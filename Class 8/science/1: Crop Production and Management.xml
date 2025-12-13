@@ -1,104 +1,188 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <quiz>
   <metadata>
-    <title>Chapter 1: Crop Production and Management</title>
-    <class>8</class>
-    <subject>Science</subject>
-    <chapter>1</chapter>
-    <author>G.S. Tutorial</author>
-    <timeLimit>30</timeLimit>
-    <difficulty>Medium</difficulty>
-    <version>1.0</version>
-    <lastUpdated>2024-01-15</lastUpdated>
+    <timeLimit>25</timeLimit>
+    <author>G. S. Tutorial</author>
+    <description>Class 8 Science - Chapter 1: Crop Production and Management</description>
   </metadata>
   
   <question>
-    <text>Which of the following is not a kharif crop?</text>
-    <option correct="false">Paddy</option>
-    <option correct="false">Maize</option>
-    <option correct="true">Wheat</option>
-    <option correct="false">Soybean</option>
-    <explanation>Wheat is a rabi crop, sown in winter and harvested in spring. Kharif crops are sown with the onset of monsoon and harvested in autumn.</explanation>
+    <text>Which of these is a kharif crop?</text>
+    <option correct="true">Paddy</option>
+    <option>Wheat</option>
+    <option>Mustard</option>
+    <option>Pea</option>
+    <explanation>Kharif crops are sown in rainy season (June-July) and harvested in autumn. Paddy (rice) is a kharif crop.</explanation>
   </question>
   
   <question>
-    <text>The process of loosening and turning of soil is called:</text>
+    <text>The process of loosening and turning the soil is called:</text>
+    <option>Irrigation</option>
+    <option>Harvesting</option>
     <option correct="true">Ploughing</option>
-    <option correct="false">Harvesting</option>
-    <option correct="false">Irrigation</option>
-    <option correct="false">Sowing</option>
-    <explanation>Ploughing is the process of loosening and turning the soil to make it suitable for sowing seeds.</explanation>
+    <option>Winnowing</option>
+    <explanation>Ploughing or tilling is the process of loosening and turning the soil.</explanation>
   </question>
   
   <question>
-    <text>Which agricultural implement is used for tilling the soil?</text>
-    <option correct="false">Sickle</option>
-    <option correct="true">Plough</option>
-    <option correct="false">Seed drill</option>
-    <option correct="false">Hoe</option>
-    <explanation>A plough is used for tilling the soil, preparing it for sowing. It breaks soil clumps and brings nutrient-rich soil to the top.</explanation>
+    <text>Which of these is not a rabi crop?</text>
+    <option>Wheat</option>
+    <option>Gram</option>
+    <option>Mustard</option>
+    <option correct="true">Cotton</option>
+    <explanation>Rabi crops are winter crops (October-December). Cotton is a kharif crop.</explanation>
   </question>
   
   <question>
-    <text>Rhizobium bacteria fix atmospheric:</text>
-    <option correct="true">Nitrogen</option>
-    <option correct="false">Oxygen</option>
-    <option correct="false">Carbon dioxide</option>
-    <option correct="false">Hydrogen</option>
-    <explanation>Rhizobium bacteria live in root nodules of leguminous plants and convert atmospheric nitrogen into a usable form for plants.</explanation>
+    <text>The process of separating grain from chaff is called:</text>
+    <option>Threshing</option>
+    <option correct="true">Winnowing</option>
+    <option>Harvesting</option>
+    <option>Irrigation</option>
+    <explanation>Winnowing is the process of separating grain from chaff using wind or air current.</explanation>
   </question>
   
   <question>
-    <text>Weeds are removed from the field by:</text>
-    <option correct="false">Irrigation</option>
-    <option correct="true">Weeding</option>
-    <option correct="false">Harvesting</option>
-    <option correct="false">Threshing</option>
-    <explanation>The process of removing weeds from the field is called weeding. Weeds compete with crops for nutrients, water, and light.</explanation>
+    <text>Which of these is a leguminous crop?</text>
+    <option>Wheat</option>
+    <option correct="true">Pea</option>
+    <option>Rice</option>
+    <option>Maize</option>
+    <explanation>Leguminous crops like peas, beans, and lentils have nitrogen-fixing bacteria in their root nodules.</explanation>
   </question>
   
   <question>
-    <text>Which of the following is a rabi crop?</text>
+    <text>The process of cutting and gathering matured crops is called:</text>
+    <option>Ploughing</option>
+    <option>Sowing</option>
+    <option correct="true">Harvesting</option>
+    <option>Threshing</option>
+    <explanation>Harvesting is the process of cutting and gathering matured crops.</explanation>
+  </question>
+  
+  <question>
+    <text>Which of these is a modern method of irrigation?</text>
+    <option>Moat</option>
+    <option>Chain pump</option>
+    <option correct="true">Drip irrigation</option>
+    <option>Dhekli</option>
+    <explanation>Drip irrigation is a modern method that saves water by delivering it directly to plant roots.</explanation>
+  </question>
+  
+  <question>
+    <text>Rhizobium bacteria are found in roots of:</text>
+    <option>Cereal crops</option>
+    <option correct="true">Leguminous plants</option>
+    <option>Oilseed crops</option>
+    <option>Fibre crops</option>
+    <explanation>Rhizobium bacteria live in root nodules of leguminous plants and fix atmospheric nitrogen.</explanation>
+  </question>
+  
+  <question>
+    <text>The practice of growing different crops in succession on the same land is called:</text>
+    <option>Mixed cropping</option>
+    <option correct="true">Crop rotation</option>
+    <option>Intercropping</option>
+    <option>Plantation</option>
+    <explanation>Crop rotation helps maintain soil fertility and control pests.</explanation>
+  </question>
+  
+  <question>
+    <text>Which of these is not a weed?</text>
+    <option>Parthenium</option>
+    <option>Xanthium</option>
+    <option>Cyperinus</option>
     <option correct="true">Wheat</option>
-    <option correct="false">Rice</option>
-    <option correct="false">Cotton</option>
-    <option correct="false">Maize</option>
-    <explanation>Wheat is a rabi crop sown in winter (October-December) and harvested in spring (March-April).</explanation>
+    <explanation>Weeds are unwanted plants that grow with crops. Wheat is a cultivated crop, not a weed.</explanation>
   </question>
   
   <question>
-    <text>The process of separating grains from chaff is called:</text>
-    <option correct="false">Winnowing</option>
-    <option correct="false">Harvesting</option>
+    <text>The process of removing weeds from crop fields is called:</text>
+    <option>Harvesting</option>
+    <option correct="true">Weeding</option>
+    <option>Threshing</option>
+    <option>Winnowing</option>
+    <explanation>Weeding is the removal of unwanted plants (weeds) from crop fields.</explanation>
+  </question>
+  
+  <question>
+    <text>Which of these is a fertilizer?</text>
+    <option correct="true">Urea</option>
+    <option>Compost</option>
+    <option>Farmyard manure</option>
+    <option>Vermicompost</option>
+    <explanation>Urea is a chemical fertilizer, while others are organic manures.</explanation>
+  </question>
+  
+  <question>
+    <text>What is the advantage of sowing seeds at proper depth?</text>
+    <option>Prevents drying</option>
+    <option>Protects from birds</option>
+    <option correct="true">All of these</option>
+    <option>None of these</option>
+    <explanation>Proper depth protects seeds from being eaten by birds, prevents drying, and ensures proper germination.</explanation>
+  </question>
+  
+  <question>
+    <text>Which of these is not a method of irrigation?</text>
+    <option>Sprinkler system</option>
+    <option>Drip system</option>
+    <option>Tube well</option>
+    <option correct="true">Combining</option>
+    <explanation>Combining is a harvesting method, not an irrigation method.</explanation>
+  </question>
+  
+  <question>
+    <text>The process of separating grains from harvested crop is called:</text>
     <option correct="true">Threshing</option>
-    <option correct="false">Irrigation</option>
-    <explanation>Threshing is the process of separating grains from chaff. It can be done manually or using machines.</explanation>
+    <option>Winnowing</option>
+    <option>Harvesting</option>
+    <option>Irrigation</option>
+    <explanation>Threshing is separating grains from harvested crop, while winnowing separates grain from chaff.</explanation>
   </question>
   
   <question>
-    <text>Which of the following is not a method of irrigation?</text>
-    <option correct="false">Drip system</option>
-    <option correct="false">Sprinkler system</option>
-    <option correct="false">Chain pump</option>
-    <option correct="true">Composting</option>
-    <explanation>Composting is a method of preparing manure, not a method of irrigation.</explanation>
+    <text>Which of these adds humus to soil?</text>
+    <option>Fertilizers</option>
+    <option correct="true">Manure</option>
+    <option>Pesticides</option>
+    <option>Herbicides</option>
+    <explanation>Manure adds humus (organic matter) to soil, improving its structure and water-holding capacity.</explanation>
   </question>
   
   <question>
-    <text>Manure is formed by the decomposition of:</text>
-    <option correct="true">Animal and plant waste</option>
-    <option correct="false">Chemical fertilizers</option>
-    <option correct="false">Plastic waste</option>
-    <option correct="false">Metal waste</option>
-    <explanation>Manure is formed by the decomposition of animal and plant waste. It improves soil fertility and texture.</explanation>
+    <text>Which vitamin is abundant in sprouts?</text>
+    <option>Vitamin A</option>
+    <option>Vitamin B</option>
+    <option correct="true">Vitamin C</option>
+    <option>Vitamin D</option>
+    <explanation>Sprouted seeds are rich in Vitamin C, proteins, and other nutrients.</explanation>
   </question>
   
   <question>
-    <text>Which of these is a weedicide?</text>
-    <option correct="false">Urea</option>
-    <option correct="true">2,4-D</option>
-    <option correct="false">NPK</option>
-    <option correct="false">Superphosphate</option>
-    <explanation>2,4-D is a common weedicide used to control weeds in crop fields.</explanation>
+    <text>The practice of growing two or more crops simultaneously on the same field is called:</text>
+    <option>Crop rotation</option>
+    <option correct="true">Mixed cropping</option>
+    <option>Plantation</option>
+    <option>Horticulture</option>
+    <explanation>Mixed cropping reduces risk of crop failure and makes better use of resources.</explanation>
+  </question>
+  
+  <question>
+    <text>Which of these is not a cereal crop?</text>
+    <option>Wheat</option>
+    <option>Rice</option>
+    <option>Maize</option>
+    <option correct="true">Groundnut</option>
+    <explanation>Groundnut is an oilseed crop, not a cereal crop.</explanation>
+  </question>
+  
+  <question>
+    <text>What is the main advantage of sprinkler irrigation?</text>
+    <option>Saves water</option>
+    <option>Can be used on uneven land</option>
+    <option>Suitable for sandy soil</option>
+    <option correct="true">All of these</option>
+    <explanation>Sprinkler irrigation saves water, works on uneven land, and is suitable for sandy soils.</explanation>
   </question>
 </quiz>
