@@ -10,7 +10,7 @@
           "chapters": [
             {
               "name": "Crop Production and Management",
-              "file": "Class8/Science/chapter1.xml",
+              "file": "Class8/Science/Chapter 1 - Crop Production.xml.xml",
               "description": "Learn about agricultural practices, crop production, and management techniques.",
             
               "difficulty": "Medium"
@@ -79,5 +79,6 @@
     }
   ]
 }
+
 
 
