@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+  <metadata>
+    <title>Chapter 1: Rational Numbers</title>
+    <class>8</class>
+    <subject>Mathematics</subject>
+    <chapter>1</chapter>
+    <timeLimit>25</timeLimit>
+    <difficulty>Medium</difficulty>
+  </metadata>
+  
+  <question>
+    <text>A number that can be expressed in the form p/q where p and q are integers and q ≠ 0 is called:</text>
+    <option correct="true">Rational number</option>
+    <option correct="false">Irrational number</option>
+    <option correct="false">Whole number</option>
+    <option correct="false">Natural number</option>
+    <explanation>A rational number is expressed as p/q where p and q are integers and q ≠ 0.</explanation>
+  </question>
+  
+  <question>
+    <text>The additive inverse of 3/5 is:</text>
+    <option correct="true">-3/5</option>
+    <option correct="false">5/3</option>
+    <option correct="false">-5/3</option>
+    <option correct="false">3/5</option>
+    <explanation>Additive inverse of a number is the number that when added gives zero.</explanation>
+  </question>
+  
+  <question>
+    <text>Which property is illustrated: a × (b + c) = a × b + a × c?</text>
+    <option correct="false">Commutative</option>
+    <option correct="true">Distributive</option>
+    <option correct="false">Associative</option>
+    <option correct="false">Closure</option>
+    <explanation>This is the distributive property of multiplication over addition.</explanation>
+  </question>
+  
+  <question>
+    <text>The reciprocal of -5/7 is:</text>
+    <option correct="false">5/7</option>
+    <option correct="true">-7/5</option>
+    <option correct="false">7/5</option>
+    <option correct="false">-5/7</option>
+    <explanation>Reciprocal of a/b is b/a, keeping the sign same.</explanation>
+  </question>
+  
+  <question>
+    <text>Which rational number lies between 1/2 and 3/4?</text>
+    <option correct="false">1/4</option>
+    <option correct="true">5/8</option>
+    <option correct="false">7/8</option>
+    <option correct="false">1</option>
+    <explanation>5/8 = 0.625 lies between 0.5 (1/2) and 0.75 (3/4).</explanation>
+  </question>
+</quiz>
