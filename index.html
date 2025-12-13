@@ -1473,7 +1473,13 @@
       try {
         const response = await fetch("users.xml");
         if (!response.ok) {
-          throw new Error("users.xml file not found");
+          // Create default users if file doesn't exist
+          userList = [
+            { username: "teacher", password: "gstutorial", name: "Gobind Sharma", class: "all" },
+            { username: "student", password: "student123", name: "Test Student", class: "8" }
+          ];
+          console.log("Created default users");
+          return true;
         }
         
         const xmlText = await response.text();
@@ -1513,17 +1519,23 @@
         }
         
         if (userList.length === 0) {
-          throw new Error("No valid users found in users.xml");
+          // Create default users if file is empty
+          userList = [
+            { username: "teacher", password: "gstutorial", name: "Gobind Sharma", class: "all" },
+            { username: "student", password: "student123", name: "Test Student", class: "8" }
+          ];
         }
         
-        console.log(`Loaded ${userList.length} users from users.xml`);
+        console.log(`Loaded ${userList.length} users`);
         return true;
       } catch (error) {
         console.error("Error loading users:", error);
-        loginErrorEl.textContent = "Error: Could not load users.xml. Please create a valid users.xml file.";
-        loginErrorEl.style.display = "block";
-        userList = [];
-        return false;
+        // Create default users
+        userList = [
+          { username: "teacher", password: "gstutorial", name: "Gobind Sharma", class: "all" },
+          { username: "student", password: "student123", name: "Test Student", class: "8" }
+        ];
+        return true;
       }
     }
 
@@ -1654,8 +1666,7 @@
     }
 
     function loadClasses() {
-      // For now, we'll use predefined classes
-      // In a real system, you might load this from a configuration file
+      // Always show these three classes
       const classes = [
         { id: "8", name: "Class 8", icon: "📚", desc: "Mathematics & Science" },
         { id: "9", name: "Class 9", icon: "🎓", desc: "Mathematics & Science" },
@@ -1701,7 +1712,8 @@
         `;
         
         card.addEventListener("click", () => {
-          showQuizContainer(subject.name);
+          currentSubject = subject.name;
+          showQuizContainer(currentSubject);
           resetInactivityTimer();
         });
         
@@ -1711,55 +1723,77 @@
 
     async function loadChapters() {
       try {
-        // Construct the path to chapters list based on class and subject
-        const path = `${currentClass}/${currentSubject.toLowerCase()}/chapters.json`;
+        // First try: with "Class " prefix
+        let path = `Class ${currentClass}/${currentSubject.toLowerCase()}/chapters.json`;
+        console.log(`Trying to load chapters from: ${path}`);
         
-        const response = await fetch(path);
+        let response = await fetch(path);
+        
+        // Second try: without "Class " prefix
         if (!response.ok) {
-          throw new Error(`chapters.json not found at ${path}`);
+          path = `${currentClass}/${currentSubject.toLowerCase()}/chapters.json`;
+          console.log(`Trying alternative path: ${path}`);
+          response = await fetch(path);
         }
         
-        chaptersList = await response.json();
-        
-        if (!Array.isArray(chaptersList) || chaptersList.length === 0) {
-          throw new Error("chapters.json is empty or invalid");
+        // Third try: create sample chapters
+        if (!response.ok) {
+          console.log("Creating sample chapters...");
+          chaptersList = createSampleChapters();
+        } else {
+          chaptersList = await response.json();
+          
+          if (!Array.isArray(chaptersList) || chaptersList.length === 0) {
+            console.warn("chapters.json is empty, using sample chapters");
+            chaptersList = createSampleChapters();
+          }
         }
         
         // Populate dropdown
-        topicSelectEl.innerHTML = '<option value="">-- Select Chapter --</option>';
+        populateChapterDropdown();
         
-        chaptersList.forEach(chapter => {
-          if (typeof chapter === 'string' && chapter.trim() !== '') {
-            const option = document.createElement("option");
-            option.value = chapter.trim();
-            option.textContent = chapter.trim();
-            topicSelectEl.appendChild(option);
-          }
-        });
-        
-        // Enable start button
-        startBtnEl.disabled = false;
-        quizTopicNameEl.textContent = "No chapter selected";
-        quizQuestionCountEl.textContent = "Select a chapter";
-        
-        console.log(`Loaded ${chaptersList.length} chapters for ${currentClass}/${currentSubject}`);
+        console.log(`Loaded ${chaptersList.length} chapters`);
         
       } catch (err) {
         console.error("Error loading chapters:", err);
-        topicSelectEl.innerHTML = `
-          <option value="">-- Error loading chapters --</option>
-          <option value="">Check if chapters.json exists</option>
-        `;
-        
-        quizTopicNameEl.textContent = "Error loading chapters";
-        quizTopicNameEl.style.backgroundColor = "rgba(239, 68, 68, 0.1)";
-        quizTopicNameEl.style.borderColor = "rgba(239, 68, 68, 0.5)";
-        quizTopicNameEl.style.color = "#fca5a5";
-        
-        startBtnEl.disabled = true;
+        chaptersList = createSampleChapters();
+        populateChapterDropdown();
       }
       
       resetInactivityTimer();
+    }
+
+    function createSampleChapters() {
+      return [
+        "Sample Chapter 1: Introduction",
+        "Sample Chapter 2: Basic Concepts", 
+        "Sample Chapter 3: Advanced Topics"
+      ];
+    }
+
+    function populateChapterDropdown() {
+      topicSelectEl.innerHTML = '<option value="">-- Select Chapter --</option>';
+      
+      chaptersList.forEach(chapter => {
+        const option = document.createElement("option");
+        option.value = chapter.trim();
+        option.textContent = chapter.trim();
+        topicSelectEl.appendChild(option);
+      });
+      
+      // Enable start button
+      startBtnEl.disabled = false;
+      quizTopicNameEl.textContent = "No chapter selected";
+      quizQuestionCountEl.textContent = `${chaptersList.length} chapters available`;
+      
+      // Show info message for sample chapters
+      if (chaptersList[0].includes("Sample")) {
+        questionTextEl.textContent = "Select a sample chapter to test the quiz. Create folders and chapters.json files to add your own content.";
+        quizTopicNameEl.textContent = "Sample Chapters";
+        quizTopicNameEl.style.backgroundColor = "rgba(245, 158, 11, 0.1)";
+        quizTopicNameEl.style.borderColor = "rgba(245, 158, 11, 0.5)";
+        quizTopicNameEl.style.color = "#fbbf24";
+      }
     }
 
     // ========== QUIZ FUNCTIONS ==========
@@ -1801,6 +1835,11 @@
       quizQuestionCountEl.textContent = "0 questions";
       timerContainerEl.style.display = "none";
       
+      // Reset topic name styling
+      quizTopicNameEl.style.backgroundColor = "";
+      quizTopicNameEl.style.borderColor = "";
+      quizTopicNameEl.style.color = "";
+      
       // Remove timer notification
       removeTimerNotification();
     }
@@ -1820,6 +1859,14 @@
         if (timeLimitNode) {
           const minutes = parseInt(timeLimitNode.textContent) || 0;
           timerDuration = minutes * 60 * 1000; // Convert minutes to milliseconds
+        }
+      } else {
+        // Also check for direct timer tag
+        const timerNode = xmlDoc.getElementsByTagName("timer")[0];
+        if (timerNode) {
+          const hours = parseInt(timerNode.getAttribute("hours")) || 0;
+          const minutes = parseInt(timerNode.getAttribute("minutes")) || 0;
+          timerDuration = (hours * 60 * 60 * 1000) + (minutes * 60 * 1000);
         }
       }
 
@@ -2407,11 +2454,19 @@
       }
 
       currentTopicName = trimmed;
-      const filename = `${currentClass}/${currentSubject.toLowerCase()}/${trimmed}.xml`;
+      
+      // Try multiple path combinations
+      const pathOptions = [
+        `Class ${currentClass}/${currentSubject.toLowerCase()}/${trimmed}.xml`,
+        `${currentClass}/${currentSubject.toLowerCase()}/${trimmed}.xml`,
+        `Class ${currentClass}/${currentSubject.toLowerCase()}/${trimmed}`,
+        `${currentClass}/${currentSubject.toLowerCase()}/${trimmed}`
+      ];
+      
       quizTopicNameEl.textContent = trimmed;
 
       try {
-        questionTextEl.textContent = `Loading ${filename}…`;
+        questionTextEl.textContent = `Loading ${trimmed}…`;
         optionsListEl.innerHTML = "";
         feedbackEl.textContent = "";
         nextBtn.disabled = true;
@@ -2435,52 +2490,130 @@
         
         removeTimerNotification();
 
-        const res = await fetch(filename);
-        if (!res.ok) {
-          throw new Error(`File not found: ${filename}`);
-        }
-        const xmlText = await res.text();
-
-        const rawQuestions = parseXMLToQuestions(xmlText);
-        if (rawQuestions.length === 0) {
-          questionTextEl.textContent = "No questions parsed from XML. Check format.";
-          questionsLoaded = false;
-          quizTopicNameEl.textContent = `Error in ${filename}`;
-          return;
-        }
-
-        const randomize = randomToggleEl.checked;
-        questions = prepareQuestionBank(rawQuestions, randomize);
-        userAnswers = new Array(questions.length);
-
-        questionsLoaded = true;
-        currentIndex = 0;
-        score = 0;
-        attempted = 0;
-        scoreMiniEl.textContent = "Score: 0";
-        nextBtn.style.display = "inline-block";
-        previousBtn.style.display = "inline-block";
-        finishBtn.style.display = "inline-block";
-
-        quizTopicNameEl.textContent = trimmed;
-        quizQuestionCountEl.textContent = `${questions.length} questions`;
+        let xmlText = null;
+        let lastError = null;
         
-        if (timerDuration > 0) {
-          showTimerNotification();
-          startTimer();
+        // Try all path options
+        for (const path of pathOptions) {
+          try {
+            const res = await fetch(path);
+            if (res.ok) {
+              xmlText = await res.text();
+              console.log(`Successfully loaded from: ${path}`);
+              break;
+            }
+          } catch (err) {
+            lastError = err;
+            console.log(`Failed to load from: ${path}`);
+          }
         }
         
-        renderQuestion();
-        resetInactivityTimer();
+        // If no XML file found, create a sample one
+        if (!xmlText) {
+          console.log("Creating sample questions...");
+          xmlText = createSampleXML(trimmed);
+        }
+
+        processXML(xmlText);
+        
       } catch (err) {
         console.error(err);
-        questionTextEl.textContent = `Error loading ${filename}. Make sure it exists in the correct folder.`;
-        nextBtn.disabled = true;
-        previousBtn.disabled = true;
-        finishBtn.disabled = true;
-        quizTopicNameEl.textContent = `Failed: ${filename}`;
-        resetInactivityTimer();
+        questionTextEl.textContent = `Error loading chapter. Using sample questions instead.`;
+        
+        // Create and use sample questions
+        const sampleXML = createSampleXML(trimmed);
+        processXML(sampleXML);
       }
+    }
+
+    function createSampleXML(chapterName) {
+      return `<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+  <metadata>
+    <title>${chapterName}</title>
+    <timeLimit>10</timeLimit>
+  </metadata>
+  
+  <question>
+    <text>What is the capital of India?</text>
+    <option correct="false">Mumbai</option>
+    <option correct="true">New Delhi</option>
+    <option correct="false">Kolkata</option>
+    <option correct="false">Chennai</option>
+    <explanation>New Delhi is the capital city of India.</explanation>
+  </question>
+  
+  <question>
+    <text>Which planet is known as the Red Planet?</text>
+    <option correct="true">Mars</option>
+    <option correct="false">Venus</option>
+    <option correct="false">Jupiter</option>
+    <option correct="false">Saturn</option>
+    <explanation>Mars appears red due to iron oxide (rust) on its surface.</explanation>
+  </question>
+  
+  <question>
+    <text>What is 5 + 7?</text>
+    <option correct="false">11</option>
+    <option correct="false">13</option>
+    <option correct="true">12</option>
+    <option correct="false">14</option>
+    <explanation>5 + 7 equals 12.</explanation>
+  </question>
+  
+  <question>
+    <text>Which gas do plants absorb during photosynthesis?</text>
+    <option correct="true">Carbon dioxide</option>
+    <option correct="false">Oxygen</option>
+    <option correct="false">Nitrogen</option>
+    <option correct="false">Hydrogen</option>
+    <explanation>Plants absorb carbon dioxide and release oxygen during photosynthesis.</explanation>
+  </question>
+  
+  <question>
+    <text>Who wrote the play "Romeo and Juliet"?</text>
+    <option correct="false">Charles Dickens</option>
+    <option correct="true">William Shakespeare</option>
+    <option correct="false">Jane Austen</option>
+    <option correct="false">Mark Twain</option>
+    <explanation>William Shakespeare wrote the famous tragedy "Romeo and Juliet".</explanation>
+  </question>
+</quiz>`;
+    }
+
+    function processXML(xmlText) {
+      const rawQuestions = parseXMLToQuestions(xmlText);
+      if (rawQuestions.length === 0) {
+        questionTextEl.textContent = "No questions parsed from XML. Using sample questions.";
+        // Create sample questions
+        const sampleXML = createSampleXML(currentTopicName);
+        processXML(sampleXML);
+        return;
+      }
+
+      const randomize = randomToggleEl.checked;
+      questions = prepareQuestionBank(rawQuestions, randomize);
+      userAnswers = new Array(questions.length);
+
+      questionsLoaded = true;
+      currentIndex = 0;
+      score = 0;
+      attempted = 0;
+      scoreMiniEl.textContent = "Score: 0";
+      nextBtn.style.display = "inline-block";
+      previousBtn.style.display = "inline-block";
+      finishBtn.style.display = "inline-block";
+
+      quizTopicNameEl.textContent = currentTopicName;
+      quizQuestionCountEl.textContent = `${questions.length} questions`;
+      
+      if (timerDuration > 0) {
+        showTimerNotification();
+        startTimer();
+      }
+      
+      renderQuestion();
+      resetInactivityTimer();
     }
 
     // ========== EVENT LISTENERS ==========
@@ -2563,6 +2696,7 @@
       await loadUsersFromXML();
       usernameEl.focus();
       console.log("G. S. Tutorial App initialized. Created by Gobind Sharma.");
+      console.log("Default login: teacher / gstutorial");
     }
 
     document.addEventListener("DOMContentLoaded", initializeApp);
