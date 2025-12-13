@@ -1,2505 +1,2576 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>G.S. Tutorial - Classes 8, 9, 10</title>
-    <style>
-        /* ===== CSS RESET & BASE STYLES ===== */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
-        }
-
-        :root {
-            --primary-blue: #3b82f6;
-            --primary-green: #22c55e;
-            --primary-yellow: #f59e0b;
-            --primary-purple: #8b5cf6;
-            --primary-red: #ef4444;
-            --dark-bg: #0f172a;
-            --dark-card: #1e293b;
-            --dark-border: #334155;
-            --text-primary: #f8fafc;
-            --text-secondary: #94a3b8;
-            --text-muted: #64748b;
-            --success: #10b981;
-            --warning: #f59e0b;
-            --danger: #ef4444;
-            --info: #3b82f6;
-            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.12);
-            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-            --radius-sm: 0.375rem;
-            --radius-md: 0.5rem;
-            --radius-lg: 0.75rem;
-            --radius-xl: 1rem;
-            --radius-2xl: 1.5rem;
-            --radius-full: 9999px;
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        body {
-            background: linear-gradient(135deg, var(--dark-bg) 0%, #1a1f35 100%);
-            color: var(--text-primary);
-            min-height: 100vh;
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        /* ===== FIXED HEADER ===== */
-        #app-header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background: rgba(30, 41, 59, 0.95);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--dark-border);
-            z-index: 1000;
-            padding: 10px 20px;
-            display: none;
-        }
-
-        #app-header.active {
-            display: block;
-        }
-
-        .header-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .header-left {
-            flex: 1;
-        }
-
-        .header-left h1 {
-            font-size: 1.3rem;
-            background: linear-gradient(90deg, var(--primary-blue) 0%, var(--primary-green) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 2px;
-        }
-
-        .header-left p {
-            color: var(--text-secondary);
-            font-size: 0.8rem;
-        }
-
-        .header-right {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .user-info {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(15, 23, 42, 0.7);
-            padding: 6px 12px;
-            border-radius: var(--radius-full);
-            border: 1px solid var(--dark-border);
-            font-size: 0.9rem;
-            min-height: 36px;
-        }
-
-        .user-name {
-            color: var(--text-primary);
-            font-weight: 600;
-        }
-
-        .header-logout-btn {
-            padding: 6px 12px;
-            font-size: 0.9rem;
-            height: 36px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        /* ===== SCREEN MANAGER ===== */
-        .screen {
-            display: none;
-            min-height: 100vh;
-            width: 100%;
-        }
-
-        .screen.active {
-            display: block;
-        }
-
-        /* ===== LOGIN SCREEN ===== */
-        #login-screen {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-            padding: 20px;
-        }
-
-        .login-container {
-            width: 100%;
-            max-width: 400px;
-            background: rgba(30, 41, 59, 0.95);
-            backdrop-filter: blur(20px);
-            border-radius: var(--radius-xl);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: var(--shadow-xl), 0 0 40px rgba(59, 130, 246, 0.1);
-            overflow: hidden;
-        }
-
-        .login-header {
-            background: linear-gradient(90deg, var(--primary-blue) 0%, var(--primary-green) 100%);
-            padding: 30px 20px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .login-header::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-            animation: shine 3s infinite linear;
-        }
-
-        @keyframes shine {
-            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
-            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
-        }
-
-        .logo {
-            position: relative;
-            z-index: 1;
-        }
-
-        .logo h1 {
-            font-size: 2rem;
-            font-weight: 800;
-            margin-bottom: 8px;
-            background: linear-gradient(90deg, #ffffff 0%, #e2e8f0 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .logo p {
-            color: rgba(255, 255, 255, 0.9);
-            font-size: 0.9rem;
-            font-weight: 500;
-        }
-
-        .login-form {
-            padding: 30px 20px;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-label {
-            display: block;
-            margin-bottom: 8px;
-            color: var(--text-primary);
-            font-weight: 600;
-            font-size: 0.9rem;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .form-input {
-            width: 100%;
-            padding: 14px 16px;
-            background: rgba(15, 23, 42, 0.7);
-            border: 2px solid var(--dark-border);
-            border-radius: var(--radius-lg);
-            color: var(--text-primary);
-            font-size: 1rem;
-            transition: var(--transition);
-        }
-
-        .form-input:focus {
-            outline: none;
-            border-color: var(--primary-blue);
-            box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.2);
-            background: rgba(15, 23, 42, 0.9);
-        }
-
-        .form-input::placeholder {
-            color: var(--text-muted);
-        }
-
-        .password-container {
-            position: relative;
-        }
-
-        .toggle-password {
-            position: absolute;
-            right: 12px;
-            top: 50%;
-            transform: translateY(-50%);
-            background: transparent;
-            border: none;
-            color: var(--text-secondary);
-            cursor: pointer;
-            padding: 5px;
-            font-size: 1.1rem;
-            transition: var(--transition);
-        }
-
-        .toggle-password:hover {
-            color: var(--primary-blue);
-        }
-
-        .btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            padding: 14px 20px;
-            border: none;
-            border-radius: var(--radius-lg);
-            font-size: 0.95rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .btn::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            transform: translate(-50%, -50%);
-            transition: width 0.6s, height 0.6s;
-        }
-
-        .btn:hover::before {
-            width: 300px;
-            height: 300px;
-        }
-
-        .btn-primary {
-            background: linear-gradient(90deg, var(--primary-blue) 0%, #2563eb 100%);
-            color: white;
-            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
-        }
-
-        .btn-secondary {
-            background: linear-gradient(90deg, var(--primary-green) 0%, #16a34a 100%);
-            color: white;
-            box-shadow: 0 4px 15px rgba(34, 197, 94, 0.3);
-        }
-
-        .btn-secondary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(34, 197, 94, 0.4);
-        }
-
-        .btn-danger {
-            background: linear-gradient(90deg, var(--primary-red) 0%, #dc2626 100%);
-            color: white;
-            box-shadow: 0 4px 15px rgba(239, 68, 68, 0.3);
-        }
-
-        .btn-danger:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(239, 68, 68, 0.4);
-        }
-
-        .btn-warning {
-            background: linear-gradient(90deg, var(--primary-yellow) 0%, #d97706 100%);
-            color: white;
-            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);
-        }
-
-        .btn-warning:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(245, 158, 11, 0.4);
-        }
-
-        .btn-outline {
-            background: transparent;
-            border: 2px solid var(--dark-border);
-            color: var(--text-primary);
-        }
-
-        .btn-outline:hover {
-            background: rgba(255, 255, 255, 0.05);
-            border-color: var(--primary-blue);
-        }
-
-        .btn:disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-            transform: none !important;
-            box-shadow: none !important;
-        }
-
-        .btn:disabled:hover::before {
-            width: 0;
-            height: 0;
-        }
-
-        .error-message {
-            background: rgba(239, 68, 68, 0.1);
-            color: #fca5a5;
-            padding: 12px;
-            border-radius: var(--radius-md);
-            border: 1px solid rgba(239, 68, 68, 0.3);
-            margin-top: 16px;
-            display: none;
-            font-size: 0.9rem;
-        }
-
-        /* ===== CONTENT WRAPPER ===== */
-        .content-wrapper {
-            width: 100%;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .main-content {
-            flex: 1;
-            padding: 70px 20px 20px;
-            display: flex;
-            flex-direction: column;
-        }
-
-        /* ===== CLASS SELECTION SCREEN ===== */
-        #class-selection-screen .main-content {
-            align-items: center;
-        }
-
-        .selection-header {
-            text-align: center;
-            margin-bottom: 30px;
-            padding: 15px 0;
-            max-width: 800px;
-        }
-
-        .selection-header h2 {
-            font-size: 1.8rem;
-            margin-bottom: 8px;
-            background: linear-gradient(90deg, var(--primary-blue) 0%, var(--primary-green) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .welcome-message {
-            color: var(--text-secondary);
-            font-size: 1rem;
-        }
-
-        .selection-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            width: 100%;
-            max-width: 900px;
-        }
-
-        .selection-card {
-            background: var(--dark-card);
-            border: 2px solid var(--dark-border);
-            border-radius: var(--radius-lg);
-            padding: 20px;
-            cursor: pointer;
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .selection-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, var(--primary-blue) 0%, var(--primary-green) 100%);
-            transform: scaleX(0);
-            transition: transform 0.3s ease;
-        }
-
-        .selection-card:hover {
-            transform: translateY(-3px);
-            border-color: var(--primary-blue);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .selection-card.selected {
-            border-color: var(--primary-green);
-            background: linear-gradient(135deg, rgba(34, 197, 94, 0.1) 0%, rgba(30, 41, 59, 0.9) 100%);
-        }
-
-        .selection-card.selected::before {
-            transform: scaleX(1);
-            background: linear-gradient(90deg, var(--primary-green) 0%, #16a34a 100%);
-        }
-
-        .selection-icon {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-            display: inline-block;
-            transition: var(--transition);
-        }
-
-        .selection-card:hover .selection-icon {
-            transform: scale(1.1) rotate(5deg);
-        }
-
-        .selection-card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 8px;
-            color: var(--text-primary);
-        }
-
-        .selection-card p {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-            line-height: 1.5;
-        }
-
-        /* ===== SUBJECT SELECTION SCREEN ===== */
-        #subject-selection-screen .main-content {
-            align-items: center;
-            justify-content: center;
-        }
-
-        /* ===== CHAPTER SELECTION SCREEN ===== */
-        #chapter-selection-screen .main-content {
-            align-items: center;
-            justify-content: center;
-        }
-
-        .selection-container {
-            width: 100%;
-            max-width: 500px;
-            background: var(--dark-card);
-            border-radius: var(--radius-lg);
-            padding: 25px;
-            border: 1px solid var(--dark-border);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .selection-title {
-            text-align: center;
-            margin-bottom: 25px;
-        }
-
-        .selection-title h2 {
-            font-size: 1.5rem;
-            margin-bottom: 8px;
-            color: var(--text-primary);
-        }
-
-        .selection-title p {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-        }
-
-        .form-select {
-            width: 100%;
-            padding: 14px 16px;
-            background: rgba(15, 23, 42, 0.7);
-            border: 2px solid var(--dark-border);
-            border-radius: var(--radius-lg);
-            color: var(--text-primary);
-            font-size: 1rem;
-            margin-bottom: 25px;
-            transition: var(--transition);
-        }
-
-        .form-select:focus {
-            outline: none;
-            border-color: var(--primary-blue);
-            box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.2);
-        }
-
-        .form-select option {
-            background: var(--dark-card);
-            color: var(--text-primary);
-        }
-
-        .btn-full {
-            width: 100%;
-        }
-
-        .back-button {
-            text-align: center;
-            margin-top: 25px;
-        }
-
-        .chapter-info-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 12px;
-            margin-bottom: 20px;
-        }
-
-        .info-box {
-            background: rgba(15, 23, 42, 0.7);
-            padding: 12px;
-            border-radius: var(--radius-md);
-            text-align: center;
-        }
-
-        .info-label {
-            font-size: 0.8rem;
-            color: var(--text-secondary);
-            margin-bottom: 4px;
-        }
-
-        .info-value {
-            font-size: 1rem;
-            font-weight: 600;
-        }
-
-        .questions-count {
-            color: var(--primary-blue);
-        }
-
-        .time-limit {
-            color: var(--primary-yellow);
-        }
-
-        .difficulty {
-            color: var(--primary-green);
-        }
-
-        .chapter-description {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-            line-height: 1.5;
-            margin-bottom: 25px;
-        }
-
-        /* ===== QUIZ QUESTION SCREEN ===== */
-        #quiz-question-screen .main-content {
-            padding: 60px 15px 15px;
-            display: flex;
-            flex-direction: column;
-            max-width: 800px;
-            margin: 0 auto;
-            width: 100%;
-        }
-
-        .quiz-progress-container {
-            background: var(--dark-card);
-            border-radius: var(--radius-lg);
-            padding: 15px;
-            margin-bottom: 15px;
-            border: 1px solid var(--dark-border);
-        }
-
-        .progress-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 12px;
-        }
-
-        .progress-title {
-            font-size: 1rem;
-            color: var(--text-primary);
-        }
-
-        .timer-container {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(15, 23, 42, 0.7);
-            padding: 6px 12px;
-            border-radius: var(--radius-full);
-            border: 1px solid var(--dark-border);
-            font-size: 0.9rem;
-        }
-
-        .timer-warning {
-            color: var(--warning);
-            animation: pulse 1s infinite;
-        }
-
-        .timer-critical {
-            color: var(--danger);
-            animation: pulse 0.5s infinite;
-        }
-
-        .progress-bar {
-            height: 6px;
-            background: rgba(15, 23, 42, 0.7);
-            border-radius: var(--radius-full);
-            overflow: hidden;
-            margin-bottom: 8px;
-        }
-
-        .progress-fill {
-            height: 100%;
-            background: linear-gradient(90deg, var(--primary-blue) 0%, var(--primary-green) 100%);
-            width: 0%;
-            transition: width 0.3s ease;
-            border-radius: var(--radius-full);
-        }
-
-        .progress-info {
-            display: flex;
-            justify-content: space-between;
-            color: var(--text-secondary);
-            font-size: 0.85rem;
-        }
-
-        .question-container {
-            background: var(--dark-card);
-            border-radius: var(--radius-lg);
-            padding: 20px;
-            margin-bottom: 15px;
-            border: 1px solid var(--dark-border);
-        }
-
-        .question-header {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 20px;
-            padding-bottom: 15px;
-            border-bottom: 1px solid var(--dark-border);
-        }
-
-        .question-number {
-            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-purple) 100%);
-            color: white;
-            width: 40px;
-            height: 40px;
-            border-radius: var(--radius-full);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.1rem;
-            font-weight: 700;
-        }
-
-        .question-chapter {
-            flex: 1;
-            font-size: 1rem;
-            color: var(--text-primary);
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-        }
-
-        .question-text {
-            font-size: 1.1rem;
-            line-height: 1.6;
-            color: var(--text-primary);
-            margin-bottom: 25px;
-        }
-
-        .options-container {
-            display: grid;
-            gap: 10px;
-            margin-bottom: 15px;
-            min-height: 200px;
-        }
-
-        .option {
-            background: rgba(15, 23, 42, 0.7);
-            border: 2px solid var(--dark-border);
-            border-radius: var(--radius-md);
-            padding: 15px;
-            cursor: pointer;
-            transition: var(--transition);
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .option::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(34, 197, 94, 0.1) 100%);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .option:hover {
-            border-color: var(--primary-blue);
-            transform: translateX(3px);
-        }
-
-        .option:hover::before {
-            opacity: 1;
-        }
-
-        .option.selected {
-            border-color: var(--primary-blue);
-            background: rgba(59, 130, 246, 0.15);
-        }
-
-        .option.correct {
-            border-color: var(--primary-green);
-            background: rgba(34, 197, 94, 0.15);
-        }
-
-        .option.incorrect {
-            border-color: var(--primary-red);
-            background: rgba(239, 68, 68, 0.15);
-        }
-
-        .option-label {
-            width: 32px;
-            height: 32px;
-            background: var(--dark-border);
-            border-radius: var(--radius-full);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            font-size: 0.95rem;
-            color: var(--text-primary);
-        }
-
-        .option.selected .option-label {
-            background: var(--primary-blue);
-            color: white;
-        }
-
-        .option.correct .option-label {
-            background: var(--primary-green);
-            color: white;
-        }
-
-        .option.incorrect .option-label {
-            background: var(--primary-red);
-            color: white;
-        }
-
-        .option-text {
-            flex: 1;
-            font-size: 0.95rem;
-            color: var(--text-primary);
-            line-height: 1.4;
-        }
-
-        .explanation-box {
-            background: rgba(15, 23, 42, 0.7);
-            border-radius: var(--radius-md);
-            padding: 20px;
-            margin-top: 15px;
-            border-left: 4px solid var(--primary-blue);
-            display: none;
-        }
-
-        .explanation-title {
-            color: var(--primary-blue);
-            font-size: 1rem;
-            font-weight: 600;
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .explanation-text {
-            color: var(--text-primary);
-            line-height: 1.5;
-            font-size: 0.95rem;
-        }
-
-        .quiz-controls {
-            display: flex;
-            gap: 10px;
-            margin-top: 15px;
-        }
-
-        .quiz-controls .btn {
-            padding: 12px;
-            font-size: 0.9rem;
-        }
-
-        .btn-previous {
-            flex: 1;
-            justify-content: flex-start;
-        }
-
-        .btn-next {
-            flex: 1;
-            justify-content: flex-end;
-        }
-
-        .btn-finish {
-            width: 100%;
-            margin-top: 10px;
-        }
-
-        /* ===== RESULTS SCREEN ===== */
-        #results-screen .main-content {
-            align-items: center;
-            justify-content: center;
-        }
-
-        .results-container {
-            width: 100%;
-            max-width: 500px;
-            background: var(--dark-card);
-            border-radius: var(--radius-xl);
-            padding: 30px;
-            border: 1px solid var(--dark-border);
-            box-shadow: var(--shadow-xl);
-        }
-
-        .results-header {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        .results-title {
-            font-size: 1.8rem;
-            background: linear-gradient(90deg, var(--primary-blue) 0%, var(--primary-green) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 8px;
-        }
-
-        .results-subtitle {
-            color: var(--text-secondary);
-            font-size: 1rem;
-        }
-
-        .score-display {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        .score-circle-container {
-            position: relative;
-            width: 160px;
-            height: 160px;
-            margin: 0 auto 25px;
-        }
-
-        .score-circle-bg {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            background: conic-gradient(var(--primary-green) 0% var(--percentage, 0%), var(--dark-border) 0%);
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .score-circle-bg::before {
-            content: '';
-            position: absolute;
-            width: 120px;
-            height: 120px;
-            background: var(--dark-card);
-            border-radius: 50%;
-        }
-
-        .score-value {
-            position: relative;
-            z-index: 1;
-            font-size: 2.2rem;
-            font-weight: 800;
-            color: var(--primary-green);
-            margin-bottom: 4px;
-        }
-
-        .score-percentage {
-            position: relative;
-            z-index: 1;
-            font-size: 1rem;
-            color: var(--text-secondary);
-        }
-
-        .results-stats {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
-            margin-bottom: 30px;
-        }
-
-        .stat-card {
-            background: rgba(15, 23, 42, 0.7);
-            border-radius: var(--radius-md);
-            padding: 15px;
-            text-align: center;
-            border: 1px solid var(--dark-border);
-        }
-
-        .stat-value {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary-blue);
-            margin-bottom: 4px;
-        }
-
-        .stat-label {
-            color: var(--text-secondary);
-            font-size: 0.8rem;
-        }
-
-        .results-message {
-            background: rgba(59, 130, 246, 0.1);
-            border-radius: var(--radius-md);
-            padding: 20px;
-            margin-bottom: 30px;
-            border: 1px solid rgba(59, 130, 246, 0.3);
-            text-align: center;
-        }
-
-        .message-text {
-            font-size: 1.1rem;
-            color: var(--text-primary);
-            margin-bottom: 8px;
-        }
-
-        .message-subtext {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-        }
-
-        .results-actions {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 12px;
-        }
-
-        /* ===== LOADER ===== */
-        .loader {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(15, 23, 42, 0.95);
-            backdrop-filter: blur(10px);
-            z-index: 9999;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-        }
-
-        .loader.active {
-            display: flex;
-        }
-
-        .loader-spinner {
-            width: 50px;
-            height: 50px;
-            border: 3px solid var(--dark-border);
-            border-top: 3px solid var(--primary-blue);
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-            margin-bottom: 15px;
-        }
-
-        .loader-text {
-            color: var(--text-secondary);
-            font-size: 1rem;
-        }
-
-        /* ===== RESPONSIVE DESIGN ===== */
-        @media (max-width: 768px) {
-            #app-header {
-                padding: 8px 15px;
-            }
-
-            .header-content {
-                flex-direction: column;
-                text-align: center;
-                gap: 8px;
-            }
-
-            .header-left h1 {
-                font-size: 1.1rem;
-            }
-
-            .header-left p {
-                font-size: 0.7rem;
-            }
-
-            .header-right {
-                width: 100%;
-                justify-content: center;
-                flex-wrap: wrap;
-                gap: 8px;
-            }
-
-            .user-info {
-                font-size: 0.8rem;
-                padding: 5px 10px;
-            }
-
-            .header-logout-btn {
-                padding: 5px 10px;
-                font-size: 0.8rem;
-            }
-
-            .main-content {
-                padding: 60px 15px 15px;
-            }
-
-            .login-container {
-                margin: 0 10px;
-            }
-
-            .login-header {
-                padding: 25px 15px;
-            }
-
-            .logo h1 {
-                font-size: 1.8rem;
-            }
-
-            .logo p {
-                font-size: 0.8rem;
-            }
-
-            .login-form {
-                padding: 25px 15px;
-            }
-
-            .selection-grid {
-                grid-template-columns: 1fr;
-                gap: 15px;
-            }
-
-            .selection-card {
-                padding: 18px;
-            }
-
-            .selection-card h3 {
-                font-size: 1.2rem;
-            }
-
-            .selection-card p {
-                font-size: 0.85rem;
-            }
-
-            .selection-container {
-                padding: 20px 15px;
-                margin: 0 10px;
-            }
-
-            .selection-title h2 {
-                font-size: 1.3rem;
-            }
-
-            .question-text {
-                font-size: 1rem;
-            }
-
-            .option {
-                padding: 12px;
-                gap: 10px;
-            }
-
-            .option-label {
-                width: 28px;
-                height: 28px;
-                font-size: 0.85rem;
-            }
-
-            .option-text {
-                font-size: 0.9rem;
-            }
-
-            .results-container {
-                padding: 25px 20px;
-                margin: 0 10px;
-            }
-
-            .results-stats {
-                grid-template-columns: 1fr;
-            }
-
-            .score-circle-container {
-                width: 140px;
-                height: 140px;
-            }
-
-            .score-circle-bg::before {
-                width: 100px;
-                height: 100px;
-            }
-
-            .score-value {
-                font-size: 1.8rem;
-            }
-
-            .quiz-controls {
-                flex-direction: column;
-            }
-
-            .btn-previous, .btn-next {
-                width: 100%;
-            }
-
-            .btn-finish {
-                order: 3;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .chapter-info-grid {
-                grid-template-columns: 1fr;
-                gap: 8px;
-            }
-            
-            .info-box {
-                padding: 10px;
-            }
-            
-            .results-actions {
-                grid-template-columns: 1fr;
-            }
-            
-            .question-chapter {
-                font-size: 0.9rem;
-            }
-            
-            .question-number {
-                width: 35px;
-                height: 35px;
-                font-size: 1rem;
-            }
-        }
-
-        /* Desktop specific */
-        @media (min-width: 769px) {
-            .options-container {
-                min-height: 300px;
-            }
-            
-            .selection-grid {
-                max-width: 900px;
-            }
-            
-            .quiz-controls {
-                justify-content: space-between;
-            }
-            
-            .btn-previous {
-                max-width: 120px;
-            }
-            
-            .btn-next {
-                max-width: 120px;
-            }
-            
-            .btn-finish {
-                max-width: 200px;
-                align-self: center;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <title>G. S. Tutorial - Online Quiz Platform</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    /* ===== BASE STYLES ===== */
+    * {
+      box-sizing: border-box;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: #0f172a;
+      color: #e5e7eb;
+      min-height: 100vh;
+      background-image: radial-gradient(circle at 50% 50%, #1e293b 0%, #0f172a 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* ===== FIXED HEADER ===== */
+    .fixed-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(2, 6, 23, 0.98);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+      z-index: 1000;
+      padding: 8px 16px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .header-content {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .header-center {
+      flex: 1;
+      text-align: center;
+      min-width: 0;
+      overflow: hidden;
+    }
+
+    .header-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      background: linear-gradient(90deg, #3b82f6 0%, #22c55e 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      line-height: 1.2;
+      margin: 0;
+      text-align: center;
+      letter-spacing: 0.5px;
+    }
+
+    .header-subtitle {
+      font-size: 0.8rem;
+      color: #9ca3af;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      line-height: 1.2;
+      text-align: center;
+      margin-top: 2px;
+    }
+
+    .header-bottom {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      padding: 3px 0;
+    }
+
+    .user-info {
+      font-size: 0.85rem;
+      color: #93c5fd;
+      background: rgba(59, 130, 246, 0.15);
+      padding: 5px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      white-space: nowrap;
+      max-width: 180px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-shrink: 1;
+      min-width: 0;
+    }
+
+    .logout-btn {
+      background: rgba(239, 68, 68, 0.15);
+      color: #fca5a5;
+      border: 1px solid rgba(239, 68, 68, 0.3);
+      border-radius: 999px;
+      padding: 5px 12px;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      flex-shrink: 0;
+    }
+
+    .logout-btn:hover {
+      background: rgba(239, 68, 68, 0.25);
+      transform: translateY(-1px);
+    }
+
+    /* ===== MAIN CONTENT AREA ===== */
+    .main-content {
+      width: 100%;
+      max-width: 720px;
+      margin-top: 90px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    /* ===== LOGIN STYLES ===== */
+    #login-container {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 20px;
+    }
+
+    .login-box {
+      background: #020617;
+      border-radius: 18px;
+      padding: 30px;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.7);
+      border: 1px solid rgba(148, 163, 184, 0.3);
+      width: 100%;
+      max-width: 420px;
+    }
+
+    .login-header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .login-title {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #e5e7eb;
+      margin-bottom: 8px;
+      background: linear-gradient(90deg, #3b82f6 0%, #22c55e 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: 0.5px;
+    }
+
+    .login-subtitle {
+      font-size: 0.95rem;
+      color: #9ca3af;
+      text-align: center;
+    }
+
+    .login-form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .form-group label {
+      font-size: 0.9rem;
+      color: #d1d5db;
+      font-weight: 500;
+    }
+
+    .form-input {
+      background: #111827;
+      color: #e5e7eb;
+      border-radius: 10px;
+      border: 1px solid rgba(75, 85, 99, 0.9);
+      padding: 12px 16px;
+      font-size: 0.95rem;
+      transition: all 0.2s ease;
+      width: 100%;
+    }
+
+    .form-input:focus {
+      outline: none;
+      border-color: #3b82f6;
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+    }
+
+    .form-input::placeholder {
+      color: #6b7280;
+    }
+
+    .login-btn {
+      background: linear-gradient(to right, #3b82f6, #2563eb);
+      color: white;
+      border: none;
+      border-radius: 999px;
+      padding: 14px 24px;
+      font-size: 1rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      margin-top: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      box-shadow: 0 8px 18px rgba(37, 99, 235, 0.4);
+      width: 100%;
+    }
+
+    .login-btn:hover:not(:disabled) {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 22px rgba(37, 99, 235, 0.5);
+    }
+
+    .login-btn:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+
+    .login-error {
+      background: rgba(239, 68, 68, 0.1);
+      color: #fca5a5;
+      padding: 10px 12px;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      border: 1px solid rgba(239, 68, 68, 0.3);
+      display: none;
+      text-align: center;
+    }
+
+    /* ===== CLASS SELECTION SCREEN ===== */
+    .class-selection {
+      background: #020617;
+      border-radius: 18px;
+      padding: 30px;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.5);
+      border: 1px solid rgba(148, 163, 184, 0.3);
+      display: none;
+      width: 100%;
+    }
+
+    .screen-header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .screen-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #e5e7eb;
+      margin-bottom: 8px;
+      background: linear-gradient(90deg, #3b82f6 0%, #22c55e 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: 0.5px;
+    }
+
+    .screen-subtitle {
+      font-size: 0.95rem;
+      color: #9ca3af;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .class-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .class-card {
+      background: rgba(15, 23, 42, 0.7);
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border: 1px solid rgba(75, 85, 99, 0.5);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 120px;
+    }
+
+    .class-card:hover {
+      transform: translateY(-4px);
+      background: rgba(31, 41, 55, 0.9);
+      border-color: #3b82f6;
+      box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3);
+    }
+
+    .class-icon {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .class-name {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #e5e7eb;
+    }
+
+    .class-desc {
+      font-size: 0.8rem;
+      color: #9ca3af;
+      margin-top: 5px;
+    }
+
+    /* ===== SUBJECT SELECTION SCREEN ===== */
+    .subject-selection {
+      background: #020617;
+      border-radius: 18px;
+      padding: 30px;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.5);
+      border: 1px solid rgba(148, 163, 184, 0.3);
+      display: none;
+      width: 100%;
+    }
+
+    .subject-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .subject-card {
+      background: rgba(15, 23, 42, 0.7);
+      border-radius: 12px;
+      padding: 25px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border: 1px solid rgba(75, 85, 99, 0.5);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 140px;
+    }
+
+    .subject-card:hover {
+      transform: translateY(-4px);
+      background: rgba(31, 41, 55, 0.9);
+      box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3);
+    }
+
+    .subject-icon {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+    }
+
+    .subject-name {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #e5e7eb;
+    }
+
+    .subject-desc {
+      font-size: 0.85rem;
+      color: #9ca3af;
+      margin-top: 8px;
+    }
+
+    .back-btn {
+      background: rgba(75, 85, 99, 0.15);
+      color: #d1d5db;
+      border: 1px solid rgba(75, 85, 99, 0.3);
+      border-radius: 999px;
+      padding: 8px 16px;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      margin-top: 20px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .back-btn:hover {
+      background: rgba(75, 85, 99, 0.25);
+      transform: translateY(-1px);
+    }
+
+    /* ===== QUIZ STYLES ===== */
+    .quiz-container {
+      background: #020617;
+      border-radius: 18px;
+      padding: 20px 22px;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.5);
+      border: 1px solid rgba(148, 163, 184, 0.3);
+      display: none;
+      width: 100%;
+    }
+
+    /* TOPIC SELECTION SECTION */
+    .topic-section {
+      margin-bottom: 20px;
+      padding: 15px;
+      background: rgba(15, 23, 42, 0.7);
+      border-radius: 12px;
+      border: 1px solid rgba(75, 85, 99, 0.5);
+    }
+
+    .topic-info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .current-path {
+      font-size: 0.85rem;
+      color: #93c5fd;
+      background: rgba(59, 130, 246, 0.1);
+      padding: 6px 12px;
+      border-radius: 8px;
+      border: 1px solid rgba(59, 130, 246, 0.2);
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .path-separator {
+      color: #6b7280;
+      margin: 0 4px;
+    }
+
+    .path-link {
+      color: #93c5fd;
+      cursor: pointer;
+      text-decoration: underline;
+      transition: color 0.2s ease;
+    }
+
+    .path-link:hover {
+      color: #60a5fa;
+    }
+
+    .topic-name {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #3b82f6;
+      background: rgba(59, 130, 246, 0.15);
+      padding: 4px 12px;
+      border-radius: 8px;
+      border: 1px solid rgba(59, 130, 246, 0.3);
+    }
+
+    .question-count {
+      font-size: 0.9rem;
+      color: #22c55e;
+      background: rgba(34, 197, 94, 0.15);
+      padding: 4px 12px;
+      border-radius: 8px;
+      border: 1px solid rgba(34, 197, 94, 0.3);
+    }
+
+    .topic-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .topic-select {
+      background: rgba(15, 23, 42, 0.7);
+      color: #e5e7eb;
+      border-radius: 8px;
+      border: 1px solid rgba(75, 85, 99, 0.9);
+      padding: 8px 12px;
+      font-size: 0.9rem;
+      flex: 1;
+      min-width: 200px;
+    }
+
+    .start-btn {
+      border-radius: 999px;
+      border: none;
+      padding: 8px 16px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      cursor: pointer;
+      background: linear-gradient(to right, #3b82f6, #2563eb);
+      color: white;
+      box-shadow: 0 8px 18px rgba(37, 99, 235, 0.4);
+      white-space: nowrap;
+    }
+
+    .start-btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 10px 22px rgba(37, 99, 235, 0.5);
+    }
+
+    /* RANDOMIZE TOGGLE */
+    .toggle-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.85rem;
+      color: #cbd5f5;
+      margin-bottom: 10px;
+      flex-wrap: wrap;
+    }
+
+    .toggle-row input {
+      transform: scale(1.1);
+      cursor: pointer;
+      accent-color: #3b82f6;
+    }
+
+    .toggle-row label {
+      cursor: pointer;
+    }
+
+    /* QUIZ CONTENT */
+    .progress {
+      margin-bottom: 16px;
+      font-size: 0.85rem;
+      color: #9ca3af;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .progress-bar {
+      flex: 1;
+      height: 6px;
+      background: rgba(15, 23, 42, 0.7);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .progress-bar-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(to right, #22c55e, #3b82f6);
+      transition: width 0.3s ease;
+    }
+
+    /* TIMER CONTAINER */
+    .timer-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+      padding: 8px 12px;
+      background: rgba(59, 130, 246, 0.05);
+      border-radius: 12px;
+      border: 1px solid rgba(59, 130, 246, 0.2);
+    }
+
+    .timer-label {
+      font-size: 0.85rem;
+      color: #93c5fd;
+      white-space: nowrap;
+      margin-right: 10px;
+    }
+
+    .timer-display {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #60a5fa;
+      font-family: 'Courier New', monospace;
+      letter-spacing: 1px;
+      white-space: nowrap;
+    }
+
+    .timer-warning {
+      color: #fbbf24;
+      animation: blink 1s infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+
+    .timer-critical {
+      color: #ef4444;
+      animation: pulse 0.5s infinite;
+    }
+
+    .timer-notification {
+      margin-bottom: 10px;
+      padding: 8px 12px;
+      background: rgba(245, 158, 11, 0.1);
+      border-radius: 10px;
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      font-size: 0.85rem;
+      color: #fbbf24;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* QUESTION BOX */
+    .question-box {
+      background: rgba(15, 23, 42, 0.7);
+      border-radius: 14px;
+      padding: 14px 14px 10px;
+      border: 1px solid rgba(75, 85, 99, 0.7);
+      margin-bottom: 16px;
+      min-height: 140px;
+    }
+
+    .question-text {
+      font-size: 1rem;
+      font-weight: 500;
+      color: #f9fafb;
+      line-height: 1.5;
+    }
+
+    /* OPTIONS - CLICK TO SUBMIT VERSION */
+    .options {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .option {
+      background: rgba(15, 23, 42, 0.5);
+      border-radius: 12px;
+      border: 1px solid rgba(75, 85, 99, 0.9);
+      padding: 8px 9px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      transition: all 0.15s ease, border-color 0.15s ease, transform 0.05s ease;
+      font-size: 0.92rem;
+      color: #e5e7eb;
+    }
+
+    .option:hover:not(.disabled) {
+      background: rgba(31, 41, 55, 0.9);
+      transform: translateY(-1px);
+    }
+
+    .option.correct {
+      background: rgba(22, 163, 74, 0.25);
+      border-color: #22c55e;
+    }
+
+    .option.incorrect {
+      background: rgba(220, 38, 38, 0.2);
+      border-color: #f97373;
+    }
+
+    .option.disabled {
+      pointer-events: none;
+      opacity: 0.9;
+    }
+
+    .option.selected {
+      border-color: #3b82f6;
+      background: rgba(59, 130, 246, 0.15);
+    }
+
+    .option.selected.correct {
+      background: rgba(22, 163, 74, 0.35);
+      border-color: #16a34a;
+    }
+
+    .option.selected.incorrect {
+      background: rgba(220, 38, 38, 0.3);
+      border-color: #dc2626;
+    }
+
+    /* FEEDBACK AND EXPLANATION */
+    .feedback {
+      min-height: 22px;
+      font-size: 0.9rem;
+      margin-top: 6px;
+      padding: 8px 12px;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .feedback.correct {
+      color: #22c55e;
+      background: rgba(22, 163, 74, 0.1);
+      border: 1px solid rgba(22, 163, 74, 0.2);
+    }
+
+    .feedback.incorrect {
+      color: #fb7185;
+      background: rgba(220, 38, 38, 0.1);
+      border: 1px solid rgba(220, 38, 38, 0.2);
+    }
+
+    .explanation {
+      margin-top: 10px;
+      padding: 10px;
+      background: rgba(59, 130, 246, 0.1);
+      border-radius: 8px;
+      border: 1px solid rgba(59, 130, 246, 0.2);
+      font-size: 0.9rem;
+      color: #93c5fd;
+      animation: fadeIn 0.3s ease-in;
+    }
+
+    .explanation strong {
+      color: #60a5fa;
+      font-weight: 600;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-5px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* CONTROLS LAYOUT */
+    .controls {
+      margin-top: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .left-controls {
+      display: flex;
+      gap: 10px;
+      justify-content: flex-start;
+      flex: 1;
+    }
+
+    .right-controls {
+      display: flex;
+      gap: 10px;
+      justify-content: flex-end;
+      flex: 1;
+    }
+
+    button {
+      transition: background 0.15s ease, transform 0.05s ease, box-shadow 0.1s ease;
+    }
+
+    #previous-btn {
+      border: none;
+      border-radius: 999px;
+      padding: 8px 18px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      cursor: pointer;
+      background: #1f2937;
+      color: #e5e7eb;
+      border: 1px solid rgba(75, 85, 99, 0.8);
+      min-width: 120px;
+    }
+
+    #previous-btn:hover:enabled {
+      background: #111827;
+    }
+
+    #previous-btn:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+
+    #next-btn {
+      border: none;
+      border-radius: 999px;
+      padding: 8px 18px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      cursor: pointer;
+      background: #1f2937;
+      color: #e5e7eb;
+      border: 1px solid rgba(75, 85, 99, 0.8);
+      min-width: 120px;
+    }
+
+    #next-btn:hover:enabled {
+      background: #111827;
+    }
+
+    #next-btn:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+
+    #finish-btn {
+      border: none;
+      border-radius: 999px;
+      padding: 8px 18px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      cursor: pointer;
+      background: linear-gradient(to right, #f59e0b, #d97706);
+      color: white;
+      box-shadow: 0 8px 18px rgba(245, 158, 11, 0.4);
+      min-width: 120px;
+    }
+
+    #finish-btn:hover:enabled {
+      transform: translateY(-1px);
+      box-shadow: 0 10px 22px rgba(245, 158, 11, 0.5);
+    }
+
+    #finish-btn:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+
+    .score-box {
+      margin-top: 10px;
+      font-size: 0.9rem;
+      color: #e5e7eb;
+    }
+
+    /* FINAL SCORE STYLES */
+    .final-score {
+      margin-top: 10px;
+      padding: 20px;
+      border-radius: 14px;
+      background: rgba(15, 23, 42, 0.7);
+      border: 1px solid rgba(75, 85, 99, 0.7);
+      font-size: 0.95rem;
+    }
+
+    .result-header {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #3b82f6;
+      margin-bottom: 15px;
+      text-align: center;
+      border-bottom: 1px solid rgba(75, 85, 99, 0.5);
+      padding-bottom: 10px;
+    }
+
+    .result-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 12px;
+      margin-bottom: 15px;
+    }
+
+    .stat-item {
+      padding: 10px;
+      border-radius: 8px;
+      background: rgba(2, 6, 23, 0.5);
+      border: 1px solid rgba(75, 85, 99, 0.5);
+    }
+
+    .stat-label {
+      font-size: 0.85rem;
+      color: #9ca3af;
+      margin-bottom: 4px;
+    }
+
+    .stat-value {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #e5e7eb;
+    }
+
+    .stat-percentage {
+      color: #22c55e;
+    }
+
+    .stat-time {
+      color: #f59e0b;
+    }
+
+    .result-summary {
+      margin-top: 15px;
+      padding: 15px;
+      border-radius: 10px;
+      background: rgba(2, 6, 23, 0.5);
+      border: 1px solid rgba(75, 85, 99, 0.5);
+      text-align: center;
+      font-size: 0.9rem;
+      color: #9ca3af;
+    }
+
+    .result-message {
+      font-size: 1rem;
+      color: #e5e7eb;
+      margin-top: 10px;
+      padding: 10px;
+      border-radius: 8px;
+      background: rgba(59, 130, 246, 0.1);
+      border: 1px solid rgba(59, 130, 246, 0.2);
+    }
+
+    .restart-btn {
+      background: linear-gradient(to right, #3b82f6, #2563eb);
+      color: white;
+      border: none;
+      border-radius: 999px;
+      padding: 10px 20px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      cursor: pointer;
+      margin-top: 15px;
+      transition: all 0.2s ease;
+      box-shadow: 0 8px 18px rgba(37, 99, 235, 0.4);
+      width: 100%;
+    }
+
+    .restart-btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 10px 22px rgba(37, 99, 235, 0.5);
+    }
+
+    .review-btn {
+      background: linear-gradient(to right, #8b5cf6, #7c3aed);
+      color: white;
+      border: none;
+      border-radius: 999px;
+      padding: 10px 20px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: all 0.2s ease;
+      box-shadow: 0 8px 18px rgba(139, 92, 246, 0.4);
+      width: 100%;
+    }
+
+    .review-btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 10px 22px rgba(139, 92, 246, 0.5);
+    }
+
+    /* RESPONSIVE STYLES */
+    @media (max-width: 700px) {
+      body {
+        padding: 0;
+        justify-content: flex-start;
+      }
+      
+      .fixed-header {
+        padding: 8px 12px;
+      }
+      
+      .header-title {
+        font-size: 1.1rem;
+      }
+      
+      .header-subtitle {
+        font-size: 0.7rem;
+      }
+      
+      .header-bottom {
+        gap: 8px;
+        justify-content: space-between;
+        padding: 3px 0;
+      }
+      
+      .user-info {
+        font-size: 0.75rem;
+        padding: 4px 8px;
+        max-width: 140px;
+        min-width: 0;
+        flex: 1;
+      }
+      
+      .logout-btn {
+        font-size: 0.75rem;
+        padding: 4px 8px;
+        gap: 3px;
+        flex-shrink: 0;
+      }
+      
+      .main-content {
+        margin-top: 95px;
+        padding: 12px;
+        gap: 15px;
+      }
+      
+      .quiz-container,
+      .class-selection,
+      .subject-selection {
+        padding: 15px;
+        border-radius: 14px;
+      }
+      
+      .login-box {
+        padding: 20px;
+        margin: 0 12px;
+      }
+      
+      .login-title,
+      .screen-title {
+        font-size: 1.3rem;
+      }
+      
+      .controls {
+        flex-direction: column;
+        gap: 8px;
+      }
+      
+      .left-controls, .right-controls {
+        width: 100%;
+        justify-content: center;
+      }
+      
+      button {
+        flex: 1;
+        min-width: 0;
+        font-size: 0.85rem;
+        padding: 8px 12px;
+      }
+      
+      .class-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .subject-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .topic-info {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+      }
+      
+      .topic-name, .question-count {
+        width: 100%;
+        text-align: center;
+        font-size: 0.9rem;
+      }
+      
+      .topic-row {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+      }
+      
+      .topic-row .topic-select,
+      .topic-row .start-btn {
+        width: 100%;
+      }
+      
+      .topic-select {
+        min-width: 0;
+        width: 100%;
+      }
+      
+      .start-btn {
+        width: 100%;
+      }
+      
+      .timer-container {
+        flex-direction: row;
+        gap: 5px;
+        align-items: center;
+        padding: 6px 10px;
+      }
+      
+      .timer-label {
+        font-size: 0.8rem;
+        margin-right: 5px;
+        white-space: nowrap;
+        flex-shrink: 0;
+      }
+      
+      .timer-display {
+        font-size: 0.95rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        flex: 1;
+        min-width: 0;
+        text-align: right;
+      }
+      
+      .question-box {
+        padding: 12px;
+        min-height: 120px;
+      }
+      
+      .question-text {
+        font-size: 0.95rem;
+      }
+      
+      .option {
+        padding: 7px 8px;
+        font-size: 0.9rem;
+      }
+      
+      .result-stats {
+        grid-template-columns: 1fr;
+      }
+      
+      .stat-item {
+        padding: 8px;
+      }
+      
+      .final-score {
+        padding: 15px;
+      }
+      
+      .result-header {
+        font-size: 1.1rem;
+      }
+    }
+
+    @media (min-width: 701px) {
+      body {
+        padding: 0;
+      }
+      
+      .main-content {
+        margin: 90px auto 20px;
+        padding: 20px;
+      }
+      
+      .header-title {
+        font-size: 1.4rem;
+      }
+      
+      .header-subtitle {
+        font-size: 0.85rem;
+      }
+    }
+    
+    @media (max-width: 400px) {
+      .header-title {
+        font-size: 1rem;
+      }
+      
+      .header-subtitle {
+        font-size: 0.65rem;
+      }
+      
+      .user-info {
+        max-width: 120px;
+        font-size: 0.7rem;
+        padding: 3px 6px;
+        gap: 3px;
+      }
+      
+      .logout-btn {
+        font-size: 0.7rem;
+        padding: 3px 6px;
+        gap: 2px;
+      }
+      
+      .main-content {
+        padding: 10px;
+        margin-top: 85px;
+      }
+      
+      .quiz-container,
+      .class-selection,
+      .subject-selection {
+        padding: 12px;
+      }
+      
+      .login-box {
+        padding: 15px;
+      }
+      
+      .header-bottom {
+        gap: 6px;
+      }
+      
+      .timer-label {
+        font-size: 0.75rem;
+      }
+      
+      .timer-display {
+        font-size: 0.85rem;
+      }
+      
+      .class-card,
+      .subject-card {
+        padding: 15px;
+        min-height: 100px;
+      }
+      
+      .class-icon {
+        font-size: 1.5rem;
+      }
+      
+      .subject-icon {
+        font-size: 2rem;
+      }
+    }
+    
+    @media (max-width: 350px) {
+      .user-info {
+        max-width: 100px;
+        font-size: 0.65rem;
+        padding: 3px 5px;
+      }
+      
+      .logout-btn {
+        font-size: 0.65rem;
+        padding: 3px 5px;
+      }
+      
+      .timer-label {
+        font-size: 0.7rem;
+      }
+      
+      .timer-display {
+        font-size: 0.8rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    <!-- ===== FIXED HEADER ===== -->
-    <header id="app-header">
-        <div class="header-content">
-            <div class="header-left">
-                <h1>G.S. Tutorial</h1>
-                <p>App created by Gobind Sharma</p>
-            </div>
-            <div class="header-right">
-                <div class="user-info">
-                    <span class="user-name" id="header-user-name">Student</span>
-                </div>
-                <button id="header-logout-btn" class="btn btn-danger header-logout-btn">
-                    <span>🚪</span>
-                    <span>Logout</span>
-                </button>
-            </div>
+  <!-- Fixed Header -->
+  <div class="fixed-header" style="display: none;">
+    <div class="header-content">
+      <div class="header-top">
+        <div class="header-center">
+          <div class="header-title">G. S. Tutorial - Online Quiz Platform</div>
+          <div class="header-subtitle">Created by Gobind Sharma</div>
         </div>
-    </header>
-
-    <!-- ===== LOADER ===== -->
-    <div id="loader" class="loader">
-        <div class="loader-spinner"></div>
-        <div class="loader-text">Loading...</div>
+      </div>
+      <div class="header-bottom">
+        <div class="user-info" id="header-user-info" style="display: none;">
+          👤 <span id="header-username">Guest</span>
+        </div>
+        <button class="logout-btn" id="header-logout-btn" style="display: none;">
+          🚪 Logout
+        </button>
+      </div>
     </div>
+  </div>
+  
+  <!-- Main Content Area -->
+  <div class="main-content">
+    <!-- Login Container (shown by default) -->
+    <div id="login-container">
+      <div class="login-box">
+        <div class="login-header">
+          <div class="login-title">🔐 G. S. Tutorial Login</div>
+          <div class="login-subtitle">Created by Gobind Sharma</div>
+        </div>
+        
+        <form id="login-form" class="login-form">
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" class="form-input" placeholder="Enter your username" required autocomplete="username">
+          </div>
+          
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" class="form-input" placeholder="Enter your password" required autocomplete="current-password">
+          </div>
+          
+          <div id="login-error" class="login-error"></div>
+          
+          <button type="submit" class="login-btn" id="login-btn">
+            Login
+          </button>
+        </form>
+      </div>
+    </div>
+    
+    <!-- Class Selection Screen -->
+    <div class="class-selection" id="class-selection">
+      <div class="screen-header">
+        <div class="screen-title">Select Your Class</div>
+        <div class="screen-subtitle">Choose your class to access subject quizzes</div>
+      </div>
+      
+      <div class="class-grid" id="class-grid">
+        <!-- Classes will be loaded dynamically -->
+      </div>
+    </div>
+    
+    <!-- Subject Selection Screen -->
+    <div class="subject-selection" id="subject-selection">
+      <div class="screen-header">
+        <div class="screen-title">Select Subject</div>
+        <div class="screen-subtitle" id="current-class-display">Class 8</div>
+      </div>
+      
+      <div class="subject-grid" id="subject-grid">
+        <!-- Subjects will be loaded dynamically -->
+      </div>
+      
+      <button class="back-btn" id="back-to-classes-btn">
+        ← Back to Classes
+      </button>
+    </div>
+    
+    <!-- Quiz Container -->
+    <div class="quiz-container" id="quiz-container">
+      <!-- Path Display -->
+      <div id="current-path" class="current-path" style="display: none;"></div>
+      
+      <!-- TOPIC SELECTION SECTION -->
+      <div class="topic-section">
+        <div class="topic-info">
+          <div class="topic-name" id="quiz-topic-name">No chapter selected</div>
+          <div class="question-count" id="quiz-question-count">0 questions</div>
+        </div>
+        
+        <div class="topic-row">
+          <select id="topic-select" class="topic-select">
+            <option value="">Loading chapters...</option>
+          </select>
+          <button class="start-btn" id="start-btn" disabled>Start Quiz</button>
+        </div>
+      </div>
 
-    <!-- ===== LOGIN SCREEN ===== -->
-    <div id="login-screen" class="screen active">
-        <div class="login-container">
-            <div class="login-header">
-                <div class="logo">
-                    <h1>G.S. Tutorial</h1>
-                    <p>Classes 8, 9 & 10 • Science & Mathematics</p>
-                </div>
-            </div>
+      <!-- Timer Container -->
+      <div id="timer-container" class="timer-container" style="display: none;">
+        <div class="timer-label">⏰ Time Remaining:</div>
+        <div id="timer-display" class="timer-display">--:--:--</div>
+      </div>
+
+      <!-- RANDOMIZE TOGGLE -->
+      <div class="toggle-row">
+        <input type="checkbox" id="random-toggle" checked />
+        <label for="random-toggle">Randomize questions & options</label>
+      </div>
+
+      <div class="progress">
+        <div id="question-counter">Choose a chapter and click Start Quiz</div>
+        <div class="progress-bar">
+          <div id="progress-bar-fill" class="progress-bar-fill"></div>
+        </div>
+        <div id="score-mini">Score: 0</div>
+      </div>
+
+      <div class="question-box">
+        <div id="question-text" class="question-text">
+          Please select a chapter to start the quiz.
+        </div>
+        <ul id="options-list" class="options"></ul>
+        <div id="feedback" class="feedback"></div>
+      </div>
+
+      <!-- BUTTON LAYOUT -->
+      <div class="controls">
+        <div class="left-controls">
+          <button id="previous-btn" disabled>← Previous</button>
+          <button id="next-btn" disabled>Next →</button>
+        </div>
+        <div class="right-controls">
+          <button id="finish-btn" disabled>Finish Quiz</button>
+        </div>
+      </div>
+
+      <div class="score-box">
+        <div id="final-score" class="final-score" style="display:none;"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // ========== GLOBAL VARIABLES ==========
+    let questions = [];
+    let currentIndex = 0;
+    let score = 0;
+    let hasAnswered = false;
+    let questionsLoaded = false;
+    let attempted = 0;
+    let userAnswers = [];
+    let timeRemaining = 0;
+    let timerInterval = null;
+    let currentTopicName = "";
+    let timerDuration = 0;
+    let quizStartTime = null;
+    let timerNotification = null;
+    let isReviewMode = false;
+    
+    // Login system variables
+    let currentUser = null;
+    let userList = [];
+    let inactivityTimer = null;
+    const INACTIVITY_TIMEOUT = 15 * 60 * 1000; // 15 minutes
+    
+    // Navigation variables
+    let currentClass = "";
+    let currentSubject = "";
+    let chaptersList = [];
+
+    // ========== DOM ELEMENTS ==========
+    const fixedHeaderEl = document.querySelector(".fixed-header");
+    const headerUserInfoEl = document.getElementById("header-user-info");
+    const headerUsernameEl = document.getElementById("header-username");
+    const headerLogoutBtnEl = document.getElementById("header-logout-btn");
+    
+    const loginContainerEl = document.getElementById("login-container");
+    const classSelectionEl = document.getElementById("class-selection");
+    const subjectSelectionEl = document.getElementById("subject-selection");
+    const quizContainerEl = document.getElementById("quiz-container");
+    
+    const loginFormEl = document.getElementById("login-form");
+    const usernameEl = document.getElementById("username");
+    const passwordEl = document.getElementById("password");
+    const loginErrorEl = document.getElementById("login-error");
+    const loginBtnEl = document.getElementById("login-btn");
+    
+    const classGridEl = document.getElementById("class-grid");
+    const subjectGridEl = document.getElementById("subject-grid");
+    const currentClassDisplayEl = document.getElementById("current-class-display");
+    const backToClassesBtn = document.getElementById("back-to-classes-btn");
+    const currentPathEl = document.getElementById("current-path");
+    
+    const topicSelectEl = document.getElementById("topic-select");
+    const startBtnEl = document.getElementById("start-btn");
+    const randomToggleEl = document.getElementById("random-toggle");
+    const quizTopicNameEl = document.getElementById("quiz-topic-name");
+    const quizQuestionCountEl = document.getElementById("quiz-question-count");
+    const timerContainerEl = document.getElementById("timer-container");
+    const timerDisplayEl = document.getElementById("timer-display");
+    
+    const questionTextEl = document.getElementById("question-text");
+    const optionsListEl = document.getElementById("options-list");
+    const feedbackEl = document.getElementById("feedback");
+    const nextBtn = document.getElementById("next-btn");
+    const previousBtn = document.getElementById("previous-btn");
+    const finishBtn = document.getElementById("finish-btn");
+    const questionCounterEl = document.getElementById("question-counter");
+    const progressBarFillEl = document.getElementById("progress-bar-fill");
+    const scoreMiniEl = document.getElementById("score-mini");
+    const finalScoreEl = document.getElementById("final-score");
+
+    // ========== USER MANAGEMENT FUNCTIONS ==========
+    async function loadUsersFromXML() {
+      try {
+        const response = await fetch("users.xml");
+        if (!response.ok) {
+          throw new Error("users.xml file not found");
+        }
+        
+        const xmlText = await response.text();
+        const parser = new DOMParser();
+        const xmlDoc = parser.parseFromString(xmlText, "application/xml");
+        
+        const parserError = xmlDoc.getElementsByTagName("parsererror");
+        if (parserError.length > 0) {
+          throw new Error("Invalid XML format in users.xml");
+        }
+        
+        const userNodes = xmlDoc.getElementsByTagName("user");
+        userList = [];
+        
+        for (let i = 0; i < userNodes.length; i++) {
+          const userNode = userNodes[i];
+          const usernameNode = userNode.getElementsByTagName("username")[0];
+          const passwordNode = userNode.getElementsByTagName("password")[0];
+          const nameNode = userNode.getElementsByTagName("name")[0];
+          const classNode = userNode.getElementsByTagName("class")[0];
+          
+          if (usernameNode && passwordNode) {
+            const username = usernameNode.textContent.trim();
+            const password = passwordNode.textContent.trim();
+            const name = nameNode ? nameNode.textContent.trim() : username;
+            const userClass = classNode ? classNode.textContent.trim() : "";
             
-            <div class="login-form">
-                <div class="form-group">
-                    <label class="form-label">
-                        <span>👤</span>
-                        <span>Username</span>
-                    </label>
-                    <input type="text" id="login-username" class="form-input" placeholder="Enter your username" autocomplete="username">
-                </div>
-                
-                <div class="form-group">
-                    <label class="form-label">
-                        <span>🔒</span>
-                        <span>Password</span>
-                    </label>
-                    <div class="password-container">
-                        <input type="password" id="login-password" class="form-input" placeholder="Enter your password" autocomplete="current-password">
-                        <button type="button" class="toggle-password" id="toggle-password">👁️</button>
-                    </div>
-                </div>
-                
-                <button id="login-btn" class="btn btn-primary">
-                    <span>🔐</span>
-                    <span>Login to Continue</span>
-                </button>
-                
-                <div id="login-error" class="error-message">
-                    Invalid username or password. Please try again.
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- ===== CLASS SELECTION SCREEN ===== -->
-    <div id="class-selection-screen" class="screen">
-        <div class="content-wrapper">
-            <div class="main-content">
-                <div class="selection-header">
-                    <h2>Welcome, <span class="user-name-highlight" id="display-user-name">Student</span>!</h2>
-                    <p class="welcome-message">Please select your class to continue</p>
-                </div>
-                
-                <div class="selection-grid">
-                    <div class="selection-card" data-type="class" data-value="class8">
-                        <div class="selection-icon">🎒</div>
-                        <h3>Class 8</h3>
-                        <p>For students studying in Class 8. Access Science and Mathematics chapters tailored for Class 8 curriculum.</p>
-                    </div>
-                    
-                    <div class="selection-card" data-type="class" data-value="class9">
-                        <div class="selection-icon">📚</div>
-                        <h3>Class 9</h3>
-                        <p>For students studying in Class 9. Comprehensive coverage of Class 9 Science and Mathematics syllabus.</p>
-                    </div>
-                    
-                    <div class="selection-card" data-type="class" data-value="class10">
-                        <div class="selection-icon">🎓</div>
-                        <h3>Class 10</h3>
-                        <p>For students studying in Class 10. Prepare for board exams with detailed chapter-wise practice.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- ===== SUBJECT SELECTION SCREEN ===== -->
-    <div id="subject-selection-screen" class="screen">
-        <div class="content-wrapper">
-            <div class="main-content">
-                <div class="selection-container">
-                    <div class="selection-title">
-                        <h2>Select Subject</h2>
-                        <p>Choose a subject for <span id="selected-class-display">Class 8</span></p>
-                    </div>
-                    
-                    <div class="selection-grid">
-                        <div class="selection-card" data-type="subject" data-value="science">
-                            <div class="selection-icon">🔬</div>
-                            <h3>Science</h3>
-                            <p>Physics, Chemistry, and Biology chapters with detailed explanations and MCQs for comprehensive learning.</p>
-                        </div>
-                        
-                        <div class="selection-card" data-type="subject" data-value="mathematics">
-                            <div class="selection-icon">📐</div>
-                            <h3>Mathematics</h3>
-                            <p>Algebra, Geometry, Arithmetic, and Statistics chapters with step-by-step solutions and practice questions.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="back-button">
-                        <button id="back-to-class-btn" class="btn btn-outline">
-                            <span>←</span>
-                            <span>Back to Class Selection</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- ===== CHAPTER SELECTION SCREEN ===== -->
-    <div id="chapter-selection-screen" class="screen">
-        <div class="content-wrapper">
-            <div class="main-content">
-                <div class="selection-container">
-                    <div class="selection-title">
-                        <h2>Select Chapter</h2>
-                        <p>Choose a chapter from <span id="selected-subject-display">Science</span> for <span id="current-class-display">Class 8</span></p>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label class="form-label">
-                            <span>📚</span>
-                            <span>Select Chapter</span>
-                        </label>
-                        <select id="chapter-select" class="form-select">
-                            <option value="">-- Please select a chapter --</option>
-                        </select>
-                    </div>
-                    
-                    <div class="chapter-info" id="chapter-info" style="display: none;">
-                        <div class="chapter-info-grid">
-                            <div class="info-box">
-                                <div class="info-label">Questions</div>
-                                <div class="info-value questions-count" id="questions-count">0</div>
-                            </div>
-                            <div class="info-box">
-                                <div class="info-label">Time Limit</div>
-                                <div class="info-value time-limit" id="time-limit">0 min</div>
-                            </div>
-                            <div class="info-box">
-                                <div class="info-label">Difficulty</div>
-                                <div class="info-value difficulty" id="difficulty">Easy</div>
-                            </div>
-                        </div>
-                        <div class="chapter-description" id="chapter-description"></div>
-                    </div>
-                    
-                    <button id="start-quiz-btn" class="btn btn-primary btn-full" disabled>
-                        <span>▶</span>
-                        <span>Start Quiz</span>
-                    </button>
-                    
-                    <div class="back-button">
-                        <button id="back-to-subject-btn" class="btn btn-outline">
-                            <span>←</span>
-                            <span>Back to Subject Selection</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- ===== QUIZ QUESTION SCREEN ===== -->
-    <div id="quiz-question-screen" class="screen">
-        <div class="content-wrapper">
-            <div class="main-content">
-                <div class="quiz-progress-container">
-                    <div class="progress-header">
-                        <div class="progress-title" id="quiz-title">Chapter Quiz</div>
-                        <div class="timer-container">
-                            <span>⏰</span>
-                            <span id="timer-display">00:00</span>
-                        </div>
-                    </div>
-                    <div class="progress-bar">
-                        <div class="progress-fill" id="progress-fill"></div>
-                    </div>
-                    <div class="progress-info">
-                        <span id="current-question-info">Question 0/0</span>
-                        <span id="score-info">Score: 0</span>
-                    </div>
-                </div>
-                
-                <div class="question-container">
-                    <div class="question-header">
-                        <div class="question-number" id="question-number">1</div>
-                        <div class="question-chapter" id="question-chapter">Chapter: Loading...</div>
-                    </div>
-                    <div class="question-text" id="question-text">
-                        Loading question...
-                    </div>
-                </div>
-                
-                <div class="options-container" id="options-container">
-                    <!-- Options will be dynamically loaded here -->
-                </div>
-                
-                <div class="explanation-box" id="explanation-box">
-                    <div class="explanation-title">
-                        <span>📝</span>
-                        <span>Explanation</span>
-                    </div>
-                    <div class="explanation-text" id="explanation-text">
-                        Loading explanation...
-                    </div>
-                </div>
-                
-                <div class="quiz-controls">
-                    <button id="prev-btn" class="btn btn-outline btn-previous">
-                        <span>←</span>
-                        <span>Previous</span>
-                    </button>
-                    <button id="finish-btn" class="btn btn-warning btn-finish">
-                        <span>🏁</span>
-                        <span>Finish Quiz</span>
-                    </button>
-                    <button id="next-btn" class="btn btn-outline btn-next">
-                        <span>Next</span>
-                        <span>→</span>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- ===== RESULTS SCREEN ===== -->
-    <div id="results-screen" class="screen">
-        <div class="content-wrapper">
-            <div class="main-content">
-                <div class="results-container">
-                    <div class="results-header">
-                        <h2 class="results-title">Quiz Completed!</h2>
-                        <p class="results-subtitle">Great effort! Here are your results</p>
-                    </div>
-                    
-                    <div class="score-display">
-                        <div class="score-circle-container">
-                            <div class="score-circle-bg" id="score-circle">
-                                <div class="score-value" id="final-score">0</div>
-                                <div class="score-percentage" id="final-percentage">0%</div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="results-stats" id="results-stats">
-                        <!-- Stats will be dynamically loaded here -->
-                    </div>
-                    
-                    <div class="results-message" id="results-message">
-                        <div class="message-text" id="message-text">Loading your performance analysis...</div>
-                        <div class="message-subtext" id="message-subtext">Keep practicing to improve your score!</div>
-                    </div>
-                    
-                    <div class="results-actions">
-                        <button id="retry-btn" class="btn btn-primary">
-                            <span>🔄</span>
-                            <span>Retry This Chapter</span>
-                        </button>
-                        <button id="new-chapter-btn" class="btn btn-secondary">
-                            <span>📚</span>
-                            <span>Try Another Chapter</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        // ===== GLOBAL VARIABLES =====
-        let currentUser = null;
-        let appData = null;
-        let selectedClass = null;
-        let selectedSubject = null;
-        let currentQuestions = [];
-        let currentQuestionIndex = 0;
-        let userAnswers = [];
-        let score = 0;
-        let totalQuestions = 0;
-        let timeRemaining = 0;
-        let timerInterval = null;
-        let currentChapterFile = null;
-        let currentChapterTitle = null;
-        let quizStartTime = null;
-        let currentChapters = [];
-        let answeredQuestions = new Set();
-
-        // ===== DOM ELEMENTS =====
-        const screens = {
-            login: document.getElementById('login-screen'),
-            classSelection: document.getElementById('class-selection-screen'),
-            subjectSelection: document.getElementById('subject-selection-screen'),
-            chapterSelection: document.getElementById('chapter-selection-screen'),
-            quizQuestion: document.getElementById('quiz-question-screen'),
-            results: document.getElementById('results-screen')
-        };
-
-        const appHeader = document.getElementById('app-header');
-        const loader = document.getElementById('loader');
-
-        // Login screen elements
-        const loginUsername = document.getElementById('login-username');
-        const loginPassword = document.getElementById('login-password');
-        const togglePasswordBtn = document.getElementById('toggle-password');
-        const loginBtn = document.getElementById('login-btn');
-        const loginError = document.getElementById('login-error');
-
-        // Class selection elements
-        const displayUserName = document.getElementById('display-user-name');
-        const classCards = document.querySelectorAll('#class-selection-screen .selection-card');
-
-        // Subject selection elements
-        const selectedClassDisplay = document.getElementById('selected-class-display');
-        const subjectCards = document.querySelectorAll('#subject-selection-screen .selection-card');
-        const backToClassBtn = document.getElementById('back-to-class-btn');
-
-        // Chapter selection elements
-        const selectedSubjectDisplay = document.getElementById('selected-subject-display');
-        const currentClassDisplay = document.getElementById('current-class-display');
-        const chapterSelect = document.getElementById('chapter-select');
-        const chapterInfo = document.getElementById('chapter-info');
-        const questionsCount = document.getElementById('questions-count');
-        const timeLimit = document.getElementById('time-limit');
-        const difficulty = document.getElementById('difficulty');
-        const chapterDescription = document.getElementById('chapter-description');
-        const startQuizBtn = document.getElementById('start-quiz-btn');
-        const backToSubjectBtn = document.getElementById('back-to-subject-btn');
-
-        // Quiz question screen elements
-        const quizTitle = document.getElementById('quiz-title');
-        const timerDisplay = document.getElementById('timer-display');
-        const progressFill = document.getElementById('progress-fill');
-        const currentQuestionInfo = document.getElementById('current-question-info');
-        const scoreInfo = document.getElementById('score-info');
-        const questionNumber = document.getElementById('question-number');
-        const questionChapter = document.getElementById('question-chapter');
-        const questionText = document.getElementById('question-text');
-        const optionsContainer = document.getElementById('options-container');
-        const explanationBox = document.getElementById('explanation-box');
-        const explanationText = document.getElementById('explanation-text');
-        const prevBtn = document.getElementById('prev-btn');
-        const nextBtn = document.getElementById('next-btn');
-        const finishBtn = document.getElementById('finish-btn');
-
-        // Results screen elements
-        const scoreCircle = document.getElementById('score-circle');
-        const finalScore = document.getElementById('final-score');
-        const finalPercentage = document.getElementById('final-percentage');
-        const resultsStats = document.getElementById('results-stats');
-        const messageText = document.getElementById('message-text');
-        const messageSubtext = document.getElementById('message-subtext');
-        const retryBtn = document.getElementById('retry-btn');
-        const newChapterBtn = document.getElementById('new-chapter-btn');
-
-        // Header elements
-        const headerUserName = document.getElementById('header-user-name');
-        const headerLogoutBtn = document.getElementById('header-logout-btn');
-
-        // ===== INITIALIZATION =====
-        document.addEventListener('DOMContentLoaded', async function() {
-            showLoader();
-            
-            try {
-                // Load app data
-                const response = await fetch('topics.json');
-                if (!response.ok) {
-                    console.warn('topics.json not found, using default data');
-                    appData = getDefaultData();
-                } else {
-                    appData = await response.json();
-                }
-                
-                // Initialize the app
-                initializeApp();
-                hideLoader();
-            } catch (error) {
-                console.error('Initialization error:', error);
-                appData = getDefaultData();
-                initializeApp();
-                hideLoader();
+            if (username && password) {
+              userList.push({
+                username: username,
+                password: password,
+                name: name,
+                class: userClass
+              });
             }
+          }
+        }
+        
+        if (userList.length === 0) {
+          throw new Error("No valid users found in users.xml");
+        }
+        
+        console.log(`Loaded ${userList.length} users from users.xml`);
+        return true;
+      } catch (error) {
+        console.error("Error loading users:", error);
+        loginErrorEl.textContent = "Error: Could not load users.xml. Please create a valid users.xml file.";
+        loginErrorEl.style.display = "block";
+        userList = [];
+        return false;
+      }
+    }
+
+    function authenticateUser(username, password) {
+      const user = userList.find(u => 
+        u.username.toLowerCase() === username.toLowerCase() && 
+        u.password === password
+      );
+      return user;
+    }
+
+    function login(user) {
+      currentUser = user;
+      headerUsernameEl.textContent = user.name;
+      
+      // Show fixed header and class selection, hide login
+      fixedHeaderEl.style.display = "block";
+      headerUserInfoEl.style.display = "block";
+      headerLogoutBtnEl.style.display = "block";
+      loginContainerEl.style.display = "none";
+      classSelectionEl.style.display = "block";
+      
+      // Reset inactivity timer
+      resetInactivityTimer();
+      
+      // Load available classes
+      loadClasses();
+      
+      console.log(`User ${user.name} logged in successfully`);
+    }
+
+    function logout() {
+      if (confirm("Are you sure you want to logout?")) {
+        // Clear all timers
+        if (timerInterval) {
+          clearInterval(timerInterval);
+          timerInterval = null;
+        }
+        
+        if (inactivityTimer) {
+          clearTimeout(inactivityTimer);
+          inactivityTimer = null;
+        }
+        
+        // Remove activity listeners
+        document.removeEventListener('mousemove', resetInactivityTimer);
+        document.removeEventListener('keypress', resetInactivityTimer);
+        document.removeEventListener('click', resetInactivityTimer);
+        
+        // Reset state
+        resetQuizState();
+        
+        // Clear current user
+        currentUser = null;
+        
+        // Hide everything, show login
+        fixedHeaderEl.style.display = "none";
+        classSelectionEl.style.display = "none";
+        subjectSelectionEl.style.display = "none";
+        quizContainerEl.style.display = "none";
+        loginContainerEl.style.display = "flex";
+        
+        // Clear login form
+        loginFormEl.reset();
+        loginErrorEl.textContent = "";
+        loginErrorEl.style.display = "none";
+        
+        // Focus on username field
+        usernameEl.focus();
+        
+        console.log("User logged out");
+      }
+    }
+
+    function autoLogout() {
+      if (currentUser) {
+        alert("You have been automatically logged out due to inactivity (15 minutes).");
+        logout();
+      }
+    }
+
+    function resetInactivityTimer() {
+      if (inactivityTimer) {
+        clearTimeout(inactivityTimer);
+      }
+      inactivityTimer = setTimeout(autoLogout, INACTIVITY_TIMEOUT);
+    }
+
+    // ========== NAVIGATION FUNCTIONS ==========
+    function showClassSelection() {
+      classSelectionEl.style.display = "block";
+      subjectSelectionEl.style.display = "none";
+      quizContainerEl.style.display = "none";
+      resetQuizState();
+      isReviewMode = false;
+    }
+
+    function showSubjectSelection(className) {
+      currentClass = className;
+      currentClassDisplayEl.textContent = `Class ${className}`;
+      
+      classSelectionEl.style.display = "none";
+      subjectSelectionEl.style.display = "block";
+      quizContainerEl.style.display = "none";
+      
+      loadSubjects();
+      isReviewMode = false;
+    }
+
+    function showQuizContainer(subjectName) {
+      currentSubject = subjectName;
+      
+      // Update path display
+      currentPathEl.innerHTML = `
+        <span class="path-link" onclick="showClassSelection()">Classes</span>
+        <span class="path-separator">›</span>
+        <span class="path-link" onclick="showSubjectSelection('${currentClass}')">Class ${currentClass}</span>
+        <span class="path-separator">›</span>
+        <span>${subjectName}</span>
+      `;
+      currentPathEl.style.display = "flex";
+      
+      subjectSelectionEl.style.display = "none";
+      quizContainerEl.style.display = "block";
+      
+      loadChapters();
+      isReviewMode = false;
+    }
+
+    function loadClasses() {
+      // For now, we'll use predefined classes
+      // In a real system, you might load this from a configuration file
+      const classes = [
+        { id: "8", name: "Class 8", icon: "📚", desc: "Mathematics & Science" },
+        { id: "9", name: "Class 9", icon: "🎓", desc: "Mathematics & Science" },
+        { id: "10", name: "Class 10", icon: "🏆", desc: "Mathematics & Science" }
+      ];
+      
+      classGridEl.innerHTML = "";
+      
+      classes.forEach(cls => {
+        const card = document.createElement("div");
+        card.className = "class-card";
+        card.innerHTML = `
+          <div class="class-icon">${cls.icon}</div>
+          <div class="class-name">${cls.name}</div>
+          <div class="class-desc">${cls.desc}</div>
+        `;
+        
+        card.addEventListener("click", () => {
+          showSubjectSelection(cls.id);
+          resetInactivityTimer();
         });
+        
+        classGridEl.appendChild(card);
+      });
+    }
 
-        function getDefaultData() {
-            return {
-                classes: [
-                    {
-                        id: "class8",
-                        name: "Class 8",
-                        subjects: [
-                            {
-                                id: "science",
-                                name: "Science",
-                                chapters: [
-                                    {
-                                        name: "Crop Production and Management",
-                                        file: "chapters/class8_science_chapter1.xml",
-                                        description: "Learn about agricultural practices, crop production, and management techniques.",
-                                        difficulty: "Medium"
-                                    },
-                                    {
-                                        name: "Microorganisms: Friend and Foe",
-                                        file: "chapters/class8_science_chapter2.xml",
-                                        description: "Study microorganisms, their types, uses, and harmful effects.",
-                                        difficulty: "Medium"
-                                    }
-                                ]
-                            },
-                            {
-                                id: "mathematics",
-                                name: "Mathematics",
-                                chapters: [
-                                    {
-                                        name: "Rational Numbers",
-                                        file: "chapters/class8_maths_chapter1.xml",
-                                        description: "Master rational numbers, their properties, and operations.",
-                                        difficulty: "Medium"
-                                    }
-                                ]
-                            }
-                        ]
-                    },
-                    {
-                        id: "class9",
-                        name: "Class 9",
-                        subjects: [
-                            {
-                                id: "science",
-                                name: "Science",
-                                chapters: [
-                                    {
-                                        name: "Matter in Our Surroundings",
-                                        file: "chapters/class9_science_chapter1.xml",
-                                        description: "Explore states of matter and their properties.",
-                                        difficulty: "Medium"
-                                    }
-                                ]
-                            }
-                        ]
-                    },
-                    {
-                        id: "class10",
-                        name: "Class 10",
-                        subjects: [
-                            {
-                                id: "science",
-                                name: "Science",
-                                chapters: [
-                                    {
-                                        name: "Chemical Reactions and Equations",
-                                        file: "chapters/class10_science_chapter1.xml",
-                                        description: "Learn about chemical reactions, equations, and balancing.",
-                                        difficulty: "Hard"
-                                    }
-                                ]
-                            }
-                        ]
-                    }
-                ]
-            };
+    function loadSubjects() {
+      // Subjects are fixed: Mathematics and Science
+      const subjects = [
+        { id: "mathematics", name: "Mathematics", icon: "📐", desc: "Algebra, Geometry, Calculus" },
+        { id: "science", name: "Science", icon: "🔬", desc: "Physics, Chemistry, Biology" }
+      ];
+      
+      subjectGridEl.innerHTML = "";
+      
+      subjects.forEach(subject => {
+        const card = document.createElement("div");
+        card.className = "subject-card";
+        card.innerHTML = `
+          <div class="subject-icon">${subject.icon}</div>
+          <div class="subject-name">${subject.name}</div>
+          <div class="subject-desc">${subject.desc}</div>
+        `;
+        
+        card.addEventListener("click", () => {
+          showQuizContainer(subject.name);
+          resetInactivityTimer();
+        });
+        
+        subjectGridEl.appendChild(card);
+      });
+    }
+
+    async function loadChapters() {
+      try {
+        // Construct the path to chapters list based on class and subject
+        const path = `${currentClass}/${currentSubject.toLowerCase()}/chapters.json`;
+        
+        const response = await fetch(path);
+        if (!response.ok) {
+          throw new Error(`chapters.json not found at ${path}`);
+        }
+        
+        chaptersList = await response.json();
+        
+        if (!Array.isArray(chaptersList) || chaptersList.length === 0) {
+          throw new Error("chapters.json is empty or invalid");
+        }
+        
+        // Populate dropdown
+        topicSelectEl.innerHTML = '<option value="">-- Select Chapter --</option>';
+        
+        chaptersList.forEach(chapter => {
+          if (typeof chapter === 'string' && chapter.trim() !== '') {
+            const option = document.createElement("option");
+            option.value = chapter.trim();
+            option.textContent = chapter.trim();
+            topicSelectEl.appendChild(option);
+          }
+        });
+        
+        // Enable start button
+        startBtnEl.disabled = false;
+        quizTopicNameEl.textContent = "No chapter selected";
+        quizQuestionCountEl.textContent = "Select a chapter";
+        
+        console.log(`Loaded ${chaptersList.length} chapters for ${currentClass}/${currentSubject}`);
+        
+      } catch (err) {
+        console.error("Error loading chapters:", err);
+        topicSelectEl.innerHTML = `
+          <option value="">-- Error loading chapters --</option>
+          <option value="">Check if chapters.json exists</option>
+        `;
+        
+        quizTopicNameEl.textContent = "Error loading chapters";
+        quizTopicNameEl.style.backgroundColor = "rgba(239, 68, 68, 0.1)";
+        quizTopicNameEl.style.borderColor = "rgba(239, 68, 68, 0.5)";
+        quizTopicNameEl.style.color = "#fca5a5";
+        
+        startBtnEl.disabled = true;
+      }
+      
+      resetInactivityTimer();
+    }
+
+    // ========== QUIZ FUNCTIONS ==========
+    function resetQuizState() {
+      questions = [];
+      currentIndex = 0;
+      score = 0;
+      hasAnswered = false;
+      questionsLoaded = false;
+      attempted = 0;
+      userAnswers = [];
+      timeRemaining = 0;
+      timerDuration = 0;
+      currentTopicName = "";
+      quizStartTime = null;
+      isReviewMode = false;
+      
+      // Reset UI
+      questionTextEl.textContent = "Please select a chapter to start the quiz.";
+      optionsListEl.innerHTML = "";
+      feedbackEl.textContent = "";
+      feedbackEl.className = "feedback";
+      nextBtn.disabled = true;
+      previousBtn.disabled = true;
+      finishBtn.disabled = true;
+      finishBtn.textContent = "Finish Quiz";
+      finishBtn.onclick = () => {
+        if (!questionsLoaded) return;
+        if (confirm("Are you sure you want to finish the quiz? Your current score will be calculated.")) {
+          showFinalResult();
+        }
+        resetInactivityTimer();
+      };
+      finalScoreEl.style.display = "none";
+      progressBarFillEl.style.width = "0%";
+      questionCounterEl.textContent = "Choose a chapter and click Start Quiz";
+      scoreMiniEl.textContent = "Score: 0";
+      quizTopicNameEl.textContent = "No chapter selected";
+      quizQuestionCountEl.textContent = "0 questions";
+      timerContainerEl.style.display = "none";
+      
+      // Remove timer notification
+      removeTimerNotification();
+    }
+
+    // ========== XML PARSER ==========
+    function parseXMLToQuestions(xmlText) {
+      const parser = new DOMParser();
+      const xmlDoc = parser.parseFromString(xmlText, "application/xml");
+
+      // Reset timer duration
+      timerDuration = 0;
+
+      // Check for timer configuration - look for timeLimit in metadata
+      const metadataNode = xmlDoc.getElementsByTagName("metadata")[0];
+      if (metadataNode) {
+        const timeLimitNode = metadataNode.getElementsByTagName("timeLimit")[0];
+        if (timeLimitNode) {
+          const minutes = parseInt(timeLimitNode.textContent) || 0;
+          timerDuration = minutes * 60 * 1000; // Convert minutes to milliseconds
+        }
+      }
+
+      const qNodes = xmlDoc.getElementsByTagName("question");
+      const out = [];
+
+      for (let i = 0; i < qNodes.length; i++) {
+        const qNode = qNodes[i];
+        const textNode = qNode.getElementsByTagName("text")[0];
+        if (!textNode) continue;
+
+        const qText = textNode.textContent.trim();
+        const optNodes = qNode.getElementsByTagName("option");
+        if (optNodes.length < 2) continue;
+
+        const options = [];
+        let correctIndex = 0;
+        let explanation = "";
+
+        // Get explanation if exists
+        const expNode = qNode.getElementsByTagName("explanation")[0];
+        if (expNode) {
+          explanation = expNode.textContent.trim();
         }
 
-        function initializeApp() {
-            setupEventListeners();
-            loginUsername.focus();
-            console.log('G.S. Tutorial App initialized successfully');
+        for (let j = 0; j < optNodes.length; j++) {
+          const optNode = optNodes[j];
+          const optText = optNode.textContent.trim();
+          const isCorrect = optNode.getAttribute("correct") === "true";
+          options.push(optText);
+          if (isCorrect) correctIndex = j;
         }
 
-        // ===== EVENT LISTENERS =====
-        function setupEventListeners() {
-            // Login screen
-            loginBtn.addEventListener('click', handleLogin);
-            loginPassword.addEventListener('keypress', function(e) {
-                if (e.key === 'Enter') handleLogin();
-            });
-            togglePasswordBtn.addEventListener('click', togglePasswordVisibility);
+        out.push({
+          question: qText,
+          options,
+          correctIndex,
+          explanation: explanation
+        });
+      }
+      return out;
+    }
 
-            // Class selection
-            classCards.forEach(card => {
-                card.addEventListener('click', handleClassCardClick);
-            });
+    // ========== HELPER FUNCTIONS ==========
+    function shuffleArray(arr) {
+      for (let i = arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+      }
+    }
 
-            // Subject selection
-            subjectCards.forEach(card => {
-                card.addEventListener('click', handleSubjectCardClick);
-            });
-            backToClassBtn.addEventListener('click', () => switchScreen('classSelection'));
+    function prepareQuestionBank(rawQuestions, randomize) {
+      const qs = rawQuestions.map(q => ({
+        question: q.question,
+        options: [...q.options],
+        correctIndex: q.correctIndex,
+        explanation: q.explanation
+      }));
 
-            // Chapter selection
-            chapterSelect.addEventListener('change', handleChapterSelect);
-            startQuizBtn.addEventListener('click', startChapterQuiz);
-            backToSubjectBtn.addEventListener('click', () => switchScreen('subjectSelection'));
+      if (randomize) {
+        shuffleArray(qs);
+        qs.forEach(q => {
+          const idxs = q.options.map((_, idx) => idx);
+          shuffleArray(idxs);
+          const newOptions = idxs.map(i => q.options[i]);
+          const newCorrectIndex = idxs.indexOf(q.correctIndex);
+          q.options = newOptions;
+          q.correctIndex = newCorrectIndex;
+        });
+      }
 
-            // Header
-            headerLogoutBtn.addEventListener('click', handleLogout);
+      return qs;
+    }
 
-            // Quiz question screen
-            prevBtn.addEventListener('click', goToPreviousQuestion);
-            nextBtn.addEventListener('click', goToNextQuestion);
-            finishBtn.addEventListener('click', finishQuiz);
+    // ========== TIMER FUNCTIONS ==========
+    function startTimer() {
+      if (timerDuration <= 0) return;
+      
+      timeRemaining = timerDuration;
+      timerContainerEl.style.display = "flex";
+      
+      updateTimerDisplay();
+      
+      timerInterval = setInterval(() => {
+        timeRemaining -= 1000;
+        
+        if (timeRemaining <= 0) {
+          timeRemaining = 0;
+          clearInterval(timerInterval);
+          autoFinishQuiz();
+        }
+        
+        updateTimerDisplay();
+      }, 1000);
+    }
 
-            // Results screen
-            retryBtn.addEventListener('click', retryQuiz);
-            newChapterBtn.addEventListener('click', () => switchScreen('chapterSelection'));
+    function updateTimerDisplay() {
+      const hours = Math.floor(timeRemaining / (1000 * 60 * 60));
+      const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+      
+      const formattedTime = 
+        `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+      
+      timerDisplayEl.textContent = formattedTime;
+      
+      timerDisplayEl.classList.remove("timer-warning", "timer-critical");
+      
+      if (timeRemaining <= 30 * 60 * 1000) {
+        timerDisplayEl.classList.add("timer-warning");
+      }
+      
+      if (timeRemaining <= 10 * 60 * 1000) {
+        timerDisplayEl.classList.add("timer-critical");
+      }
+    }
+
+    function stopTimer() {
+      if (timerInterval) {
+        clearInterval(timerInterval);
+        timerInterval = null;
+      }
+      timerContainerEl.style.display = "none";
+    }
+
+    function showTimerNotification() {
+      removeTimerNotification();
+      
+      if (timerDuration > 0) {
+        const hours = Math.floor(timerDuration / (1000 * 60 * 60));
+        const minutes = Math.floor((timerDuration % (1000 * 60 * 60)) / (1000 * 60));
+        
+        let timeString = "";
+        if (hours > 0 && minutes > 0) {
+          timeString = `${hours} hour${hours > 1 ? 's' : ''} ${minutes} minute${minutes > 1 ? 's' : ''}`;
+        } else if (hours > 0) {
+          timeString = `${hours} hour${hours > 1 ? 's' : ''}`;
+        } else if (minutes > 0) {
+          timeString = `${minutes} minute${minutes > 1 ? 's' : ''}`;
+        } else {
+          timeString = "less than a minute";
+        }
+        
+        timerNotification = document.createElement("div");
+        timerNotification.className = "timer-notification";
+        timerNotification.innerHTML = `
+          <span>⏰</span>
+          <span>Timer set: <strong>${timeString}</strong> for this chapter</span>
+        `;
+        
+        const toggleRow = document.querySelector(".toggle-row");
+        if (toggleRow && toggleRow.nextElementSibling) {
+          toggleRow.parentNode.insertBefore(timerNotification, toggleRow.nextElementSibling);
+        }
+      }
+    }
+
+    function removeTimerNotification() {
+      if (timerNotification && timerNotification.parentNode) {
+        timerNotification.parentNode.removeChild(timerNotification);
+        timerNotification = null;
+      }
+      
+      const existingNotifications = document.querySelectorAll(".timer-notification");
+      existingNotifications.forEach(notification => {
+        if (notification.parentNode) {
+          notification.parentNode.removeChild(notification);
+        }
+      });
+    }
+
+    function autoFinishQuiz() {
+      showFinalResult();
+      stopTimer();
+      removeTimerNotification();
+    }
+
+    function formatTimeTaken() {
+      if (timerDuration <= 0 || !quizStartTime) return "";
+      
+      const endTime = Date.now();
+      const timeTaken = endTime - quizStartTime;
+      const hours = Math.floor(timeTaken / (1000 * 60 * 60));
+      const minutes = Math.floor((timeTaken % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((timeTaken % (1000 * 60)) / 1000);
+      
+      if (hours > 0) {
+        return `${hours}h ${minutes}m ${seconds}s`;
+      } else if (minutes > 0) {
+        return `${minutes}m ${seconds}s`;
+      } else {
+        return `${seconds}s`;
+      }
+    }
+
+    // ========== UI FUNCTIONS ==========
+    function renderQuestion() {
+      if (!questionsLoaded || questions.length === 0) {
+        questionTextEl.textContent = "No questions available. Check your XML file.";
+        optionsListEl.innerHTML = "";
+        nextBtn.disabled = true;
+        previousBtn.disabled = true;
+        finishBtn.disabled = true;
+        return;
+      }
+
+      const q = questions[currentIndex];
+      hasAnswered = false;
+      feedbackEl.textContent = "";
+      feedbackEl.className = "feedback";
+      
+      // Clear any existing explanation
+      const existingExplanation = feedbackEl.querySelector('.explanation');
+      if (existingExplanation) {
+        existingExplanation.remove();
+      }
+
+      questionCounterEl.textContent = `Question ${currentIndex + 1} / ${questions.length}`;
+      const progressPercent = ((currentIndex + 1) / questions.length) * 100;
+      progressBarFillEl.style.width = `${progressPercent}%`;
+
+      questionTextEl.textContent = q.question;
+      optionsListEl.innerHTML = "";
+
+      q.options.forEach((opt, idx) => {
+        const li = document.createElement("li");
+        li.className = "option";
+        
+        // Check if this option was previously selected
+        if (userAnswers[currentIndex] !== undefined && userAnswers[currentIndex] === idx) {
+          li.classList.add("selected");
         }
 
-        // ===== SCREEN MANAGEMENT =====
-        function switchScreen(screenName) {
-            // Hide all screens
-            Object.values(screens).forEach(screen => {
-                screen.classList.remove('active');
-            });
-            
-            // Show selected screen
-            screens[screenName].classList.add('active');
-            
-            // Show/hide header
-            if (screenName === 'login') {
-                appHeader.classList.remove('active');
-            } else {
-                appHeader.classList.add('active');
-            }
-            
-            // Special actions for specific screens
-            switch(screenName) {
-                case 'classSelection':
-                    resetClassSelection();
-                    break;
-                case 'subjectSelection':
-                    loadSubjectsForClass();
-                    break;
-                case 'chapterSelection':
-                    loadChaptersForSubject();
-                    break;
-                case 'quizQuestion':
-                    startQuizTimer();
-                    break;
-                case 'results':
-                    calculateResults();
-                    break;
-            }
+        const label = document.createElement("div");
+        label.textContent = opt;
+        li.appendChild(label);
+        optionsListEl.appendChild(li);
+
+        li.addEventListener("click", () => {
+          if (hasAnswered || isReviewMode) return;
+          
+          // Remove selected class from all options
+          document.querySelectorAll(".option").forEach(opt => {
+            opt.classList.remove("selected");
+          });
+          
+          // Add selected class to clicked option
+          li.classList.add("selected");
+          
+          userAnswers[currentIndex] = idx;
+          
+          // Handle option click (shows explanation)
+          handleOptionClick(idx);
+          resetInactivityTimer();
+        });
+      });
+
+      previousBtn.disabled = (currentIndex === 0);
+      
+      // In review mode, next button is always enabled
+      // In quiz mode, next button is disabled until answer is selected
+      if (isReviewMode) {
+        nextBtn.disabled = false;
+        showQuestionInReviewMode();
+      } else {
+        nextBtn.disabled = true; // Disable next until answer is selected
+      }
+      
+      finishBtn.disabled = false;
+      
+      // If already answered this question, show feedback and explanation
+      if (userAnswers[currentIndex] !== undefined) {
+        const selectedIndex = userAnswers[currentIndex];
+        const isCorrect = (selectedIndex === q.correctIndex);
+        
+        showCorrectness(selectedIndex);
+        lockOptions();
+        hasAnswered = true;
+        
+        if (isCorrect) {
+          feedbackEl.textContent = "✅ Correct!";
+          feedbackEl.className = "feedback correct";
+        } else {
+          feedbackEl.textContent = `❌ Wrong. The correct answer was: ${q.options[q.correctIndex]}`;
+          feedbackEl.className = "feedback incorrect";
+        }
+        
+        // Show explanation if available
+        if (q.explanation) {
+          const explanationDiv = document.createElement("div");
+          explanationDiv.className = "explanation";
+          explanationDiv.innerHTML = `<strong>Explanation:</strong> ${q.explanation}`;
+          feedbackEl.appendChild(explanationDiv);
+        }
+        
+        // Enable next button since answer is already selected (only in quiz mode)
+        if (!isReviewMode) {
+          nextBtn.disabled = false;
+        }
+      }
+      
+      resetInactivityTimer();
+    }
+
+    function showQuestionInReviewMode() {
+      const q = questions[currentIndex];
+      const selectedIndex = userAnswers[currentIndex];
+      const hasAnsweredQuestion = selectedIndex !== undefined;
+      
+      if (hasAnsweredQuestion) {
+        const isCorrect = (selectedIndex === q.correctIndex);
+        
+        showCorrectness(selectedIndex);
+        lockOptions();
+        hasAnswered = true;
+        
+        if (isCorrect) {
+          feedbackEl.textContent = "✅ Your answer was correct!";
+          feedbackEl.className = "feedback correct";
+        } else {
+          feedbackEl.textContent = `❌ Your answer was incorrect. The correct answer was: ${q.options[q.correctIndex]}`;
+          feedbackEl.className = "feedback incorrect";
+        }
+        
+        // Show explanation if available
+        if (q.explanation) {
+          const explanationDiv = document.createElement("div");
+          explanationDiv.className = "explanation";
+          explanationDiv.innerHTML = `<strong>Explanation:</strong> ${q.explanation}`;
+          feedbackEl.appendChild(explanationDiv);
+        }
+      } else {
+        feedbackEl.textContent = "⚠️ You did not answer this question.";
+        feedbackEl.className = "feedback";
+        
+        // Still show the correct answer and explanation
+        showCorrectness(-1); // Show only correct answer
+        lockOptions();
+        
+        if (q.explanation) {
+          const explanationDiv = document.createElement("div");
+          explanationDiv.className = "explanation";
+          explanationDiv.innerHTML = `<strong>Correct Answer:</strong> ${q.options[q.correctIndex]}<br><br><strong>Explanation:</strong> ${q.explanation}`;
+          feedbackEl.appendChild(explanationDiv);
+        }
+      }
+    }
+
+    function handleOptionClick(selectedIndex) {
+      if (hasAnswered || isReviewMode) return;
+      
+      const q = questions[currentIndex];
+      hasAnswered = true;
+      attempted++;
+      
+      const isCorrect = (selectedIndex === q.correctIndex);
+      
+      if (isCorrect) {
+        score++;
+        feedbackEl.textContent = "✅ Correct!";
+        feedbackEl.className = "feedback correct";
+      } else {
+        feedbackEl.textContent = `❌ Wrong. The correct answer was: ${q.options[q.correctIndex]}`;
+        feedbackEl.className = "feedback incorrect";
+      }
+      
+      // Show explanation if available
+      if (q.explanation) {
+        const explanationDiv = document.createElement("div");
+        explanationDiv.className = "explanation";
+        explanationDiv.innerHTML = `<strong>Explanation:</strong> ${q.explanation}`;
+        feedbackEl.appendChild(explanationDiv);
+      }
+      
+      scoreMiniEl.textContent = `Score: ${score}`;
+      showCorrectness(selectedIndex);
+      lockOptions();
+      
+      // Enable next button for manual navigation (NO AUTO-ADVANCE)
+      nextBtn.disabled = false;
+    }
+
+    function lockOptions() {
+      const optionEls = document.querySelectorAll(".option");
+      optionEls.forEach(opt => {
+        opt.classList.add("disabled");
+      });
+    }
+
+    function showCorrectness(selectedIndex) {
+      const q = questions[currentIndex];
+      const optionEls = document.querySelectorAll(".option");
+      optionEls.forEach((optEl, idx) => {
+        optEl.classList.remove("correct", "incorrect");
+        if (idx === q.correctIndex) optEl.classList.add("correct");
+        if (idx === selectedIndex && selectedIndex !== q.correctIndex) {
+          optEl.classList.add("incorrect");
+        }
+      });
+    }
+
+    function goToNextQuestion() {
+      currentIndex++;
+      if (currentIndex < questions.length) {
+        renderQuestion();
+      } else {
+        if (!isReviewMode) {
+          progressBarFillEl.style.width = "100%";
+          showFinalResult();
+        } else {
+          // In review mode, loop back to first question
+          currentIndex = 0;
+          renderQuestion();
+        }
+      }
+      resetInactivityTimer();
+    }
+
+    function goToPreviousQuestion() {
+      if (currentIndex > 0) {
+        currentIndex--;
+        renderQuestion();
+      }
+      resetInactivityTimer();
+    }
+
+    function calculateQuizStats() {
+      let attempted = 0;
+      let correct = 0;
+      
+      for (let i = 0; i < questions.length; i++) {
+        if (userAnswers[i] !== undefined) {
+          attempted++;
+          if (userAnswers[i] === questions[i].correctIndex) {
+            correct++;
+          }
+        }
+      }
+      
+      const percentage = questions.length > 0 ? ((correct / questions.length) * 100).toFixed(2) : 0;
+      
+      return {
+        total: questions.length,
+        attempted,
+        correct,
+        percentage
+      };
+    }
+
+    function showFinalResult() {
+      stopTimer();
+      removeTimerNotification();
+      
+      const stats = calculateQuizStats();
+      const timeTaken = formatTimeTaken();
+      
+      progressBarFillEl.style.width = "100%";
+      questionTextEl.textContent = "Quiz Completed!";
+      optionsListEl.innerHTML = "";
+      feedbackEl.textContent = "";
+      nextBtn.style.display = "none";
+      previousBtn.style.display = "none";
+      finishBtn.style.display = "none";
+      finalScoreEl.style.display = "block";
+      
+      let performanceMessage = "";
+      if (stats.percentage >= 80) {
+        performanceMessage = "🎉 Excellent! Outstanding performance!";
+      } else if (stats.percentage >= 60) {
+        performanceMessage = "👍 Good job! Keep practicing!";
+      } else if (stats.percentage >= 40) {
+        performanceMessage = "📚 Keep learning! Review the chapter again.";
+      } else {
+        performanceMessage = "📖 Needs improvement. Study the chapter thoroughly.";
+      }
+      
+      // Add option to review questions with explanations
+      let reviewSection = '';
+      if (questions.length > 0) {
+        reviewSection = `
+          <div class="result-summary" style="margin-top: 20px;">
+            <button class="review-btn" onclick="showQuestionReview()">
+              📖 Review Questions with Explanations
+            </button>
+          </div>
+        `;
+      }
+      
+      finalScoreEl.innerHTML = `
+        <div class="result-header">Quiz Results - ${currentTopicName}</div>
+        <div class="result-stats">
+          <div class="stat-item">
+            <div class="stat-label">Total Questions</div>
+            <div class="stat-value">${stats.total}</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-label">Attempted</div>
+            <div class="stat-value">${stats.attempted}/${stats.total}</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-label">Correct Answers</div>
+            <div class="stat-value">${stats.correct}</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-label">Score Percentage</div>
+            <div class="stat-value stat-percentage">${stats.percentage}%</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-label">Time Taken</div>
+            <div class="stat-value stat-time">${timeTaken || "No timer set"}</div>
+          </div>
+          ${timerDuration > 0 ? `
+          <div class="stat-item">
+            <div class="stat-label">Time Limit</div>
+            <div class="stat-value">${Math.floor(timerDuration / (1000 * 60))} minutes</div>
+          </div>
+          ` : ''}
+        </div>
+        <div class="result-message">
+          ${performanceMessage}
+        </div>
+        <div class="result-summary">
+          <em>Select another chapter from the dropdown above to start a new quiz.</em>
+        </div>
+        <button class="restart-btn" onclick="restartQuiz()">Restart Same Quiz</button>
+        ${reviewSection}
+      `;
+      
+      resetInactivityTimer();
+    }
+
+    // Add function to review questions with explanations
+    function showQuestionReview() {
+      isReviewMode = true;
+      finalScoreEl.style.display = "none";
+      nextBtn.style.display = "inline-block";
+      previousBtn.style.display = "inline-block";
+      finishBtn.style.display = "inline-block";
+      finishBtn.textContent = "Back to Results";
+      finishBtn.onclick = () => {
+        showFinalResult();
+      };
+      
+      currentIndex = 0;
+      renderQuestion();
+    }
+
+    function restartQuiz() {
+      isReviewMode = false;
+      score = 0;
+      attempted = 0;
+      currentIndex = 0;
+      userAnswers = [];
+      scoreMiniEl.textContent = "Score: 0";
+      nextBtn.style.display = "inline-block";
+      previousBtn.style.display = "inline-block";
+      finishBtn.style.display = "inline-block";
+      finishBtn.textContent = "Finish Quiz";
+      finishBtn.onclick = () => {
+        if (!questionsLoaded) return;
+        if (confirm("Are you sure you want to finish the quiz? Your current score will be calculated.")) {
+          showFinalResult();
+        }
+        resetInactivityTimer();
+      };
+      finalScoreEl.style.display = "none";
+      
+      if (timerDuration > 0) {
+        showTimerNotification();
+        startTimer();
+      }
+      
+      // Re-render the first question
+      renderQuestion();
+      resetInactivityTimer();
+    }
+
+    // ========== LOAD QUESTIONS ==========
+    async function loadQuestionsFromXML(chapterName) {
+      const trimmed = chapterName.trim();
+      if (!trimmed) {
+        alert("Please select a chapter.");
+        resetInactivityTimer();
+        return;
+      }
+
+      currentTopicName = trimmed;
+      const filename = `${currentClass}/${currentSubject.toLowerCase()}/${trimmed}.xml`;
+      quizTopicNameEl.textContent = trimmed;
+
+      try {
+        questionTextEl.textContent = `Loading ${filename}…`;
+        optionsListEl.innerHTML = "";
+        feedbackEl.textContent = "";
+        nextBtn.disabled = true;
+        previousBtn.disabled = true;
+        finishBtn.disabled = true;
+        finishBtn.textContent = "Finish Quiz";
+        finishBtn.onclick = () => {
+          if (!questionsLoaded) return;
+          if (confirm("Are you sure you want to finish the quiz? Your current score will be calculated.")) {
+            showFinalResult();
+          }
+          resetInactivityTimer();
+        };
+        finalScoreEl.style.display = "none";
+        progressBarFillEl.style.width = "0%";
+        questionCounterEl.textContent = "Loading…";
+
+        timerContainerEl.style.display = "none";
+        timerDuration = 0;
+        quizStartTime = Date.now();
+        
+        removeTimerNotification();
+
+        const res = await fetch(filename);
+        if (!res.ok) {
+          throw new Error(`File not found: ${filename}`);
+        }
+        const xmlText = await res.text();
+
+        const rawQuestions = parseXMLToQuestions(xmlText);
+        if (rawQuestions.length === 0) {
+          questionTextEl.textContent = "No questions parsed from XML. Check format.";
+          questionsLoaded = false;
+          quizTopicNameEl.textContent = `Error in ${filename}`;
+          return;
         }
 
-        // ===== LOADER FUNCTIONS =====
-        function showLoader(message = 'Loading...') {
-            loader.querySelector('.loader-text').textContent = message;
-            loader.classList.add('active');
+        const randomize = randomToggleEl.checked;
+        questions = prepareQuestionBank(rawQuestions, randomize);
+        userAnswers = new Array(questions.length);
+
+        questionsLoaded = true;
+        currentIndex = 0;
+        score = 0;
+        attempted = 0;
+        scoreMiniEl.textContent = "Score: 0";
+        nextBtn.style.display = "inline-block";
+        previousBtn.style.display = "inline-block";
+        finishBtn.style.display = "inline-block";
+
+        quizTopicNameEl.textContent = trimmed;
+        quizQuestionCountEl.textContent = `${questions.length} questions`;
+        
+        if (timerDuration > 0) {
+          showTimerNotification();
+          startTimer();
         }
+        
+        renderQuestion();
+        resetInactivityTimer();
+      } catch (err) {
+        console.error(err);
+        questionTextEl.textContent = `Error loading ${filename}. Make sure it exists in the correct folder.`;
+        nextBtn.disabled = true;
+        previousBtn.disabled = true;
+        finishBtn.disabled = true;
+        quizTopicNameEl.textContent = `Failed: ${filename}`;
+        resetInactivityTimer();
+      }
+    }
 
-        function hideLoader() {
-            loader.classList.remove('active');
+    // ========== EVENT LISTENERS ==========
+    loginFormEl.addEventListener("submit", async function(e) {
+      e.preventDefault();
+      
+      const username = usernameEl.value.trim();
+      const password = passwordEl.value.trim();
+      
+      if (!username || !password) {
+        loginErrorEl.textContent = "Please enter both username and password";
+        loginErrorEl.style.display = "block";
+        return;
+      }
+      
+      loginErrorEl.textContent = "";
+      loginErrorEl.style.display = "none";
+      
+      loginBtnEl.disabled = true;
+      loginBtnEl.innerHTML = '<span class="btn-loader">Loading...</span>';
+      
+      if (userList.length === 0) {
+        const loaded = await loadUsersFromXML();
+        if (!loaded) {
+          loginErrorEl.textContent = "Cannot load users. Please check users.xml file.";
+          loginErrorEl.style.display = "block";
+          loginBtnEl.disabled = false;
+          loginBtnEl.innerHTML = 'Login';
+          return;
         }
-
-        // ===== LOGIN FUNCTIONS =====
-        async function handleLogin() {
-            const username = loginUsername.value.trim();
-            const password = loginPassword.value.trim();
-
-            if (!username || !password) {
-                showLoginError('Please enter both username and password');
-                return;
-            }
-
-            showLoader('Authenticating...');
-            
-            try {
-                // Try to load users.xml
-                const response = await fetch('users.xml');
-                let user = null;
-                
-                if (response.ok) {
-                    // Parse XML
-                    const xmlText = await response.text();
-                    const parser = new DOMParser();
-                    const xmlDoc = parser.parseFromString(xmlText, 'application/xml');
-                    
-                    // Find user in XML
-                    const users = xmlDoc.getElementsByTagName('user');
-                    for (let i = 0; i < users.length; i++) {
-                        const userElem = users[i];
-                        const xmlUsername = userElem.getElementsByTagName('username')[0]?.textContent;
-                        const xmlPassword = userElem.getElementsByTagName('password')[0]?.textContent;
-                        
-                        if (xmlUsername === username && xmlPassword === password) {
-                            user = {
-                                username: xmlUsername,
-                                name: userElem.getElementsByTagName('name')[0]?.textContent || username,
-                                role: userElem.getElementsByTagName('role')[0]?.textContent || 'student'
-                            };
-                            break;
-                        }
-                    }
-                } else {
-                    // Fallback to default users if XML doesn't exist
-                    const defaultUsers = [
-                        { username: 'admin', password: '123', name: 'G.S. Tutorial Admin', role: 'admin' },
-                        { username: 'student8', password: 'pass123', name: 'Class 8 Student', role: 'student' },
-                        { username: 'student9', password: 'pass456', name: 'Class 9 Student', role: 'student' },
-                        { username: 'student10', password: 'pass789', name: 'Class 10 Student', role: 'student' },
-                        { username: 'teacher1', password: 'teacher123', name: 'G.S. Tutorial Teacher', role: 'teacher' }
-                    ];
-                    
-                    user = defaultUsers.find(u => u.username === username && u.password === password);
-                }
-
-                if (user) {
-                    loginSuccessful(user);
-                } else {
-                    showLoginError('Invalid username or password');
-                }
-            } catch (error) {
-                console.error('Login error:', error);
-                showLoginError('Error during login. Please try again.');
-            } finally {
-                hideLoader();
-            }
+      }
+      
+      setTimeout(() => {
+        const user = authenticateUser(username, password);
+        
+        if (user) {
+          login(user);
+        } else {
+          loginErrorEl.textContent = "Invalid username or password";
+          loginErrorEl.style.display = "block";
+          usernameEl.focus();
+          usernameEl.select();
         }
+        
+        loginBtnEl.disabled = false;
+        loginBtnEl.innerHTML = 'Login';
+      }, 500);
+    });
 
-        function loginSuccessful(user) {
-            currentUser = user;
-            hideLoginError();
-            
-            displayUserName.textContent = currentUser.name;
-            headerUserName.textContent = currentUser.name;
-            
-            // Clear login form
-            loginUsername.value = '';
-            loginPassword.value = '';
-            
-            switchScreen('classSelection');
-        }
+    headerLogoutBtnEl.addEventListener("click", logout);
+    backToClassesBtn.addEventListener("click", () => {
+      showClassSelection();
+      resetInactivityTimer();
+    });
 
-        function togglePasswordVisibility() {
-            const passwordField = loginPassword;
-            const type = passwordField.type === 'password' ? 'text' : 'password';
-            passwordField.type = type;
-            togglePasswordBtn.textContent = type === 'password' ? '👁️' : '👁️‍🗨️';
-        }
+    startBtnEl.addEventListener("click", () => {
+      const dropdownVal = topicSelectEl.value;
+      
+      if (timerInterval) {
+        clearInterval(timerInterval);
+        timerInterval = null;
+      }
+      
+      removeTimerNotification();
+      
+      loadQuestionsFromXML(dropdownVal);
+      resetInactivityTimer();
+    });
 
-        function showLoginError(message) {
-            loginError.textContent = message;
-            loginError.style.display = 'block';
-            loginPassword.focus();
-            loginPassword.select();
-        }
+    nextBtn.addEventListener("click", () => {
+      goToNextQuestion();
+    });
 
-        function hideLoginError() {
-            loginError.style.display = 'none';
-        }
+    previousBtn.addEventListener("click", () => {
+      goToPreviousQuestion();
+    });
 
-        // ===== CLASS SELECTION FUNCTIONS =====
-        function handleClassCardClick(event) {
-            const card = event.currentTarget;
-            selectClassCard(card);
-            
-            // Auto-proceed to subject selection
-            setTimeout(() => {
-                goToSubjectSelection();
-            }, 300);
-        }
+    // ========== INITIALIZATION ==========
+    async function initializeApp() {
+      await loadUsersFromXML();
+      usernameEl.focus();
+      console.log("G. S. Tutorial App initialized. Created by Gobind Sharma.");
+    }
 
-        function selectClassCard(card) {
-            classCards.forEach(c => {
-                c.classList.remove('selected');
-            });
-            
-            card.classList.add('selected');
-            selectedClass = card.dataset.value;
-        }
-
-        function resetClassSelection() {
-            if (selectedClass) {
-                const classCard = document.querySelector(`#class-selection-screen [data-value="${selectedClass}"]`);
-                if (classCard) {
-                    classCard.classList.add('selected');
-                }
-            }
-        }
-
-        function goToSubjectSelection() {
-            if (!selectedClass) return;
-            
-            const classObj = appData.classes.find(c => c.id === selectedClass);
-            if (classObj) {
-                selectedClassDisplay.textContent = classObj.name;
-                switchScreen('subjectSelection');
-            }
-        }
-
-        // ===== SUBJECT SELECTION FUNCTIONS =====
-        function loadSubjectsForClass() {
-            if (!selectedClass) return;
-            
-            selectedSubject = null;
-            subjectCards.forEach(card => {
-                card.classList.remove('selected');
-            });
-        }
-
-        function handleSubjectCardClick(event) {
-            const card = event.currentTarget;
-            selectSubjectCard(card);
-            
-            // Auto-proceed to chapter selection
-            setTimeout(() => {
-                goToChapterSelection();
-            }, 300);
-        }
-
-        function selectSubjectCard(card) {
-            subjectCards.forEach(c => {
-                c.classList.remove('selected');
-            });
-            
-            card.classList.add('selected');
-            selectedSubject = card.dataset.value;
-        }
-
-        function goToChapterSelection() {
-            if (!selectedClass || !selectedSubject) return;
-            
-            const classObj = appData.classes.find(c => c.id === selectedClass);
-            const subjectObj = classObj.subjects.find(s => s.id === selectedSubject);
-            
-            if (classObj && subjectObj) {
-                selectedSubjectDisplay.textContent = subjectObj.name;
-                currentClassDisplay.textContent = classObj.name;
-                switchScreen('chapterSelection');
-            }
-        }
-
-        // ===== CHAPTER SELECTION FUNCTIONS =====
-        async function loadChaptersForSubject() {
-            if (!selectedClass || !selectedSubject) return;
-            
-            showLoader('Loading chapters...');
-            
-            try {
-                const classObj = appData.classes.find(c => c.id === selectedClass);
-                const subjectObj = classObj.subjects.find(s => s.id === selectedSubject);
-                
-                chapterSelect.innerHTML = '<option value="">-- Please select a chapter --</option>';
-                chapterInfo.style.display = 'none';
-                startQuizBtn.disabled = true;
-                currentChapters = [];
-                
-                if (!subjectObj.chapters || subjectObj.chapters.length === 0) {
-                    chapterSelect.innerHTML += '<option value="" disabled>No chapters available</option>';
-                    return;
-                }
-                
-                currentChapters = subjectObj.chapters;
-                subjectObj.chapters.forEach((chapter, index) => {
-                    const option = document.createElement('option');
-                    option.value = index;
-                    option.textContent = chapter.name;
-                    chapterSelect.appendChild(option);
-                });
-                
-            } catch (error) {
-                console.error('Error loading chapters:', error);
-                chapterSelect.innerHTML = '<option value="" disabled>Error loading chapters</option>';
-            } finally {
-                hideLoader();
-            }
-        }
-
-        async function handleChapterSelect() {
-            const selectedIndex = parseInt(chapterSelect.value);
-            
-            if (isNaN(selectedIndex) || selectedIndex < 0 || selectedIndex >= currentChapters.length) {
-                chapterInfo.style.display = 'none';
-                startQuizBtn.disabled = true;
-                return;
-            }
-            
-            const chapter = currentChapters[selectedIndex];
-            
-            showLoader('Loading chapter details...');
-            
-            try {
-                // Load XML to get actual question count and time limit
-                const response = await fetch(chapter.file);
-                if (!response.ok) {
-                    throw new Error(`Failed to load ${chapter.file}`);
-                }
-                
-                const xmlText = await response.text();
-                const parser = new DOMParser();
-                const xmlDoc = parser.parseFromString(xmlText, 'application/xml');
-                
-                // Get metadata from XML
-                const metadata = xmlDoc.getElementsByTagName('metadata')[0];
-                let totalQuestionsFromXML = 0;
-                let timeLimitFromXML = 30; // Default 30 minutes
-                
-                if (metadata) {
-                    const timeLimitElement = metadata.getElementsByTagName('timeLimit')[0];
-                    if (timeLimitElement) {
-                        timeLimitFromXML = parseInt(timeLimitElement.textContent) || 30;
-                    }
-                    
-                    const totalQuestionsElement = metadata.getElementsByTagName('totalQuestions')[0];
-                    if (totalQuestionsElement) {
-                        totalQuestionsFromXML = parseInt(totalQuestionsElement.textContent) || 0;
-                    }
-                }
-                
-                // Count actual questions
-                const questionNodes = xmlDoc.getElementsByTagName('question');
-                const actualQuestionCount = questionNodes.length;
-                
-                // Use actual count if totalQuestions not specified
-                const finalQuestionCount = totalQuestionsFromXML > 0 ? totalQuestionsFromXML : actualQuestionCount;
-                
-                // Update chapter info
-                questionsCount.textContent = finalQuestionCount;
-                timeLimit.textContent = `${timeLimitFromXML} min`;
-                difficulty.textContent = chapter.difficulty || 'Medium';
-                chapterDescription.textContent = chapter.description || 'Practice questions from this chapter to test your knowledge and improve your skills.';
-                
-                chapterInfo.style.display = 'block';
-                startQuizBtn.disabled = false;
-                
-            } catch (error) {
-                console.error('Error loading chapter details:', error);
-                // Fallback to default values
-                questionsCount.textContent = '15';
-                timeLimit.textContent = '30 min';
-                difficulty.textContent = chapter.difficulty || 'Medium';
-                chapterDescription.textContent = chapter.description || 'Practice questions from this chapter to test your knowledge and improve your skills.';
-                
-                chapterInfo.style.display = 'block';
-                startQuizBtn.disabled = false;
-            } finally {
-                hideLoader();
-            }
-        }
-
-        async function startChapterQuiz() {
-            const selectedIndex = parseInt(chapterSelect.value);
-            
-            if (isNaN(selectedIndex) || selectedIndex < 0 || selectedIndex >= currentChapters.length) {
-                return;
-            }
-            
-            const chapter = currentChapters[selectedIndex];
-            
-            showLoader('Loading quiz...');
-            
-            try {
-                const response = await fetch(chapter.file);
-                if (!response.ok) {
-                    throw new Error(`Failed to load ${chapter.file}`);
-                }
-                
-                const xmlText = await response.text();
-                const parser = new DOMParser();
-                const xmlDoc = parser.parseFromString(xmlText, 'application/xml');
-                
-                // Get time limit from XML
-                const metadata = xmlDoc.getElementsByTagName('metadata')[0];
-                let timeLimitFromXML = 30;
-                
-                if (metadata) {
-                    const timeLimitElement = metadata.getElementsByTagName('timeLimit')[0];
-                    if (timeLimitElement) {
-                        timeLimitFromXML = parseInt(timeLimitElement.textContent) || 30;
-                    }
-                }
-                
-                // Parse questions
-                currentQuestions = [];
-                const questionNodes = xmlDoc.getElementsByTagName('question');
-                
-                for (let i = 0; i < questionNodes.length; i++) {
-                    const qNode = questionNodes[i];
-                    const question = {
-                        text: qNode.getElementsByTagName('text')[0]?.textContent || '',
-                        options: [],
-                        correctIndex: -1,
-                        explanation: qNode.getElementsByTagName('explanation')[0]?.textContent || 'No explanation available.'
-                    };
-                    
-                    const optionNodes = qNode.getElementsByTagName('option');
-                    for (let j = 0; j < optionNodes.length; j++) {
-                        const optNode = optionNodes[j];
-                        question.options.push(optNode.textContent);
-                        if (optNode.getAttribute('correct') === 'true') {
-                            question.correctIndex = j;
-                        }
-                    }
-                    
-                    if (question.text && question.options.length >= 2 && question.correctIndex !== -1) {
-                        currentQuestions.push(question);
-                    }
-                }
-                
-                if (currentQuestions.length === 0) {
-                    throw new Error('No valid questions found in this chapter.');
-                }
-                
-                // Reset quiz state
-                currentQuestionIndex = 0;
-                userAnswers = new Array(currentQuestions.length).fill(null);
-                score = 0;
-                totalQuestions = currentQuestions.length;
-                timeRemaining = timeLimitFromXML * 60;
-                currentChapterFile = chapter.file;
-                currentChapterTitle = chapter.name;
-                quizStartTime = Date.now();
-                answeredQuestions.clear();
-                
-                quizTitle.textContent = `Chapter: ${chapter.name}`;
-                questionChapter.textContent = `Chapter: ${chapter.name}`;
-                
-                switchScreen('quizQuestion');
-                loadQuestion();
-                
-            } catch (error) {
-                console.error('Error starting quiz:', error);
-                alert(`Error loading quiz: ${error.message}\nUsing sample questions instead.`);
-                
-                // Load sample questions as fallback
-                loadSampleQuestions(chapter);
-            } finally {
-                hideLoader();
-            }
-        }
-
-        function loadSampleQuestions(chapter) {
-            currentQuestions = [
-                {
-                    text: "Which of the following is not a kharif crop?",
-                    options: ["Paddy", "Maize", "Wheat", "Soybean"],
-                    correctIndex: 2,
-                    explanation: "Wheat is a rabi crop, not a kharif crop. Kharif crops are sown in the rainy season (June-July) and harvested in autumn."
-                },
-                {
-                    text: "The process of loosening and turning of soil is called:",
-                    options: ["Harvesting", "Ploughing", "Irrigation", "Winnowing"],
-                    correctIndex: 1,
-                    explanation: "Ploughing is the process of loosening and turning the soil. It helps in proper aeration and mixing of nutrients."
-                },
-                {
-                    text: "Which of the following is a natural fertilizer?",
-                    options: ["Manure", "Urea", "NPK", "Ammonium sulphate"],
-                    correctIndex: 0,
-                    explanation: "Manure is a natural fertilizer obtained from the decomposition of plant and animal wastes."
-                }
-            ];
-            
-            currentQuestionIndex = 0;
-            userAnswers = new Array(currentQuestions.length).fill(null);
-            score = 0;
-            totalQuestions = currentQuestions.length;
-            timeRemaining = 30 * 60;
-            currentChapterFile = chapter.file;
-            currentChapterTitle = chapter.name;
-            quizStartTime = Date.now();
-            answeredQuestions.clear();
-            
-            quizTitle.textContent = `Chapter: ${chapter.name}`;
-            questionChapter.textContent = `Chapter: ${chapter.name}`;
-            
-            switchScreen('quizQuestion');
-            loadQuestion();
-        }
-
-        function handleLogout() {
-            if (confirm('Are you sure you want to logout?')) {
-                currentUser = null;
-                selectedClass = null;
-                selectedSubject = null;
-                currentQuestions = [];
-                userAnswers = [];
-                score = 0;
-                
-                if (timerInterval) {
-                    clearInterval(timerInterval);
-                    timerInterval = null;
-                }
-                
-                loginUsername.value = '';
-                loginPassword.value = '';
-                loginPassword.type = 'password';
-                togglePasswordBtn.textContent = '👁️';
-                loginError.style.display = 'none';
-                
-                switchScreen('login');
-            }
-        }
-
-        // ===== QUIZ FUNCTIONS =====
-        function startQuizTimer() {
-            if (timerInterval) {
-                clearInterval(timerInterval);
-            }
-            
-            updateTimerDisplay();
-            
-            timerInterval = setInterval(() => {
-                timeRemaining--;
-                updateTimerDisplay();
-                
-                if (timeRemaining <= 0) {
-                    clearInterval(timerInterval);
-                    finishQuiz();
-                }
-            }, 1000);
-        }
-
-        function updateTimerDisplay() {
-            const minutes = Math.floor(timeRemaining / 60);
-            const seconds = timeRemaining % 60;
-            timerDisplay.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-            
-            timerDisplay.classList.remove('timer-warning', 'timer-critical');
-            if (timeRemaining <= 300) {
-                timerDisplay.classList.add('timer-warning');
-            }
-            if (timeRemaining <= 60) {
-                timerDisplay.classList.remove('timer-warning');
-                timerDisplay.classList.add('timer-critical');
-            }
-        }
-
-        function loadQuestion() {
-            if (currentQuestionIndex >= currentQuestions.length) {
-                finishQuiz();
-                return;
-            }
-            
-            const question = currentQuestions[currentQuestionIndex];
-            
-            // Update progress
-            const progressPercent = ((currentQuestionIndex) / currentQuestions.length) * 100;
-            progressFill.style.width = `${progressPercent}%`;
-            
-            // Update question info
-            questionNumber.textContent = currentQuestionIndex + 1;
-            currentQuestionInfo.textContent = `Question ${currentQuestionIndex + 1}/${currentQuestions.length}`;
-            scoreInfo.textContent = `Score: ${score}`;
-            questionText.textContent = question.text;
-            
-            // Clear previous options and explanation
-            optionsContainer.innerHTML = '';
-            explanationBox.style.display = 'none';
-            
-            // Add options
-            question.options.forEach((option, index) => {
-                const optionDiv = document.createElement('div');
-                optionDiv.className = 'option';
-                if (userAnswers[currentQuestionIndex] === index) {
-                    optionDiv.classList.add('selected');
-                }
-                
-                optionDiv.innerHTML = `
-                    <div class="option-label">${String.fromCharCode(65 + index)}</div>
-                    <div class="option-text">${option}</div>
-                `;
-                
-                optionDiv.addEventListener('click', () => {
-                    if (userAnswers[currentQuestionIndex] === null) {
-                        selectOption(index);
-                        // Auto-submit answer
-                        submitAnswer();
-                    }
-                });
-                optionsContainer.appendChild(optionDiv);
-            });
-            
-            // Update button states
-            prevBtn.disabled = currentQuestionIndex === 0;
-            nextBtn.disabled = currentQuestionIndex === currentQuestions.length - 1;
-            finishBtn.disabled = false;
-            
-            // Show explanation if already answered
-            if (userAnswers[currentQuestionIndex] !== null) {
-                showAnswerFeedback();
-            }
-        }
-
-        function selectOption(index) {
-            userAnswers[currentQuestionIndex] = index;
-        }
-
-        function showAnswerFeedback() {
-            const question = currentQuestions[currentQuestionIndex];
-            const selectedIndex = userAnswers[currentQuestionIndex];
-            const isCorrect = selectedIndex === question.correctIndex;
-            
-            const options = optionsContainer.querySelectorAll('.option');
-            options.forEach((option, index) => {
-                if (index === question.correctIndex) {
-                    option.classList.add('correct');
-                } else if (index === selectedIndex && !isCorrect) {
-                    option.classList.add('incorrect');
-                }
-            });
-            
-            explanationText.textContent = question.explanation;
-            explanationBox.style.display = 'block';
-        }
-
-        function submitAnswer() {
-            if (userAnswers[currentQuestionIndex] === null) {
-                return;
-            }
-            
-            const question = currentQuestions[currentQuestionIndex];
-            const selectedIndex = userAnswers[currentQuestionIndex];
-            const isCorrect = selectedIndex === question.correctIndex;
-            
-            if (isCorrect && !answeredQuestions.has(currentQuestionIndex)) {
-                score++;
-                scoreInfo.textContent = `Score: ${score}`;
-            }
-            
-            answeredQuestions.add(currentQuestionIndex);
-            showAnswerFeedback();
-            
-            // Auto-move to next question after 1.5 seconds
-            setTimeout(() => {
-                if (currentQuestionIndex < currentQuestions.length - 1) {
-                    currentQuestionIndex++;
-                    loadQuestion();
-                }
-            }, 1500);
-        }
-
-        function goToPreviousQuestion() {
-            if (currentQuestionIndex > 0) {
-                currentQuestionIndex--;
-                loadQuestion();
-            }
-        }
-
-        function goToNextQuestion() {
-            if (currentQuestionIndex < currentQuestions.length - 1) {
-                currentQuestionIndex++;
-                loadQuestion();
-            }
-        }
-
-        function finishQuiz() {
-            if (timerInterval) {
-                clearInterval(timerInterval);
-                timerInterval = null;
-            }
-            
-            switchScreen('results');
-        }
-
-        // ===== RESULTS SCREEN FUNCTIONS =====
-        function calculateResults() {
-            // Calculate correct answers
-            let correct = 0;
-            let attempted = 0;
-            
-            for (let i = 0; i < currentQuestions.length; i++) {
-                if (userAnswers[i] !== null) {
-                    attempted++;
-                    if (userAnswers[i] === currentQuestions[i].correctIndex) {
-                        correct++;
-                    }
-                }
-            }
-            
-            // Make sure score matches calculated correct answers
-            score = correct;
-            
-            // Calculate statistics
-            const total = currentQuestions.length;
-            const incorrect = attempted - correct;
-            const unattempted = total - attempted;
-            const percentage = total > 0 ? Math.round((correct / total) * 100) : 0;
-            const timeTaken = quizStartTime ? Math.floor((Date.now() - quizStartTime) / 1000) : 0;
-            const minutes = Math.floor(timeTaken / 60);
-            const seconds = timeTaken % 60;
-            
-            // Update score circle
-            scoreCircle.style.setProperty('--percentage', `${percentage}%`);
-            finalScore.textContent = correct;
-            finalPercentage.textContent = `${percentage}%`;
-            
-            // Update statistics
-            resultsStats.innerHTML = `
-                <div class="stat-card">
-                    <div class="stat-value">${total}</div>
-                    <div class="stat-label">Total Questions</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-value">${correct}</div>
-                    <div class="stat-label">Correct Answers</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-value">${incorrect}</div>
-                    <div class="stat-label">Incorrect Answers</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-value">${unattempted}</div>
-                    <div class="stat-label">Unattempted</div>
-                </div>
-            `;
-            
-            // Update message based on performance
-            let message, submessage;
-            if (percentage >= 90) {
-                message = "🎉 Outstanding Performance!";
-                submessage = "You have mastered this chapter! Excellent work!";
-            } else if (percentage >= 75) {
-                message = "👍 Very Good!";
-                submessage = "You have a strong understanding of this chapter. Keep it up!";
-            } else if (percentage >= 60) {
-                message = "📚 Good Effort!";
-                submessage = "You understand the basics well. Review the explanations to improve.";
-            } else if (percentage >= 40) {
-                message = "💡 Room for Improvement";
-                submessage = "Review the chapter material and explanations carefully.";
-            } else {
-                message = "📖 Needs More Practice";
-                submessage = "Take your time to study the chapter thoroughly before trying again.";
-            }
-            
-            messageText.textContent = message;
-            messageSubtext.textContent = submessage;
-        }
-
-        function retryQuiz() {
-            currentQuestionIndex = 0;
-            userAnswers.fill(null);
-            score = 0;
-            answeredQuestions.clear();
-            
-            switchScreen('quizQuestion');
-            loadQuestion();
-            startQuizTimer();
-        }
-    </script>
+    document.addEventListener("DOMContentLoaded", initializeApp);
+    
+    // Add activity listeners for inactivity timer
+    document.addEventListener('mousemove', resetInactivityTimer);
+    document.addEventListener('keypress', resetInactivityTimer);
+    document.addEventListener('click', resetInactivityTimer);
+  </script>
 </body>
 </html>
