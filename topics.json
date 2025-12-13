@@ -1,0 +1,183 @@
+{
+  "app_name": "G.S. Tutorial - Classes 8-10",
+  "version": "1.0",
+  "classes": [
+    {
+      "id": "class8",
+      "name": "Class 8",
+      "folder": "Class 8",
+      "icon": "🎒",
+      "color": "#3b82f6",
+      "subjects": [
+        {
+          "id": "science",
+          "name": "Science",
+          "icon": "🔬",
+          "color": "#22c55e",
+          "folder": "Science",
+          "chapters": [
+            {
+              "id": "ch1",
+              "name": "Crop Production and Management",
+              "file": "Class 8/Science/Chapter 1 - Crop Production.xml",
+              "questions": 20,
+              "time_limit": 30,
+              "difficulty": "Medium"
+            },
+            {
+              "id": "ch2",
+              "name": "Microorganisms: Friend and Foe",
+              "file": "Class 8/Science/Chapter 2 - Microorganisms.xml",
+              "questions": 25,
+              "time_limit": 35,
+              "difficulty": "Medium"
+            }
+          ]
+        },
+        {
+          "id": "mathematics",
+          "name": "Mathematics",
+          "icon": "📐",
+          "color": "#f59e0b",
+          "folder": "Mathematics",
+          "chapters": [
+            {
+              "id": "ch1",
+              "name": "Rational Numbers",
+              "file": "Class 8/Mathematics/Chapter 1 - Rational Numbers.xml",
+              "questions": 18,
+              "time_limit": 25,
+              "difficulty": "Medium"
+            },
+            {
+              "id": "ch2",
+              "name": "Linear Equations in One Variable",
+              "file": "Class 8/Mathematics/Chapter 2 - Linear Equations.xml",
+              "questions": 22,
+              "time_limit": 30,
+              "difficulty": "Medium"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "class9",
+      "name": "Class 9",
+      "folder": "Class 9",
+      "icon": "📚",
+      "color": "#8b5cf6",
+      "subjects": [
+        {
+          "id": "science",
+          "name": "Science",
+          "icon": "🔬",
+          "color": "#22c55e",
+          "folder": "Science",
+          "chapters": [
+            {
+              "id": "ch1",
+              "name": "Matter in Our Surroundings",
+              "file": "Class 9/Science/Chapter 1 - Matter.xml",
+              "questions": 20,
+              "time_limit": 30,
+              "difficulty": "Medium"
+            },
+            {
+              "id": "ch2",
+              "name": "Is Matter Around Us Pure?",
+              "file": "Class 9/Science/Chapter 2 - Pure Matter.xml",
+              "questions": 22,
+              "time_limit": 35,
+              "difficulty": "Medium"
+            }
+          ]
+        },
+        {
+          "id": "mathematics",
+          "name": "Mathematics",
+          "icon": "📐",
+          "color": "#f59e0b",
+          "folder": "Mathematics",
+          "chapters": [
+            {
+              "id": "ch1",
+              "name": "Number Systems",
+              "file": "Class 9/Mathematics/Chapter 1 - Number Systems.xml",
+              "questions": 20,
+              "time_limit": 30,
+              "difficulty": "Medium"
+            },
+            {
+              "id": "ch2",
+              "name": "Polynomials",
+              "file": "Class 9/Mathematics/Chapter 2 - Polynomials.xml",
+              "questions": 24,
+              "time_limit": 35,
+              "difficulty": "Hard"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "class10",
+      "name": "Class 10",
+      "folder": "Class 10",
+      "icon": "🎓",
+      "color": "#ef4444",
+      "subjects": [
+        {
+          "id": "science",
+          "name": "Science",
+          "icon": "🔬",
+          "color": "#22c55e",
+          "folder": "Science",
+          "chapters": [
+            {
+              "id": "ch1",
+              "name": "Chemical Reactions and Equations",
+              "file": "Class 10/Science/Chapter 1 - Chemical Reactions.xml",
+              "questions": 25,
+              "time_limit": 35,
+              "difficulty": "Hard"
+            },
+            {
+              "id": "ch2",
+              "name": "Acids, Bases and Salts",
+              "file": "Class 10/Science/Chapter 2 - Acids Bases Salts.xml",
+              "questions": 22,
+              "time_limit": 30,
+              "difficulty": "Hard"
+            }
+          ]
+        },
+        {
+          "id": "mathematics",
+          "name": "Mathematics",
+          "icon": "📐",
+          "color": "#f59e0b",
+          "folder": "Mathematics",
+          "chapters": [
+            {
+              "id": "ch1",
+              "name": "Real Numbers",
+              "file": "Class 10/Mathematics/Chapter 1 - Real Numbers.xml",
+              "questions": 20,
+              "time_limit": 30,
+              "difficulty": "Medium"
+            },
+            {
+              "id": "ch2",
+              "name": "Polynomials",
+              "file": "Class 10/Mathematics/Chapter 2 - Polynomials.xml",
+              "questions": 22,
+              "time_limit": 35,
+              "difficulty": "Hard"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

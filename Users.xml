@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<users>
+  <!-- Teacher/Admin Account -->
+  <user>
+    <username>admin</username>
+    <password>admin123</password>
+    <name>G.S. Tutorial Admin</name>
+    <role>admin</role>
+  </user>
+  
+  <!-- Student Accounts - Class 8 -->
+  <user>
+    <username>student8</username>
+    <password>pass123</password>
+    <name>Rohan Sharma (Class 8)</name>
+    <class>8</class>
+    <role>student</role>
+  </user>
+  
+  <!-- Student Accounts - Class 9 -->
+  <user>
+    <username>student9</username>
+    <password>pass456</password>
+    <name>Priya Singh (Class 9)</name>
+    <class>9</class>
+    <role>student</role>
+  </user>
+  
+  <!-- Student Accounts - Class 10 -->
+  <user>
+    <username>student10</username>
+    <password>pass789</password>
+    <name>Aman Verma (Class 10)</name>
+    <class>10</class>
+    <role>student</role>
+  </user>
+  
+  <!-- More test accounts -->
+  <user>
+    <username>test8</username>
+    <password>123456</password>
+    <name>Test Student 8</name>
+    <class>8</class>
+    <role>student</role>
+  </user>
+  
+  <user>
+    <username>test9</username>
+    <password>123456</password>
+    <name>Test Student 9</name>
+    <class>9</class>
+    <role>student</role>
+  </user>
+  
+  <user>
+    <username>test10</username>
+    <password>123456</password>
+    <name>Test Student 10</name>
+    <class>10</class>
+    <role>student</role>
+  </user>
+</users>

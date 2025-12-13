@@ -1,0 +1,1425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>G.S. Tutorial - Classes 8-10</title>
+    <style>
+        /* ===== BASE STYLES ===== */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #e5e7eb;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* ===== LOGIN SCREEN ===== */
+        .screen {
+            display: none;
+        }
+
+        .screen.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .card {
+            background: rgba(15, 23, 42, 0.9);
+            border-radius: 20px;
+            padding: 40px;
+            margin-top: 40px;
+            border: 1px solid rgba(148, 163, 184, 0.3);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .logo {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .logo h1 {
+            font-size: 2.5rem;
+            background: linear-gradient(90deg, #3b82f6 0%, #22c55e 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+        }
+
+        .logo p {
+            color: #9ca3af;
+            font-size: 1.1rem;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            color: #d1d5db;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 15px 20px;
+            background: rgba(30, 41, 59, 0.8);
+            border: 2px solid rgba(75, 85, 99, 0.8);
+            border-radius: 12px;
+            color: #e5e7eb;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.2);
+        }
+
+        .btn {
+            padding: 16px 30px;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+        }
+
+        .btn-primary {
+            background: linear-gradient(90deg, #3b82f6 0%, #2563eb 100%);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.4);
+        }
+
+        .error-message {
+            background: rgba(239, 68, 68, 0.1);
+            color: #fca5a5;
+            padding: 15px;
+            border-radius: 10px;
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            margin-top: 20px;
+            display: none;
+        }
+
+        /* ===== CLASS-SUBJECT SELECTION SCREEN ===== */
+        .selection-title {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .selection-title h2 {
+            font-size: 1.8rem;
+            color: #3b82f6;
+            margin-bottom: 10px;
+        }
+
+        .welcome-message {
+            color: #9ca3af;
+            font-size: 1.1rem;
+        }
+
+        .user-name {
+            color: #22c55e;
+            font-weight: 600;
+        }
+
+        .selection-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .selection-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .selection-card {
+            background: rgba(30, 41, 59, 0.8);
+            border-radius: 15px;
+            padding: 30px;
+            border: 2px solid rgba(75, 85, 99, 0.5);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .selection-card:hover {
+            border-color: #3b82f6;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.2);
+        }
+
+        .selection-card.selected {
+            border-color: #22c55e;
+            background: rgba(34, 197, 94, 0.1);
+        }
+
+        .selection-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .selection-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: #e5e7eb;
+        }
+
+        .selection-card p {
+            color: #9ca3af;
+            font-size: 0.95rem;
+        }
+
+        .btn-continue {
+            background: linear-gradient(90deg, #22c55e 0%, #16a34a 100%);
+            color: white;
+            max-width: 300px;
+            margin: 30px auto 0;
+        }
+
+        .btn-continue:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(34, 197, 94, 0.4);
+        }
+
+        .btn-continue:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        /* ===== QUIZ SCREEN ===== */
+        .quiz-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(75, 85, 99, 0.5);
+        }
+
+        .quiz-title h2 {
+            font-size: 1.6rem;
+            color: #3b82f6;
+        }
+
+        .quiz-subtitle {
+            color: #9ca3af;
+            margin-top: 5px;
+        }
+
+        .user-badge {
+            background: rgba(59, 130, 246, 0.15);
+            padding: 10px 20px;
+            border-radius: 20px;
+            border: 1px solid rgba(59, 130, 246, 0.3);
+        }
+
+        .user-badge .class {
+            color: #fbbf24;
+            font-weight: 600;
+        }
+
+        .chapters-container {
+            margin-bottom: 40px;
+        }
+
+        .chapters-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .chapter-card {
+            background: rgba(30, 41, 59, 0.8);
+            border-radius: 15px;
+            padding: 25px;
+            border: 2px solid rgba(75, 85, 99, 0.5);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .chapter-card:hover {
+            border-color: #3b82f6;
+            transform: translateY(-3px);
+        }
+
+        .chapter-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .chapter-title {
+            font-size: 1.2rem;
+            color: #e5e7eb;
+        }
+
+        .chapter-badge {
+            background: rgba(245, 158, 11, 0.15);
+            color: #fbbf24;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .chapter-info {
+            display: flex;
+            gap: 20px;
+            color: #9ca3af;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .chapter-description {
+            color: #d1d5db;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .btn-start {
+            background: linear-gradient(90deg, #3b82f6 0%, #2563eb 100%);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 10px;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            width: 100%;
+            justify-content: center;
+        }
+
+        .btn-start:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3);
+        }
+
+        .btn-back {
+            background: rgba(75, 85, 99, 0.5);
+            color: #e5e7eb;
+            padding: 12px 25px;
+            border-radius: 10px;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-back:hover {
+            background: rgba(75, 85, 99, 0.8);
+        }
+
+        /* ===== QUIZ QUESTION SCREEN ===== */
+        .quiz-question-container {
+            display: none;
+        }
+
+        .quiz-progress {
+            margin-bottom: 30px;
+        }
+
+        .progress-bar {
+            height: 8px;
+            background: rgba(30, 41, 59, 0.8);
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 10px;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #3b82f6 0%, #22c55e 100%);
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+
+        .progress-info {
+            display: flex;
+            justify-content: space-between;
+            color: #9ca3af;
+            font-size: 0.9rem;
+        }
+
+        .question-box {
+            background: rgba(30, 41, 59, 0.8);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(75, 85, 99, 0.5);
+        }
+
+        .question-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .question-number {
+            background: #3b82f6;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .question-text {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            color: #f9fafb;
+        }
+
+        .options-container {
+            display: grid;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .option {
+            background: rgba(15, 23, 42, 0.8);
+            border: 2px solid rgba(75, 85, 99, 0.8);
+            border-radius: 12px;
+            padding: 18px 20px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .option:hover {
+            border-color: #3b82f6;
+            background: rgba(59, 130, 246, 0.1);
+        }
+
+        .option.selected {
+            border-color: #3b82f6;
+            background: rgba(59, 130, 246, 0.2);
+        }
+
+        .option.correct {
+            border-color: #22c55e;
+            background: rgba(34, 197, 94, 0.2);
+        }
+
+        .option.incorrect {
+            border-color: #ef4444;
+            background: rgba(239, 68, 68, 0.2);
+        }
+
+        .option-label {
+            width: 36px;
+            height: 36px;
+            background: rgba(75, 85, 99, 0.8);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .option.selected .option-label {
+            background: #3b82f6;
+            color: white;
+        }
+
+        .option-text {
+            flex: 1;
+            font-size: 1rem;
+            color: #e5e7eb;
+        }
+
+        .quiz-controls {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+        }
+
+        .btn-prev, .btn-next, .btn-submit, .btn-finish {
+            padding: 15px 30px;
+            border-radius: 10px;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-prev, .btn-next {
+            background: #1f2937;
+            color: #e5e7eb;
+            border: 1px solid rgba(75, 85, 99, 0.8);
+        }
+
+        .btn-prev:hover:not(:disabled), .btn-next:hover:not(:disabled) {
+            background: #111827;
+        }
+
+        .btn-submit {
+            background: linear-gradient(90deg, #22c55e 0%, #16a34a 100%);
+            color: white;
+        }
+
+        .btn-submit:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(34, 197, 94, 0.3);
+        }
+
+        .btn-finish {
+            background: linear-gradient(90deg, #f59e0b 0%, #d97706 100%);
+            color: white;
+        }
+
+        .btn-finish:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(245, 158, 11, 0.3);
+        }
+
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none !important;
+            box-shadow: none !important;
+        }
+
+        .explanation-box {
+            background: rgba(30, 41, 59, 0.8);
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+            border-left: 4px solid #3b82f6;
+            display: none;
+        }
+
+        .explanation-title {
+            color: #3b82f6;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .explanation-text {
+            color: #d1d5db;
+            line-height: 1.5;
+        }
+
+        /* ===== RESULTS SCREEN ===== */
+        .results-container {
+            display: none;
+            text-align: center;
+        }
+
+        .results-header {
+            margin-bottom: 30px;
+        }
+
+        .results-title {
+            font-size: 2rem;
+            background: linear-gradient(90deg, #3b82f6 0%, #22c55e 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+        }
+
+        .score-circle {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: conic-gradient(#22c55e var(--percentage), #1f2937 0);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+            position: relative;
+        }
+
+        .score-inner {
+            width: 160px;
+            height: 160px;
+            background: #0f172a;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .score-value {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #22c55e;
+        }
+
+        .score-percentage {
+            font-size: 1.2rem;
+            color: #9ca3af;
+        }
+
+        .results-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .stat-card {
+            background: rgba(30, 41, 59, 0.8);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #3b82f6;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            color: #9ca3af;
+            font-size: 0.9rem;
+        }
+
+        .results-message {
+            background: rgba(59, 130, 246, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(59, 130, 246, 0.3);
+        }
+
+        .message-text {
+            font-size: 1.2rem;
+            color: #e5e7eb;
+            margin-bottom: 10px;
+        }
+
+        .message-subtext {
+            color: #9ca3af;
+            font-size: 0.95rem;
+        }
+
+        .results-actions {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .btn-retry {
+            background: linear-gradient(90deg, #3b82f6 0%, #2563eb 100%);
+            color: white;
+        }
+
+        .btn-new-chapter {
+            background: linear-gradient(90deg, #22c55e 0%, #16a34a 100%);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- ===== SCREEN 1: LOGIN ===== -->
+        <div id="login-screen" class="screen active">
+            <div class="card">
+                <div class="logo">
+                    <h1>G.S. Tutorial</h1>
+                    <p>Classes 8, 9 & 10 • Science & Mathematics</p>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Username</label>
+                    <input type="text" id="login-username" class="form-input" placeholder="Enter your username">
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Password</label>
+                    <input type="password" id="login-password" class="form-input" placeholder="Enter your password">
+                </div>
+                
+                <button id="login-btn" class="btn btn-primary">
+                    <span>🔐 Login</span>
+                </button>
+                
+                <div id="login-error" class="error-message">
+                    Invalid username or password. Please try again.
+                </div>
+                
+                <div style="margin-top: 30px; text-align: center; color: #9ca3af; font-size: 0.9rem;">
+                    <p>Test Accounts:</p>
+                    <p>• Class 8: student8 / pass123</p>
+                    <p>• Class 9: student9 / pass456</p>
+                    <p>• Class 10: student10 / pass789</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- ===== SCREEN 2: CLASS-SUBJECT SELECTION ===== -->
+        <div id="selection-screen" class="screen">
+            <div class="card">
+                <div class="selection-title">
+                    <h2>Welcome, <span id="user-name" class="user-name">Student</span>!</h2>
+                    <p class="welcome-message">Select your class and subject to continue</p>
+                </div>
+                
+                <div class="selection-grid">
+                    <!-- Class 8 -->
+                    <div class="selection-card" data-class="class8">
+                        <div class="selection-icon">🎒</div>
+                        <h3>Class 8</h3>
+                        <p>For students in Class 8</p>
+                    </div>
+                    
+                    <!-- Class 9 -->
+                    <div class="selection-card" data-class="class9">
+                        <div class="selection-icon">📚</div>
+                        <h3>Class 9</h3>
+                        <p>For students in Class 9</p>
+                    </div>
+                    
+                    <!-- Class 10 -->
+                    <div class="selection-card" data-class="class10">
+                        <div class="selection-icon">🎓</div>
+                        <h3>Class 10</h3>
+                        <p>For students in Class 10</p>
+                    </div>
+                    
+                    <!-- Science -->
+                    <div class="selection-card" data-subject="science">
+                        <div class="selection-icon">🔬</div>
+                        <h3>Science</h3>
+                        <p>Physics, Chemistry, Biology</p>
+                    </div>
+                    
+                    <!-- Mathematics -->
+                    <div class="selection-card" data-subject="mathematics">
+                        <div class="selection-icon">📐</div>
+                        <h3>Mathematics</h3>
+                        <p>Algebra, Geometry, Arithmetic</p>
+                    </div>
+                </div>
+                
+                <button id="continue-btn" class="btn btn-continue" disabled>
+                    <span>Continue to Chapters →</span>
+                </button>
+            </div>
+        </div>
+        
+        <!-- ===== SCREEN 3: QUIZ CHAPTER SELECTION ===== -->
+        <div id="quiz-screen" class="screen">
+            <div class="quiz-header">
+                <div class="quiz-title">
+                    <h2 id="current-class-subject">Class 8 - Science</h2>
+                    <p class="quiz-subtitle">Select a chapter to practice</p>
+                </div>
+                <div class="user-badge">
+                    Logged in as: <span id="display-user-name">Student</span> • 
+                    <span id="display-user-class" class="class">Class 8</span>
+                </div>
+            </div>
+            
+            <div class="chapters-container" id="chapters-container">
+                <!-- Chapters will be loaded here -->
+            </div>
+            
+            <button id="back-to-selection-btn" class="btn-back">
+                ← Back to Class/Subject Selection
+            </button>
+        </div>
+        
+        <!-- ===== QUIZ QUESTION SCREEN ===== -->
+        <div id="quiz-question-screen" class="screen">
+            <div class="quiz-progress">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill"></div>
+                </div>
+                <div class="progress-info">
+                    <span id="current-question-num">Question 1</span>
+                    <span id="time-remaining">Time: --:--</span>
+                </div>
+            </div>
+            
+            <div class="question-box">
+                <div class="question-header">
+                    <div class="question-number" id="question-num">1</div>
+                    <div id="chapter-title">Chapter 1: Crop Production</div>
+                </div>
+                <div class="question-text" id="question-text">
+                    Loading question...
+                </div>
+            </div>
+            
+            <div class="options-container" id="options-container">
+                <!-- Options will be loaded here -->
+            </div>
+            
+            <div class="explanation-box" id="explanation-box">
+                <div class="explanation-title">📝 Explanation</div>
+                <div class="explanation-text" id="explanation-text"></div>
+            </div>
+            
+            <div class="quiz-controls">
+                <button id="prev-btn" class="btn-prev" disabled>← Previous</button>
+                <button id="next-btn" class="btn-next">Next →</button>
+                <button id="submit-btn" class="btn-submit">Submit Answer</button>
+                <button id="finish-btn" class="btn-finish">Finish Quiz</button>
+            </div>
+        </div>
+        
+        <!-- ===== RESULTS SCREEN ===== -->
+        <div id="results-screen" class="screen">
+            <div class="card">
+                <div class="results-header">
+                    <h2 class="results-title">Quiz Completed!</h2>
+                    <p class="quiz-subtitle">Here are your results</p>
+                </div>
+                
+                <div class="score-circle" id="score-circle">
+                    <div class="score-inner">
+                        <div class="score-value" id="final-score">0</div>
+                        <div class="score-percentage" id="final-percentage">0%</div>
+                    </div>
+                </div>
+                
+                <div class="results-stats" id="results-stats">
+                    <!-- Stats will be loaded here -->
+                </div>
+                
+                <div class="results-message" id="results-message">
+                    <div class="message-text" id="message-text">Great job!</div>
+                    <div class="message-subtext" id="message-subtext">Keep practicing to improve your score</div>
+                </div>
+                
+                <div class="results-actions">
+                    <button id="retry-btn" class="btn btn-retry">🔄 Retry This Chapter</button>
+                    <button id="new-chapter-btn" class="btn btn-new-chapter">📚 Try Another Chapter</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ===== GLOBAL VARIABLES =====
+        let currentUser = null;
+        let appData = null;
+        let selectedClass = null;
+        let selectedSubject = null;
+        let currentQuestions = [];
+        let currentQuestionIndex = 0;
+        let userAnswers = [];
+        let score = 0;
+        let totalQuestions = 0;
+        let quizStartTime = null;
+        let timerInterval = null;
+        let timeRemaining = 0;
+
+        // ===== DOM ELEMENTS =====
+        const screens = {
+            login: document.getElementById('login-screen'),
+            selection: document.getElementById('selection-screen'),
+            quiz: document.getElementById('quiz-screen'),
+            quizQuestion: document.getElementById('quiz-question-screen'),
+            results: document.getElementById('results-screen')
+        };
+
+        // Login screen elements
+        const loginUsername = document.getElementById('login-username');
+        const loginPassword = document.getElementById('login-password');
+        const loginBtn = document.getElementById('login-btn');
+        const loginError = document.getElementById('login-error');
+
+        // Selection screen elements
+        const userNameDisplay = document.getElementById('user-name');
+        const classCards = document.querySelectorAll('[data-class]');
+        const subjectCards = document.querySelectorAll('[data-subject]');
+        const continueBtn = document.getElementById('continue-btn');
+
+        // Quiz screen elements
+        const currentClassSubject = document.getElementById('current-class-subject');
+        const displayUserName = document.getElementById('display-user-name');
+        const displayUserClass = document.getElementById('display-user-class');
+        const chaptersContainer = document.getElementById('chapters-container');
+        const backToSelectionBtn = document.getElementById('back-to-selection-btn');
+
+        // Quiz question screen elements
+        const progressFill = document.getElementById('progress-fill');
+        const currentQuestionNum = document.getElementById('current-question-num');
+        const timeRemainingDisplay = document.getElementById('time-remaining');
+        const questionNum = document.getElementById('question-num');
+        const chapterTitle = document.getElementById('chapter-title');
+        const questionText = document.getElementById('question-text');
+        const optionsContainer = document.getElementById('options-container');
+        const explanationBox = document.getElementById('explanation-box');
+        const explanationText = document.getElementById('explanation-text');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+        const submitBtn = document.getElementById('submit-btn');
+        const finishBtn = document.getElementById('finish-btn');
+
+        // Results screen elements
+        const scoreCircle = document.getElementById('score-circle');
+        const finalScore = document.getElementById('final-score');
+        const finalPercentage = document.getElementById('final-percentage');
+        const resultsStats = document.getElementById('results-stats');
+        const messageText = document.getElementById('message-text');
+        const messageSubtext = document.getElementById('message-subtext');
+        const retryBtn = document.getElementById('retry-btn');
+        const newChapterBtn = document.getElementById('new-chapter-btn');
+
+        // ===== INITIALIZATION =====
+        document.addEventListener('DOMContentLoaded', async function() {
+            // Load app data
+            try {
+                const response = await fetch('topics.json');
+                appData = await response.json();
+                console.log('App data loaded:', appData);
+            } catch (error) {
+                console.error('Error loading topics.json:', error);
+                alert('Error loading app data. Please check topics.json file.');
+            }
+
+            // Setup event listeners
+            setupEventListeners();
+        });
+
+        // ===== EVENT LISTENERS =====
+        function setupEventListeners() {
+            // Login button
+            loginBtn.addEventListener('click', handleLogin);
+            loginPassword.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') handleLogin();
+            });
+
+            // Class/Subject selection cards
+            classCards.forEach(card => {
+                card.addEventListener('click', () => selectCard(card, 'class'));
+            });
+
+            subjectCards.forEach(card => {
+                card.addEventListener('click', () => selectCard(card, 'subject'));
+            });
+
+            // Continue button
+            continueBtn.addEventListener('click', goToQuizScreen);
+
+            // Back button
+            backToSelectionBtn.addEventListener('click', () => switchScreen('selection'));
+
+            // Quiz navigation buttons
+            prevBtn.addEventListener('click', goToPreviousQuestion);
+            nextBtn.addEventListener('click', goToNextQuestion);
+            submitBtn.addEventListener('click', submitAnswer);
+            finishBtn.addEventListener('click', finishQuiz);
+
+            // Results screen buttons
+            retryBtn.addEventListener('click', retryQuiz);
+            newChapterBtn.addEventListener('click', () => switchScreen('quiz'));
+        }
+
+        // ===== LOGIN FUNCTION =====
+        async function handleLogin() {
+            const username = loginUsername.value.trim();
+            const password = loginPassword.value.trim();
+
+            if (!username || !password) {
+                showError('Please enter both username and password');
+                return;
+            }
+
+            try {
+                // Load users.xml
+                const response = await fetch('users.xml');
+                const xmlText = await response.text();
+                const parser = new DOMParser();
+                const xmlDoc = parser.parseFromString(xmlText, 'application/xml');
+
+                // Find user
+                const users = xmlDoc.getElementsByTagName('user');
+                let userFound = null;
+
+                for (let i = 0; i < users.length; i++) {
+                    const user = users[i];
+                    const xmlUsername = user.getElementsByTagName('username')[0]?.textContent;
+                    const xmlPassword = user.getElementsByTagName('password')[0]?.textContent;
+
+                    if (xmlUsername === username && xmlPassword === password) {
+                        userFound = {
+                            username: xmlUsername,
+                            name: user.getElementsByTagName('name')[0]?.textContent || username,
+                            class: user.getElementsByTagName('class')[0]?.textContent || '8',
+                            role: user.getElementsByTagName('role')[0]?.textContent || 'student'
+                        };
+                        break;
+                    }
+                }
+
+                if (userFound) {
+                    currentUser = userFound;
+                    hideError();
+                    
+                    // Update UI
+                    userNameDisplay.textContent = currentUser.name;
+                    displayUserName.textContent = currentUser.name;
+                    displayUserClass.textContent = `Class ${currentUser.class}`;
+                    
+                    // Auto-select class based on user's class
+                    const userClassId = `class${currentUser.class}`;
+                    const classCard = document.querySelector(`[data-class="${userClassId}"]`);
+                    if (classCard) {
+                        selectCard(classCard, 'class');
+                    }
+                    
+                    // Switch to selection screen
+                    switchScreen('selection');
+                    
+                    console.log('Login successful:', currentUser);
+                } else {
+                    showError('Invalid username or password');
+                }
+            } catch (error) {
+                console.error('Login error:', error);
+                showError('Error loading user data. Please check users.xml file.');
+            }
+        }
+
+        // ===== SCREEN MANAGEMENT =====
+        function switchScreen(screenName) {
+            // Hide all screens
+            Object.values(screens).forEach(screen => {
+                screen.classList.remove('active');
+            });
+            
+            // Show selected screen
+            screens[screenName].classList.add('active');
+            
+            // Special actions for certain screens
+            if (screenName === 'quiz') {
+                loadChaptersForSelection();
+            } else if (screenName === 'selection') {
+                resetSelection();
+            } else if (screenName === 'quizQuestion') {
+                startQuizTimer();
+            }
+        }
+
+        // ===== SELECTION SCREEN FUNCTIONS =====
+        function selectCard(card, type) {
+            if (type === 'class') {
+                // Deselect other class cards
+                classCards.forEach(c => c.classList.remove('selected'));
+                selectedClass = card.dataset.class;
+            } else {
+                // Deselect other subject cards
+                subjectCards.forEach(c => c.classList.remove('selected'));
+                selectedSubject = card.dataset.subject;
+            }
+            
+            card.classList.add('selected');
+            checkContinueButton();
+        }
+
+        function checkContinueButton() {
+            continueBtn.disabled = !(selectedClass && selectedSubject);
+        }
+
+        function resetSelection() {
+            classCards.forEach(card => card.classList.remove('selected'));
+            subjectCards.forEach(card => card.classList.remove('selected'));
+            selectedClass = null;
+            selectedSubject = null;
+            checkContinueButton();
+        }
+
+        function goToQuizScreen() {
+            if (!selectedClass || !selectedSubject) return;
+            
+            // Update title
+            const classObj = appData.classes.find(c => c.id === selectedClass);
+            const subjectObj = classObj.subjects.find(s => s.id === selectedSubject);
+            currentClassSubject.textContent = `${classObj.name} - ${subjectObj.name}`;
+            
+            switchScreen('quiz');
+        }
+
+        // ===== QUIZ SCREEN FUNCTIONS =====
+        function loadChaptersForSelection() {
+            if (!selectedClass || !selectedSubject) return;
+            
+            const classObj = appData.classes.find(c => c.id === selectedClass);
+            const subjectObj = classObj.subjects.find(s => s.id === selectedSubject);
+            
+            chaptersContainer.innerHTML = '';
+            
+            if (!subjectObj.chapters || subjectObj.chapters.length === 0) {
+                chaptersContainer.innerHTML = `
+                    <div style="text-align: center; padding: 40px; color: #9ca3af;">
+                        <div style="font-size: 3rem; margin-bottom: 20px;">📚</div>
+                        <h3>No Chapters Available</h3>
+                        <p>Chapters for this subject will be added soon.</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            subjectObj.chapters.forEach(chapter => {
+                const chapterCard = document.createElement('div');
+                chapterCard.className = 'chapter-card';
+                chapterCard.innerHTML = `
+                    <div class="chapter-header">
+                        <div class="chapter-title">${chapter.name}</div>
+                        <div class="chapter-badge">${chapter.difficulty || 'Medium'}</div>
+                    </div>
+                    <div class="chapter-info">
+                        <div class="info-item">📝 ${chapter.questions || '0'} questions</div>
+                        <div class="info-item">⏱️ ${chapter.time_limit || '30'} min</div>
+                    </div>
+                    <div class="chapter-description">
+                        Practice questions from ${chapter.name}. Test your knowledge and improve your skills.
+                    </div>
+                    <button class="btn-start" onclick="startChapterQuiz('${chapter.file}')">
+                        ▶ Start Practice
+                    </button>
+                `;
+                chaptersContainer.appendChild(chapterCard);
+            });
+        }
+
+        // ===== QUIZ FUNCTIONS =====
+        async function startChapterQuiz(chapterFile) {
+            try {
+                // Load chapter XML
+                const response = await fetch(chapterFile);
+                const xmlText = await response.text();
+                const parser = new DOMParser();
+                const xmlDoc = parser.parseFromString(xmlText, 'application/xml');
+                
+                // Parse metadata
+                const metadata = xmlDoc.getElementsByTagName('metadata')[0];
+                const title = metadata.getElementsByTagName('title')[0]?.textContent || 'Chapter';
+                const timeLimit = parseInt(metadata.getElementsByTagName('timeLimit')[0]?.textContent || '30');
+                
+                // Parse questions
+                currentQuestions = [];
+                const questionNodes = xmlDoc.getElementsByTagName('question');
+                
+                for (let i = 0; i < questionNodes.length; i++) {
+                    const qNode = questionNodes[i];
+                    const question = {
+                        text: qNode.getElementsByTagName('text')[0]?.textContent || '',
+                        options: [],
+                        correctIndex: -1,
+                        explanation: qNode.getElementsByTagName('explanation')[0]?.textContent || ''
+                    };
+                    
+                    const optionNodes = qNode.getElementsByTagName('option');
+                    for (let j = 0; j < optionNodes.length; j++) {
+                        const optNode = optionNodes[j];
+                        question.options.push(optNode.textContent);
+                        if (optNode.getAttribute('correct') === 'true') {
+                            question.correctIndex = j;
+                        }
+                    }
+                    
+                    if (question.text && question.options.length >= 2) {
+                        currentQuestions.push(question);
+                    }
+                }
+                
+                if (currentQuestions.length === 0) {
+                    alert('No valid questions found in this chapter.');
+                    return;
+                }
+                
+                // Reset quiz state
+                currentQuestionIndex = 0;
+                userAnswers = new Array(currentQuestions.length).fill(null);
+                score = 0;
+                totalQuestions = currentQuestions.length;
+                timeRemaining = timeLimit * 60; // Convert to seconds
+                
+                // Set chapter title
+                chapterTitle.textContent = title;
+                
+                // Start quiz
+                switchScreen('quizQuestion');
+                loadQuestion();
+                
+            } catch (error) {
+                console.error('Error loading chapter:', error);
+                alert('Error loading chapter. Please check if the XML file exists.');
+            }
+        }
+
+        function startQuizTimer() {
+            if (timerInterval) clearInterval(timerInterval);
+            
+            timerInterval = setInterval(() => {
+                timeRemaining--;
+                
+                // Update timer display
+                const minutes = Math.floor(timeRemaining / 60);
+                const seconds = timeRemaining % 60;
+                timeRemainingDisplay.textContent = `Time: ${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+                
+                // Timer warning
+                if (timeRemaining <= 300) { // 5 minutes
+                    timeRemainingDisplay.style.color = '#f59e0b';
+                }
+                if (timeRemaining <= 60) { // 1 minute
+                    timeRemainingDisplay.style.color = '#ef4444';
+                }
+                
+                // Time's up
+                if (timeRemaining <= 0) {
+                    clearInterval(timerInterval);
+                    finishQuiz();
+                }
+            }, 1000);
+        }
+
+        function loadQuestion() {
+            if (currentQuestionIndex >= currentQuestions.length) {
+                finishQuiz();
+                return;
+            }
+            
+            const question = currentQuestions[currentQuestionIndex];
+            
+            // Update progress
+            const progressPercent = ((currentQuestionIndex) / currentQuestions.length) * 100;
+            progressFill.style.width = `${progressPercent}%`;
+            
+            // Update question info
+            questionNum.textContent = currentQuestionIndex + 1;
+            currentQuestionNum.textContent = `Question ${currentQuestionIndex + 1} of ${currentQuestions.length}`;
+            questionText.textContent = question.text;
+            
+            // Clear previous options
+            optionsContainer.innerHTML = '';
+            explanationBox.style.display = 'none';
+            
+            // Add new options
+            question.options.forEach((option, index) => {
+                const optionDiv = document.createElement('div');
+                optionDiv.className = 'option';
+                if (userAnswers[currentQuestionIndex] === index) {
+                    optionDiv.classList.add('selected');
+                }
+                
+                optionDiv.innerHTML = `
+                    <div class="option-label">${String.fromCharCode(65 + index)}</div>
+                    <div class="option-text">${option}</div>
+                `;
+                
+                optionDiv.addEventListener('click', () => selectOption(index));
+                optionsContainer.appendChild(optionDiv);
+            });
+            
+            // Update button states
+            prevBtn.disabled = currentQuestionIndex === 0;
+            nextBtn.disabled = currentQuestionIndex === currentQuestions.length - 1;
+            submitBtn.disabled = userAnswers[currentQuestionIndex] === null;
+            
+            // Show explanation if already answered
+            if (userAnswers[currentQuestionIndex] !== null) {
+                showAnswerFeedback();
+            }
+        }
+
+        function selectOption(index) {
+            userAnswers[currentQuestionIndex] = index;
+            loadQuestion();
+        }
+
+        function showAnswerFeedback() {
+            const question = currentQuestions[currentQuestionIndex];
+            const selectedIndex = userAnswers[currentQuestionIndex];
+            const isCorrect = selectedIndex === question.correctIndex;
+            
+            // Highlight correct/incorrect options
+            const options = optionsContainer.querySelectorAll('.option');
+            options.forEach((option, index) => {
+                if (index === question.correctIndex) {
+                    option.classList.add('correct');
+                } else if (index === selectedIndex && !isCorrect) {
+                    option.classList.add('incorrect');
+                }
+            });
+            
+            // Show explanation
+            if (question.explanation) {
+                explanationText.textContent = question.explanation;
+                explanationBox.style.display = 'block';
+            }
+            
+            // Update button
+            submitBtn.disabled = true;
+        }
+
+        function submitAnswer() {
+            if (userAnswers[currentQuestionIndex] === null) {
+                alert('Please select an answer first.');
+                return;
+            }
+            
+            const question = currentQuestions[currentQuestionIndex];
+            const selectedIndex = userAnswers[currentQuestionIndex];
+            const isCorrect = selectedIndex === question.correctIndex;
+            
+            if (isCorrect) {
+                score++;
+            }
+            
+            showAnswerFeedback();
+        }
+
+        function goToPreviousQuestion() {
+            if (currentQuestionIndex > 0) {
+                currentQuestionIndex--;
+                loadQuestion();
+            }
+        }
+
+        function goToNextQuestion() {
+            if (currentQuestionIndex < currentQuestions.length - 1) {
+                currentQuestionIndex++;
+                loadQuestion();
+            } else {
+                finishQuiz();
+            }
+        }
+
+        function finishQuiz() {
+            if (timerInterval) clearInterval(timerInterval);
+            
+            // Calculate final score
+            const percentage = Math.round((score / totalQuestions) * 100);
+            
+            // Update score circle
+            scoreCircle.style.setProperty('--percentage', `${percentage}%`);
+            finalScore.textContent = score;
+            finalPercentage.textContent = `${percentage}%`;
+            
+            // Update stats
+            resultsStats.innerHTML = `
+                <div class="stat-card">
+                    <div class="stat-value">${totalQuestions}</div>
+                    <div class="stat-label">Total Questions</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">${score}</div>
+                    <div class="stat-label">Correct Answers</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">${totalQuestions - score}</div>
+                    <div class="stat-label">Incorrect Answers</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">${percentage}%</div>
+                    <div class="stat-label">Score</div>
+                </div>
+            `;
+            
+            // Update message based on score
+            if (percentage >= 80) {
+                messageText.textContent = '🎉 Excellent Work!';
+                messageSubtext.textContent = 'You have mastered this chapter!';
+            } else if (percentage >= 60) {
+                messageText.textContent = '👍 Good Job!';
+                messageSubtext.textContent = 'You have a good understanding of this chapter.';
+            } else if (percentage >= 40) {
+                messageText.textContent = '📚 Keep Practicing';
+                messageSubtext.textContent = 'Review the chapter and try again.';
+            } else {
+                messageText.textContent = '📖 Needs Improvement';
+                messageSubtext.textContent = 'Study the chapter thoroughly and try again.';
+            }
+            
+            switchScreen('results');
+        }
+
+        function retryQuiz() {
+            // Reset quiz state
+            currentQuestionIndex = 0;
+            userAnswers.fill(null);
+            score = 0;
+            
+            // Restart quiz
+            switchScreen('quizQuestion');
+            loadQuestion();
+            startQuizTimer();
+        }
+
+        // ===== HELPER FUNCTIONS =====
+        function showError(message) {
+            loginError.textContent = message;
+            loginError.style.display = 'block';
+        }
+
+        function hideError() {
+            loginError.style.display = 'none';
+        }
+
+        // Make functions available globally for onclick handlers
+        window.startChapterQuiz = startChapterQuiz;
+    </script>
+</body>
+</html>
