@@ -2526,60 +2526,7 @@
       }
     }
 
-    function createSampleXML(chapterName) {
-      return `<?xml version="1.0" encoding="UTF-8"?>
-<quiz>
-  <metadata>
-    <title>${chapterName}</title>
-    <timeLimit>10</timeLimit>
-  </metadata>
-  
-  <question>
-    <text>What is the capital of India?</text>
-    <option correct="false">Mumbai</option>
-    <option correct="true">New Delhi</option>
-    <option correct="false">Kolkata</option>
-    <option correct="false">Chennai</option>
-    <explanation>New Delhi is the capital city of India.</explanation>
-  </question>
-  
-  <question>
-    <text>Which planet is known as the Red Planet?</text>
-    <option correct="true">Mars</option>
-    <option correct="false">Venus</option>
-    <option correct="false">Jupiter</option>
-    <option correct="false">Saturn</option>
-    <explanation>Mars appears red due to iron oxide (rust) on its surface.</explanation>
-  </question>
-  
-  <question>
-    <text>What is 5 + 7?</text>
-    <option correct="false">11</option>
-    <option correct="false">13</option>
-    <option correct="true">12</option>
-    <option correct="false">14</option>
-    <explanation>5 + 7 equals 12.</explanation>
-  </question>
-  
-  <question>
-    <text>Which gas do plants absorb during photosynthesis?</text>
-    <option correct="true">Carbon dioxide</option>
-    <option correct="false">Oxygen</option>
-    <option correct="false">Nitrogen</option>
-    <option correct="false">Hydrogen</option>
-    <explanation>Plants absorb carbon dioxide and release oxygen during photosynthesis.</explanation>
-  </question>
-  
-  <question>
-    <text>Who wrote the play "Romeo and Juliet"?</text>
-    <option correct="false">Charles Dickens</option>
-    <option correct="true">William Shakespeare</option>
-    <option correct="false">Jane Austen</option>
-    <option correct="false">Mark Twain</option>
-    <explanation>William Shakespeare wrote the famous tragedy "Romeo and Juliet".</explanation>
-  </question>
-</quiz>`;
-    }
+    
 
     function processXML(xmlText) {
       const rawQuestions = parseXMLToQuestions(xmlText);
@@ -2708,3 +2655,4 @@
   </script>
 </body>
 </html>
+
