@@ -52,7 +52,6 @@
 
         /* ===== FIXED HEADER ===== */
         #app-header {
-            display: none;
             position: fixed;
             top: 0;
             left: 0;
@@ -62,6 +61,7 @@
             border-bottom: 1px solid var(--dark-border);
             z-index: 1000;
             padding: 10px 20px;
+            display: none;
         }
 
         #app-header.active {
@@ -140,17 +140,12 @@
 
         /* ===== LOGIN SCREEN ===== */
         #login-screen {
+            min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
             padding: 20px;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            overflow: hidden;
         }
 
         .login-container {
@@ -162,8 +157,6 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
             box-shadow: var(--shadow-xl), 0 0 40px rgba(59, 130, 246, 0.1);
             overflow: hidden;
-            max-height: 90vh;
-            margin: 0 auto;
         }
 
         .login-header {
@@ -396,21 +389,21 @@
 
         .main-content {
             flex: 1;
-            padding: 80px 20px 20px;
+            padding: 70px 20px 20px;
             display: flex;
             flex-direction: column;
-            overflow: hidden;
         }
 
         /* ===== CLASS SELECTION SCREEN ===== */
         #class-selection-screen .main-content {
-            padding-top: 70px;
+            align-items: center;
         }
 
         .selection-header {
             text-align: center;
             margin-bottom: 30px;
             padding: 15px 0;
+            max-width: 800px;
         }
 
         .selection-header h2 {
@@ -431,9 +424,8 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 20px;
-            margin: 0 auto;
             width: 100%;
-            max-width: 1000px;
+            max-width: 900px;
         }
 
         .selection-card {
@@ -500,14 +492,12 @@
 
         /* ===== SUBJECT SELECTION SCREEN ===== */
         #subject-selection-screen .main-content {
-            padding-top: 70px;
             align-items: center;
             justify-content: center;
         }
 
         /* ===== CHAPTER SELECTION SCREEN ===== */
         #chapter-selection-screen .main-content {
-            padding-top: 70px;
             align-items: center;
             justify-content: center;
         }
@@ -630,7 +620,6 @@
             padding: 15px;
             margin-bottom: 15px;
             border: 1px solid var(--dark-border);
-            flex-shrink: 0;
         }
 
         .progress-header {
@@ -695,7 +684,6 @@
             padding: 20px;
             margin-bottom: 15px;
             border: 1px solid var(--dark-border);
-            flex-shrink: 0;
         }
 
         .question-header {
@@ -718,7 +706,6 @@
             justify-content: center;
             font-size: 1.1rem;
             font-weight: 700;
-            flex-shrink: 0;
         }
 
         .question-chapter {
@@ -741,10 +728,6 @@
             display: grid;
             gap: 10px;
             margin-bottom: 15px;
-            flex: 1;
-            overflow-y: auto;
-            max-height: 50vh;
-            padding-right: 5px;
             min-height: 200px;
         }
 
@@ -809,8 +792,6 @@
             font-weight: 700;
             font-size: 0.95rem;
             color: var(--text-primary);
-            flex-shrink: 0;
-            z-index: 1;
         }
 
         .option.selected .option-label {
@@ -832,7 +813,6 @@
             flex: 1;
             font-size: 0.95rem;
             color: var(--text-primary);
-            z-index: 1;
             line-height: 1.4;
         }
 
@@ -843,7 +823,6 @@
             margin-top: 15px;
             border-left: 4px solid var(--primary-blue);
             display: none;
-            flex-shrink: 0;
         }
 
         .explanation-title {
@@ -866,7 +845,6 @@
             display: flex;
             gap: 10px;
             margin-top: 15px;
-            flex-shrink: 0;
         }
 
         .quiz-controls .btn {
@@ -891,7 +869,6 @@
 
         /* ===== RESULTS SCREEN ===== */
         #results-screen .main-content {
-            padding: 70px 20px 20px;
             align-items: center;
             justify-content: center;
         }
@@ -1102,16 +1079,8 @@
                 padding: 60px 15px 15px;
             }
 
-            #class-selection-screen .main-content,
-            #subject-selection-screen .main-content,
-            #chapter-selection-screen .main-content,
-            #results-screen .main-content {
-                padding-top: 60px;
-            }
-
             .login-container {
                 margin: 0 10px;
-                max-height: 85vh;
             }
 
             .login-header {
@@ -1691,6 +1660,60 @@
                                         file: "chapters/class8_science_chapter1.xml",
                                         description: "Learn about agricultural practices, crop production, and management techniques.",
                                         difficulty: "Medium"
+                                    },
+                                    {
+                                        name: "Microorganisms: Friend and Foe",
+                                        file: "chapters/class8_science_chapter2.xml",
+                                        description: "Study microorganisms, their types, uses, and harmful effects.",
+                                        difficulty: "Medium"
+                                    }
+                                ]
+                            },
+                            {
+                                id: "mathematics",
+                                name: "Mathematics",
+                                chapters: [
+                                    {
+                                        name: "Rational Numbers",
+                                        file: "chapters/class8_maths_chapter1.xml",
+                                        description: "Master rational numbers, their properties, and operations.",
+                                        difficulty: "Medium"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        id: "class9",
+                        name: "Class 9",
+                        subjects: [
+                            {
+                                id: "science",
+                                name: "Science",
+                                chapters: [
+                                    {
+                                        name: "Matter in Our Surroundings",
+                                        file: "chapters/class9_science_chapter1.xml",
+                                        description: "Explore states of matter and their properties.",
+                                        difficulty: "Medium"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        id: "class10",
+                        name: "Class 10",
+                        subjects: [
+                            {
+                                id: "science",
+                                name: "Science",
+                                chapters: [
+                                    {
+                                        name: "Chemical Reactions and Equations",
+                                        file: "chapters/class10_science_chapter1.xml",
+                                        description: "Learn about chemical reactions, equations, and balancing.",
+                                        difficulty: "Hard"
                                     }
                                 ]
                             }
@@ -1746,18 +1769,22 @@
 
         // ===== SCREEN MANAGEMENT =====
         function switchScreen(screenName) {
+            // Hide all screens
             Object.values(screens).forEach(screen => {
                 screen.classList.remove('active');
             });
             
+            // Show selected screen
             screens[screenName].classList.add('active');
             
+            // Show/hide header
             if (screenName === 'login') {
                 appHeader.classList.remove('active');
             } else {
                 appHeader.classList.add('active');
             }
             
+            // Special actions for specific screens
             switch(screenName) {
                 case 'classSelection':
                     resetClassSelection();
@@ -1800,9 +1827,34 @@
             showLoader('Authenticating...');
             
             try {
+                // Try to load users.xml
                 const response = await fetch('users.xml');
-                if (!response.ok) {
-                    console.warn('users.xml not found, using default users');
+                let user = null;
+                
+                if (response.ok) {
+                    // Parse XML
+                    const xmlText = await response.text();
+                    const parser = new DOMParser();
+                    const xmlDoc = parser.parseFromString(xmlText, 'application/xml');
+                    
+                    // Find user in XML
+                    const users = xmlDoc.getElementsByTagName('user');
+                    for (let i = 0; i < users.length; i++) {
+                        const userElem = users[i];
+                        const xmlUsername = userElem.getElementsByTagName('username')[0]?.textContent;
+                        const xmlPassword = userElem.getElementsByTagName('password')[0]?.textContent;
+                        
+                        if (xmlUsername === username && xmlPassword === password) {
+                            user = {
+                                username: xmlUsername,
+                                name: userElem.getElementsByTagName('name')[0]?.textContent || username,
+                                role: userElem.getElementsByTagName('role')[0]?.textContent || 'student'
+                            };
+                            break;
+                        }
+                    }
+                } else {
+                    // Fallback to default users if XML doesn't exist
                     const defaultUsers = [
                         { username: 'admin', password: '123', name: 'G.S. Tutorial Admin', role: 'admin' },
                         { username: 'student8', password: 'pass123', name: 'Class 8 Student', role: 'student' },
@@ -1811,52 +1863,17 @@
                         { username: 'teacher1', password: 'teacher123', name: 'G.S. Tutorial Teacher', role: 'teacher' }
                     ];
                     
-                    const user = defaultUsers.find(u => u.username === username && u.password === password);
-                    
-                    if (user) {
-                        loginSuccessful(user);
-                    } else {
-                        showLoginError('Invalid username or password');
-                    }
+                    user = defaultUsers.find(u => u.username === username && u.password === password);
+                }
+
+                if (user) {
+                    loginSuccessful(user);
                 } else {
-                    const xmlText = await response.text();
-                    const parser = new DOMParser();
-                    const xmlDoc = parser.parseFromString(xmlText, 'application/xml');
-
-                    const parserError = xmlDoc.getElementsByTagName('parsererror');
-                    if (parserError.length > 0) {
-                        console.error('XML parsing error:', parserError[0].textContent);
-                        showLoginError('Error reading user data. Please check users.xml format.');
-                        return;
-                    }
-
-                    const users = xmlDoc.getElementsByTagName('user');
-                    let userFound = null;
-
-                    for (let i = 0; i < users.length; i++) {
-                        const user = users[i];
-                        const xmlUsername = user.getElementsByTagName('username')[0]?.textContent;
-                        const xmlPassword = user.getElementsByTagName('password')[0]?.textContent;
-
-                        if (xmlUsername === username && xmlPassword === password) {
-                            userFound = {
-                                username: xmlUsername,
-                                name: user.getElementsByTagName('name')[0]?.textContent || username,
-                                role: user.getElementsByTagName('role')[0]?.textContent || 'student'
-                            };
-                            break;
-                        }
-                    }
-
-                    if (userFound) {
-                        loginSuccessful(userFound);
-                    } else {
-                        showLoginError('Invalid username or password');
-                    }
+                    showLoginError('Invalid username or password');
                 }
             } catch (error) {
                 console.error('Login error:', error);
-                showLoginError('Error loading user data. Please check users.xml file.');
+                showLoginError('Error during login. Please try again.');
             } finally {
                 hideLoader();
             }
@@ -1869,9 +1886,11 @@
             displayUserName.textContent = currentUser.name;
             headerUserName.textContent = currentUser.name;
             
-            switchScreen('classSelection');
+            // Clear login form
+            loginUsername.value = '';
+            loginPassword.value = '';
             
-            console.log('Login successful:', currentUser);
+            switchScreen('classSelection');
         }
 
         function togglePasswordVisibility() {
@@ -1925,9 +1944,10 @@
             if (!selectedClass) return;
             
             const classObj = appData.classes.find(c => c.id === selectedClass);
-            selectedClassDisplay.textContent = classObj.name;
-            
-            switchScreen('subjectSelection');
+            if (classObj) {
+                selectedClassDisplay.textContent = classObj.name;
+                switchScreen('subjectSelection');
+            }
         }
 
         // ===== SUBJECT SELECTION FUNCTIONS =====
@@ -1965,10 +1985,11 @@
             const classObj = appData.classes.find(c => c.id === selectedClass);
             const subjectObj = classObj.subjects.find(s => s.id === selectedSubject);
             
-            selectedSubjectDisplay.textContent = subjectObj.name;
-            currentClassDisplay.textContent = classObj.name;
-            
-            switchScreen('chapterSelection');
+            if (classObj && subjectObj) {
+                selectedSubjectDisplay.textContent = subjectObj.name;
+                currentClassDisplay.textContent = classObj.name;
+                switchScreen('chapterSelection');
+            }
         }
 
         // ===== CHAPTER SELECTION FUNCTIONS =====
@@ -2161,7 +2182,7 @@
                 
             } catch (error) {
                 console.error('Error starting quiz:', error);
-                alert(`Error loading quiz: ${error.message}\nPlease check if the XML file exists and has correct format.`);
+                alert(`Error loading quiz: ${error.message}\nUsing sample questions instead.`);
                 
                 // Load sample questions as fallback
                 loadSampleQuestions(chapter);
@@ -2321,14 +2342,10 @@
             if (userAnswers[currentQuestionIndex] !== null) {
                 showAnswerFeedback();
             }
-            
-            // Scroll to top of options
-            optionsContainer.scrollTop = 0;
         }
 
         function selectOption(index) {
             userAnswers[currentQuestionIndex] = index;
-            // Don't reload question immediately - let submitAnswer handle it
         }
 
         function showAnswerFeedback() {
