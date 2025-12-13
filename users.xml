@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<users>
+  <!-- Teacher/Admin Account -->
+  <user>
+    <username>admin</username>
+    <password>123</password>
+    <name>G.S. Tutorial Admin</name>
+    <role>admin</role>
+  </user>
+  
+  <!-- Student Accounts -->
+  <user>
+    <username>student8</username>
+    <password>pass123</password>
+    <name>Class 8 Student</name>
+    <role>student</role>
+  </user>
+  
+  <user>
+    <username>student9</username>
+    <password>pass456</password>
+    <name>Class 9 Student</name>
+    <role>student</role>
+  </user>
+  
+  <user>
+    <username>student10</username>
+    <password>pass789</password>
+    <name>Class 10 Student</name>
+    <role>student</role>
+  </user>
+  
+  <user>
+    <username>teacher1</username>
+    <password>teacher123</password>
+    <name>G.S. Tutorial Teacher</name>
+    <role>teacher</role>
+  </user>
+</users>
