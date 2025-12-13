@@ -101,49 +101,4 @@
     <option correct="false">Superphosphate</option>
     <explanation>2,4-D is a common weedicide used to control weeds in crop fields.</explanation>
   </question>
-  
-  <question>
-    <text>Crops grown for their commercial value are called:</text>
-    <option correct="false">Food crops</option>
-    <option correct="true">Cash crops</option>
-    <option correct="false">Plantation crops</option>
-    <option correct="false">Horticultural crops</option>
-    <explanation>Cash crops are grown for their commercial value rather than for personal use. Examples: cotton, sugarcane, tobacco.</explanation>
-  </question>
-  
-  <question>
-    <text>Which tool is used for removing weeds?</text>
-    <option correct="false">Plough</option>
-    <option correct="true">Hoe</option>
-    <option correct="false">Seed drill</option>
-    <option correct="false">Combine</option>
-    <explanation>A hoe is used for removing weeds and loosening soil.</explanation>
-  </question>
-  
-  <question>
-    <text>The practice of growing different crops in succession is called:</text>
-    <option correct="true">Crop rotation</option>
-    <option correct="false">Mixed cropping</option>
-    <option correct="false">Intercropping</option>
-    <option correct="false">Plant breeding</option>
-    <explanation>Crop rotation involves growing different crops in succession on the same land to maintain soil fertility.</explanation>
-  </question>
-  
-  <question>
-    <text>Which bacteria converts atmospheric nitrogen into nitrates?</text>
-    <option correct="false">Lactobacillus</option>
-    <option correct="true">Rhizobium</option>
-    <option correct="false">E. coli</option>
-    <option correct="false">Salmonella</option>
-    <explanation>Rhizobium bacteria convert atmospheric nitrogen into nitrates that plants can absorb and use.</explanation>
-  </question>
-  
-  <question>
-    <text>Drip irrigation helps in:</text>
-    <option correct="false">Increasing soil erosion</option>
-    <option correct="true">Conserving water</option>
-    <option correct="false">Increasing weed growth</option>
-    <option correct="false">Decreasing crop yield</option>
-    <explanation>Drip irrigation conserves water by delivering it directly to plant roots, minimizing evaporation and runoff.</explanation>
-  </question>
 </quiz>
