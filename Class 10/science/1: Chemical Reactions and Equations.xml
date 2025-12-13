@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+  <metadata>
+    <timeLimit>30</timeLimit>
+    <author>G. S. Tutorial</author>
+    <description>Class 10 Science - Chapter 1: Chemical Reactions and Equations</description>
+  </metadata>
+  
+  <question>
+    <text>Which is a chemical change?</text>
+    <option>Melting of ice</option>
+    <option>Boiling of water</option>
+    <option correct="true">Rusting of iron</option>
+    <option>Dissolving sugar in water</option>
+    <explanation>Rusting forms new substance (iron oxide), so it's chemical change.</explanation>
+  </question>
+  
+  <question>
+    <text>What is the chemical formula of quick lime?</text>
+    <option>Ca(OH)₂</option>
+    <option correct="true">CaO</option>
+    <option>CaCO₃</option>
+    <option>CaCl₂</option>
+    <explanation>Quick lime is calcium oxide (CaO). Slaked lime is Ca(OH)₂.</explanation>
+  </question>
+  
+  <question>
+    <text>Which gas is evolved when zinc reacts with dilute hydrochloric acid?</text>
+    <option>Oxygen</option>
+    <option>Carbon dioxide</option>
+    <option correct="true">Hydrogen</option>
+    <option>Nitrogen</option>
+    <explanation>Zn + 2HCl → ZnCl₂ + H₂↑</explanation>
+  </question>
+  
+  <question>
+    <text>In photosynthesis, carbon dioxide and water form:</text>
+    <option>Starch and oxygen</option>
+    <option correct="true">Glucose and oxygen</option>
+    <option>Protein and oxygen</option>
+    <option>Fat and oxygen</option>
+    <explanation>6CO₂ + 6H₂O → C₆H₁₂O₆ + 6O₂ (in presence of sunlight and chlorophyll)</explanation>
+  </question>
+  
+  <question>
+    <text>What type of reaction is: 2Na + Cl₂ → 2NaCl?</text>
+    <option>Decomposition</option>
+    <option>Displacement</option>
+    <option correct="true">Combination</option>
+    <option>Double displacement</option>
+    <explanation>Two substances combine to form one product - combination reaction.</explanation>
+  </question>
+  
+  <question>
+    <text>Balance: Fe + H₂O → Fe₃O₄ + H₂</text>
+    <option>3Fe + 4H₂O → Fe₃O₄ + 4H₂</option>
+    <option correct="true">3Fe + 4H₂O → Fe₃O₄ + 4H₂</option>
+    <option>2Fe + 3H₂O → Fe₂O₃ + 3H₂</option>
+    <option>Fe + 2H₂O → FeO + 2H₂</option>
+    <explanation>3Fe + 4H₂O → Fe₃O₄ + 4H₂ is the balanced equation.</explanation>
+  </question>
+  
+  <question>
+    <text>Which is an endothermic reaction?</text>
+    <option>Burning of coal</option>
+    <option>Respiration</option>
+    <option correct="true">Photosynthesis</option>
+    <option>Neutralization</option>
+    <explanation>Photosynthesis absorbs energy from sunlight, so it's endothermic.</explanation>
+  </question>
+  
+  <question>
+    <text>When copper reacts with silver nitrate solution, which metal is displaced?</text>
+    <option>Copper</option>
+    <option correct="true">Silver</option>
+    <option>Nitrogen</option>
+    <option>Oxygen</option>
+    <explanation>Cu + 2AgNO₃ → Cu(NO₃)₂ + 2Ag. Silver is displaced by copper.</explanation>
+  </question>
+  
+  <question>
+    <text>What is the chemical name of baking soda?</text>
+    <option>Sodium carbonate</option>
+    <option correct="true">Sodium bicarbonate</option>
+    <option>Calcium carbonate</option>
+    <option>Magnesium bicarbonate</option>
+    <explanation>Baking soda is NaHCO₃ - sodium bicarbonate.</explanation>
+  </question>
+  
+  <question>
+    <text>Which is a redox reaction?</text>
+    <option>NaCl + AgNO₃ → AgCl + NaNO₃</option>
+    <option correct="true">CuO + H₂ → Cu + H₂O</option>
+    <option>HCl + NaOH → NaCl + H₂O</option>
+    <option>CaCO₃ → CaO + CO₂</option>
+    <explanation>CuO is reduced to Cu, H₂ is oxidized to H₂O - redox reaction.</explanation>
+  </question>
+  
+  <question>
+    <text>What is observed when lead nitrate is heated?</text>
+    <option>Brown fumes of NO₂</option>
+    <option correct="true">Brown fumes of NO₂</option>
+    <option>White fumes</option>
+    <option>Yellow fumes</option>
+    <explanation>2Pb(NO₃)₂ → 2PbO + 4NO₂ + O₂. NO₂ is brown gas.</explanation>
+  </question>
+  
+  <question>
+    <text>In electrolysis of water, ratio of hydrogen to oxygen is:</text>
+    <option>1:1</option>
+    <option>1:2</option>
+    <option correct="true">2:1</option>
+    <option>1:8</option>
+    <explanation>2H₂O → 2H₂ + O₂. So 2 volumes of hydrogen and 1 volume of oxygen.</explanation>
+  </question>
+  
+  <question>
+    <text>What is rancidity?</text>
+    <option>Growth of microorganisms</option>
+    <option>Formation of soap</option>
+    <option correct="true">Oxidation of oils and fats</option>
+    <option>Fermentation of sugar</option>
+    <explanation>Rancidity is oxidation of oils/fats producing unpleasant smell and taste.</explanation>
+  </question>
+  
+  <question>
+    <text>Which is not a balanced equation?</text>
+    <option>N₂ + 3H₂ → 2NH₃</option>
+    <option>2Mg + O₂ → 2MgO</option>
+    <option>CH₄ + 2O₂ → CO₂ + 2H₂O</option>
+    <option correct="true">Fe + 2Cl₂ → FeCl₂</option>
+    <explanation>Fe + 2Cl₂ → FeCl₄? Actually FeCl₃ forms. Should be 2Fe + 3Cl₂ → 2FeCl₃</explanation>
+  </question>
+  
+  <question>
+    <text>Which gas turns lime water milky?</text>
+    <option>Oxygen</option>
+    <option>Hydrogen</option>
+    <option correct="true">Carbon dioxide</option>
+    <option>Nitrogen</option>
+    <explanation>CO₂ + Ca(OH)₂ → CaCO₃ (milky) + H₂O</explanation>
+  </question>
+  
+  <question>
+    <text>What type of reaction is: CaCO₃ → CaO + CO₂?</text>
+    <option>Combination</option>
+    <option>Displacement</option>
+    <option correct="true">Decomposition</option>
+    <option>Double displacement</option>
+    <explanation>One compound breaks into two or more substances - decomposition.</explanation>
+  </question>
+  
+  <question>
+    <text>In the reaction: Zn + CuSO₄ → ZnSO₄ + Cu, zinc is:</text>
+    <option>Reduced</option>
+    <option correct="true">Oxidized</option>
+    <option>Neither</option>
+    <option>Both</option>
+    <explanation>Zinc loses electrons (Zn → Zn²⁺ + 2e⁻), so it's oxidized.</explanation>
+  </question>
+  
+  <question>
+    <text>Which is used to prevent rancidity?</text>
+    <option>Antioxidants</option>
+    <option>Packing in nitrogen</option>
+    <option>Refrigeration</option>
+    <option correct="true">All of these</option>
+    <explanation>All these methods prevent oxidation of fats/oils.</explanation>
+  </question>
+  
+  <question>
+    <text>When magnesium ribbon burns, it forms:</text>
+    <option>MgO</option>
+    <option correct="true">MgO</option>
+    <option>Mg(OH)₂</option>
+    <option>MgCO₃</option>
+    <explanation>2Mg + O₂ → 2MgO (magnesium oxide - white powder)</explanation>
+  </question>
+  
+  <question>
+    <text>What is the chemical formula of washing soda?</text>
+    <option>NaHCO₃</option>
+    <option correct="true">Na₂CO₃·10H₂O</option>
+    <option>NaOH</option>
+    <option>Na₂SO₄</option>
+    <explanation>Washing soda is sodium carbonate decahydrate.</explanation>
+  </question>
+</quiz>
