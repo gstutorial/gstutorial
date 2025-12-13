@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+  <metadata>
+    <title>Crop Production</title>
+    <timeLimit>10</timeLimit>
+  </metadata>
+  
+  <question>
+    <text>Which of the following is a kharif crop?</text>
+    <option correct="true">Paddy</option>
+    <option correct="false">Wheat</option>
+    <option correct="false">Mustard</option>
+    <option correct="false">Peas</option>
+    <explanation>Paddy (rice) is a kharif crop sown during monsoon season.</explanation>
+  </question>
+  
+  <question>
+    <text>Rhizobium bacteria helps in:</text>
+    <option correct="true">Nitrogen fixation</option>
+    <option correct="false">Photosynthesis</option>
+    <option correct="false">Respiration</option>
+    <option correct="false">Digestion</option>
+    <explanation>Rhizobium converts atmospheric nitrogen into usable form for plants.</explanation>
+  </question>
+</quiz>
