@@ -58,6 +58,10 @@
       text-align: center;
       min-width: 0;
       overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
     }
 
     .header-title {
@@ -132,6 +136,36 @@
     .logout-btn:hover {
       background: rgba(239, 68, 68, 0.25);
       transform: translateY(-1px);
+    }
+
+    /* Logo styles */
+    .logo {
+      height: 40px;
+      width: 40px;
+      object-fit: contain;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 2px;
+    }
+
+    .logo-small {
+      height: 30px;
+      width: 30px;
+      object-fit: contain;
+      border-radius: 6px;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 1px;
+    }
+
+    .logo-login {
+      height: 60px;
+      width: 60px;
+      object-fit: contain;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 3px;
+      margin: 0 auto 15px;
+      display: block;
     }
 
     /* ===== MAIN CONTENT AREA ===== */
@@ -264,6 +298,25 @@
       border: 1px solid rgba(239, 68, 68, 0.3);
       display: none;
       text-align: center;
+    }
+
+    .sheets-config-link {
+      margin-top: 15px;
+      text-align: center;
+      font-size: 0.8rem;
+      color: #6b7280;
+      padding: 8px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 8px;
+    }
+
+    .sheets-config-link a {
+      color: #60a5fa;
+      text-decoration: none;
+    }
+
+    .sheets-config-link a:hover {
+      text-decoration: underline;
     }
 
     /* ===== CLASS SELECTION SCREEN ===== */
@@ -1260,8 +1313,11 @@
     <div class="header-content">
       <div class="header-top">
         <div class="header-center">
-          <div class="header-title">G. S. Tutorial - Online MCQ Practice</div>
-          <div class="header-subtitle">Created by Gobind Sharma</div>
+          <img src="logo.png" alt="G.S. Tutorial Logo" class="logo" onerror="this.style.display='none'">
+          <div>
+            <div class="header-title">G. S. Tutorial - Online MCQ Practice</div>
+            <div class="header-subtitle">Created by Gobind Sharma</div>
+          </div>
         </div>
       </div>
       <div class="header-bottom">
@@ -1281,6 +1337,7 @@
     <div id="login-container">
       <div class="login-box">
         <div class="login-header">
+          <img src="logo.png" alt="G.S. Tutorial Logo" class="logo-login" onerror="this.style.display='none'">
           <div class="login-title">🔐 G. S. Tutorial Login</div>
           <div class="login-subtitle">Created by Gobind Sharma</div>
         </div>
@@ -1299,8 +1356,12 @@
           <div id="login-error" class="login-error"></div>
           
           <button type="submit" class="login-btn" id="login-btn">
-            🔒 Login
+            🔒 Login from Google Sheets
           </button>
+          
+          <div class="sheets-config-link">
+            Using Google Sheet: <a href="https://docs.google.com/spreadsheets/d/1G6tTHT56T6FmqOwOvVFVPoVqoSs-TSBz_-SiW9imQvk/edit?gid=0#gid=0" target="_blank">View Sheet</a>
+          </div>
         </form>
       </div>
     </div>
@@ -1398,7 +1459,19 @@
     </div>
   </div>
 
+  <!-- Configuration for Google Sheets -->
   <script>
+    // ========== GOOGLE SHEETS CONFIGURATION ==========
+    const GOOGLE_SHEETS_CONFIG = {
+      // Your Google Sheets ID and configuration
+      sheetId: "1G6tTHT56T6FmqOwOvVFVPoVqoSs-TSBz_-SiW9imQvk",
+      gid: "0", // Sheet ID (gid parameter)
+      apiKey: "", // You'll need to get an API key from Google Cloud Console
+      
+      // Alternative: Use Google Sheets JSON export (no API key needed)
+      jsonExportUrl: "https://docs.google.com/spreadsheets/d/1G6tTHT56T6FmqOwOvVFVPoVqoSs-TSBz_-SiW9imQvk/gviz/tq?tqx=out:json&gid=0"
+    };
+
     // ========== GLOBAL VARIABLES ==========
     let questions = [];
     let currentIndex = 0;
@@ -1468,73 +1541,80 @@
     const scoreMiniEl = document.getElementById("score-mini");
     const finalScoreEl = document.getElementById("final-score");
 
-    // ========== USER MANAGEMENT FUNCTIONS ==========
-    async function loadUsersFromXML() {
+    // ========== GOOGLE SHEETS AUTHENTICATION ==========
+    async function loadUsersFromGoogleSheets() {
       try {
-        const response = await fetch("users.xml");
+        console.log("Loading users from Google Sheets...");
+        
+        // Method 1: Using Google Sheets JSON export (no API key needed)
+        const response = await fetch(GOOGLE_SHEETS_CONFIG.jsonExportUrl);
+        
         if (!response.ok) {
-          // Create default users if file doesn't exist
-          userList = [
-            { username: "teacher", password: "gstutorial", name: "Gobind Sharma", class: "all" },
-            { username: "student", password: "student123", name: "Test Student", class: "8" }
-          ];
-          console.log("Created default users");
-          return true;
+          throw new Error(`Failed to fetch Google Sheet: ${response.status} ${response.statusText}`);
         }
         
-        const xmlText = await response.text();
-        const parser = new DOMParser();
-        const xmlDoc = parser.parseFromString(xmlText, "application/xml");
+        const text = await response.text();
         
-        const parserError = xmlDoc.getElementsByTagName("parsererror");
-        if (parserError.length > 0) {
-          throw new Error("Invalid XML format in users.xml");
+        // Google Sheets returns JSONP, we need to parse it
+        const jsonMatch = text.match(/google\.visualization\.Query\.setResponse\(({.*})\);/);
+        if (!jsonMatch) {
+          throw new Error("Invalid response format from Google Sheets");
         }
         
-        const userNodes = xmlDoc.getElementsByTagName("user");
+        const jsonData = JSON.parse(jsonMatch[1]);
+        const rows = jsonData.table.rows;
+        
         userList = [];
         
-        for (let i = 0; i < userNodes.length; i++) {
-          const userNode = userNodes[i];
-          const usernameNode = userNode.getElementsByTagName("username")[0];
-          const passwordNode = userNode.getElementsByTagName("password")[0];
-          const nameNode = userNode.getElementsByTagName("name")[0];
-          const classNode = userNode.getElementsByTagName("class")[0];
+        for (let i = 0; i < rows.length; i++) {
+          const row = rows[i];
+          const cells = row.c;
           
-          if (usernameNode && passwordNode) {
-            const username = usernameNode.textContent.trim();
-            const password = passwordNode.textContent.trim();
-            const name = nameNode ? nameNode.textContent.trim() : username;
-            const userClass = classNode ? classNode.textContent.trim() : "";
+          // Skip header row (first row)
+          if (i === 0) continue;
+          
+          // Check if row has data
+          if (cells && cells.length >= 5) {
+            const username = cells[0] ? cells[0].v : "";
+            const password = cells[1] ? cells[1].v : "";
+            const name = cells[2] ? cells[2].v : "";
+            const role = cells[3] ? cells[3].v : "";
+            const userClass = cells[4] ? cells[4].v : "";
             
             if (username && password) {
               userList.push({
-                username: username,
-                password: password,
-                name: name,
-                class: userClass
+                username: username.toString().trim(),
+                password: password.toString().trim(),
+                name: name ? name.toString().trim() : username.toString().trim(),
+                role: role ? role.toString().trim() : "student",
+                class: userClass ? userClass.toString().trim() : ""
               });
             }
           }
         }
         
         if (userList.length === 0) {
-          // Create default users if file is empty
+          console.warn("No users found in Google Sheet. Using fallback users.");
+          // Fallback users if sheet is empty
           userList = [
-            { username: "teacher", password: "gstutorial", name: "Gobind Sharma", class: "all" },
-            { username: "student", password: "student123", name: "Test Student", class: "8" }
+            { username: "teacher", password: "gstutorial", name: "Gobind Sharma", role: "teacher", class: "all" },
+            { username: "student", password: "student123", name: "Test Student", role: "student", class: "8" }
           ];
         }
         
-        console.log(`Loaded ${userList.length} users`);
+        console.log(`Loaded ${userList.length} users from Google Sheets`);
         return true;
+        
       } catch (error) {
-        console.error("Error loading users:", error);
-        // Create default users
+        console.error("Error loading users from Google Sheets:", error);
+        
+        // Fallback to hardcoded users if Google Sheets fails
         userList = [
-          { username: "teacher", password: "gstutorial", name: "Gobind Sharma", class: "all" },
-          { username: "student", password: "student123", name: "Test Student", class: "8" }
+          { username: "teacher", password: "gstutorial", name: "Gobind Sharma", role: "teacher", class: "all" },
+          { username: "student", password: "student123", name: "Test Student", role: "student", class: "8" }
         ];
+        
+        console.log("Using fallback users due to Google Sheets error");
         return true;
       }
     }
@@ -1549,7 +1629,7 @@
 
     function login(user) {
       currentUser = user;
-      headerUsernameEl.textContent = user.name;
+      headerUsernameEl.textContent = `${user.name} (${user.role})`;
       
       // Show fixed header and class selection, hide login
       fixedHeaderEl.style.display = "block";
@@ -1561,10 +1641,10 @@
       // Reset inactivity timer
       resetInactivityTimer();
       
-      // Load available classes
+      // Load available classes based on user's access
       loadClasses();
       
-      console.log(`User ${user.name} logged in successfully`);
+      console.log(`User ${user.name} (${user.role}) logged in successfully`);
     }
 
     function logout() {
@@ -1666,16 +1746,34 @@
     }
 
     function loadClasses() {
-      // Always show these three classes
-      const classes = [
-        { id: "8", name: "Class 8", icon: "📚", desc: "Mathematics & Science" },
-        { id: "9", name: "Class 9", icon: "🎓", desc: "Mathematics & Science" },
-        { id: "10", name: "Class 10", icon: "🏆", desc: "Mathematics & Science" }
-      ];
+      // Determine which classes this user can access
+      let availableClasses = [];
+      
+      if (currentUser.role === "teacher" || currentUser.class === "all") {
+        // Teacher or admin can access all classes
+        availableClasses = [
+          { id: "8", name: "Class 8", icon: "📚", desc: "Mathematics & Science" },
+          { id: "9", name: "Class 9", icon: "🎓", desc: "Mathematics & Science" },
+          { id: "10", name: "Class 10", icon: "🏆", desc: "Mathematics & Science" }
+        ];
+      } else {
+        // Student can only access their specific class
+        const userClass = currentUser.class;
+        if (userClass) {
+          availableClasses = [
+            { id: userClass, name: `Class ${userClass}`, icon: "📚", desc: "Mathematics & Science" }
+          ];
+        } else {
+          // Default to class 8 if no class specified
+          availableClasses = [
+            { id: "8", name: "Class 8", icon: "📚", desc: "Mathematics & Science" }
+          ];
+        }
+      }
       
       classGridEl.innerHTML = "";
       
-      classes.forEach(cls => {
+      availableClasses.forEach(cls => {
         const card = document.createElement("div");
         card.className = "class-card";
         card.innerHTML = `
@@ -2670,20 +2768,12 @@
       loginErrorEl.style.display = "none";
       
       loginBtnEl.disabled = true;
-      loginBtnEl.innerHTML = '<span class="btn-loader">Loading...</span>';
+      loginBtnEl.innerHTML = '🔒 Loading from Google Sheets...';
       
-      if (userList.length === 0) {
-        const loaded = await loadUsersFromXML();
-        if (!loaded) {
-          loginErrorEl.textContent = "Cannot load users. Please check users.xml file.";
-          loginErrorEl.style.display = "block";
-          loginBtnEl.disabled = false;
-          loginBtnEl.innerHTML = 'Login';
-          return;
-        }
-      }
-      
-      setTimeout(() => {
+      try {
+        // Load users from Google Sheets
+        await loadUsersFromGoogleSheets();
+        
         const user = authenticateUser(username, password);
         
         if (user) {
@@ -2694,10 +2784,14 @@
           usernameEl.focus();
           usernameEl.select();
         }
-        
+      } catch (error) {
+        loginErrorEl.textContent = "Error connecting to Google Sheets. Please try again.";
+        loginErrorEl.style.display = "block";
+        console.error("Login error:", error);
+      } finally {
         loginBtnEl.disabled = false;
-        loginBtnEl.innerHTML = 'Login';
-      }, 500);
+        loginBtnEl.innerHTML = '🔒 Login from Google Sheets';
+      }
     });
 
     headerLogoutBtnEl.addEventListener("click", logout);
@@ -2730,20 +2824,29 @@
 
     // ========== INITIALIZATION ==========
     async function initializeApp() {
-      await loadUsersFromXML();
+      // Focus on username field
       usernameEl.focus();
       console.log("G. S. Tutorial App initialized. Created by Gobind Sharma.");
-      console.log("Default login: teacher / gstutorial");
-      console.log("IMPORTANT: Create folders with chapters.json and XML files to load your content.");
+      console.log("Using Google Sheets for authentication");
+      console.log(`Sheet URL: https://docs.google.com/spreadsheets/d/${GOOGLE_SHEETS_CONFIG.sheetId}`);
       
       // Add activity listeners for inactivity timer
       document.addEventListener('mousemove', resetInactivityTimer);
       document.addEventListener('keypress', resetInactivityTimer);
       document.addEventListener('click', resetInactivityTimer);
+      
+      // Test Google Sheets connection
+      console.log("Testing Google Sheets connection...");
+      try {
+        await loadUsersFromGoogleSheets();
+        console.log("Google Sheets connection successful!");
+      } catch (error) {
+        console.warn("Google Sheets connection test failed:", error.message);
+        console.log("App will use fallback users");
+      }
     }
 
     document.addEventListener("DOMContentLoaded", initializeApp);
   </script>
 </body>
 </html>
-
