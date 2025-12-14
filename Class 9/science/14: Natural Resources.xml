@@ -10,7 +10,7 @@
   <text>Which gas protects us from harmful UV rays?</text>
   <option>Oxygen</option>
   <option>Nitrogen</option>
-  <option correct="true>Ozone</option>
+  <option correct="true">Ozone</option>
   <option>Carbon dioxide</option>
   <explanation>Ozone layer in stratosphere filters UV-B radiation.</explanation>
 </question>
@@ -18,7 +18,7 @@
 <question>
   <text>Most abundant gas in atmosphere is:</text>
   <option>Oxygen</option>
-  <option correct="true>Nitrogen</option>
+  <option correct="true">Nitrogen</option>
   <option>Carbon dioxide</option>
   <option>Argon</option>
   <explanation>Nitrogen constitutes 78% of atmosphere by volume.</explanation>
@@ -28,7 +28,7 @@
   <text>Which process adds oxygen to atmosphere?</text>
   <option>Respiration</option>
   <option>Combustion</option>
-  <option correct="true>Photosynthesis</option>
+  <option correct="true">Photosynthesis</option>
   <option>Decomposition</option>
   <explanation>Plants release oxygen during photosynthesis.</explanation>
 </question>
@@ -36,7 +36,7 @@
 <question>
   <text>Acid rain is caused by oxides of:</text>
   <option>Carbon and nitrogen</option>
-  <option correct="true>Sulfur and nitrogen</option>
+  <option correct="true">Sulfur and nitrogen</option>
   <option>Carbon and sulfur</option>
   <option>Nitrogen and phosphorus</option>
   <explanation>SO₂ and NOx from industries/vehicles form sulfuric and nitric acid.</explanation>
@@ -46,7 +46,7 @@
   <text>The sphere of water is called:</text>
   <option>Atmosphere</option>
   <option>Lithosphere</option>
-  <option correct="true>Hydrosphere</option>
+  <option correct="true">Hydrosphere</option>
   <option>Biosphere</option>
   <explanation>Hydrosphere = all water on Earth's surface.</explanation>
 </question>
@@ -56,7 +56,7 @@
   <option>Ozone</option>
   <option>Nitrogen</option>
   <option>Oxygen</option>
-  <option correct="true>Carbon dioxide</option>
+  <option correct="true">Carbon dioxide</option>
   <explanation>CO₂, methane, water vapor trap heat - greenhouse gases.</explanation>
 </question>
 
@@ -64,7 +64,7 @@
   <text>Topsoil contains:</text>
   <option>Rocks</option>
   <option>Sand only</option>
-  <option correct="true>Humus and microorganisms</option>
+  <option correct="true">Humus and microorganisms</option>
   <option>Clay only</option>
   <explanation>Topsoil (A-horizon) is richest in humus and organisms.</explanation>
 </question>
@@ -72,7 +72,7 @@
 <question>
   <text>Water harvesting means:</text>
   <option>Storing water in dams</option>
-  <option correct="true>Collecting rainwater for reuse</option>
+  <option correct="true">Collecting rainwater for reuse</option>
   <option>Drilling wells</option>
   <option>Purifying seawater</option>
   <explanation>Rainwater harvesting collects and stores rainwater.</explanation>
@@ -81,7 +81,7 @@
 <question>
   <text>Chipko Movement was for:</text>
   <option>Water conservation</option>
-  <option correct="true>Forest conservation</option>
+  <option correct="true">Forest conservation</option>
   <option>Wildlife protection</option>
   <option>Soil conservation</option>
   <explanation>Chipko (hug trees) movement in 1970s to protect forests.</explanation>
@@ -92,14 +92,14 @@
   <option>Coal</option>
   <option>Petroleum</option>
   <option>Natural gas</option>
-  <option correct="true>Solar energy</option>
+  <option correct="true">Solar energy</option>
   <explanation>Solar energy is inexhaustible (renewable).</explanation>
 </question>
 
 <question>
   <text>Ozone hole was first observed over:</text>
   <option>Arctic</option>
-  <option correct="true>Antarctica</option>
+  <option correct="true">Antarctica</option>
   <option>Australia</option>
   <option>Africa</option>
   <explanation>Ozone depletion first detected over Antarctica in 1980s.</explanation>
@@ -108,7 +108,7 @@
 <question>
   <text>Which bacteria converts atmospheric nitrogen to nitrates?</text>
   <option>Denitrifying bacteria</option>
-  <option correct="true>Nitrogen-fixing bacteria</option>
+  <option correct="true">Nitrogen-fixing bacteria</option>
   <option>Putrefying bacteria</option>
   <option>Methanogens</option>
   <explanation>Rhizobium (in legume roots) fixes atmospheric N₂ to nitrates.</explanation>
@@ -119,7 +119,7 @@
   <option>Water cycle</option>
   <option>Nitrogen cycle</option>
   <option>Carbon cycle</option>
-  <option correct="true>All of these</option>
+  <option correct="true">All of these</option>
   <explanation>Biogeochemical cycles: Water, Nitrogen, Carbon, Oxygen, etc.</explanation>
 </question>
 
@@ -127,7 +127,7 @@
   <text>Which gas is mainly responsible for global warming?</text>
   <option>Oxygen</option>
   <option>Nitrogen</option>
-  <option correct="true>Carbon dioxide</option>
+  <option correct="true">Carbon dioxide</option>
   <option>Hydrogen</option>
   <explanation>CO₂ is primary greenhouse gas causing global warming.</explanation>
 </question>
@@ -136,7 +136,7 @@
   <text>The process of water changing to vapor is:</text>
   <option>Condensation</option>
   <option>Precipitation</option>
-  <option correct="true>Evaporation</option>
+  <option correct="true">Evaporation</option>
   <option>Transpiration</option>
   <explanation>Evaporation: liquid water → water vapor.</explanation>
 </question>
@@ -145,7 +145,7 @@
   <text>Which layer of soil is hardest?</text>
   <option>Topsoil</option>
   <option>Subsoil</option>
-  <option correct="true>Bedrock</option>
+  <option correct="true">Bedrock</option>
   <option>Weathered rock</option>
   <explanation>Bedrock (R-horizon) is solid rock layer.</explanation>
 </question>
@@ -154,7 +154,7 @@
   <text>CFCs damage:</text>
   <option>Soil fertility</option>
   <option>Water quality</option>
-  <option correct="true>Ozone layer</option>
+  <option correct="true">Ozone layer</option>
   <option>Crops</option>
   <explanation>Chlorofluorocarbons (CFCs) break down ozone molecules.</explanation>
 </question>
@@ -163,7 +163,7 @@
   <text>Rhizobium is found in roots of:</text>
   <option>Cereals</option>
   <option>Vegetables</option>
-  <option correct="true>Legumes</option>
+  <option correct="true">Legumes</option>
   <option>Fruits</option>
   <explanation>Rhizobium bacteria in legume root nodules fix nitrogen.</explanation>
 </question>
@@ -171,7 +171,7 @@
 <question>
   <text>The major cause of air pollution in cities is:</text>
   <option>Industries</option>
-  <option correct="true>Vehicles</option>
+  <option correct="true">Vehicles</option>
   <option>Household waste</option>
   <option>Agriculture</option>
 <explanation>Vehicles emit CO, NOx, particulates - major urban air pollutants.</explanation>
@@ -181,7 +181,7 @@
   <text>Which process removes CO₂ from atmosphere?</text>
   <option>Respiration</option>
   <option>Combustion</option>
-  <option correct="true>Photosynthesis</option>
+  <option correct="true">Photosynthesis</option>
   <option>Volcanic eruption</option>
   <explanation>Plants absorb CO₂ during photosynthesis.</explanation>
 </question>
@@ -190,7 +190,7 @@
   <text>Eutrophication is due to excess:</text>
   <option>Oxygen</option>
   <option>Carbon dioxide</option>
-  <option correct="true>Nutrients (nitrates, phosphates)</option>
+  <option correct="true">Nutrients (nitrates, phosphates)</option>
   <option>Heavy metals</option>
   <explanation>Excess nutrients cause algal blooms, oxygen depletion in water.</explanation>
 </question>
@@ -200,7 +200,7 @@
   <option>Atmosphere</option>
   <option>Lithosphere</option>
   <option>Hydrosphere</option>
-  <option correct="true>Biosphere</option>
+  <option correct="true">Biosphere</option>
   <explanation>Biosphere = zone of Earth where life exists.</explanation>
 </question>
 
@@ -209,7 +209,7 @@
   <option>Wind energy</option>
   <option>Tidal energy</option>
   <option>Biomass</option>
-  <option correct="true>Natural gas</option>
+  <option correct="true">Natural gas</option>
   <explanation>Fossil fuels (natural gas) are non-renewable (finite).</explanation>
 </question>
 
@@ -218,14 +218,14 @@
   <option>Ammonification</option>
   <option>Denitrification</option>
   <option>Nitrification</option>
-  <option correct="true>Nitrogen fixation</option>
+  <option correct="true">Nitrogen fixation</option>
   <explanation>N₂ → Nitrates = Nitrogen fixation (by bacteria/lightning).</explanation>
 </question>
 
 <question>
   <text>Montreal Protocol (1987) aimed to phase out:</text>
   <option>Greenhouse gases</option>
-  <option correct="true>Ozone-depleting substances</option>
+  <option correct="true">Ozone-depleting substances</option>
   <option>Acid rain chemicals</option>
   <option>Pesticides</option>
   <explanation>Montreal Protocol phased out CFCs to protect ozone layer.</explanation>
