@@ -16,6 +16,6 @@ const GOOGLE_SHEETS_CONFIG = {
 const LOGO_CONFIG = {
     src: 'logo.png',
     alt: 'G. S. Tutorial Logo',
-    width: '40px',
-    height: '40px'
+    width: '50px',
+    height: '50px'
 };
