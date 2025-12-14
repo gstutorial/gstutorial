@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+<metadata>
+  <chapter>Atoms and Molecules</chapter>
+  <timeLimit>25</timeLimit>
+  <author>G. S. Tutorial</author>
+</metadata>
+
+<question>
+  <text>What is the atomicity of ozone?</text>
+  <option>1</option>
+  <option>2</option>
+  <option correct="true">3</option>
+  <option>4</option>
+  <explanation>Ozone (O₃) has 3 atoms in its molecule, so atomicity is 3.</explanation>
+</question>
+
+<question>
+  <text>What is the formula mass of water (H₂O)?</text>
+  <option>16 u</option>
+  <option>17 u</option>
+  <option correct="true">18 u</option>
+  <option>20 u</option>
+  <explanation>H₂O = (2×1) + 16 = 18 atomic mass units.</explanation>
+</question>
+
+<question>
+  <text>Who proposed atomic theory?</text>
+  <option>Rutherford</option>
+  <option correct="true">Dalton</option>
+  <option>Bohr</option>
+  <option>Thomson</option>
+  <explanation>John Dalton proposed the atomic theory in 1808.</explanation>
+</question>
+
+<question>
+  <text>What is the valency of oxygen?</text>
+  <option>1</option>
+  <option correct="true">2</option>
+  <option>3</option>
+  <option>4</option>
+  <explanation>Oxygen needs 2 electrons to complete its octet, so valency is 2.</explanation>
+</question>
+
+<question>
+  <text>What is one mole of any substance?</text>
+  <option>1 gram</option>
+  <option>22.4 liters</option>
+  <option correct="true">6.022 × 10²³ particles</option>
+  <option>1000 particles</option>
+  <explanation>One mole contains Avogadro's number (6.022 × 10²³) of particles.</explanation>
+</question>
+
+<question>
+  <text>Which law states: "Mass is neither created nor destroyed"?</text>
+  <option>Gay-Lussac's law</option>
+  <option>Avogadro's law</option>
+  <option correct="true">Law of conservation of mass</option>
+  <option>Law of definite proportions</option>
+  <explanation>Law of conservation of mass states mass remains constant in chemical reactions.</explanation>
+</question>
+
+<question>
+  <text>What is the chemical formula of sodium chloride?</text>
+  <option>NaCl₂</option>
+  <option correct="true">NaCl</option>
+  <option>Na₂Cl</option>
+  <option>NaClO</option>
+  <explanation>Sodium chloride is NaCl (Na⁺ and Cl⁻ ions in 1:1 ratio).</explanation>
+</question>
+
+<question>
+  <text>Which element has the symbol K?</text>
+  <option>Krypton</option>
+  <option>Kurchatovium</option>
+  <option correct="true">Potassium</option>
+  <option>Kryptonite</option>
+  <explanation>K is the symbol for Potassium (from Latin 'Kalium').</explanation>
+</question>
+
+<question>
+  <text>What is the molecular mass of CO₂?</text>
+  <option>28 u</option>
+  <option>32 u</option>
+  <option correct="true">44 u</option>
+  <option>16 u</option>
+  <explanation>CO₂ = 12 + (2×16) = 44 atomic mass units.</explanation>
+</question>
+
+<question>
+  <text>What is the atomic number?</text>
+  <option>Number of neutrons</option>
+  <option correct="true">Number of protons</option>
+  <option>Number of electrons</option>
+  <option>Mass number</option>
+  <explanation>Atomic number = Number of protons in nucleus.</explanation>
+</question>
+</quiz>
