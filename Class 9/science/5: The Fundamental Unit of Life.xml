@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <quiz>
 <metadata>
-  <chapter>The Fundamental Unit of Life</chapter>
-  <timeLimit>25</timeLimit>
-  <author>G. S. Tutorial</author>
+  <chapter>5. The Fundamental Unit of Life</chapter>
+  <timeLimit>30</timeLimit>
+  <author>CBSE Exam Important Questions</author>
 </metadata>
 
 <question>
@@ -12,25 +12,25 @@
   <option correct="true">Robert Hooke</option>
   <option>Leeuwenhoek</option>
   <option>Schleiden</option>
-  <explanation>Robert Hooke discovered cells in 1665 while examining cork under microscope.</explanation>
+  <explanation>Robert Hooke discovered cells in 1665 examining cork under microscope.</explanation>
 </question>
 
 <question>
-  <text>Which cell organelle is called powerhouse?</text>
+  <text>Powerhouse of cell is:</text>
   <option>Golgi apparatus</option>
   <option>Endoplasmic reticulum</option>
   <option correct="true">Mitochondria</option>
   <option>Nucleus</option>
-  <explanation>Mitochondria produce ATP, the energy currency of cell.</explanation>
+  <explanation>Mitochondria produce ATP through cellular respiration.</explanation>
 </question>
 
 <question>
-  <text>What is the function of ribosomes?</text>
+  <text>Function of ribosomes is:</text>
   <option>Lipid synthesis</option>
   <option correct="true">Protein synthesis</option>
   <option>DNA replication</option>
   <option>Respiration</option>
-  <explanation>Ribosomes are sites of protein synthesis in the cell.</explanation>
+  <explanation>Ribosomes are sites of protein synthesis (translation).</explanation>
 </question>
 
 <question>
@@ -39,16 +39,16 @@
   <option>Animal cell</option>
   <option correct="true">Bacterial cell</option>
   <option>Fungal cell</option>
-  <explanation>Bacteria are prokaryotes lacking true nucleus and membrane-bound organelles.</explanation>
+  <explanation>Bacteria are prokaryotes without true nucleus.</explanation>
 </question>
 
 <question>
-  <text>What is plasmolysis?</text>
-  <option>Cell division</option>
-  <option>Cell growth</option>
-  <option correct="true">Shrinking of cytoplasm from cell wall</option>
-  <option>Cell death</option>
-  <explanation>Plasmolysis occurs when plant cell loses water in hypertonic solution.</explanation>
+  <text>Plasmolysis occurs in:</text>
+  <option>Animal cells</option>
+  <option correct="true">Plant cells</option>
+  <option>Bacterial cells</option>
+  <option>All cells</option>
+  <explanation>Plasmolysis - shrinking of cytoplasm from cell wall in hypertonic solution.</explanation>
 </question>
 
 <question>
@@ -57,42 +57,177 @@
   <option correct="true">Nucleus</option>
   <option>Ribosomes</option>
   <option>Chloroplast</option>
-  <explanation>Nucleus contains genetic material and controls all cell activities.</explanation>
+  <explanation>Nucleus contains genetic material and controls all cell functions.</explanation>
 </question>
 
 <question>
-  <text>Which is present only in plant cells?</text>
+  <text>Present only in plant cells:</text>
   <option>Mitochondria</option>
   <option>Ribosomes</option>
   <option correct="true">Cell wall</option>
   <option>Cell membrane</option>
-  <explanation>Cell wall made of cellulose is present only in plant cells, not animal cells.</explanation>
+  <explanation>Cell wall (cellulose) gives rigidity to plant cells.</explanation>
 </question>
 
 <question>
-  <text>What is osmosis?</text>
+  <text>Osmosis is:</text>
   <option>Movement of gases</option>
   <option correct="true">Movement of water through semipermeable membrane</option>
   <option>Movement of ions</option>
   <option>Active transport</option>
-  <explanation>Osmosis is passive diffusion of water from high to low concentration.</explanation>
+  <explanation>Osmosis - passive diffusion of water from high to low concentration.</explanation>
 </question>
 
 <question>
-  <text>Where is chlorophyll located?</text>
+  <text>Chlorophyll is located in:</text>
   <option>Mitochondria</option>
   <option correct="true">Chloroplast</option>
   <option>Nucleus</option>
   <option>Vacuole</option>
-  <explanation>Chlorophyll pigment is found in chloroplasts of plant cells.</explanation>
+  <explanation>Chlorophyll pigment for photosynthesis is in chloroplasts.</explanation>
 </question>
 
 <question>
-  <text>Which gives shape to plant cell?</text>
-  <option>Cell membrane</option>
-  <option correct="true">Cell wall</option>
-  <option>Cytoplasm</option>
+  <text>Lysosomes contain:</text>
+  <option>DNA</option>
+  <option>Chlorophyll</option>
+  <option correct="true">Digestive enzymes</option>
+  <option>Ribosomes</option>
+  <explanation>Lysosomes are suicidal bags containing hydrolytic enzymes.</explanation>
+</question>
+
+<question>
+  <text>Which organelle modifies and packages proteins?</text>
+  <option>Mitochondria</option>
+  <option>Ribosomes</option>
+  <option correct="true">Golgi apparatus</option>
+  <option>Endoplasmic reticulum</option>
+  <explanation>Golgi apparatus modifies, sorts, and packages proteins for secretion.</explanation>
+</question>
+
+<question>
+  <text>Selectively permeable membrane is:</text>
+  <option>Cell wall</option>
+  <option correct="true">Plasma membrane</option>
+  <option>Nuclear membrane</option>
+  <option>Mitochondrial membrane</option>
+  <explanation>Plasma membrane allows selective movement of substances.</explanation>
+</question>
+
+<question>
+  <text>Endoplasmic reticulum with ribosomes is called:</text>
+  <option>Smooth ER</option>
+  <option correct="true">Rough ER</option>
+  <option>Granular ER</option>
+  <option>None of these</option>
+  <explanation>Rough ER has ribosomes attached for protein synthesis.</explanation>
+</question>
+
+<question>
+  <text>Who proposed cell theory?</text>
+  <option>Hooke and Leeuwenhoek</option>
+  <option correct="true">Schleiden and Schwann</option>
+  <option>Virchow and Pasteur</option>
+  <option>Darwin and Mendel</option>
+  <explanation>Schleiden (plants) and Schwann (animals) proposed cell theory in 1838-39.</explanation>
+</question>
+
+<question>
+  <text>Cell membrane is made of:</text>
+  <option>Cellulose</option>
+  <option correct="true">Lipids and proteins</option>
+  <option>Chitin</option>
+  <option>Starch</option>
+  <explanation>Fluid mosaic model - phospholipid bilayer with proteins.</explanation>
+</question>
+
+<question>
+  <text>Largest cell organelle in plant cell:</text>
   <option>Nucleus</option>
-  <explanation>Rigid cell wall made of cellulose gives shape and support to plant cells.</explanation>
+  <option>Mitochondria</option>
+  <option correct="true">Vacuole</option>
+  <option>Chloroplast</option>
+  <explanation>Plant cells have large central vacuole occupying 90% volume.</explanation>
+</question>
+
+<question>
+  <text>Which is NOT a part of cell theory?</text>
+  <option>All living things made of cells</option>
+  <option>Cell is basic unit of life</option>
+  <option correct="true">All cells have nucleus</option>
+  <option>Cells arise from pre-existing cells</option>
+  <explanation>Prokaryotic cells lack true nucleus.</explanation>
+</question>
+
+<question>
+  <text>Energy currency of cell:</text>
+  <option>DNA</option>
+  <option>RNA</option>
+  <option correct="true">ATP</option>
+  <option>Glucose</option>
+  <explanation>ATP (Adenosine Triphosphate) stores and transfers energy.</explanation>
+</question>
+
+<question>
+  <text>Chromosomes are found in:</text>
+  <option>Ribosomes</option>
+  <option correct="true">Nucleus</option>
+  <option>Golgi apparatus</option>
+  <option>Mitochondria</option>
+  <explanation>Chromosomes (DNA+proteins) are in nucleus.</explanation>
+</question>
+
+<question>
+  <text>Which organelle detoxifies drugs?</text>
+  <option>Ribosomes</option>
+  <option correct="true">Smooth ER</option>
+  <option>Lysosomes</option>
+  <option>Golgi apparatus</option>
+  <explanation>Smooth ER synthesizes lipids and detoxifies drugs.</explanation>
+</question>
+
+<question>
+  <text>Diffusion rate increases with:</text>
+  <option>Decrease in temperature</option>
+  <option>Decrease in concentration gradient</option>
+  <option correct="true">Increase in temperature</option>
+  <option>Increase in particle size</option>
+  <explanation>Higher temperature increases kinetic energy, faster diffusion.</explanation>
+</question>
+
+<question>
+  <text>Which cells have irregular shape?</text>
+  <option>Plant cells</option>
+  <option correct="true">Animal cells</option>
+  <option>Bacterial cells</option>
+  <option>Fungal cells</option>
+  <explanation>Animal cells lack cell wall, so shape varies.</explanation>
+</question>
+
+<question>
+  <text>Cell wall of fungi is made of:</text>
+  <option>Cellulose</option>
+  <option correct="true">Chitin</option>
+  <option>Peptidoglycan</option>
+  <option>Silica</option>
+  <explanation>Fungal cell wall contains chitin (not cellulose).</explanation>
+</question>
+
+<question>
+  <text>Which organelle stores calcium ions?</text>
+  <option>Golgi apparatus</option>
+  <option>Lysosomes</option>
+  <option correct="true">Endoplasmic reticulum</option>
+  <option>Ribosomes</option>
+  <explanation>ER stores calcium ions for muscle contraction signaling.</explanation>
+</question>
+
+<question>
+  <text>Who saw first living cell?</text>
+  <option>Robert Hooke</option>
+  <option correct="true">Anton van Leeuwenhoek</option>
+  <option>Robert Brown</option>
+  <option>Schleiden</option>
+  <explanation>Leeuwenhoek observed first living cells (bacteria) in 1674.</explanation>
 </question>
 </quiz>
