@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+<metadata>
+  <chapter>Structure of the Atom</chapter>
+  <timeLimit>25</timeLimit>
+  <author>G. S. Tutorial</author>
+</metadata>
+
+<question>
+  <text>Who discovered the nucleus?</text>
+  <option>J.J. Thomson</option>
+  <option correct="true">Ernest Rutherford</option>
+  <option>Neils Bohr</option>
+  <option>James Chadwick</option>
+  <explanation>Rutherford discovered nucleus through gold foil experiment in 1911.</explanation>
+</question>
+
+<question>
+  <text>Which subatomic particle has no charge?</text>
+  <option>Proton</option>
+  <option>Electron</option>
+  <option correct="true">Neutron</option>
+  <option>Positron</option>
+  <explanation>Neutron is electrically neutral (no charge).</explanation>
+</question>
+
+<question>
+  <text>What are isotopes?</text>
+  <option>Atoms of different elements</option>
+  <option correct="true">Atoms with same atomic number but different mass</option>
+  <option>Atoms with same mass but different atomic number</option>
+  <option>Atoms with same number of neutrons</option>
+  <explanation>Isotopes have same number of protons but different number of neutrons.</explanation>
+</question>
+
+<question>
+  <text>Maximum electrons in M shell?</text>
+  <option>2</option>
+  <option>8</option>
+  <option correct="true">18</option>
+  <option>32</option>
+  <explanation>M shell (n=3) can hold maximum 18 electrons (2n² formula).</explanation>
+</question>
+
+<question>
+  <text>What determines chemical properties of an element?</text>
+  <option>Number of neutrons</option>
+  <option>Mass number</option>
+  <option correct="true">Number of valence electrons</option>
+  <option>Atomic mass</option>
+  <explanation>Chemical properties depend on valence electrons and their configuration.</explanation>
+</question>
+
+<question>
+  <text>Who proposed planetary model of atom?</text>
+  <option>Dalton</option>
+  <option>Thomson</option>
+  <option correct="true">Bohr</option>
+  <option>Rutherford</option>
+  <explanation>Neils Bohr proposed electrons revolve in fixed orbits around nucleus.</explanation>
+</question>
+
+<question>
+  <text>What is the electronic configuration of sodium (Z=11)?</text>
+  <option>2,8,1</option>
+  <option>2,8,2</option>
+  <option>2,8,3</option>
+  <option>2,8,8,1</option>
+  <correct>2,8,1</correct>
+  <explanation>Sodium has 11 electrons: K=2, L=8, M=1.</explanation>
+</question>
+
+<question>
+  <text>Which is not a fundamental particle?</text>
+  <option>Proton</option>
+  <option>Neutron</option>
+  <option>Electron</option>
+  <option correct="true">Positron</option>
+  <explanation>Proton, neutron, and electron are fundamental. Positron is antiparticle of electron.</explanation>
+</question>
+
+<question>
+  <text>What is atomic mass unit?</text>
+  <option>Mass of hydrogen atom</option>
+  <option correct="true">1/12th mass of carbon-12 atom</option>
+  <option>Mass of oxygen atom</option>
+  <option>Mass of electron</option>
+  <explanation>1 amu = 1/12th of mass of one carbon-12 atom.</explanation>
+</question>
+
+<question>
+  <text>Mass number is sum of:</text>
+  <option>Electrons and protons</option>
+  <option correct="true">Protons and neutrons</option>
+  <option>Electrons and neutrons</option>
+  <option>Protons only</option>
+  <explanation>Mass number (A) = Number of protons (Z) + Number of neutrons (N).</explanation>
+</question>
+</quiz>
