@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+<metadata>
+  <chapter>15. Improvement in Food Resources</chapter>
+  <timeLimit>30</timeLimit>
+  <author>CBSE Exam Important Questions</author>
+</metadata>
+
+<question>
+  <text>Which nutrient is required in largest quantity by plants?</text>
+  <option>Phosphorus</option>
+  <option>Potassium</option>
+  <option correct="true>Nitrogen</option>
+  <option>Calcium</option>
+  <explanation>Macronutrients: Nitrogen required in largest amount for growth.</explanation>
+</question>
+
+<question>
+  <text>Manure is preferred over fertilizers because it:</text>
+  <option>Gives quick results</option>
+  <option correct="true>Improves soil texture</option>
+  <option>Has higher nutrient content</option>
+  <option>Is cheaper</option>
+  <explanation>Manure adds humus, improves soil structure and water retention.</explanation>
+</question>
+
+<question>
+  <text>Which is a kharif crop?</text>
+  <option>Wheat</option>
+  <option>Mustard</option>
+  <option correct="true>Paddy (rice)</option>
+  <option>Gram</option>
+  <explanation>Kharif crops: June-October (rice, maize, cotton). Rabi: October-March (wheat, gram).</explanation>
+</question>
+
+<question>
+  <text>Cross-breeding between Indian and exotic breeds is done for:</text>
+  <option>Increasing milk yield</option>
+  <option>Disease resistance</option>
+  <option correct="true>Both of these</option>
+  <option>Better appearance</option>
+  <explanation>Cross-breeding combines high yield of exotic with disease resistance of local breeds.</explanation>
+</question>
+
+<question>
+  <text>Blue revolution is related to:</text>
+  <option>Crop production</option>
+  <option>Poultry farming</option>
+  <option correct="true>Fish production</option>
+  <option>Dairy farming</option>
+  <explanation>Blue revolution: enhancement of fish production.</explanation>
+</question>
+
+<question>
+  <text>Which is a macronutrient for plants?</text>
+  <option>Zinc</option>
+  <option>Iron</option>
+  <option>Copper</option>
+  <option correct="true>Potassium</option>
+  <explanation>Macronutrients: N, P, K, Ca, Mg, S (needed in large amounts).</explanation>
+</question>
+
+<question>
+  <text>Vermicompost is prepared using:</text>
+  <option>Bacteria</option>
+  <option correct="true>Earthworms</option>
+  <option>Fungi</option>
+  <option>Insects</option>
+  <explanation>Vermicompost: organic waste decomposed by earthworms.</explanation>
+</question>
+
+<question>
+  <text>Which breed of cattle is known for high milk yield?</text>
+  <option>Red Sindhi</option>
+  <option>Sahiwal</option>
+  <option correct="true>Holstein-Friesian</option>
+  <option>Gir</option>
+  <explanation>Exotic breed Holstein-Friesian gives highest milk yield.</explanation>
+</question>
+
+<question>
+  <text>Weeds can be controlled by:</text>
+  <option>Herbicides</option>
+  <option>Manual removal</option>
+  <option>Cultural methods</option>
+  <option correct="true>All of these</option>
+  <explanation>Weed control: chemical (herbicides), manual, cultural (crop rotation).</explanation>
+</question>
+
+<question>
+  <text>Green manure is obtained from:</text>
+  <option>Animal waste</option>
+  <option correct="true>Leguminous plants</option>
+  <option>Kitchen waste</option>
+  <option>Sewage</option>
+  <explanation>Green manure: legume plants (sunhemp, guar) ploughed into soil.</explanation>
+</question>
+
+<question>
+  <text>White revolution is associated with:</text>
+  <option>Crop production</option>
+  <option correct="true>Milk production</option>
+  <option>Egg production</option>
+  <option>Fish production</option>
+  <explanation>White revolution (Operation Flood) by Dr. Verghese Kurien increased milk production.</explanation>
+</question>
+
+<question>
+  <text>Which is a rabi crop?</text>
+  <option>Rice</option>
+  <option>Maize</option>
+  <option>Soybean</option>
+  <option correct="true>Wheat</option>
+  <explanation>Rabi crops (winter): wheat, barley, gram, mustard.</explanation>
+</question>
+
+<question>
+  <text>NPK refers to:</text>
+  <option>Nitrogen, Phosphorus, Potassium</option>
+  <option>Nitrogen, Potassium, Calcium</option>
+  <option>Nitrogen, Phosphorus, Calcium</option>
+  <option correct="true>Nitrogen, Phosphorus, Potassium</option>
+  <explanation>NPK = Primary macronutrients in fertilizers.</explanation>
+</question>
+
+<question>
+  <text>Pisciculture means:</text>
+  <option>Bee keeping</option>
+  <option>Poultry farming</option>
+  <option correct="true>Fish farming</option>
+  <option>Sericulture</option>
+  <explanation>Pisciculture: breeding and rearing of fish.</explanation>
+</question>
+
+<question>
+  <text>Which micronutrient is required for chlorophyll formation?</text>
+  <option>Phosphorus</option>
+  <option>Potassium</option>
+  <option correct="true>Iron</option>
+  <option>Calcium</option>
+  <explanation>Iron is micronutrient needed for chlorophyll synthesis.</explanation>
+</question>
+
+<question>
+  <text>Composite fish culture involves:</text>
+  <option>Single fish species</option>
+  <option correct="true>Multiple fish species</option>
+  <option>Only marine fish</option>
+  <option>Only freshwater fish</option>
+  <explanation>Composite culture: 5-6 species with different feeding habits in same pond.</explanation>
+</question>
+
+<question>
+  <text>Which poultry breed is an exotic layer?</text>
+  <option>Rhode Island Red</option>
+  <option correct="true>Leghorn</option>
+  <option>Assel</option>
+  <option>Chittagong</option>
+  <explanation>Leghorn (white) is exotic breed known for egg laying.</explanation>
+</question>
+
+<question>
+  <text>Lack of which nutrient causes yellowing of leaves?</text>
+  <option>Phosphorus</option>
+  <option>Potassium</option>
+  <option correct="true>Nitrogen</option>
+  <option>Calcium</option>
+  <explanation>Nitrogen deficiency causes chlorosis (yellowing) of older leaves.</explanation>
+</question>
+
+<question>
+  <text>Apiculture is rearing of:</text>
+  <option>Fish</option>
+  <option>Silkworms</option>
+  <option>Poultry</option>
+  <option correct="true>Honeybees</option>
+  <explanation>Apiculture: beekeeping for honey production.</explanation>
+</question>
+
+<question>
+  <text>Which irrigation method is most efficient?</text>
+  <option>Surface irrigation</option>
+  <option>Sprinkler irrigation</option>
+  <option correct="true>Drip irrigation</option>
+  <option>Flood irrigation</option>
+  <explanation>Drip irrigation saves water (90% efficiency) by direct root watering.</explanation>
+</question>
+
+<question>
+  <text>Rohu, Catla and Mrigal are examples of:</text>
+  <option>Marine fish</option>
+  <option correct="true>Freshwater fish</option>
+  <option>Shellfish</option>
+  <option>Exotic fish</option>
+  <explanation>Indian major carps used in composite fish culture.</explanation>
+</question>
+
+<question>
+  <text>Which is NOT a source of plant nutrients?</text>
+  <option>Manure</option>
+  <option>Fertilizers</option>
+  <option correct="true>Pesticides</option>
+  <option>Compost</option>
+  <explanation>Pesticides kill pests, don't provide nutrients.</explanation>
+</question>
+
+<question>
+  <text>Hybridization aims to produce crops with:</text>
+  <option>Higher yield</option>
+  <option>Disease resistance</option>
+  <option>Better quality</option>
+  <option correct="true>All of these</option>
+  <explanation>Hybridization combines desirable traits from different varieties.</explanation>
+</question>
+
+<question>
+  <text>Which crop is grown in zaid season?</text>
+  <option>Rice</option>
+  <option>Wheat</option>
+  <option correct="true>Cucumber</option>
+  <option>Mustard</option>
+  <explanation>Zaid crops: March-June (cucumber, watermelon, muskmelon).</explanation>
+</question>
+
+<question>
+  <text>Broilers are chickens reared for:</text>
+  <option>Egg production</option>
+  <option correct="true>Meat production</option>
+  <option>Both egg and meat</option>
+  <option>Feathers</option>
+  <explanation>Broilers: meat-type poultry (grown for 6-7 weeks).</explanation>
+</question>
+</quiz>
