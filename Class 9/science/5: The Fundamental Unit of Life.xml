@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+<metadata>
+  <chapter>The Fundamental Unit of Life</chapter>
+  <timeLimit>25</timeLimit>
+  <author>G. S. Tutorial</author>
+</metadata>
+
+<question>
+  <text>Who discovered cells?</text>
+  <option>Louis Pasteur</option>
+  <option correct="true">Robert Hooke</option>
+  <option>Leeuwenhoek</option>
+  <option>Schleiden</option>
+  <explanation>Robert Hooke discovered cells in 1665 while examining cork under microscope.</explanation>
+</question>
+
+<question>
+  <text>Which cell organelle is called powerhouse?</text>
+  <option>Golgi apparatus</option>
+  <option>Endoplasmic reticulum</option>
+  <option correct="true">Mitochondria</option>
+  <option>Nucleus</option>
+  <explanation>Mitochondria produce ATP, the energy currency of cell.</explanation>
+</question>
+
+<question>
+  <text>What is the function of ribosomes?</text>
+  <option>Lipid synthesis</option>
+  <option correct="true">Protein synthesis</option>
+  <option>DNA replication</option>
+  <option>Respiration</option>
+  <explanation>Ribosomes are sites of protein synthesis in the cell.</explanation>
+</question>
+
+<question>
+  <text>Which cell lacks nucleus?</text>
+  <option>Plant cell</option>
+  <option>Animal cell</option>
+  <option correct="true">Bacterial cell</option>
+  <option>Fungal cell</option>
+  <explanation>Bacteria are prokaryotes lacking true nucleus and membrane-bound organelles.</explanation>
+</question>
+
+<question>
+  <text>What is plasmolysis?</text>
+  <option>Cell division</option>
+  <option>Cell growth</option>
+  <option correct="true">Shrinking of cytoplasm from cell wall</option>
+  <option>Cell death</option>
+  <explanation>Plasmolysis occurs when plant cell loses water in hypertonic solution.</explanation>
+</question>
+
+<question>
+  <text>Which controls cell activities?</text>
+  <option>Mitochondria</option>
+  <option correct="true">Nucleus</option>
+  <option>Ribosomes</option>
+  <option>Chloroplast</option>
+  <explanation>Nucleus contains genetic material and controls all cell activities.</explanation>
+</question>
+
+<question>
+  <text>Which is present only in plant cells?</text>
+  <option>Mitochondria</option>
+  <option>Ribosomes</option>
+  <option correct="true">Cell wall</option>
+  <option>Cell membrane</option>
+  <explanation>Cell wall made of cellulose is present only in plant cells, not animal cells.</explanation>
+</question>
+
+<question>
+  <text>What is osmosis?</text>
+  <option>Movement of gases</option>
+  <option correct="true">Movement of water through semipermeable membrane</option>
+  <option>Movement of ions</option>
+  <option>Active transport</option>
+  <explanation>Osmosis is passive diffusion of water from high to low concentration.</explanation>
+</question>
+
+<question>
+  <text>Where is chlorophyll located?</text>
+  <option>Mitochondria</option>
+  <option correct="true">Chloroplast</option>
+  <option>Nucleus</option>
+  <option>Vacuole</option>
+  <explanation>Chlorophyll pigment is found in chloroplasts of plant cells.</explanation>
+</question>
+
+<question>
+  <text>Which gives shape to plant cell?</text>
+  <option>Cell membrane</option>
+  <option correct="true">Cell wall</option>
+  <option>Cytoplasm</option>
+  <option>Nucleus</option>
+  <explanation>Rigid cell wall made of cellulose gives shape and support to plant cells.</explanation>
+</question>
+</quiz>
