@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+<metadata>
+  <chapter>Is Matter Around Us Pure</chapter>
+  <timeLimit>25</timeLimit>
+  <author>G. S. Tutorial</author>
+</metadata>
+
+<question>
+  <text>What is a pure substance?</text>
+  <option correct="true">Substance with fixed composition</option>
+  <option>Mixture of elements</option>
+  <option>Impure substance</option>
+  <option>All of these</option>
+  <explanation>A pure substance has definite chemical composition and properties throughout.</explanation>
+</question>
+
+<question>
+  <text>Which of the following is a homogeneous mixture?</text>
+  <option>Sand and water</option>
+  <option>Oil and water</option>
+  <option correct="true">Sugar solution</option>
+  <option>Soil</option>
+  <explanation>Sugar solution is homogeneous as sugar particles are uniformly distributed in water.</explanation>
+</question>
+
+<question>
+  <text>What method separates immiscible liquids?</text>
+  <option>Distillation</option>
+  <option>Chromatography</option>
+  <option correct="true">Separating funnel</option>
+  <option>Evaporation</option>
+  <explanation>Separating funnel is used to separate immiscible liquids based on density differences.</explanation>
+</question>
+
+<question>
+  <text>Tyndall effect is shown by:</text>
+  <option>True solutions</option>
+  <option correct="true">Colloidal solutions</option>
+  <option>Compounds</option>
+  <option>Elements</option>
+  <explanation>Colloids scatter light beam, making its path visible (Tyndall effect).</explanation>
+</question>
+
+<question>
+  <text>What is the size of particles in a true solution?</text>
+  <option>More than 100 nm</option>
+  <option>1-100 nm</option>
+  <option correct="true">Less than 1 nm</option>
+  <option>10-1000 nm</option>
+  <explanation>True solution particles are less than 1 nm in diameter and invisible even under microscope.</explanation>
+</question>
+
+<question>
+  <text>Which is a compound?</text>
+  <option>Air</option>
+  <option>Gold</option>
+  <option correct="true">Water</option>
+  <option>Brass</option>
+  <explanation>Water (H₂O) is a compound made of hydrogen and oxygen chemically combined.</explanation>
+</question>
+
+<question>
+  <text>Chromatography is used to separate:</text>
+  <option>Solid from liquid</option>
+  <option correct="true">Colored substances</option>
+  <option>Metals from ores</option>
+  <option>Immiscible liquids</option>
+  <explanation>Chromatography separates components of a mixture based on their different rates of movement.</explanation>
+</question>
+
+<question>
+  <text>Which is NOT a characteristic of mixture?</text>
+  <option>Variable composition</option>
+  <option>No chemical reaction</option>
+  <option correct="true">Fixed boiling point</option>
+  <option>Components can be separated</option>
+  <explanation>Mixtures don't have fixed boiling points as composition varies.</explanation>
+</question>
+
+<question>
+  <text>Brass is an example of:</text>
+  <option>Compound</option>
+  <option>Element</option>
+  <option correct="true">Homogeneous mixture</option>
+  <option>Heterogeneous mixture</option>
+  <explanation>Brass (copper + zinc) is a homogeneous mixture (alloy).</explanation>
+</question>
+
+<question>
+  <text>What is the process of obtaining pure water from seawater?</text>
+  <option>Filtration</option>
+  <option>Crystallization</option>
+  <option correct="true">Distillation</option>
+  <option>Sedimentation</option>
+  <explanation>Distillation involves boiling and condensation to obtain pure water from seawater.</explanation>
+</question>
+</quiz>
