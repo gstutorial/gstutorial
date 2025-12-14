@@ -64,6 +64,21 @@
       gap: 10px;
     }
 
+    /* Logo styles */
+    .logo {
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      object-fit: contain;
+      flex-shrink: 0;
+    }
+
+    .logo-small {
+      width: 30px;
+      height: 30px;
+      margin-right: 8px;
+    }
+
     .header-title {
       font-size: 1.3rem;
       font-weight: 700;
@@ -78,6 +93,9 @@
       margin: 0;
       text-align: center;
       letter-spacing: 0.5px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
 
     .header-subtitle {
@@ -138,36 +156,6 @@
       transform: translateY(-1px);
     }
 
-    /* Logo styles */
-    .logo {
-      height: 40px;
-      width: 40px;
-      object-fit: contain;
-      border-radius: 8px;
-      background: rgba(255, 255, 255, 0.1);
-      padding: 2px;
-    }
-
-    .logo-small {
-      height: 30px;
-      width: 30px;
-      object-fit: contain;
-      border-radius: 6px;
-      background: rgba(255, 255, 255, 0.1);
-      padding: 1px;
-    }
-
-    .logo-login {
-      height: 60px;
-      width: 60px;
-      object-fit: contain;
-      border-radius: 12px;
-      background: rgba(255, 255, 255, 0.1);
-      padding: 3px;
-      margin: 0 auto 15px;
-      display: block;
-    }
-
     /* ===== MAIN CONTENT AREA ===== */
     .main-content {
       width: 100%;
@@ -201,6 +189,19 @@
     .login-header {
       text-align: center;
       margin-bottom: 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .login-logo {
+      width: 60px;
+      height: 60px;
+      border-radius: 12px;
+      object-fit: contain;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 5px;
     }
 
     .login-title {
@@ -300,22 +301,24 @@
       text-align: center;
     }
 
-    .sheets-config-link {
-      margin-top: 15px;
-      text-align: center;
-      font-size: 0.8rem;
-      color: #6b7280;
-      padding: 8px;
-      background: rgba(255, 255, 255, 0.05);
+    /* Configuration info panel */
+    .config-info {
+      background: rgba(59, 130, 246, 0.1);
+      border: 1px solid rgba(59, 130, 246, 0.3);
       border-radius: 8px;
+      padding: 10px;
+      margin-top: 15px;
+      font-size: 0.8rem;
+      color: #93c5fd;
+      text-align: center;
     }
 
-    .sheets-config-link a {
+    .config-info a {
       color: #60a5fa;
       text-decoration: none;
     }
 
-    .sheets-config-link a:hover {
+    .config-info a:hover {
       text-decoration: underline;
     }
 
@@ -1040,6 +1043,14 @@
       
       .header-title {
         font-size: 1.1rem;
+        flex-direction: column;
+        gap: 5px;
+      }
+      
+      .logo-small {
+        width: 25px;
+        height: 25px;
+        margin-right: 5px;
       }
       
       .header-subtitle {
@@ -1083,6 +1094,11 @@
       .login-box {
         padding: 20px;
         margin: 0 12px;
+      }
+      
+      .login-logo {
+        width: 50px;
+        height: 50px;
       }
       
       .login-title,
@@ -1230,6 +1246,11 @@
         font-size: 0.65rem;
       }
       
+      .logo-small {
+        width: 20px;
+        height: 20px;
+      }
+      
       .user-info {
         max-width: 120px;
         font-size: 0.7rem;
@@ -1256,6 +1277,11 @@
       
       .login-box {
         padding: 15px;
+      }
+      
+      .login-logo {
+        width: 40px;
+        height: 40px;
       }
       
       .header-bottom {
@@ -1313,11 +1339,8 @@
     <div class="header-content">
       <div class="header-top">
         <div class="header-center">
-          <img src="logo.png" alt="G.S. Tutorial Logo" class="logo" onerror="this.style.display='none'">
-          <div>
-            <div class="header-title">G. S. Tutorial - Online MCQ Practice</div>
-            <div class="header-subtitle">Created by Gobind Sharma</div>
-          </div>
+          <img src="logo.png" alt="Logo" class="logo-small">
+          <div class="header-title">G. S. Tutorial - Online MCQ Practice</div>
         </div>
       </div>
       <div class="header-bottom">
@@ -1337,7 +1360,7 @@
     <div id="login-container">
       <div class="login-box">
         <div class="login-header">
-          <img src="logo.png" alt="G.S. Tutorial Logo" class="logo-login" onerror="this.style.display='none'">
+          <img src="logo.png" alt="G. S. Tutorial Logo" class="login-logo">
           <div class="login-title">🔐 G. S. Tutorial Login</div>
           <div class="login-subtitle">Created by Gobind Sharma</div>
         </div>
@@ -1356,13 +1379,13 @@
           <div id="login-error" class="login-error"></div>
           
           <button type="submit" class="login-btn" id="login-btn">
-            🔒 Login from Google Sheets
+            🔒 Login
           </button>
-          
-          <div class="sheets-config-link">
-            Using Google Sheet: <a href="https://docs.google.com/spreadsheets/d/1G6tTHT56T6FmqOwOvVFVPoVqoSs-TSBz_-SiW9imQvk/edit?gid=0#gid=0" target="_blank">View Sheet</a>
-          </div>
         </form>
+        
+        <div class="config-info">
+          💡 Login credentials managed via Google Sheets
+        </div>
       </div>
     </div>
     
@@ -1459,17 +1482,21 @@
     </div>
   </div>
 
-  <!-- Configuration for Google Sheets -->
   <script>
     // ========== GOOGLE SHEETS CONFIGURATION ==========
     const GOOGLE_SHEETS_CONFIG = {
-      // Your Google Sheets ID and configuration
-      sheetId: "1G6tTHT56T6FmqOwOvVFVPoVqoSs-TSBz_-SiW9imQvk",
-      gid: "0", // Sheet ID (gid parameter)
-      apiKey: "", // You'll need to get an API key from Google Cloud Console
-      
-      // Alternative: Use Google Sheets JSON export (no API key needed)
-      jsonExportUrl: "https://docs.google.com/spreadsheets/d/1G6tTHT56T6FmqOwOvVFVPoVqoSs-TSBz_-SiW9imQvk/gviz/tq?tqx=out:json&gid=0"
+        // ========== CONFIGURE YOUR SHEET HERE ==========
+        // Replace with your Google Sheet ID
+        SHEET_ID: '1G6tTHT56T6FmqOwOvVFVPoVqoSs-TSBz_-SiW9imQvk',
+        
+        // Replace with your Sheet GID (usually 0 for first sheet)
+        GID: '0',
+        // ===============================================
+        
+        // API endpoint to fetch sheet data
+        get API_URL() {
+            return `https://docs.google.com/spreadsheets/d/${this.SHEET_ID}/gviz/tq?tqx=out:json&gid=${this.GID}`;
+        }
     };
 
     // ========== GLOBAL VARIABLES ==========
@@ -1541,81 +1568,77 @@
     const scoreMiniEl = document.getElementById("score-mini");
     const finalScoreEl = document.getElementById("final-score");
 
-    // ========== GOOGLE SHEETS AUTHENTICATION ==========
-    async function loadUsersFromGoogleSheets() {
+    // ========== GOOGLE SHEETS FUNCTIONS ==========
+    async function loadUsersFromGoogleSheet() {
       try {
-        console.log("Loading users from Google Sheets...");
+        console.log("Loading users from Google Sheet...");
         
-        // Method 1: Using Google Sheets JSON export (no API key needed)
-        const response = await fetch(GOOGLE_SHEETS_CONFIG.jsonExportUrl);
+        // Create the API URL using the config
+        const apiUrl = GOOGLE_SHEETS_CONFIG.API_URL;
+        console.log("Fetching from:", apiUrl);
         
+        const response = await fetch(apiUrl);
         if (!response.ok) {
-          throw new Error(`Failed to fetch Google Sheet: ${response.status} ${response.statusText}`);
+          throw new Error(`Failed to fetch Google Sheet. Status: ${response.status}`);
         }
         
-        const text = await response.text();
+        const data = await response.text();
         
-        // Google Sheets returns JSONP, we need to parse it
-        const jsonMatch = text.match(/google\.visualization\.Query\.setResponse\(({.*})\);/);
-        if (!jsonMatch) {
-          throw new Error("Invalid response format from Google Sheets");
-        }
+        // Google Sheets returns JSONP-like format, parse it
+        const jsonData = JSON.parse(data.substring(47).slice(0, -2));
         
-        const jsonData = JSON.parse(jsonMatch[1]);
+        // Extract rows from the response
         const rows = jsonData.table.rows;
-        
         userList = [];
         
-        for (let i = 0; i < rows.length; i++) {
+        // Expected column indices (adjust if your sheet has different order)
+        // Based on your description: username, password, name, role, class
+        const USERNAME_COL = 0;  // Column A
+        const PASSWORD_COL = 1;  // Column B
+        const NAME_COL = 2;      // Column C
+        const ROLE_COL = 3;      // Column D
+        const CLASS_COL = 4;     // Column E
+        
+        for (let i = 1; i < rows.length; i++) { // Start from 1 to skip header
           const row = rows[i];
-          const cells = row.c;
           
-          // Skip header row (first row)
-          if (i === 0) continue;
-          
-          // Check if row has data
-          if (cells && cells.length >= 5) {
-            const username = cells[0] ? cells[0].v : "";
-            const password = cells[1] ? cells[1].v : "";
-            const name = cells[2] ? cells[2].v : "";
-            const role = cells[3] ? cells[3].v : "";
-            const userClass = cells[4] ? cells[4].v : "";
+          if (row.c && row.c.length >= 2) { // At least username and password
+            const username = row.c[USERNAME_COL] ? row.c[USERNAME_COL].v : '';
+            const password = row.c[PASSWORD_COL] ? row.c[PASSWORD_COL].v : '';
+            const name = row.c[NAME_COL] ? row.c[NAME_COL].v : username;
+            const role = row.c[ROLE_COL] ? row.c[ROLE_COL].v : 'student';
+            const userClass = row.c[CLASS_COL] ? row.c[CLASS_COL].v : '';
             
             if (username && password) {
               userList.push({
                 username: username.toString().trim(),
                 password: password.toString().trim(),
-                name: name ? name.toString().trim() : username.toString().trim(),
-                role: role ? role.toString().trim() : "student",
-                class: userClass ? userClass.toString().trim() : ""
+                name: name.toString().trim(),
+                role: role.toString().trim(),
+                class: userClass.toString().trim()
               });
             }
           }
         }
         
         if (userList.length === 0) {
-          console.warn("No users found in Google Sheet. Using fallback users.");
-          // Fallback users if sheet is empty
-          userList = [
-            { username: "teacher", password: "gstutorial", name: "Gobind Sharma", role: "teacher", class: "all" },
-            { username: "student", password: "student123", name: "Test Student", role: "student", class: "8" }
-          ];
+          console.warn("No users found in Google Sheet. Using fallback.");
+          userList = []; // Return empty array
         }
         
-        console.log(`Loaded ${userList.length} users from Google Sheets`);
+        console.log(`Loaded ${userList.length} users from Google Sheet`);
         return true;
         
       } catch (error) {
-        console.error("Error loading users from Google Sheets:", error);
+        console.error("Error loading users from Google Sheet:", error);
         
-        // Fallback to hardcoded users if Google Sheets fails
-        userList = [
-          { username: "teacher", password: "gstutorial", name: "Gobind Sharma", role: "teacher", class: "all" },
-          { username: "student", password: "student123", name: "Test Student", role: "student", class: "8" }
-        ];
+        // Show user-friendly error
+        loginErrorEl.textContent = "⚠️ Cannot connect to login database. Please check your internet connection.";
+        loginErrorEl.style.display = "block";
         
-        console.log("Using fallback users due to Google Sheets error");
-        return true;
+        // Return empty user list
+        userList = [];
+        return false;
       }
     }
 
@@ -1629,7 +1652,7 @@
 
     function login(user) {
       currentUser = user;
-      headerUsernameEl.textContent = `${user.name} (${user.role})`;
+      headerUsernameEl.textContent = user.name;
       
       // Show fixed header and class selection, hide login
       fixedHeaderEl.style.display = "block";
@@ -1641,10 +1664,10 @@
       // Reset inactivity timer
       resetInactivityTimer();
       
-      // Load available classes based on user's access
+      // Load available classes
       loadClasses();
       
-      console.log(`User ${user.name} (${user.role}) logged in successfully`);
+      console.log(`User ${user.name} logged in successfully. Role: ${user.role}, Class: ${user.class}`);
     }
 
     function logout() {
@@ -1746,29 +1769,23 @@
     }
 
     function loadClasses() {
-      // Determine which classes this user can access
+      // For teacher/admin, show all classes
+      // For students, show only their assigned class
       let availableClasses = [];
       
-      if (currentUser.role === "teacher" || currentUser.class === "all") {
-        // Teacher or admin can access all classes
+      if (currentUser && currentUser.role === 'teacher') {
+        // Teacher sees all classes
         availableClasses = [
           { id: "8", name: "Class 8", icon: "📚", desc: "Mathematics & Science" },
           { id: "9", name: "Class 9", icon: "🎓", desc: "Mathematics & Science" },
           { id: "10", name: "Class 10", icon: "🏆", desc: "Mathematics & Science" }
         ];
       } else {
-        // Student can only access their specific class
-        const userClass = currentUser.class;
-        if (userClass) {
-          availableClasses = [
-            { id: userClass, name: `Class ${userClass}`, icon: "📚", desc: "Mathematics & Science" }
-          ];
-        } else {
-          // Default to class 8 if no class specified
-          availableClasses = [
-            { id: "8", name: "Class 8", icon: "📚", desc: "Mathematics & Science" }
-          ];
-        }
+        // Student sees only their assigned class
+        const userClass = currentUser?.class || "8";
+        availableClasses = [
+          { id: userClass, name: `Class ${userClass}`, icon: "📚", desc: "Mathematics & Science" }
+        ];
       }
       
       classGridEl.innerHTML = "";
@@ -2768,12 +2785,20 @@
       loginErrorEl.style.display = "none";
       
       loginBtnEl.disabled = true;
-      loginBtnEl.innerHTML = '🔒 Loading from Google Sheets...';
+      loginBtnEl.innerHTML = '<span class="btn-loader">Loading...</span>';
       
-      try {
-        // Load users from Google Sheets
-        await loadUsersFromGoogleSheets();
-        
+      // Always load fresh data from Google Sheets
+      const loaded = await loadUsersFromGoogleSheet();
+      
+      if (!loaded || userList.length === 0) {
+        loginErrorEl.textContent = "⚠️ Cannot load users. Please check your internet connection.";
+        loginErrorEl.style.display = "block";
+        loginBtnEl.disabled = false;
+        loginBtnEl.innerHTML = 'Login';
+        return;
+      }
+      
+      setTimeout(() => {
         const user = authenticateUser(username, password);
         
         if (user) {
@@ -2784,14 +2809,10 @@
           usernameEl.focus();
           usernameEl.select();
         }
-      } catch (error) {
-        loginErrorEl.textContent = "Error connecting to Google Sheets. Please try again.";
-        loginErrorEl.style.display = "block";
-        console.error("Login error:", error);
-      } finally {
+        
         loginBtnEl.disabled = false;
-        loginBtnEl.innerHTML = '🔒 Login from Google Sheets';
-      }
+        loginBtnEl.innerHTML = 'Login';
+      }, 500);
     });
 
     headerLogoutBtnEl.addEventListener("click", logout);
@@ -2824,26 +2845,20 @@
 
     // ========== INITIALIZATION ==========
     async function initializeApp() {
-      // Focus on username field
       usernameEl.focus();
       console.log("G. S. Tutorial App initialized. Created by Gobind Sharma.");
-      console.log("Using Google Sheets for authentication");
-      console.log(`Sheet URL: https://docs.google.com/spreadsheets/d/${GOOGLE_SHEETS_CONFIG.sheetId}`);
+      console.log("Google Sheets Login System Ready");
+      
+      // Show configuration info in console
+      console.log("Current Google Sheets Configuration:");
+      console.log(`- Sheet ID: ${GOOGLE_SHEETS_CONFIG.SHEET_ID}`);
+      console.log(`- GID: ${GOOGLE_SHEETS_CONFIG.GID}`);
+      console.log(`- API URL: ${GOOGLE_SHEETS_CONFIG.API_URL}`);
       
       // Add activity listeners for inactivity timer
       document.addEventListener('mousemove', resetInactivityTimer);
       document.addEventListener('keypress', resetInactivityTimer);
       document.addEventListener('click', resetInactivityTimer);
-      
-      // Test Google Sheets connection
-      console.log("Testing Google Sheets connection...");
-      try {
-        await loadUsersFromGoogleSheets();
-        console.log("Google Sheets connection successful!");
-      } catch (error) {
-        console.warn("Google Sheets connection test failed:", error.message);
-        console.log("App will use fallback users");
-      }
     }
 
     document.addEventListener("DOMContentLoaded", initializeApp);
