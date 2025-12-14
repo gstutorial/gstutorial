@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <quiz>
 <metadata>
-  <testName>Class 9 Science Final Practice Test</testName>
+  <testName>Class 9 Science Complete Practice Test</testName>
   <timeLimit>60</timeLimit>
-  <author>CBSE Mixed Questions Test Paper</author>
+  <author>CBSE Final Revision Test</author>
   <description>50 Important Mixed Questions from All Chapters</description>
 </metadata>
 
@@ -482,5 +482,59 @@
   <option correct="true">Skeletal muscle</option>
   <option>All muscles</option>
   <explanation>Skeletal muscles are under voluntary control.</explanation>
+</question>
+
+<question>
+  <text>Dry ice is:</text>
+  <option>Ice without water</option>
+  <option correct="true">Solid carbon dioxide</option>
+  <option>Solid oxygen</option>
+  <option>Frozen nitrogen</option>
+  <explanation>Dry ice is solid CO₂ which sublimates directly to gas.</explanation>
+</question>
+
+<question>
+  <text>Audible range for humans is:</text>
+  <option>20 Hz - 2000 Hz</option>
+  <option correct="true">20 Hz - 20,000 Hz</option>
+  <option>200 Hz - 2000 Hz</option>
+  <option>2 Hz - 200 Hz</option>
+  <explanation>Normal human hearing range: 20 Hz to 20 kHz.</explanation>
+</question>
+
+<question>
+  <text>Loudness of sound depends on:</text>
+  <option>Frequency</option>
+  <option correct="true">Amplitude</option>
+  <option>Wavelength</option>
+  <option>Speed</option>
+  <explanation>Larger amplitude means louder sound.</explanation>
+</question>
+
+<question>
+  <text>Which element has the symbol K?</text>
+  <option>Krypton</option>
+  <option correct="true">Potassium</option>
+  <option>Kurchatovium</option>
+  <option>Kryptonite</option>
+  <explanation>K is from Latin 'Kalium' for potassium.</explanation>
+</question>
+
+<question>
+  <text>Fungi are classified in kingdom:</text>
+  <option>Monera</option>
+  <option>Protista</option>
+  <option correct="true">Fungi</option>
+  <option>Plantae</option>
+  <explanation>Fungi have their own separate kingdom in Whittaker's classification.</explanation>
+</question>
+
+<question>
+  <text>Latent heat of fusion of ice is:</text>
+  <option correct="true">80 cal/g</option>
+  <option>540 cal/g</option>
+  <option>100 cal/g</option>
+  <option>1 cal/g</option>
+  <explanation>Ice requires 80 calories to melt 1g at 0°C without temperature change.</explanation>
 </question>
 </quiz>
