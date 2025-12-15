@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <quiz>
   <metadata>
-    <timeLimit>25</timeLimit>
+ <!--  <timeLimit>25</timeLimit> -->
     <author>G. S. Tutorial</author>
     <description>Class 8 Science - Chapter 1: Crop Production and Management</description>
   </metadata>
@@ -186,3 +186,4 @@
     <explanation>Sprinkler irrigation saves water, works on uneven land, and is suitable for sandy soils.</explanation>
   </question>
 </quiz>
+
