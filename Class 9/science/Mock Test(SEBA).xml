@@ -1,0 +1,478 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+  <metadata>
+    <timelimit>50</timelimit>
+    <author>G. S. Tutorial</author>
+    <description>Class 9 Science - Most Important 50 Questions for Final Exam</description>
+  </metadata>
+
+  <!-- Most Important 50 Questions from All 15 Chapters -->
+
+  <question>
+    <text>Which state of matter has maximum intermolecular forces?</text>
+    <option>Gas</option>
+    <option>Liquid</option>
+    <option correct="true">Solid</option>
+    <option>Plasma</option>
+    <explanation>Solids have strongest intermolecular forces, particles closely packed. Gases weakest forces.</explanation>
+  </question>
+
+  <question>
+    <text>The process of solid directly changing to gas is called:</text>
+    <option>Evaporation</option>
+    <option>Condensation</option>
+    <option correct="true">Sublimation</option>
+    <option>Fusion</option>
+    <explanation>Sublimation: e.g., camphor, dry ice, iodine. No liquid phase formed.</explanation>
+  </question>
+
+  <question>
+    <text>Which of these is a pure substance?</text>
+    <option>Air</option>
+    <option>Milk</option>
+    <option>Sea water</option>
+    <option correct="true">Gold</option>
+    <explanation>Gold is an element. Air, milk, sea water are mixtures with variable composition.</explanation>
+  </question>
+
+  <question>
+    <text>The method to separate cream from milk is:</text>
+    <option>Distillation</option>
+    <option>Filtration</option>
+    <option correct="true">Centrifugation</option>
+    <option>Chromatography</option>
+    <explanation>Centrifugal force separates lighter cream from heavier milk in dairy industry.</explanation>
+  </question>
+
+  <question>
+    <text>The number of moles in 52g of He is: (Atomic mass He=4)</text>
+    <option>1</option>
+    <option correct="true">13</option>
+    <option>26</option>
+    <option>52</option>
+    <explanation>Moles = mass/molar mass = 52/4 = 13 moles.</explanation>
+  </question>
+
+  <question>
+    <text>The formula of sodium carbonate is:</text>
+    <option>NaCO₃</option>
+    <option correct="true">Na₂CO₃</option>
+    <option>Na₂(CO₃)₂</option>
+    <option>NaCO₂</option>
+    <explanation>Na⁺ (charge +1) and CO₃²⁻ (charge -2) → Na₂CO₃.</explanation>
+  </question>
+
+  <question>
+    <text>Which subatomic particle was discovered by J.J. Thomson?</text>
+    <option>Proton</option>
+    <option correct="true">Electron</option>
+    <option>Neutron</option>
+    <option>Nucleus</option>
+    <explanation>Cathode ray tube experiment (1897). Proton: Goldstein, Neutron: Chadwick, Nucleus: Rutherford.</explanation>
+  </question>
+
+  <question>
+    <text>Isotopes have same:</text>
+    <option>Mass number</option>
+    <option>Number of neutrons</option>
+    <option correct="true">Atomic number</option>
+    <option>Both mass and atomic number</option>
+    <explanation>Isotopes: same protons (atomic number), different neutrons (mass number).</explanation>
+  </question>
+
+  <question>
+    <text>Which cell organelle is called "powerhouse of cell"?</text>
+    <option>Nucleus</option>
+    <option>Endoplasmic reticulum</option>
+    <option correct="true">Mitochondria</option>
+    <option>Golgi apparatus</option>
+    <explanation>Mitochondria produce ATP through cellular respiration.</explanation>
+  </question>
+
+  <question>
+    <text>Plasmolysis occurs when plant cell is placed in:</text>
+    <option>Hypotonic solution</option>
+    <option correct="true">Hypertonic solution</option>
+    <option>Isotonic solution</option>
+    <option>Distilled water</option>
+    <explanation>Water leaves cell in hypertonic solution → cytoplasm shrinks from cell wall.</explanation>
+  </question>
+
+  <question>
+    <text>Which tissue connects bone to bone?</text>
+    <option>Tendon</option>
+    <option correct="true">Ligament</option>
+    <option>Cartilage</option>
+    <option>Areolar tissue</option>
+    <explanation>Ligament: bone to bone (elastic). Tendon: muscle to bone (less elastic).</explanation>
+  </question>
+
+  <question>
+    <text>Xylem transports:</text>
+    <option>Food</option>
+    <option correct="true">Water and minerals</option>
+    <option>Hormones</option>
+    <option>Oxygen</option>
+    <explanation>Xylem: water/minerals upward. Phloem: food bidirectional.</explanation>
+  </question>
+
+  <question>
+    <text>Five kingdom classification was proposed by:</text>
+    <option>Linnaeus</option>
+    <option>Haeckel</option>
+    <option correct="true">Whittaker</option>
+    <option>Darwin</option>
+    <explanation>Robert Whittaker (1969): Monera, Protista, Fungi, Plantae, Animalia.</explanation>
+  </question>
+
+  <question>
+    <text>Which phylum includes animals with jointed legs?</text>
+    <option>Mollusca</option>
+    <option>Annelida</option>
+    <option correct="true">Arthropoda</option>
+    <option>Echinodermata</option>
+    <explanation>Arthropoda: insects, spiders, crustaceans. Largest phylum.</explanation>
+  </question>
+
+  <question>
+    <text>SI unit of acceleration is:</text>
+    <option>m/s</option>
+    <option>m</option>
+    <option correct="true">m/s²</option>
+    <option>m²/s</option>
+    <explanation>Acceleration = change in velocity/time = (m/s)/s = m/s².</explanation>
+  </question>
+
+  <question>
+    <text>Area under velocity-time graph represents:</text>
+    <option>Acceleration</option>
+    <option correct="true">Displacement</option>
+    <option>Distance</option>
+    <option>Speed</option>
+    <explanation>Area = displacement (vector) or distance (scalar). Slope gives acceleration.</explanation>
+  </question>
+
+  <question>
+    <text>Newton's first law is also called:</text>
+    <option correct="true">Law of inertia</option>
+    <option>Law of momentum</option>
+    <option>Law of action-reaction</option>
+    <option>Law of force</option>
+    <explanation>Body at rest/motion stays unless acted by external force. Defines inertia.</explanation>
+  </question>
+
+  <question>
+    <text>Product of mass and velocity is:</text>
+    <option>Force</option>
+    <option>Acceleration</option>
+    <option correct="true">Momentum</option>
+    <option>Inertia</option>
+    <explanation>Momentum p = m×v. Vector quantity, conserved in isolated system.</explanation>
+  </question>
+
+  <question>
+    <text>Value of g on moon is about:</text>
+    <option>9.8 m/s²</option>
+    <option correct="true">1.63 m/s²</option>
+    <option>3.7 m/s²</option>
+    <option>0 m/s²</option>
+    <explanation>g_moon ≈ 1/6 g_earth = 9.8/6 ≈ 1.63 m/s².</explanation>
+  </question>
+
+  <question>
+    <text>Weight of object on earth is 60N. On moon it will be:</text>
+    <option>60 N</option>
+    <option correct="true">10 N</option>
+    <option>360 N</option>
+    <option>6 N</option>
+    <explanation>Weight_moon = Weight_earth/6 = 60/6 = 10 N. Mass same (≈6.12 kg).</explanation>
+  </question>
+
+  <question>
+    <text>SI unit of work is:</text>
+    <option>Newton</option>
+    <option>Watt</option>
+    <option correct="true">Joule</option>
+    <option>Pascal</option>
+    <explanation>Work = Force × Displacement. 1 J = 1 N·m.</explanation>
+  </question>
+
+  <question>
+    <text>Kinetic energy of mass m moving at velocity v is:</text>
+    <option>mv</option>
+    <option>mv²</option>
+    <option correct="true">½mv²</option>
+    <option>2mv²</option>
+    <explanation>KE = ½mv². Doubling velocity → 4× KE.</explanation>
+  </question>
+
+  <question>
+    <text>Sound cannot travel through:</text>
+    <option>Solid</option>
+    <option>Liquid</option>
+    <option>Gas</option>
+    <option correct="true">Vacuum</option>
+    <explanation>Requires material medium. No particles in vacuum to vibrate.</explanation>
+  </question>
+
+  <question>
+    <text>Loudness depends on:</text>
+    <option>Frequency</option>
+    <option correct="true">Amplitude</option>
+    <option>Time period</option>
+    <option>Wavelength</option>
+    <explanation>Greater amplitude → louder sound. Measured in decibels (dB).</explanation>
+  </question>
+
+  <question>
+    <text>Which disease is caused by virus?</text>
+    <option>Tuberculosis</option>
+    <option>Typhoid</option>
+    <option correct="true">Common cold</option>
+    <option>Cholera</option>
+    <explanation>Common cold: rhinovirus. TB: bacteria, Typhoid: bacteria, Cholera: bacteria.</explanation>
+  </question>
+
+  <question>
+    <text>BCG vaccine prevents:</text>
+    <option>Polio</option>
+    <option>Typhoid</option>
+    <option correct="true">Tuberculosis</option>
+    <option>Cholera</option>
+    <explanation>BCG (Bacillus Calmette-Guérin) given at birth in many countries.</explanation>
+  </question>
+
+  <question>
+    <text>Most abundant gas in atmosphere is:</text>
+    <option>Oxygen</option>
+    <option correct="true">Nitrogen</option>
+    <option>Carbon dioxide</option>
+    <option>Argon</option>
+    <explanation>Nitrogen: 78%, Oxygen: 21%, Argon: 0.93%, CO₂: 0.04%.</explanation>
+  </question>
+
+  <question>
+    <text>Which layer protects from UV radiation?</text>
+    <option>Troposphere</option>
+    <option correct="true">Ozone layer</option>
+    <option>Ionosphere</option>
+    <option>Stratosphere</option>
+    <explanation>Ozone (O₃) in stratosphere absorbs harmful UV-B, UV-C.</explanation>
+  </question>
+
+  <question>
+    <text>Which is a kharif crop?</text>
+    <option>Wheat</option>
+    <option>Gram</option>
+    <option correct="true">Paddy</option>
+    <option>Mustard</option>
+    <explanation>Kharif: monsoon crops (June-Oct). Rabi: winter crops (Oct-Mar).</explanation>
+  </question>
+
+  <question>
+    <text>White Revolution is associated with:</text>
+    <option>Egg production</option>
+    <option>Wheat production</option>
+    <option correct="true">Milk production</option>
+    <option>Fish production</option>
+    <explanation>Operation Flood (Dr. Verghese Kurien) made India largest milk producer.</explanation>
+  </question>
+
+  <question>
+    <text>Evaporation causes cooling because:</text>
+    <option>Water is cold</option>
+    <option correct="true">Energy absorbed from surroundings</option>
+    <option>Wind blows</option>
+    <option>Humidity decreases</option>
+    <explanation>Latent heat of vaporization absorbed from surface → cooling effect.</explanation>
+  </question>
+
+  <question>
+    <text>Tyndall effect is shown by:</text>
+    <option>Sugar solution</option>
+    <option>Salt solution</option>
+    <option correct="true">Starch solution</option>
+    <option>Alcohol in water</option>
+    <explanation>Colloidal particles scatter light. True solutions don't show Tyndall effect.</explanation>
+  </question>
+
+  <question>
+    <text>Mass of 1 mole of oxygen atoms is:</text>
+    <option>8 g</option>
+    <option correct="true">16 g</option>
+    <option>32 g</option>
+    <option>64 g</option>
+    <explanation>Atomic mass O = 16 u → molar mass = 16 g/mol.</explanation>
+  </question>
+
+  <question>
+    <text>Rutherford's experiment led to discovery of:</text>
+    <option>Electron</option>
+    <option>Proton</option>
+    <option correct="true">Nucleus</option>
+    <option>Neutron</option>
+    <explanation>Gold foil experiment: most alpha particles passed through → atom mostly empty, dense nucleus at center.</explanation>
+  </question>
+
+  <question>
+    <text>Lysosomes are called "suicide bags" because:</text>
+    <option>They produce energy</option>
+    <option>They synthesize proteins</option>
+    <option correct="true">They contain digestive enzymes</option>
+    <option>They help in cell division</option>
+    <explanation>During cell damage, lysosomes burst → enzymes digest cell contents (autolysis).</explanation>
+  </question>
+
+  <question>
+    <text>Meristematic tissue is found in:</text>
+    <option>Root tips</option>
+    <option>Stem tips</option>
+    <option>Cambium</option>
+    <option correct="true">All of these</option>
+    <explanation>Apical meristem (tips), lateral meristem (cambium), intercalary meristem (nodes).</explanation>
+  </question>
+
+  <question>
+    <text>Binomial nomenclature was introduced by:</text>
+    <option correct="true">Carolus Linnaeus</option>
+    <option>Robert Whittaker</option>
+    <option>Charles Darwin</option>
+    <option>Ernst Haeckel</option>
+    <explanation>Genus species format (e.g., Homo sapiens). First capitalized, second lowercase, italicized.</explanation>
+  </question>
+
+  <question>
+    <text>Distance-time graph for uniform motion is:</text>
+    <option>Curved line</option>
+    <option>Horizontal line</option>
+    <option correct="true">Straight line inclined</option>
+    <option>Vertical line</option>
+    <explanation>Constant slope = constant speed. Horizontal: at rest.</explanation>
+  </question>
+
+  <question>
+    <text>According to Newton's second law, F =</text>
+    <option>m/v</option>
+    <option>mv</option>
+    <option correct="true">ma</option>
+    <option>m/a</option>
+    <explanation>Force = mass × acceleration. Defines force quantitatively.</explanation>
+  </question>
+
+  <question>
+    <text>Gravitational constant G has unit:</text>
+    <option>N m²/kg</option>
+    <option>N/kg²</option>
+    <option correct="true">N m²/kg²</option>
+    <option>m/s²</option>
+    <explanation>From F = Gm₁m₂/r² → G = Fr²/m₁m₂ → N·m²/kg².</explanation>
+  </question>
+
+  <question>
+    <text>Power is defined as:</text>
+    <option>Force × velocity</option>
+    <option>Work × time</option>
+    <option correct="true">Work/time</option>
+    <option>Energy × distance</option>
+    <explanation>Rate of doing work. SI unit: Watt (W) = J/s.</explanation>
+  </question>
+
+  <question>
+    <text>1 kWh equals:</text>
+    <option>3.6 × 10³ J</option>
+    <option>3.6 × 10⁴ J</option>
+    <option correct="true">3.6 × 10⁶ J</option>
+    <option>3.6 × 10⁹ J</option>
+    <explanation>1 kWh = 1000 W × 3600 s = 3,600,000 J.</explanation>
+  </question>
+
+  <question>
+    <text>Pitch of sound depends on:</text>
+    <option>Amplitude</option>
+    <option correct="true">Frequency</option>
+    <option>Loudness</option>
+    <option>Speed</option>
+    <explanation>Higher frequency → higher pitch (shrill). Lower frequency → lower pitch (deep).</explanation>
+  </question>
+
+  <question>
+    <text>SONAR works on principle of:</text>
+    <option>Reflection of light</option>
+    <option>Refraction of sound</option>
+    <option correct="true">Reflection of sound</option>
+    <option>Diffraction of sound</option>
+    <explanation>Sound Navigation and Ranging: ultrasound emitted, echo detected to measure depth.</explanation>
+  </question>
+
+  <question>
+    <text>Which is a communicable disease?</text>
+    <option>Diabetes</option>
+    <option>Cancer</option>
+    <option correct="true">Malaria</option>
+    <option>Arthritis</option>
+    <explanation>Malaria spreads via mosquito. Others are non-communicable.</explanation>
+  </question>
+
+  <question>
+    <text>Acid rain is caused by:</text>
+    <option>CO₂</option>
+    <option correct="true">SO₂ and NO₂</option>
+    <option>O₂</option>
+    <option>N₂</option>
+    <explanation>From industries/vehicles → sulfuric/nitric acid → pH < 5.6.</explanation>
+  </question>
+
+  <question>
+    <text>Chipko Movement was for:</text>
+    <option>Water conservation</option>
+    <option correct="true">Forest conservation</option>
+    <option>Wildlife protection</option>
+    <option>Soil conservation</option>
+    <explanation>1973, Uttarakhand - hugging trees to prevent logging.</explanation>
+  </question>
+
+  <question>
+    <text>Which is a micronutrient for plants?</text>
+    <option>Nitrogen</option>
+    <option>Phosphorus</option>
+    <option correct="true">Zinc</option>
+    <option>Potassium</option>
+    <explanation>Micronutrients needed in trace amounts: Zn, Cu, Fe, Mn, B, Mo, Cl.</explanation>
+  </question>
+
+  <question>
+    <text>Green Revolution is associated with:</text>
+    <option>Milk production</option>
+    <option>Fish production</option>
+    <option correct="true">Cereal production</option>
+    <option>Vegetable production</option>
+    <explanation>High-yielding varieties of wheat/rice, fertilizers, irrigation (1960s).</explanation>
+  </question>
+
+  <question>
+    <text>Water has maximum density at:</text>
+    <option>0°C</option>
+    <option correct="true">4°C</option>
+    <option>10°C</option>
+    <option>100°C</option>
+    <explanation>1 g/cm³ at 4°C. Expands below 4°C → ice floats.</explanation>
+  </question>
+
+  <question>
+    <text>Law of constant proportions states:</text>
+    <option>Mass conserved in reaction</option>
+    <option correct="true">Elements combine in fixed ratio</option>
+    <option>Multiple proportions</option>
+    <option>Reciprocal proportions</option>
+    <explanation>Proust's law: compound always has same elements in fixed proportion by mass.</explanation>
+  </question>
+
+  <question>
+    <text>Blood is which type of tissue?</text>
+    <option>Epithelial</option>
+    <option>Muscular</option>
+    <option>Nervous</option>
+    <option correct="true">Connective</option>
+    <explanation>Fluid connective tissue. Plasma matrix + formed elements (RBCs, WBCs, platelets).</explanation>
+  </question>
+</quiz>
