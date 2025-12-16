@@ -1,233 +1,344 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <quiz>
-<metadata>
-  <chapter>5. The Fundamental Unit of Life</chapter>
-  <timeLimit>30</timeLimit>
-  <author>CBSE Exam Important Questions</author>
-</metadata>
+  <metadata>
+    <author>G. S. Tutorial</author>
+    <description>Class 9 Science - Chapter 5: The Fundamental Unit of Life</description>
+  </metadata>
 
-<question>
-  <text>Who discovered cells?</text>
-  <option>Louis Pasteur</option>
-  <option correct="true">Robert Hooke</option>
-  <option>Leeuwenhoek</option>
-  <option>Schleiden</option>
-  <explanation>Robert Hooke discovered cells in 1665 examining cork under microscope.</explanation>
-</question>
+  <!-- Previous Year Questions (CBSE/SEBA) -->
 
-<question>
-  <text>Powerhouse of cell is:</text>
-  <option>Golgi apparatus</option>
-  <option>Endoplasmic reticulum</option>
-  <option correct="true">Mitochondria</option>
-  <option>Nucleus</option>
-  <explanation>Mitochondria produce ATP through cellular respiration.</explanation>
-</question>
+  <question>
+    <text>(CBSE 2023) Which cell organelle is called the "powerhouse of the cell"?</text>
+    <option>Nucleus</option>
+    <option>Endoplasmic reticulum</option>
+    <option correct="true">Mitochondria</option>
+    <option>Golgi apparatus</option>
+    <explanation>Mitochondria produce ATP through cellular respiration, providing energy for cellular activities.</explanation>
+  </question>
 
-<question>
-  <text>Function of ribosomes is:</text>
-  <option>Lipid synthesis</option>
-  <option correct="true">Protein synthesis</option>
-  <option>DNA replication</option>
-  <option>Respiration</option>
-  <explanation>Ribosomes are sites of protein synthesis (translation).</explanation>
-</question>
+  <question>
+    <text>(SEBA 2023) Plasmolysis occurs when a plant cell is placed in:</text>
+    <option>Hypotonic solution</option>
+    <option correct="true">Hypertonic solution</option>
+    <option>Isotonic solution</option>
+    <option>Distilled water</option>
+    <explanation>Plasmolysis: cell loses water in hypertonic solution, cytoplasm shrinks away from cell wall. Hypotonic causes turgidity.</explanation>
+  </question>
 
-<question>
-  <text>Which cell lacks nucleus?</text>
-  <option>Plant cell</option>
-  <option>Animal cell</option>
-  <option correct="true">Bacterial cell</option>
-  <option>Fungal cell</option>
-  <explanation>Bacteria are prokaryotes without true nucleus.</explanation>
-</question>
+  <question>
+    <text>(CBSE 2022) Which of these is NOT a part of the nucleus?</text>
+    <option>Nucleolus</option>
+    <option>Chromatin</option>
+    <option correct="true">Lysosome</option>
+    <option>Nuclear membrane</option>
+    <explanation>Lysosome is separate organelle containing digestive enzymes. Nucleus contains nucleolus, chromatin, nucleoplasm, nuclear membrane.</explanation>
+  </question>
 
-<question>
-  <text>Plasmolysis occurs in:</text>
-  <option>Animal cells</option>
-  <option correct="true">Plant cells</option>
-  <option>Bacterial cells</option>
-  <option>All cells</option>
-  <explanation>Plasmolysis - shrinking of cytoplasm from cell wall in hypertonic solution.</explanation>
-</question>
+  <question>
+    <text>(SEBA 2022) The process by which Amoeba engulfs food is called:</text>
+    <option>Diffusion</option>
+    <option>Osmosis</option>
+    <option correct="true">Phagocytosis</option>
+    <option>Pinocytosis</option>
+    <explanation>Phagocytosis: cell eating (solid particles). Amoeba uses pseudopodia. Pinocytosis: cell drinking (liquid).</explanation>
+  </question>
 
-<question>
-  <text>Which controls cell activities?</text>
-  <option>Mitochondria</option>
-  <option correct="true">Nucleus</option>
-  <option>Ribosomes</option>
-  <option>Chloroplast</option>
-  <explanation>Nucleus contains genetic material and controls all cell functions.</explanation>
-</question>
+  <question>
+    <text>(CBSE 2021) Which organelle contains digestive enzymes?</text>
+    <option>Mitochondria</option>
+    <option>Ribosome</option>
+    <option correct="true">Lysosome</option>
+    <option>Chloroplast</option>
+    <explanation>Lysosomes contain hydrolytic enzymes for digestion (suicide bags). Break down worn-out organelles, foreign particles.</explanation>
+  </question>
 
-<question>
-  <text>Present only in plant cells:</text>
-  <option>Mitochondria</option>
-  <option>Ribosomes</option>
-  <option correct="true">Cell wall</option>
-  <option>Cell membrane</option>
-  <explanation>Cell wall (cellulose) gives rigidity to plant cells.</explanation>
-</question>
+  <question>
+    <text>(SEBA 2021) The cell wall of plants is made of:</text>
+    <option>Lipid</option>
+    <option>Protein</option>
+    <option correct="true">Cellulose</option>
+    <option>Chitin</option>
+    <explanation>Plant cell wall: cellulose (polysaccharide). Fungal cell wall: chitin. Bacterial cell wall: peptidoglycan.</explanation>
+  </question>
 
-<question>
-  <text>Osmosis is:</text>
-  <option>Movement of gases</option>
-  <option correct="true">Movement of water through semipermeable membrane</option>
-  <option>Movement of ions</option>
-  <option>Active transport</option>
-  <explanation>Osmosis - passive diffusion of water from high to low concentration.</explanation>
-</question>
+  <question>
+    <text>(CBSE 2020) Which of these is present only in plant cells?</text>
+    <option>Mitochondria</option>
+    <option>Endoplasmic reticulum</option>
+    <option correct="true">Plastids</option>
+    <option>Ribosomes</option>
+    <explanation>Plastids (chloroplasts, chromoplasts, leucoplasts) are only in plant cells. Chloroplasts contain chlorophyll for photosynthesis.</explanation>
+  </question>
 
-<question>
-  <text>Chlorophyll is located in:</text>
-  <option>Mitochondria</option>
-  <option correct="true">Chloroplast</option>
-  <option>Nucleus</option>
-  <option>Vacuole</option>
-  <explanation>Chlorophyll pigment for photosynthesis is in chloroplasts.</explanation>
-</question>
+  <question>
+    <text>(SEBA 2020) The process of movement of water across a semi-permeable membrane is called:</text>
+    <option>Diffusion</option>
+    <option correct="true">Osmosis</option>
+    <option>Active transport</option>
+    <option>Plasmolysis</option>
+    <explanation>Osmosis: water movement from higher to lower concentration through semi-permeable membrane. Diffusion is for any particles.</explanation>
+  </question>
 
-<question>
-  <text>Lysosomes contain:</text>
-  <option>DNA</option>
-  <option>Chlorophyll</option>
-  <option correct="true">Digestive enzymes</option>
-  <option>Ribosomes</option>
-  <explanation>Lysosomes are suicidal bags containing hydrolytic enzymes.</explanation>
-</question>
+  <question>
+    <text>(CBSE 2019) Which cell organelle is involved in protein synthesis?</text>
+    <option>Golgi apparatus</option>
+    <option correct="true">Ribosome</option>
+    <option>Lysosome</option>
+    <option>Mitochondria</option>
+    <explanation>Ribosomes (free or on RER) synthesize proteins. mRNA brings code, tRNA brings amino acids.</explanation>
+  </question>
 
-<question>
-  <text>Which organelle modifies and packages proteins?</text>
-  <option>Mitochondria</option>
-  <option>Ribosomes</option>
-  <option correct="true">Golgi apparatus</option>
-  <option>Endoplasmic reticulum</option>
-  <explanation>Golgi apparatus modifies, sorts, and packages proteins for secretion.</explanation>
-</question>
+  <question>
+    <text>(SEBA 2019) Who discovered cells in cork slices?</text>
+    <option>Robert Brown</option>
+    <option>Leeuwenhoek</option>
+    <option correct="true">Robert Hooke</option>
+    <option>Schleiden</option>
+    <explanation>Robert Hooke (1665) observed cork cells under microscope. Named them "cells" (small rooms).</explanation>
+  </question>
 
-<question>
-  <text>Selectively permeable membrane is:</text>
-  <option>Cell wall</option>
-  <option correct="true">Plasma membrane</option>
-  <option>Nuclear membrane</option>
-  <option>Mitochondrial membrane</option>
-  <explanation>Plasma membrane allows selective movement of substances.</explanation>
-</question>
+  <question>
+    <text>(CBSE 2018) Which of these is called the "suicide bags" of the cell?</text>
+    <option>Mitochondria</option>
+    <option>Ribosomes</option>
+    <option correct="true">Lysosomes</option>
+    <option>Golgi bodies</option>
+    <explanation>Lysosomes burst during cell damage, releasing enzymes that digest cell contents (autolysis).</explanation>
+  </question>
 
-<question>
-  <text>Endoplasmic reticulum with ribosomes is called:</text>
-  <option>Smooth ER</option>
-  <option correct="true">Rough ER</option>
-  <option>Granular ER</option>
-  <option>None of these</option>
-  <explanation>Rough ER has ribosomes attached for protein synthesis.</explanation>
-</question>
+  <question>
+    <text>(SEBA 2018) The movement of substances from higher to lower concentration without energy is:</text>
+    <option>Active transport</option>
+    <option correct="true">Passive transport</option>
+    <option>Endocytosis</option>
+    <option>Exocytosis</option>
+    <explanation>Passive transport (diffusion, osmosis): down concentration gradient, no energy. Active transport: against gradient, requires ATP.</explanation>
+  </question>
 
-<question>
-  <text>Who proposed cell theory?</text>
-  <option>Hooke and Leeuwenhoek</option>
-  <option correct="true">Schleiden and Schwann</option>
-  <option>Virchow and Pasteur</option>
-  <option>Darwin and Mendel</option>
-  <explanation>Schleiden (plants) and Schwann (animals) proposed cell theory in 1838-39.</explanation>
-</question>
+  <!-- Additional Important MCQs -->
 
-<question>
-  <text>Cell membrane is made of:</text>
-  <option>Cellulose</option>
-  <option correct="true">Lipids and proteins</option>
-  <option>Chitin</option>
-  <option>Starch</option>
-  <explanation>Fluid mosaic model - phospholipid bilayer with proteins.</explanation>
-</question>
+  <question>
+    <text>Who proposed cell theory?</text>
+    <option>Hooke and Brown</option>
+    <option correct="true">Schleiden and Schwann</option>
+    <option>Virchow and Pasteur</option>
+    <option>Leeuwenhoek and Hooke</option>
+    <explanation>Cell theory (1838-39): 1) All organisms made of cells, 2) Cell basic unit of life, 3) Cells from pre-existing cells (Virchow).</explanation>
+  </question>
 
-<question>
-  <text>Largest cell organelle in plant cell:</text>
-  <option>Nucleus</option>
-  <option>Mitochondria</option>
-  <option correct="true">Vacuole</option>
-  <option>Chloroplast</option>
-  <explanation>Plant cells have large central vacuole occupying 90% volume.</explanation>
-</question>
+  <question>
+    <text>Which organelle is called the "kitchen of the plant cell"?</text>
+    <option>Mitochondria</option>
+    <option>Nucleus</option>
+    <option correct="true">Chloroplast</option>
+    <option>Vacuole</option>
+    <explanation>Chloroplasts perform photosynthesis, producing food (glucose) for plant. Contain chlorophyll in thylakoids.</explanation>
+  </question>
 
-<question>
-  <text>Which is NOT a part of cell theory?</text>
-  <option>All living things made of cells</option>
-  <option>Cell is basic unit of life</option>
-  <option correct="true">All cells have nucleus</option>
-  <option>Cells arise from pre-existing cells</option>
-  <explanation>Prokaryotic cells lack true nucleus.</explanation>
-</question>
+  <question>
+    <text>The control center of the cell is:</text>
+    <option>Mitochondria</option>
+    <option correct="true">Nucleus</option>
+    <option>Golgi apparatus</option>
+    <option>Endoplasmic reticulum</option>
+    <explanation>Nucleus contains genetic material (DNA), controls cell activities, cell division, protein synthesis.</explanation>
+  </question>
 
-<question>
-  <text>Energy currency of cell:</text>
-  <option>DNA</option>
-  <option>RNA</option>
-  <option correct="true">ATP</option>
-  <option>Glucose</option>
-  <explanation>ATP (Adenosine Triphosphate) stores and transfers energy.</explanation>
-</question>
+  <question>
+    <text>Which is NOT a function of Golgi apparatus?</text>
+    <option>Packaging materials</option>
+    <option>Formation of lysosomes</option>
+    <option>Formation of glycoproteins</option>
+    <option correct="true">Protein synthesis</option>
+    <explanation>Protein synthesis by ribosomes. Golgi modifies, sorts, packages proteins from ER; forms secretory vesicles.</explanation>
+  </question>
 
-<question>
-  <text>Chromosomes are found in:</text>
-  <option>Ribosomes</option>
-  <option correct="true">Nucleus</option>
-  <option>Golgi apparatus</option>
-  <option>Mitochondria</option>
-  <explanation>Chromosomes (DNA+proteins) are in nucleus.</explanation>
-</question>
+  <question>
+    <text>Endoplasmic reticulum with ribosomes is called:</text>
+    <option>Smooth ER</option>
+    <option correct="true">Rough ER</option>
+    <option>Granular ER</option>
+    <option>Non-granular ER</option>
+    <explanation>Rough ER has ribosomes for protein synthesis. Smooth ER lacks ribosomes, involved in lipid synthesis, detoxification.</explanation>
+  </question>
 
-<question>
-  <text>Which organelle detoxifies drugs?</text>
-  <option>Ribosomes</option>
-  <option correct="true">Smooth ER</option>
-  <option>Lysosomes</option>
-  <option>Golgi apparatus</option>
-  <explanation>Smooth ER synthesizes lipids and detoxifies drugs.</explanation>
-</question>
+  <question>
+    <text>What is the function of centrosome?</text>
+    <option>Photosynthesis</option>
+    <option correct="true">Cell division in animal cells</option>
+    <option>Protein synthesis</option>
+    <option>Respiration</option>
+    <explanation>Centrosome (animal cells) contains centrioles that form spindle fibers during cell division. Absent in plant cells.</explanation>
+  </question>
 
-<question>
-  <text>Diffusion rate increases with:</text>
-  <option>Decrease in temperature</option>
-  <option>Decrease in concentration gradient</option>
-  <option correct="true">Increase in temperature</option>
-  <option>Increase in particle size</option>
-  <explanation>Higher temperature increases kinetic energy, faster diffusion.</explanation>
-</question>
+  <question>
+    <text>Which solution causes cell to become turgid?</text>
+    <option>Hypertonic</option>
+    <option correct="true">Hypotonic</option>
+    <option>Isotonic</option>
+    <option>Saturated</option>
+    <explanation>Hypotonic: external solution dilute, water enters cell → turgid (plant) or swell/burst (animal). Hypertonic: water leaves → plasmolysis/shrink.</explanation>
+  </question>
 
-<question>
-  <text>Which cells have irregular shape?</text>
-  <option>Plant cells</option>
-  <option correct="true">Animal cells</option>
-  <option>Bacterial cells</option>
-  <option>Fungal cells</option>
-  <explanation>Animal cells lack cell wall, so shape varies.</explanation>
-</question>
+  <question>
+    <text>The network of microtubules and microfilaments is called:</text>
+    <option>Endomembrane system</option>
+    <option correct="true">Cytoskeleton</option>
+    <option>Plasmodesmata</option>
+    <option>Ground substance</option>
+    <explanation>Cytoskeleton: protein filaments (microtubules, microfilaments, intermediate filaments) providing shape, movement, support.</explanation>
+  </question>
 
-<question>
-  <text>Cell wall of fungi is made of:</text>
-  <option>Cellulose</option>
-  <option correct="true">Chitin</option>
-  <option>Peptidoglycan</option>
-  <option>Silica</option>
-  <explanation>Fungal cell wall contains chitin (not cellulose).</explanation>
-</question>
+  <question>
+    <text>Which organelle stores water, salts, and wastes?</text>
+    <option>Lysosome</option>
+    <option>Golgi apparatus</option>
+    <option correct="true">Vacuole</option>
+    <option>Mitochondria</option>
+    <explanation>Vacuoles: large central in plants (cell sap), small in animals. Store water, ions, nutrients, wastes; maintain turgor pressure.</explanation>
+  </question>
 
-<question>
-  <text>Which organelle stores calcium ions?</text>
-  <option>Golgi apparatus</option>
-  <option>Lysosomes</option>
-  <option correct="true">Endoplasmic reticulum</option>
-  <option>Ribosomes</option>
-  <explanation>ER stores calcium ions for muscle contraction signaling.</explanation>
-</question>
+  <question>
+    <text>Who discovered nucleus in cells?</text>
+    <option correct="true">Robert Brown</option>
+    <option>Robert Hooke</option>
+    <option>Anton van Leeuwenhoek</option>
+    <option>Matthias Schleiden</option>
+    <explanation>Robert Brown (1831) discovered nucleus in orchid cells. Nucleus = "little nut" in Latin.</explanation>
+  </question>
 
-<question>
-  <text>Who saw first living cell?</text>
-  <option>Robert Hooke</option>
-  <option correct="true">Anton van Leeuwenhoek</option>
-  <option>Robert Brown</option>
-  <option>Schleiden</option>
-  <explanation>Leeuwenhoek observed first living cells (bacteria) in 1674.</explanation>
-</question>
+  <question>
+    <text>Which process requires energy to move substances?</text>
+    <option>Diffusion</option>
+    <option>Osmosis</option>
+    <option correct="true">Active transport</option>
+    <option>Facilitated diffusion</option>
+    <explanation>Active transport uses ATP to move against gradient (e.g., Na⁺/K⁺ pump). Diffusion, osmosis, facilitated diffusion are passive.</explanation>
+  </question>
+
+  <question>
+    <text>The living content of cell is called:</text>
+    <option>Cell wall</option>
+    <option correct="true">Protoplasm</option>
+    <option>Cytoplasm</option>
+    <option>Nucleoplasm</option>
+    <explanation>Protoplasm = cytoplasm + nucleus. Cytoplasm = cytosol + organelles. Nucleoplasm = nuclear content.</explanation>
+  </question>
+
+  <question>
+    <text>Which organelle detoxifies drugs and poisons?</text>
+    <option>Rough ER</option>
+    <option correct="true">Smooth ER</option>
+    <option>Golgi apparatus</option>
+    <option>Lysosome</option>
+    <explanation>Smooth ER in liver cells contains detoxifying enzymes. Also synthesizes lipids, steroids.</explanation>
+  </question>
+
+  <question>
+    <text>The process of cell drinking is:</text>
+    <option correct="true">Pinocytosis</option>
+    <option>Phagocytosis</option>
+    <option>Exocytosis</option>
+    <option>Plasmolysis</option>
+    <explanation>Pinocytosis ("cell drinking"): ingestion of liquid/dissolved substances. Phagocytosis: solid particles.</explanation>
+  </question>
+
+  <question>
+    <text>Which structures allow communication between plant cells?</text>
+    <option>Desmosomes</option>
+    <option>Tight junctions</option>
+    <option correct="true">Plasmodesmata</option>
+    <option>Gap junctions</option>
+    <explanation>Plasmodesmata: cytoplasmic connections through cell walls for transport/signaling. Animals have gap junctions.</explanation>
+  </question>
+
+  <question>
+    <text>Chromosomes are made of:</text>
+    <option>RNA and protein</option>
+    <option correct="true">DNA and protein</option>
+    <option>Lipid and protein</option>
+    <option>Carbohydrate and protein</option>
+    <explanation>Chromosomes = DNA + histone proteins. Chromatin = uncoiled chromosomes. Genes are DNA segments.</explanation>
+  </question>
+
+  <question>
+    <text>Which is NOT a difference between plant and animal cells?</text>
+    <option>Cell wall present in plants</option>
+    <option>Chloroplasts in plants</option>
+    <option>Large vacuole in plants</option>
+    <option correct="true">Mitochondria in both</option>
+    <explanation>Both plant and animal cells have mitochondria. Differences: plants have cell wall, chloroplasts, large vacuole; animals have centrioles.</explanation>
+  </question>
+
+  <question>
+    <text>The fluid content inside plasma membrane is:</text>
+    <option>Nucleoplasm</option>
+    <option correct="true">Cytoplasm</option>
+    <option>Protoplasm</option>
+    <option>Cell sap</option>
+    <explanation>Cytoplasm: fluid between plasma membrane and nucleus (cytosol + organelles). Cytosol = aqueous matrix.</explanation>
+  </question>
+
+  <question>
+    <text>Which organelle modifies and packages proteins?</text>
+    <option>Ribosome</option>
+    <option>Endoplasmic reticulum</option>
+    <option correct="true">Golgi apparatus</option>
+    <option>Lysosome</option>
+    <explanation>Golgi apparatus: receives proteins from ER, modifies (glycosylation), packages into vesicles for secretion/lysosomes.</explanation>
+  </question>
+
+  <question>
+    <text>The selectively permeable membrane of cell is:</text>
+    <option>Cell wall</option>
+    <option correct="true">Plasma membrane</option>
+    <option>Nuclear membrane</option>
+    <option>Tonoplast</option>
+    <explanation>Plasma membrane: phospholipid bilayer with proteins, selectively permeable. Cell wall fully permeable. Tonoplast vacuole membrane.</explanation>
+  </question>
+
+  <question>
+    <text>Which process releases cellular secretions?</text>
+    <option>Endocytosis</option>
+    <option correct="true">Exocytosis</option>
+    <option>Osmosis</option>
+    <option>Diffusion</option>
+    <explanation>Exocytosis: vesicles fuse with plasma membrane, release contents outside (hormones, enzymes). Endocytosis: intake.</explanation>
+  </question>
+
+  <question>
+    <text>The smallest cell is of:</text>
+    <option>Ostrich egg</option>
+    <option>Human nerve cell</option>
+    <option correct="true">Mycoplasma</option>
+    <option>Bacteria</option>
+    <explanation>Mycoplasma (PPLO): 0.1-0.5 μm, smallest cell. Largest: ostrich egg. Longest: human nerve cell (up to 1 m).</explanation>
+  </question>
+
+  <question>
+    <text>Which gives shape and rigidity to plant cell?</text>
+    <option>Plasma membrane</option>
+    <option correct="true">Cell wall</option>
+    <option>Cytoskeleton</option>
+    <option>Vacuole</option>
+    <explanation>Cell wall (cellulose) provides shape, rigidity, protection, prevents bursting in hypotonic solution.</explanation>
+  </question>
+
+  <question>
+    <text>The site of aerobic respiration is:</text>
+    <option>Chloroplast</option>
+    <option>Ribosome</option>
+    <option correct="true">Mitochondria</term>
+    <option>Nucleus</option>
+    <explanation>Mitochondria: Krebs cycle in matrix, ETC in inner membrane. Produce 36 ATP per glucose. "Powerhouse".</explanation>
+  </question>
+
+  <question>
+    <text>Who discovered living cells?</text>
+    <option>Robert Hooke</option>
+    <option correct="true">Anton van Leeuwenhoek</option>
+    <option>Robert Brown</option>
+    <option>Schleiden</option>
+    <explanation>Leeuwenhoek (1674) discovered free-living cells (bacteria, protozoa) using improved microscope. Called them "animalcules".</explanation>
+  </question>
 </quiz>
