@@ -66,13 +66,13 @@
     "description": "Junior Engineer",
     "subjects": [
       {
-        "id": "mechanical",
+        "id": "Mechanical",
         "name": "Mechanical",
         "icon": "🦾",
         "description": "DPQ/LDCE"
       },
       {
-        "id": "electrical",
+        "id": "Electrical",
         "name": "Electrical",
         "icon": "⚡",
         "description": "DPQ/LDCE"
