@@ -2135,80 +2135,81 @@
     }
 
     function loadClasses() {
-      // Get user's class from Google Sheet
-      const userClassValue = currentUser?.class || "8";
-      
-      let availableClasses = [];
-      
-      if (currentUser && currentUser.role === 'Teacher') {
-        // Teacher sees all classes from classes.json
-        availableClasses = CLASSES_CONFIG.map(cls => ({
-          id: cls.id,
-          name: cls.name,
-          icon: cls.icon,
-          desc: cls.description
-        }));
-      } else {
-        // Student sees only their assigned class
-        let studentClass = "8";
-        
-        if (userClassValue && userClassValue.toLowerCase() !== "none" && userClassValue.trim() !== "") {
-          // Try to find matching class in CLASSES_CONFIG
-          const matchedClass = CLASSES_CONFIG.find(cls => 
-            cls.id.toLowerCase() === userClassValue.toLowerCase() || 
-            cls.name.toLowerCase().includes(userClassValue.toLowerCase())
-          );
-          
-          if (matchedClass) {
-            studentClass = matchedClass.id;
-          } else {
-            // Extract numeric part
-            const classMatch = userClassValue.match(/\d+/);
-            studentClass = classMatch ? classMatch[0] : "8";
-          }
-        }
-        
-        // Find the class in CLASSES_CONFIG
-        const studentClassConfig = CLASSES_CONFIG.find(cls => cls.id === studentClass);
-        
-        if (studentClassConfig) {
-          availableClasses = [{
-            id: studentClassConfig.id,
-            name: studentClassConfig.name,
-            icon: studentClassConfig.icon,
-            desc: studentClassConfig.description
-          }];
-        } else {
-          // Fallback
-          availableClasses = [{
-            id: studentClass,
-            name: `Class ${studentClass}`,
-            icon: "📚",
-            desc: "Mathematics & Science"
-          }];
-        }
-      }
-      
-      classGridEl.innerHTML = "";
-      
-      availableClasses.forEach(cls => {
-        const card = document.createElement("div");
-        card.className = "class-card";
-        card.innerHTML = `
-          <div class="class-icon">${cls.icon}</div>
-          <div class="class-name">${cls.name}</div>
-          <div class="class-desc">${cls.desc}</div>
-        `;
-        
-        card.addEventListener("click", () => {
-          showSubjectSelection(cls.id);
-          resetInactivityTimer();
-        });
-        
-        classGridEl.appendChild(card);
-      });
-      
-      console.log(`📚 Loaded ${availableClasses.length} classes for user`);
+  const userClassValue = currentUser?.class || "";
+  let availableClasses = [];
+
+  // =========================
+  // ADMIN → FULL ACCESS
+  // =========================
+  if (currentUser.role === 'Admin') {
+    availableClasses = CLASSES_CONFIG;
+  }
+
+  // =========================
+  // TEACHER → LIMITED CLASSES
+  // =========================
+  else if (currentUser.role === 'Teacher') {
+
+    if (!userClassValue || userClassValue.toLowerCase() === "all") {
+      availableClasses = CLASSES_CONFIG;
+    } else {
+      const teacherClasses = userClassValue
+        .split(',')
+        .map(c => c.replace(/class/i, '').trim());
+
+      availableClasses = CLASSES_CONFIG.filter(cls =>
+        teacherClasses.includes(cls.id)
+      );
+    }
+  }
+
+  // =========================
+  // STUDENT → SINGLE CLASS
+  // =========================
+  else {
+    let studentClass = "8";
+
+    if (userClassValue && userClassValue.toLowerCase() !== "none") {
+      const match = userClassValue.match(/\d+/);
+      studentClass = match ? match[0] : "8";
+    }
+
+    const cls = CLASSES_CONFIG.find(c => c.id === studentClass);
+
+    availableClasses = cls
+      ? [cls]
+      : [{
+          id: studentClass,
+          name: `Class ${studentClass}`,
+          icon: "📚",
+          description: "Mathematics & Science"
+        }];
+  }
+
+  // =========================
+  // RENDER CLASS CARDS
+  // =========================
+  classGridEl.innerHTML = "";
+
+  availableClasses.forEach(cls => {
+    const card = document.createElement("div");
+    card.className = "class-card";
+    card.innerHTML = `
+      <div class="class-icon">${cls.icon}</div>
+      <div class="class-name">${cls.name}</div>
+      <div class="class-desc">${cls.description || ""}</div>
+    `;
+
+    card.addEventListener("click", () => {
+      showSubjectSelection(cls.id);
+      resetInactivityTimer();
+    });
+
+    classGridEl.appendChild(card);
+  });
+
+  console.log(`📚 ${currentUser.role} access → ${availableClasses.length} classes`);
+}
     }
 
     function loadSubjects() {
