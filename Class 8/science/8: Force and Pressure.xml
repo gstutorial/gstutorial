@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+  <metadata>
+    <author>G. S. Tutorial</author>
+    <description>Class 8 Science - Chapter 8: Force and Pressure</description>
+  </metadata>
+
+  <!-- Previous Year Questions (CBSE/SEBA) -->
+
+  <question>
+    <text>(CBSE 2023) Which of the following is a contact force?</text>
+    <option>Gravitational force</option>
+    <option>Magnetic force</option>
+    <option correct="true">Frictional force</option>
+    <option>Electrostatic force</option>
+    <explanation>Frictional force requires physical contact between surfaces. Gravitational, magnetic, and electrostatic forces are non-contact forces.</explanation>
+  </question>
+
+  <question>
+    <text>(SEBA 2023) What is the SI unit of pressure?</text>
+    <option>Newton</option>
+    <option>Joule</option>
+    <option correct="true">Pascal</option>
+    <option>Watt</option>
+    <explanation>Pressure = Force/Area. Its SI unit is Pascal (Pa) = 1 Newton per square meter (N/m²).</explanation>
+  </question>
+
+  <question>
+    <text>(CBSE 2022) Which force is responsible for the Earth revolving around the Sun?</text>
+    <option>Frictional force</option>
+    <option>Magnetic force</option>
+    <option correct="true">Gravitational force</option>
+    <option>Muscular force</option>
+    <explanation>Gravitational force between the Sun and Earth keeps the Earth in orbit around the Sun.</explanation>
+  </question>
+
+  <question>
+    <text>(SEBA 2022) What happens to pressure when area decreases?</text>
+    <option>Pressure decreases</option>
+    <option>Pressure remains same</option>
+    <option correct="true">Pressure increases</option>
+    <option>Pressure becomes zero</option>
+    <explanation>Pressure is inversely proportional to area (P = F/A). Smaller area means greater pressure for the same force.</explanation>
+  </question>
+
+  <question>
+    <text>(CBSE 2021) Which device is used to measure atmospheric pressure?</text>
+    <option>Thermometer</option>
+    <option>Speedometer</option>
+    <option correct="true">Barometer</option>
+    <option>Ammeter</option>
+    <explanation>Barometer measures atmospheric pressure. Mercury barometer was invented by Torricelli.</explanation>
+  </question>
+
+  <question>
+    <text>(SEBA 2021) Why do sharp knives cut better?</text>
+    <option>They are shiny</option>
+    <option>They are heavy</option>
+    <option correct="true">They have small area of contact</option>
+    <option>They are made of steel</option>
+    <explanation>Sharp knives have very small cutting edge area, producing high pressure even with small force.</explanation>
+  </question>
+
+  <question>
+    <text>(CBSE 2020) Which force always opposes motion?</text>
+    <option>Gravitational force</option>
+    <option>Magnetic force</option>
+    <option correct="true">Frictional force</option>
+    <option>Electrostatic force</option>
+    <explanation>Friction always opposes relative motion between surfaces in contact.</explanation>
+  </question>
+
+  <question>
+    <text>(SEBA 2020) What is the pressure exerted by atmosphere at sea level?</text>
+    <option>760 mm of Hg</option>
+    <option correct="true">760 mm of Hg</option>
+    <option>700 mm of Hg</option>
+    <option>800 mm of Hg</option>
+    <explanation>Normal atmospheric pressure at sea level is 760 mm of mercury (Hg) or 1.013 × 10⁵ Pa.</explanation>
+  </question>
+
+  <question>
+    <text>(CBSE 2019) Which of these is an example of muscular force?</text>
+    <option>Falling of apple</option>
+    <option>Attraction between magnets</option>
+    <option correct="true">Lifting a bucket</option>
+    <option>Charged comb attracting paper</option>
+    <explanation>Muscular force is exerted by muscles of living beings. Lifting, pushing, pulling involve muscular force.</explanation>
+  </question>
+
+  <question>
+    <text>(SEBA 2019) Why are wide tires used in heavy vehicles?</text>
+    <option>To look attractive</option>
+    <option>To reduce friction</option>
+    <option correct="true">To reduce pressure on ground</option>
+    <option>To increase speed</option>
+    <explanation>Wider tires increase contact area, reducing pressure on road surface and preventing sinking into soft ground.</explanation>
+  </question>
+
+  <question>
+    <text>(CBSE 2018) Which force prevents us from slipping?</text>
+    <option>Gravitational force</option>
+    <option correct="true">Frictional force</option>
+    <option>Magnetic force</option>
+    <option>Electrostatic force</option>
+    <explanation>Friction between shoes and ground prevents slipping. Without friction, walking would be impossible.</explanation>
+  </question>
+
+  <question>
+    <text>(SEBA 2018) What instrument measures liquid pressure?</text>
+    <option>Barometer</option>
+    <option>Thermometer</option>
+    <option correct="true">Manometer</option>
+    <option>Hydrometer</option>
+    <explanation>Manometer measures pressure of liquids and gases. Barometer measures atmospheric pressure specifically.</explanation>
+  </question>
+
+  <!-- Additional Important MCQs -->
+
+  <question>
+    <text>Which force pulls objects towards the Earth?</text>
+    <option>Magnetic force</option>
+    <option>Frictional force</option>
+    <option correct="true">Gravitational force</option>
+    <option>Electrostatic force</option>
+    <explanation>Gravity is the force of attraction between Earth and objects. It gives objects weight.</explanation>
+  </question>
+
+  <question>
+    <text>What is pressure?</text>
+    <option>Force per unit volume</option>
+    <option>Mass per unit area</option>
+    <option correct="true">Force per unit area</option>
+    <option>Weight per unit volume</option>
+    <explanation>Pressure = Force/Area. It measures how concentrated a force is.</explanation>
+  </question>
+
+  <question>
+    <text>Why do nails have pointed tips?</text>
+    <option>To look good</option>
+    <option>To reduce weight</option>
+    <option correct="true">To increase pressure for easy penetration</option>
+    <option>To reduce cost</option>
+    <explanation>Pointed tips have very small area, creating high pressure with hammer blows to penetrate wood easily.</explanation>
+  </question>
+
+  <question>
+    <text>Which force is exerted by a charged body?</text>
+    <option>Magnetic force</option>
+    <option correct="true">Electrostatic force</option>
+    <option>Gravitational force</option>
+    <option>Frictional force</option>
+    <explanation>Electrostatic force is exerted by charged objects. Like charges repel, unlike charges attract.</explanation>
+  </question>
+
+  <question>
+    <text>What happens to atmospheric pressure as we go higher?</text>
+    <option>Increases</option>
+    <option>Remains same</option>
+    <option correct="true">Decreases</option>
+    <option>First increases then decreases</option>
+    <explanation>Atmospheric pressure decreases with altitude because air becomes thinner (less air column above).</explanation>
+  </question>
+
+  <question>
+    <text>Which type of force does not require physical contact?</text>
+    <option>Frictional force</option>
+    <option>Muscular force</option>
+    <option correct="true">Magnetic force</option>
+    <option>Mechanical force</option>
+    <explanation>Magnetic, gravitational and electrostatic forces act at a distance without contact.</explanation>
+  </question>
+
+  <question>
+    <text>Why do school bags have wide straps?</text>
+    <option>To look fashionable</option>
+    <option>To carry more books</option>
+    <option correct="true">To reduce pressure on shoulders</option>
+    <option>To make them waterproof</option>
+    <explanation>Wide straps increase area of contact, reducing pressure on shoulders for greater comfort.</explanation>
+  </question>
+
+  <question>
+    <text>What is the effect of force on a stationary object?</text>
+    <option>Can change its shape</option>
+    <option>Can make it move</option>
+    <option>Can stop a moving object</option>
+    <option correct="true">All of these</option>
+    <explanation>Force can: move stationary objects, stop moving objects, change speed/direction, and change shape of objects.</explanation>
+  </question>
+
+  <question>
+    <text>Which scientist discovered the principle of buoyancy?</text>
+    <option>Newton</option>
+    <option>Galileo</option>
+    <option correct="true">Archimedes</option>
+    <option>Einstein</option>
+    <explanation>Archimedes discovered that upward buoyant force equals weight of fluid displaced by an object.</explanation>
+  </question>
+
+  <question>
+    <text>What is 1 Pascal equal to?</text>
+    <option>1 N/cm²</option>
+    <option correct="true">1 N/m²</option>
+    <option>1 kg/m²</option>
+    <option>1 dyne/cm²</option>
+    <explanation>1 Pascal = 1 Newton per square meter. It's a very small unit; atmospheric pressure is about 101,325 Pa.</explanation>
+  </question>
+
+  <question>
+    <text>Why do skis slide easily on snow?</text>
+    <option>They are made of metal</option>
+    <option correct="true">They have large area reducing pressure</option>
+    <option>Snow has no friction</option>
+    <option>They are very light</option>
+    <explanation>Skis have large surface area, reducing pressure so they don't sink into snow, allowing sliding with less friction.</explanation>
+  </question>
+
+  <question>
+    <text>Which force holds protons and neutrons in nucleus?</text>
+    <option>Gravitational force</option>
+    <option>Electromagnetic force</option>
+    <option correct="true">Nuclear force</option>
+    <option>Frictional force</option>
+    <explanation>Nuclear force (strong force) binds protons and neutrons in atomic nucleus. It's the strongest fundamental force.</explanation>
+  </question>
+
+  <question>
+    <text>What happens to liquid pressure with depth?</text>
+    <option>Decreases</option>
+    <option>Remains constant</option>
+    <option correct="true">Increases</option>
+    <option>First decreases then increases</option>
+    <explanation>Liquid pressure increases with depth due to weight of liquid above. P = hρg where h is depth.</explanation>
+  </question>
+
+  <question>
+    <text>Which device works on atmospheric pressure?</text>
+    <option>Electric bulb</option>
+    <option correct="true">Drinking straw</option>
+    <option>Bicycle pump</option>
+    <option>Spring balance</option>
+    <explanation>When you suck through a straw, you reduce pressure inside, and atmospheric pressure pushes liquid up.</explanation>
+  </question>
+
+  <question>
+    <text>What type of force is tension in a string?</text>
+    <option>Non-contact force</option>
+    <option correct="true">Contact force</option>
+    <option>Magnetic force</option>
+    <option>Gravitational force</option>
+    <explanation>Tension is a contact force transmitted through a string, rope, or cable when pulled at both ends.</explanation>
+  </question>
+
+  <question>
+    <text>Why are dams thicker at bottom?</text>
+    <option>For beauty</option>
+    <option>To store more water</option>
+    <option correct="true">To withstand higher pressure at depth</option>
+    <option>To reduce cost</option>
+    <explanation>Water pressure increases with depth. Thicker base withstands greater pressure at bottom of dam.</explanation>
+  </question>
+
+  <question>
+    <text>What force causes a charged balloon to stick to wall?</text>
+    <option>Magnetic force</option>
+    <option>Gravitational force</option>
+    <option correct="true">Electrostatic force</option>
+    <option>Frictional force</option>
+    <explanation>Rubbed balloon becomes charged and exerts electrostatic force on wall, causing attraction.</explanation>
+  </question>
+
+  <question>
+    <text>Which force is responsible for tides?</text>
+    <option>Magnetic force of Earth</option>
+    <option correct="true">Gravitational pull of moon</option>
+    <option>Centrifugal force</option>
+    <option>Frictional force</option>
+    <explanation>Moon's gravity pulls ocean water causing high tides. Sun also contributes but with less effect.</explanation>
+  </question>
+
+  <question>
+    <text>What happens when force is applied to a spring?</text>
+    <option>It breaks</option>
+    <option correct="true">It gets compressed or stretched</option>
+    <option>It loses weight</option>
+    <option>It becomes hot</option>
+    <explanation>Force can change shape of objects. Spring gets compressed (pushed) or stretched (pulled), demonstrating elastic force.</explanation>
+  </question>
+
+  <question>
+    <text>Why do divers wear special suits in deep sea?</text>
+    <option>To look colorful</option>
+    <option>To swim faster</option>
+    <option correct="true">To withstand high pressure</option>
+    <option>To attract fish</option>
+    <explanation>Deep sea has enormous water pressure. Special suits maintain normal pressure around diver's body.</explanation>
+  </question>
+</quiz>
