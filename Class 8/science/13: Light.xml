@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+  <metadata>
+    <author>G. S. Tutorial</author>
+    <description>Class 8 Science - Chapter 13: Light</description>
+  </metadata>
+
+  <!-- Previous Year Questions (CBSE/SEBA) -->
+
+  <question>
+    <text>(CBSE 2023) Which type of mirror always forms a virtual image?</text>
+    <option>Concave mirror</option>
+    <option>Plane mirror</option>
+    <option correct="true">Convex mirror</option>
+    <option>Both plane and convex</option>
+    <explanation>Convex mirrors always form virtual, erect, and diminished images regardless of object position.</explanation>
+  </question>
+
+  <question>
+    <text>(SEBA 2023) The splitting of white light into seven colors is called:</text>
+    <option>Reflection</option>
+    <option>Refraction</option>
+    <option correct="true">Dispersion</option>
+    <option>Scattering</option>
+    <explanation>Dispersion is the splitting of white light into its constituent colors (VIBGYOR) when passing through a prism.</explanation>
+  </question>
+
+  <question>
+    <text>(CBSE 2022) Which part of human eye controls the amount of light entering?</text>
+    <option>Retina</option>
+    <option>Cornea</option>
+    <option correct="true">Iris</option>
+    <option>Lens</option>
+    <explanation>Iris controls pupil size, regulating light entering eye. In bright light, pupil constricts; in dim light, it dilates.</explanation>
+  </question>
+
+  <question>
+    <text>(SEBA 2022) What is the angle of incidence if reflected ray is at 30° to normal?</text>
+    <option>15°</option>
+    <option>60°</option>
+    <option correct="true">30°</option>
+    <option>90°</option>
+    <explanation>According to law of reflection: Angle of incidence = Angle of reflection. Both are measured from normal.</explanation>
+  </question>
+
+  <question>
+    <text>(CBSE 2021) Which cells in retina are sensitive to dim light?</text>
+    <option>Cone cells</option>
+    <option correct="true">Rod cells</option>
+    <option>Optic nerve cells</option>
+    <option>Iris cells</option>
+    <explanation>Rod cells detect dim light (night vision) but don't distinguish colors. Cone cells detect colors in bright light.</explanation>
+  </question>
+
+  <question>
+    <text>(SEBA 2021) The image formed by plane mirror is:</text>
+    <option>Real and inverted</option>
+    <option>Real and erect</option>
+    <option>Virtual and inverted</option>
+    <option correct="true">Virtual and erect</option>
+    <explanation>Plane mirrors always form virtual (cannot be obtained on screen), erect, and same-size images laterally inverted.</explanation>
+  </question>
+
+  <question>
+    <text>(CBSE 2020) Which phenomenon is responsible for twinkling of stars?</text>
+    <option>Reflection</option>
+    <option>Dispersion</option>
+    <option correct="true">Refraction</option>
+    <option>Scattering</option>
+    <explanation>Atmospheric refraction causes starlight to bend continuously due to varying air density, making stars twinkle.</explanation>
+  </question>
+
+  <question>
+    <text>(SEBA 2020) What type of lens is used to correct myopia?</text>
+    <option>Convex lens</option>
+    <option correct="true">Concave lens</option>
+    <option>Cylindrical lens</option>
+    <option>Bifocal lens</option>
+    <explanation>Myopia (nearsightedness) is corrected using concave (diverging) lenses which diverge light before it enters eye.</explanation>
+  </question>
+
+  <question>
+    <text>(CBSE 2019) Which color of light scatters least in atmosphere?</text>
+    <option>Violet</option>
+    <option>Blue</option>
+    <option correct="true">Red</option>
+    <option>Green</option>
+    <explanation>Red light has longest wavelength and scatters least. Blue/violet scatter most (Rayleigh scattering).</explanation>
+  </question>
+
+  <question>
+    <text>(SEBA 2019) The phenomenon of bouncing back of light is called:</text>
+    <option>Refraction</option>
+    <option>Dispersion</option>
+    <option correct="true">Reflection</option>
+    <option>Scattering</option>
+    <explanation>Reflection is when light bounces off a surface. Laws: 1) ∠i = ∠r, 2) Incident ray, reflected ray, and normal are coplanar.</explanation>
+  </question>
+
+  <question>
+    <text>(CBSE 2018) Which mirror is used as rear view mirror in vehicles?</text>
+    <option>Plane mirror</option>
+    <option>Concave mirror</option>
+    <option correct="true">Convex mirror</option>
+    <option>Spherical mirror</option>
+    <explanation>Convex mirrors give wider field of view and always show diminished but wider area, making them ideal for rear view.</explanation>
+  </question>
+
+  <question>
+    <text>(SEBA 2018) What is the persistence of vision?</text>
+    <option>Ability to see colors</option>
+    <option>Ability to see distant objects</option>
+    <option correct="true">Retention of image for 1/16 second</option>
+    <option>Ability to see in dark</option>
+    <explanation>Eye retains image for about 1/16 second after object is removed. This makes motion pictures appear continuous.</explanation>
+  </question>
+
+  <!-- Additional Important MCQs -->
+
+  <question>
+    <text>Which lens converges light rays?</text>
+    <option>Concave lens</option>
+    <option correct="true">Convex lens</option>
+    <option>Both</option>
+    <option>Neither</option>
+    <explanation>Convex lens (converging) brings parallel rays to focus. Concave lens (diverging) spreads parallel rays apart.</explanation>
+  </question>
+
+  <question>
+    <text>What is the speed of light in vacuum?</text>
+    <option>3 × 10⁵ m/s</option>
+    <option correct="true">3 × 10⁸ m/s</option>
+    <option>3 × 10¹⁰ m/s</option>
+    <option>3 × 10⁶ m/s</option>
+    <explanation>Speed of light in vacuum = 299,792,458 m/s ≈ 3 × 10⁸ m/s. It's the universal speed limit.</explanation>
+  </question>
+
+  <question>
+    <text>Why does a pencil appear bent in water?</text>
+    <option>Due to reflection</option>
+    <option correct="true">Due to refraction</option>
+    <option>Due to dispersion</option>
+    <option>Due to scattering</option>
+    <explanation>Light bends when passing from water to air (refraction), making pencil appear bent at water surface.</explanation>
+  </question>
+
+  <question>
+    <text>Which defect causes difficulty in seeing nearby objects clearly?</text>
+    <option>Myopia</option>
+    <option correct="true">Hypermetropia</option>
+    <option>Presbyopia</option>
+    <option>Astigmatism</option>
+    <explanation>Hypermetropia (farsightedness): can see distant objects clearly but not nearby. Corrected with convex lens.</explanation>
+  </question>
+
+  <question>
+    <text>What is the white part of eye called?</text>
+    <option>Cornea</option>
+    <option>Iris</option>
+    <option>Retina</option>
+    <option correct="true">Sclera</option>
+    <explanation>Sclera is tough white outer layer. Cornea is transparent front part. Iris is colored part. Retina contains light-sensitive cells.</explanation>
+  </question>
+
+  <question>
+    <text>What type of image is formed on retina?</text>
+    <option correct="true">Real and inverted</option>
+    <option>Virtual and erect</option>
+    <option>Virtual and inverted</option>
+    <option>Real and erect</option>
+    <explanation>Eye lens forms real, inverted image on retina. Brain processes it as erect.</explanation>
+  </question>
+
+  <question>
+    <text>Which phenomenon causes rainbow?</text>
+    <option>Reflection</option>
+    <option>Refraction</option>
+    <option correct="true">Dispersion and total internal reflection</option>
+    <option>Scattering</option>
+    <explanation>Rainbow forms due to refraction, dispersion, and total internal reflection of sunlight in raindrops.</explanation>
+  </question>
+
+  <question>
+    <text>What is the power of accommodation?</text>
+    <option>Eye's ability to see colors</option>
+    <option correct="true">Eye's ability to change focal length</option>
+    <option>Eye's ability to see in dark</option>
+    <option>Eye's ability to produce tears</option>
+    <explanation>Ciliary muscles change lens curvature to focus on near/far objects. This ability decreases with age (presbyopia).</explanation>
+  </question>
+
+  <question>
+    <text>Which mirror can form real and inverted images?</text>
+    <option>Plane mirror</option>
+    <option>Convex mirror</option>
+    <option correct="true">Concave mirror</option>
+    <option>All mirrors</option>
+    <explanation>Concave mirrors form real, inverted images when object is beyond focus. They also form virtual, erect images if object is between focus and mirror.</explanation>
+  </question>
+
+  <question>
+    <text>What is the blind spot?</text>
+    <option>Where rods are concentrated</option>
+    <option correct="true">Where optic nerve exits, no photoreceptors</option>
+    <option>Center of retina</option>
+    <option>Where lens attaches</option>
+    <explanation>Blind spot has no rods or cones, so images falling here aren't detected. Brain fills the gap using surrounding information.</explanation>
+  </question>
+
+  <question>
+    <text>Why is sky blue?</text>
+    <option>Water reflection</option>
+    <option correct="true">Rayleigh scattering of blue light</option>
+    <option>Ozone layer color</option>
+    <option>Sun emits blue light</option>
+    <explanation>Shorter blue wavelengths scatter more in atmosphere than longer red wavelengths, making sky appear blue.</explanation>
+  </question>
+
+  <question>
+    <text>What is the normal vision called?</text>
+    <option>Myopia</option>
+    <option>Hypermetropia</option>
+    <option correct="true">Emmetropia</option>
+    <option>Presbyopia</option>
+    <explanation>Emmetropia is normal vision where parallel rays focus exactly on retina without accommodation.</explanation>
+  </question>
+
+  <question>
+    <text>Which mirror has a positive focal length?</text>
+    <option>Concave mirror</option>
+    <option correct="true">Concave mirror</option>
+    <option>Convex mirror</option>
+    <option>Both</option>
+    <explanation>Concave mirror focal length is negative by convention. Convex mirror focal length is positive.</explanation>
+  </question>
+
+  <question>
+    <text>What causes sun to appear red during sunrise/sunset?</text>
+    <option>Reflection from clouds</option>
+    <option correct="true">More atmospheric scattering of blue light</option>
+    <option>Sun is cooler</option>
+    <option>Earth's rotation</option>
+    <explanation>Sunlight travels through thicker atmosphere at horizon, scattering away blue light, leaving red/orange to reach us.</explanation>
+  </question>
+
+  <question>
+    <text>Which part of eye contains photoreceptor cells?</text>
+    <option>Cornea</option>
+    <option>Iris</option>
+    <option correct="true">Retina</option>
+    <option>Lens</option>
+    <explanation>Retina contains rods (dim light) and cones (color vision). Optic nerve carries signals to brain.</explanation>
+  </question>
+
+  <question>
+    <text>What is lateral inversion?</text>
+    <option>Image upside down</option>
+    <option correct="true">Left appears right and vice versa</option>
+    <option>Image enlarged</option>
+    <option>Image blurred</option>
+    <explanation>Plane mirror causes lateral inversion: your left appears as right in mirror. Text appears reversed.</explanation>
+  </question>
+
+  <question>
+    <text>Which lens is thicker at center than edges?</text>
+    <option>Concave lens</option>
+    <option correct="true">Convex lens</option>
+    <option>Both</option>
+    <option>Neither</option>
+    <explanation>Convex lens converges light, thicker at center. Concave lens diverges light, thinner at center.</explanation>
+  </question>
+
+  <question>
+    <text>What is the range of normal vision?</text>
+    <option>10 cm to infinity</option>
+    <option correct="true">25 cm to infinity</option>
+    <option>50 cm to 5 m</option>
+    <option>1 m to 100 m</option>
+    <explanation>Normal near point = 25 cm (least distance of distinct vision). Normal far point = infinity.</explanation>
+  </question>
+
+  <question>
+    <text>Which phenomenon causes mirage?</text>
+    <option>Reflection</option>
+    <option correct="true">Total internal reflection</option>
+    <option>Dispersion</option>
+    <option>Scattering</option>
+    <explanation>Mirage in deserts: total internal reflection due to temperature gradient makes sky appear as water on ground.</explanation>
+  </question>
+
+  <question>
+    <text>What is the function of cornea?</text>
+    <option>Controls light entry</option>
+    <option>Provides color</option>
+    <option correct="true">Major refracting surface</option>
+    <option>Contains photoreceptors</option>
+    <explanation>Cornea provides about 2/3 of eye's refractive power. It's transparent and has no blood vessels.</explanation>
+  </question>
+
+  <question>
+    <text>Which mirror is used in solar cookers?</text>
+    <option>Plane mirror</option>
+    <option correct="true">Concave mirror</option>
+    <option>Convex mirror</option>
+    <option>Any mirror</option>
+    <explanation>Concave mirrors concentrate sunlight to a point (focus), generating high temperature for cooking.</explanation>
+  </question>
+
+  <question>
+    <text>What is the defect where eye lens becomes cloudy?</text>
+    <option>Myopia</option>
+    <option>Hypermetropia</option>
+    <option correct="true">Cataract</option>
+    <option>Glaucoma</option>
+    <explanation>Cataract causes lens to become opaque, causing blurry vision. Treated with surgery to replace lens.</explanation>
+  </question>
+
+  <question>
+    <text>Which color has maximum wavelength in visible spectrum?</text>
+    <option>Violet</option>
+    <option>Blue</option>
+    <option>Green</option>
+    <option correct="true">Red</option>
+    <explanation>Visible spectrum: Violet (400 nm) to Red (700 nm). Red has longest wavelength, violet shortest.</explanation>
+  </question>
+
+  <question>
+    <text>What is the angle between incident ray and reflected ray if angle of incidence is 45°?</text>
+    <option>45°</option>
+    <option>90°</option>
+    <option correct="true">90°</option>
+    <option>180°</option>
+    <explanation>∠i = ∠r = 45°. Angle between incident and reflected ray = 45° + 45° = 90°.</explanation>
+  </question>
+
+  <question>
+    <text>Which part of eye adjusts focal length?</text>
+    <option>Cornea</option>
+    <option>Retina</option>
+    <option correct="true">Ciliary muscles</option>
+    <option>Iris</option>
+    <explanation>Ciliary muscles change lens shape for accommodation: contract for near objects, relax for distant objects.</explanation>
+  </question>
+</quiz>
