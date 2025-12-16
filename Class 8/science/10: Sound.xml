@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+  <metadata>
+    <author>G. S. Tutorial</author>
+    <description>Class 8 Science - Chapter 10: Sound</description>
+  </metadata>
+
+  <!-- Previous Year Questions (CBSE/SEBA) -->
+
+  <question>
+    <text>(CBSE 2023) Sound cannot travel through:</text>
+    <option>Solid</option>
+    <option>Liquid</option>
+    <option>Gas</option>
+    <option correct="true">Vacuum</option>
+    <explanation>Sound requires a material medium (solid, liquid, or gas) to travel. It cannot travel through vacuum as there are no particles to vibrate.</explanation>
+  </question>
+
+  <question>
+    <text>(SEBA 2023) The number of oscillations per second is called:</text>
+    <option>Amplitude</option>
+    <option>Time period</option>
+    <option correct="true">Frequency</option>
+    <option>Wavelength</option>
+    <explanation>Frequency is the number of complete oscillations/vibrations per second. Its SI unit is Hertz (Hz).</explanation>
+  </question>
+
+  <question>
+    <text>(CBSE 2022) Which part of human ear converts vibrations into electrical signals?</text>
+    <option>Eardrum</option>
+    <option>Hammer</option>
+    <option>Anvil</option>
+    <option correct="true">Cochlea</option>
+    <explanation>Cochlea contains hair cells that convert sound vibrations into electrical signals sent to brain via auditory nerve.</explanation>
+  </question>
+
+  <question>
+    <text>(SEBA 2022) Loudness of sound depends on:</text>
+    <option>Frequency</option>
+    <option correct="true">Amplitude</option>
+    <option>Time period</option>
+    <option>Wavelength</option>
+    <explanation>Loudness depends on amplitude of vibration. Greater amplitude → louder sound. It's measured in decibels (dB).</explanation>
+  </question>
+
+  <question>
+    <text>(CBSE 2021) The unit of frequency is:</text>
+    <option>Decibel</option>
+    <option>Metre</option>
+    <option>Second</option>
+    <option correct="true">Hertz</option>
+    <explanation>Frequency is measured in Hertz (Hz). 1 Hz = 1 vibration per second. Named after Heinrich Hertz.</explanation>
+  </question>
+
+  <question>
+    <text>(SEBA 2021) Sound travels fastest in:</text>
+    <option>Gases</option>
+    <option>Liquids</option>
+    <option correct="true">Solids</option>
+    <option>Vacuum</option>
+    <explanation>Sound travels fastest in solids (steel: ~5000 m/s), then liquids (water: ~1500 m/s), slowest in gases (air: ~330 m/s).</explanation>
+  </question>
+
+  <question>
+    <text>(CBSE 2020) The hearing range of human ear is:</text>
+    <option>20 Hz - 2000 Hz</option>
+    <option correct="true">20 Hz - 20,000 Hz</option>
+    <option>200 Hz - 2000 Hz</option>
+    <option>2 Hz - 200 Hz</option>
+    <explanation>Normal human hearing range is 20 Hz (lowest) to 20,000 Hz (highest). Frequencies beyond this are ultrasound/infrasound.</explanation>
+  </question>
+
+  <question>
+    <text>(SEBA 2020) Unwanted or unpleasant sound is called:</text>
+    <option>Music</option>
+    <option correct="true">Noise</option>
+    <option>Echo</option>
+    <option>Vibration</option>
+    <explanation>Noise is unpleasant, disturbing sound that can cause health issues. Music is pleasant, organized sound.</explanation>
+  </question>
+
+  <question>
+    <text>(CBSE 2019) The persistence of sound due to repeated reflection is called:</text>
+    <option>Echo</option>
+    <option correct="true">Reverberation</option>
+    <option>Vibration</option>
+    <option>Amplification</option>
+    <explanation>Reverberation is persistence of sound when it reflects multiple times. Echo is single distinct reflection heard separately.</explanation>
+  </question>
+
+  <question>
+    <text>(SEBA 2019) Which part of ear vibrates when sound enters?</text>
+    <option>Cochlea</option>
+    <option>Hammer</option>
+    <option correct="true">Eardrum</option>
+    <option>Anvil</option>
+    <explanation>Sound waves cause eardrum (tympanic membrane) to vibrate. These vibrations are transmitted through ossicles to inner ear.</explanation>
+  </question>
+
+  <question>
+    <text>(CBSE 2018) Pitch of sound depends on:</text>
+    <option>Amplitude</option>
+    <option correct="true">Frequency</option>
+    <option>Loudness</option>
+    <option>Speed</option>
+    <explanation>Pitch (shrillness) depends on frequency. Higher frequency → higher pitch (e.g., woman's voice). Lower frequency → lower pitch (e.g., man's voice).</explanation>
+  </question>
+
+  <question>
+    <text>(SEBA 2018) What is the speed of sound in air at room temperature?</text>
+    <option>1500 m/s</option>
+    <option>5000 m/s</option>
+    <option correct="true">340 m/s</option>
+    <option>1000 m/s</option>
+    <explanation>Speed of sound in dry air at 20°C is approximately 343 m/s, often rounded to 340 m/s for calculations.</explanation>
+  </question>
+
+  <!-- Additional Important MCQs -->
+
+  <question>
+    <text>What produces sound?</text>
+    <option>Energy</option>
+    <option>Light</option>
+    <option correct="true">Vibration</option>
+    <option>Heat</option>
+    <explanation>Sound is produced by vibrating objects. The vibrating object causes air particles to vibrate, creating sound waves.</explanation>
+  </question>
+
+  <question>
+    <text>Which musical instrument works on vibration of strings?</text>
+    <option>Flute</option>
+    <option>Drum</option>
+    <option correct="true">Guitar</option>
+    <option>Tabla</option>
+    <explanation>Guitar, violin, sitar produce sound by vibrating strings. Flute uses air column, drums use membranes.</explanation>
+  </question>
+
+  <question>
+    <text>What is the audible range for dogs?</text>
+    <option>20 Hz - 20,000 Hz</option>
+    <option correct="true">Up to 45,000 Hz</option>
+    <option>Up to 1000 Hz</option>
+    <option>Up to 10,000 Hz</option>
+    <explanation>Dogs can hear ultrasound (above 20,000 Hz) up to about 45,000 Hz, which is why dog whistles work.</explanation>
+  </question>
+
+  <question>
+    <text>What is echo?</text>
+    <option>Persistent sound</option>
+    <option correct="true">Reflection of sound heard separately</option>
+    <option>Absorption of sound</option>
+    <option>Transmission of sound</option>
+    <explanation>Echo is distinct repetition of sound caused by reflection from distant obstacle (minimum 17m for clear echo in air).</explanation>
+  </question>
+
+  <question>
+    <text>Which characteristic distinguishes musical sounds?</text>
+    <option>Loudness</option>
+    <option>Pitch</option>
+    <option>Timbre</option>
+    <option correct="true">All of these</option>
+    <explanation>Musical sounds are characterized by: 1) Loudness (amplitude), 2) Pitch (frequency), 3) Quality/Timbre (waveform).</explanation>
+  </question>
+
+  <question>
+    <text>What is the full form of SONAR?</text>
+    <option>Sound Navigation and Ranging</option>
+    <option correct="true">Sound Navigation and Ranging</option>
+    <option>Sound Natural Radiation</option>
+    <option>Sound Navigation of Radar</option>
+    <explanation>SONAR uses ultrasound to detect underwater objects, measure depth, and navigate.</explanation>
+  </question>
+
+  <question>
+    <text>Why are ceilings of concert halls curved?</text>
+    <option>For beauty</option>
+    <option>To reduce cost</option>
+    <option correct="true">To prevent reverberation</option>
+    <option>To increase height</option>
+    <explanation>Curved ceilings help distribute sound evenly and reduce excessive reverberation for clear audio.</explanation>
+  </question>
+
+  <question>
+    <text>What is ultrasound?</text>
+    <option>Very loud sound</option>
+    <option>Very soft sound</option>
+    <option correct="true">Sound above 20,000 Hz</option>
+    <option>Sound below 20 Hz</option>
+    <explanation>Ultrasound has frequency >20,000 Hz (beyond human hearing). Used in medical imaging, cleaning, SONAR.</explanation>
+  </question>
+
+  <question>
+    <text>What is noise pollution?</text>
+    <option>Pleasant sounds</option>
+    <option correct="true">Unwanted excessive sound</option>
+    <option>Musical sounds</option>
+    <option>Natural sounds</option>
+    <explanation>Noise pollution is harmful, disturbing sound from vehicles, industries, loudspeakers etc., affecting health and environment.</explanation>
+  </question>
+
+  <question>
+    <text>How does sound travel?</text>
+    <option>In straight lines</option>
+    <option>In circles</option>
+    <option correct="true">As longitudinal waves</option>
+    <option>As transverse waves</option>
+    <explanation>Sound travels as longitudinal waves where particles vibrate parallel to wave direction, creating compressions and rarefactions.</explanation>
+  </question>
+
+  <question>
+    <text>Which part of ear amplifies sound vibrations?</text>
+    <option>Eardrum</option>
+    <option correct="true">Ossicles (hammer, anvil, stirrup)</option>
+    <option>Cochlea</option>
+    <option>Auditory nerve</option>
+    <explanation>Three tiny bones (ossicles) in middle ear amplify vibrations about 20 times before sending to inner ear.</explanation>
+  </question>
+
+  <question>
+    <text>What is the time taken for one complete oscillation called?</text>
+    <option>Frequency</option>
+    <option correct="true">Time period</option>
+    <option>Amplitude</option>
+    <option>Wavelength</option>
+    <explanation>Time period (T) is time for one complete oscillation. T = 1/f where f is frequency.</explanation>
+  </question>
+
+  <question>
+    <text>Why can't we hear sound on moon?</text>
+    <option>Moon is too far</option>
+    <option>Moon has no gravity</option>
+    <option correct="true">Moon has no atmosphere</option>
+    <option>Sound is absorbed by moon</option>
+    <explanation>Moon has near vacuum, so sound cannot travel. Astronauts use radio communication in space.</explanation>
+  </question>
+
+  <question>
+    <text>What is the unit of loudness?</text>
+    <option>Hertz (Hz)</option>
+    <option>Metre (m)</option>
+    <option correct="true">Decibel (dB)</option>
+    <option>Second (s)</option>
+    <explanation>Loudness is measured in decibels (dB). Normal conversation: 60 dB, Pain threshold: 120 dB, Whisper: 30 dB.</explanation>
+  </question>
+
+  <question>
+    <text>Which property distinguishes two sounds of same loudness and pitch?</text>
+    <option>Amplitude</option>
+    <option>Frequency</option>
+    <option correct="true">Timbre (Quality)</option>
+    <option>Speed</option>
+    <explanation>Timbre helps distinguish different instruments playing same note at same loudness (e.g., guitar vs piano playing A4).</explanation>
+  </question>
+
+  <question>
+    <text>What is infrasound?</text>
+    <option>Very loud sound</option>
+    <option>Very soft sound</option>
+    <option>Sound above 20,000 Hz</option>
+    <option correct="true">Sound below 20 Hz</option>
+    <explanation>Infrasound (frequency <20 Hz) is produced by earthquakes, volcanic eruptions, whales, elephants. Humans can't hear it.</explanation>
+  </question>
+
+  <question>
+    <text>How do bats navigate in dark?</text>
+    <option>By light</option>
+    <option>By smell</option>
+    <option correct="true">By echolocation</option>
+    <option>By magnetic field</option>
+    <explanation>Bats emit ultrasound clicks and listen for echoes to locate prey and avoid obstacles (echolocation).</explanation>
+  </question>
+
+  <question>
+    <text>What is the effect of temperature on speed of sound?</text>
+    <option>No effect</option>
+    <option>Decreases with temperature</option>
+    <option correct="true">Increases with temperature</option>
+    <option>First increases then decreases</option>
+    <explanation>Speed of sound increases with temperature because air particles move faster at higher temperatures.</explanation>
+  </question>
+
+  <question>
+    <text>Which material is best for soundproofing?</text>
+    <option>Metal</option>
+    <option>Glass</option>
+    <option correct="true">Foam/Sponge</option>
+    <option>Wood</option>
+    <explanation>Porous materials like foam, fiberglass absorb sound rather than reflecting it, reducing noise transmission.</explanation>
+  </question>
+
+  <question>
+    <text>What is the audible range for elephants?</text>
+    <option>Only ultrasound</option>
+    <option>Only infrasound</option>
+    <option correct="true">Both infrasound and audible sound</option>
+    <option>Only audible sound</option>
+    <explanation>Elephants communicate using infrasound (<20 Hz) that travels long distances, but can also hear audible sounds.</explanation>
+  </question>
+
+  <question>
+    <text>Why are sound waves called mechanical waves?</text>
+    <option>They need machines</option>
+    <option>They are produced by instruments</option>
+    <option correct="true">They need material medium</option>
+    <option>They are man-made</option>
+    <explanation>Sound waves are mechanical because they require a material medium (solid, liquid, gas) to propagate.</explanation>
+  </question>
+
+  <question>
+    <text>What is the purpose of cochlear implant?</text>
+    <option>Amplify sound</option>
+    <option correct="true">Help profoundly deaf people</option>
+    <option>Measure sound</option>
+    <option>Produce ultrasound</option>
+    <explanation>Cochlear implants bypass damaged hair cells, directly stimulating auditory nerve for people with severe hearing loss.</explanation>
+  </question>
+
+  <question>
+    <text>Which law states that angle of incidence = angle of reflection for sound?</text>
+    <option>Ohm's law</option>
+    <option>Newton's law</option>
+    <option correct="true">Laws of reflection</option>
+    <option>Law of refraction</option>
+    <explanation>Sound follows same laws of reflection as light: 1) Angle i = Angle r, 2) Incident, reflected rays and normal are in same plane.</explanation>
+  </question>
+
+  <question>
+    <text>What is the dB level considered dangerous?</text>
+    <option>Above 30 dB</option>
+    <option>Above 60 dB</option>
+    <option>Above 90 dB</option>
+    <option correct="true">Above 85 dB</option>
+    <explanation>Prolonged exposure above 85 dB can cause permanent hearing damage. Factories, concerts often exceed this.</explanation>
+  </question>
+</quiz>
