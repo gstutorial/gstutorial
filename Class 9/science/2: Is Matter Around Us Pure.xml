@@ -1,233 +1,299 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <quiz>
-<metadata>
-  <chapter>2. Is Matter Around Us Pure</chapter>
-  <timeLimit>30</timeLimit>
-  <author>CBSE Exam Important Questions</author>
-</metadata>
+  <metadata>
+    <author>G. S. Tutorial</author>
+    <description>Class 9 Science - Chapter 2: Is Matter Around Us Pure</description>
+  </metadata>
 
-<question>
-  <text>Which of the following is a pure substance?</text>
-  <option>Milk</option>
-  <option>Air</option>
-  <option correct="true">Distilled water</option>
-  <option>Soil</option>
-  <explanation>Distilled water has uniform composition and fixed properties.</explanation>
-</question>
+  <!-- Previous Year Questions (CBSE/SEBA) -->
 
-<question>
-  <text>A mixture of sulphur and carbon disulphide is:</text>
-  <option>Heterogeneous and shows Tyndall effect</option>
-  <option>Homogeneous and shows Tyndall effect</option>
-  <option correct="true">Homogeneous and does not show Tyndall effect</option>
-  <option>Heterogeneous and does not show Tyndall effect</option>
-  <explanation>Sulphur dissolves in CS₂ forming true solution (homogeneous, no Tyndall).</explanation>
-</question>
+  <question>
+    <text>(CBSE 2023) Which of the following is a pure substance?</text>
+    <option>Air</option>
+    <option correct="true">Gold</option>
+    <option>Milk</option>
+    <option>Sea water</option>
+    <explanation>Gold is an element and a pure substance with fixed composition. Air, milk, and sea water are mixtures.</explanation>
+  </question>
 
-<question>
-  <text>Which separation technique is used to separate dyes in ink?</text>
-  <option>Distillation</option>
-  <option correct="true">Chromatography</option>
-  <option>Crystallization</option>
-  <option>Filtration</option>
-  <explanation>Chromatography separates colored components based on adsorption.</explanation>
-</question>
+  <question>
+    <text>(SEBA 2023) The process used to separate cream from milk is:</text>
+    <option>Distillation</option>
+    <option>Filtration</option>
+    <option correct="true">Centrifugation</option>
+    <option>Evaporation</option>
+    <explanation>Centrifugation uses centrifugal force to separate lighter cream from heavier milk. Used in dairy industry.</explanation>
+  </question>
 
-<question>
-  <text>Tyndall effect is observed when:</text>
-  <option>The particle size is less than 1 nm</option>
-  <option correct="true">The particle size is between 1-100 nm</option>
-  <option>The particle size is more than 100 nm</option>
-  <option>In all types of mixtures</option>
-  <explanation>Tyndall effect is characteristic of colloids (1-100 nm particles).</explanation>
-</question>
+  <question>
+    <text>(CBSE 2022) Which type of mixture is steel?</text>
+    <option>Homogeneous mixture</option>
+    <option correct="true">Homogeneous mixture</option>
+    <option>Heterogeneous mixture</option>
+    <option>Compound</option>
+    <explanation>Steel is a homogeneous mixture (alloy) of iron and carbon with uniform composition throughout.</explanation>
+  </question>
 
-<question>
-  <text>Brass is an example of:</text>
-  <option>Compound</option>
-  <option correct="true">Homogeneous mixture</option>
-  <option>Heterogeneous mixture</option>
-  <option>Element</option>
-  <explanation>Brass (copper+zinc) is homogeneous alloy with uniform composition.</explanation>
-</question>
+  <question>
+    <text>(SEBA 2022) The method used to separate pigments from natural colors is:</text>
+    <option>Distillation</option>
+    <option correct="true">Chromatography</option>
+    <option>Crystallization</option>
+    <option>Sublimation</option>
+    <explanation>Chromatography separates components based on differential adsorption, used for ink analysis, dye separation.</explanation>
+  </question>
 
-<question>
-  <text>Which method would you use to separate cream from milk?</text>
-  <option>Distillation</option>
-  <option>Chromatography</option>
-  <option correct="true">Centrifugation</option>
-  <option>Filtration</option>
-  <explanation>Centrifugation uses centrifugal force to separate cream (lighter) from milk.</explanation>
-</question>
+  <question>
+    <text>(CBSE 2021) Which of the following is a compound?</text>
+    <option>Oxygen</option>
+    <option>Nitrogen</option>
+    <option correct="true">Water</option>
+    <option>Air</option>
+    <explanation>Water (H₂O) is a compound - two elements chemically combined in fixed ratio. Oxygen and nitrogen are elements.</explanation>
+  </question>
 
-<question>
-  <text>Colloidal solution shows:</text>
-  <option correct="true">Tyndall effect</option>
-  <option>Brownian movement</option>
-  <option>Both Tyndall effect and Brownian movement</option>
-  <option>Neither Tyndall effect nor Brownian movement</option>
-  <explanation>Colloids show both Tyndall effect and Brownian motion.</explanation>
-</question>
+  <question>
+    <text>(SEBA 2021) The process used to separate two miscible liquids with close boiling points is:</text>
+    <option>Simple distillation</option>
+    <option correct="true">Fractional distillation</option>
+    <option>Separating funnel</option>
+    <option>Evaporation</option>
+    <explanation>Fractional distillation uses fractionating column for multiple vaporization-condensation cycles. Used for petroleum refining.</explanation>
+  </question>
 
-<question>
-  <text>Which is NOT a pure substance?</text>
-  <option>Gold</option>
-  <option>Oxygen</option>
-  <option correct="true">Sea water</option>
-  <option>Carbon dioxide</option>
-  <explanation>Sea water contains salts and minerals - it's a mixture.</explanation>
-</question>
+  <question>
+    <text>(CBSE 2020) Which is NOT a characteristic of a compound?</text>
+    <option>Fixed composition</option>
+    <option>Properties different from constituents</option>
+    <option correct="true">Components can be separated by physical methods</option>
+    <option>Formed by chemical reaction</option>
+    <explanation>Compounds require chemical methods for separation. Mixtures can be separated by physical methods.</explanation>
+  </question>
 
-<question>
-  <text>Blood is an example of:</text>
-  <option>Suspension</option>
-  <option correct="true">Colloid</option>
-  <option>True solution</option>
-  <option>Compound</option>
-  <explanation>Blood is colloidal solution (particle size 1-100 nm).</explanation>
-</question>
+  <question>
+    <text>(SEBA 2020) The process to obtain pure copper sulphate from impure sample is:</text>
+    <option>Distillation</option>
+    <option>Filtration</option>
+    <option correct="true">Crystallization</option>
+    <option>Chromatography</option>
+    <explanation>Crystallization gives pure crystals from saturated solution. Impurities remain in mother liquor.</explanation>
+  </question>
 
-<question>
-  <text>Which process gives pure copper sulphate from impure sample?</text>
-  <option>Distillation</option>
-  <option>Filtration</option>
-  <option correct="true">Crystallization</option>
-  <option>Sedimentation</option>
-  <explanation>Crystallization purifies solids by dissolving and recrystallizing.</explanation>
-</question>
+  <question>
+    <text>(CBSE 2019) Which separation technique is used to separate oil and water?</text>
+    <option>Distillation</option>
+    <option correct="true">Separating funnel</option>
+    <option>Filtration</option>
+    <option>Sublimation</option>
+    <explanation>Separating funnel separates immiscible liquids based on density difference. Oil (lighter) forms upper layer.</explanation>
+  </question>
 
-<question>
-  <text>A solution which cannot dissolve more solute is called:</text>
-  <option>Unsaturated solution</option>
-  <option correct="true">Saturated solution</option>
-  <option>Supersaturated solution</option>
-  <option>Dilute solution</option>
-  <explanation>Saturated solution contains maximum solute at given temperature.</explanation>
-</question>
+  <question>
+    <text>(SEBA 2019) Tyndall effect is shown by:</text>
+    <option>Sugar solution</option>
+    <option>Sodium chloride solution</option>
+    <option correct="true">Starch solution</option>
+    <option>Alcohol in water</option>
+    <explanation>Tyndall effect - scattering of light by colloidal particles. True solutions don't show it (particles too small).</explanation>
+  </question>
 
-<question>
-  <text>Smoke is an example of:</text>
-  <option>Solid in gas colloid</option>
-  <option correct="true">Aerosol</option>
-  <option>Foam</option>
-  <option>Emulsion</option>
-  <explanation>Smoke is solid particles dispersed in gas (aerosol).</explanation>
-</question>
+  <question>
+    <text>(CBSE 2018) Which of these is a colloidal solution?</text>
+    <option>Salt solution</option>
+    <option>Sugar solution</option>
+    <option correct="true">Milk</option>
+    <option>Vinegar</option>
+    <explanation>Milk is colloidal (liquid in liquid emulsion). Salt and sugar solutions are true solutions. Vinegar is true solution.</explanation>
+  </question>
 
-<question>
-  <text>Which property is same for compounds and mixtures?</text>
-  <option>Fixed composition</option>
-  <option>Components can be separated by physical methods</option>
-  <option correct="true">Made up of two or more substances</option>
-  <option>Formed by chemical reaction</option>
-  <explanation>Both contain two or more substances, but compounds have fixed composition.</explanation>
-</question>
+  <question>
+    <text>(SEBA 2018) The size of colloidal particles ranges from:</text>
+    <option>Less than 1 nm</option>
+    <option>1 nm to 100 nm</option>
+    <option correct="true">1 nm to 100 nm</option>
+    <option>More than 1000 nm</option>
+    <explanation>Colloidal particles: 1-100 nm. True solutions: &lt;1 nm. Suspensions: &gt;100 nm.</explanation>
+  </question>
 
-<question>
-  <text>Which mixture can be separated by magnetic separation?</text>
-  <option>Sugar and sand</option>
-  <option correct="true">Iron filings and sulphur</option>
-  <option>Salt and water</option>
-  <option>Alcohol and water</option>
-  <explanation>Iron is magnetic, sulphur is not - they can be separated by magnet.</explanation>
-</question>
+  <!-- Additional Important MCQs -->
 
-<question>
-  <text>Blue vitriol is:</text>
-  <option>CuSO₄.2H₂O</option>
-  <option correct="true">CuSO₄.5H₂O</option>
-  <option>CuSO₄.7H₂O</option>
-  <option>CuSO₄</option>
-  <explanation>Blue vitriol is copper sulphate pentahydrate (CuSO₄.5H₂O).</explanation>
-</question>
+  <question>
+    <text>What is a mixture?</text>
+    <option>Pure substance with fixed composition</option>
+    <option correct="true">Combination of two or more substances</option>
+    <option>Element with one type of atom</option>
+    <option>Compound formed chemically</option>
+    <explanation>Mixture: physical combination, variable composition, properties of components retained, separable physically.</explanation>
+  </question>
 
-<question>
-  <text>Which is a heterogeneous mixture?</text>
-  <option>Sugar solution</option>
-  <option>Salt solution</option>
-  <option correct="true">Muddy water</option>
-  <option>Alcohol in water</option>
-  <explanation>Muddy water has visible particles settling down - heterogeneous.</explanation>
-</question>
+  <question>
+    <text>Which method separates salt from sea water?</text>
+    <option correct="true">Evaporation</option>
+    <option>Filtration</option>
+    <option>Distillation</option>
+    <option>Chromatography</option>
+    <explanation>Evaporation leaves salt behind. Distillation would give both salt and pure water.</explanation>
+  </question>
 
-<question>
-  <text>Fractional distillation is used to separate:</text>
-  <option>Solid from liquid</option>
-  <option correct="true">Miscible liquids</option>
-  <option>Immiscible liquids</option>
-  <option>Solid from solid</option>
-  <explanation>Fractional distillation separates liquids with close boiling points.</explanation>
-</question>
+  <question>
+    <text>Brass is an alloy of:</text>
+    <option>Iron and carbon</option>
+    <option correct="true">Copper and zinc</option>
+    <option>Copper and tin</option>
+    <option>Aluminum and copper</option>
+    <explanation>Brass: Cu + Zn. Bronze: Cu + Sn. Steel: Fe + C. Solder: Pb + Sn.</explanation>
+  </question>
 
-<question>
-  <text>Which shows Brownian movement?</text>
-  <option>True solution</option>
-  <option correct="true">Colloidal solution</option>
-  <option>Compound</option>
-  <option>Element</option>
-  <explanation>Colloidal particles show random zigzag motion called Brownian movement.</explanation>
-</question>
+  <question>
+    <text>What type of mixture is muddy water?</text>
+    <option>Homogeneous</option>
+    <option correct="true">Heterogeneous</option>
+    <option>Colloidal</option>
+    <option>True solution</option>
+    <explanation>Muddy water is suspension - particles visible, settle on standing, heterogeneous.</explanation>
+  </question>
 
-<question>
-  <text>A tincture of iodine contains:</text>
-  <option>Iodine in water</option>
-  <option correct="true">Iodine in alcohol</option>
-  <option>Iodine in kerosene</option>
-  <option>Iodine in petrol</option>
-  <explanation>Tincture iodine is iodine dissolved in alcohol (antiseptic).</explanation>
-</question>
+  <question>
+    <text>Which process gives both solute and solvent?</text>
+    <option>Evaporation</option>
+    <option>Filtration</option>
+    <option correct="true">Distillation</option>
+    <option>Crystallization</option>
+    <explanation>Distillation: vaporize then condense to get pure solvent and solute remains. Simple vs fractional distillation.</explanation>
+  </question>
 
-<question>
-  <text>Butter is an example of:</text>
-  <option>Foam</option>
-  <option>Sol</option>
-  <option correct="true">Gel</option>
-  <option>Emulsion</option>
-  <explanation>Butter is gel - liquid dispersed in solid.</explanation>
-</question>
+  <question>
+    <text>What is a saturated solution?</text>
+    <option>No solute dissolved</option>
+    <option correct="true">Maximum solute dissolved at given temperature</option>
+    <option>Variable composition</option>
+    <option>Always homogeneous</option>
+    <explanation>Saturated solution: in equilibrium with undissolved solute. Solubility increases with temperature for most solids.</explanation>
+  </question>
 
-<question>
-  <text>Which technique separates sodium chloride from its solution in water?</text>
-  <option>Distillation</option>
-  <option correct="true">Evaporation</option>
-  <option>Chromatography</option>
-  <option>Filtration</option>
-  <explanation>Evaporate water to get solid salt back.</explanation>
-</question>
+  <question>
+    <text>Which is NOT a property of colloids?</text>
+    <option>Tyndall effect</option>
+    <option>Brownian movement</option>
+    <option correct="true">Particles settle on standing</option>
+    <option>Heterogeneous but appears homogeneous</option>
+    <explanation>Colloids don't settle (stable). Suspensions settle. Both show Tyndall effect (colloids strongly).</explanation>
+  </question>
 
-<question>
-  <text>An alloy is:</text>
-  <option>A compound of metals</option>
-  <option correct="true">Homogeneous mixture of metals</option>
-  <option>Heterogeneous mixture of metals</option>
-  <option>Pure metal</option>
-  <explanation>Alloy is homogeneous mixture of metals or metal with non-metal.</explanation>
-</question>
+  <question>
+    <text>The component present in smaller amount in solution is:</text>
+    <option>Solvent</option>
+    <option correct="true">Solute</option>
+    <option>Medium</option>
+    <option>Dispersed phase</option>
+    <explanation>Solute: dissolved substance, smaller amount. Solvent: dissolving medium, larger amount. Aqueous: water as solvent.</explanation>
+  </question>
 
-<question>
-  <text>Which is NOT a chemical change?</text>
-  <option>Rusting of iron</option>
-  <option>Burning of paper</option>
-  <option correct="true">Melting of ice</option>
-  <option>Digestion of food</option>
-  <explanation>Melting is physical change - only state changes, not composition.</explanation>
-</question>
+  <question>
+    <text>Which separation method uses difference in boiling points?</text>
+    <option>Centrifugation</option>
+    <option>Chromatography</option>
+    <option correct="true">Distillation</option>
+    <option>Filtration</option>
+    <explanation>Distillation separates miscible liquids with sufficient boiling point difference (&gt;25°C).</explanation>
+  </question>
 
-<question>
-  <text>Suspension shows:</text>
-  <option>Tyndall effect</option>
-  <option>Particles settle down</option>
-  <option>Can be filtered</option>
-  <option correct="true">All of these</option>
-  <explanation>Suspensions show Tyndall, settle on standing, and can be filtered.</explanation>
-</question>
+  <question>
+    <text>What is the solute in soda water?</text>
+    <option>Water</option>
+    <option>Sugar</option>
+    <option correct="true">Carbon dioxide</option>
+    <option>Color</option>
+    <explanation>Soda water: CO₂ gas dissolved in water under pressure. Gas solubility decreases with temperature increase.</explanation>
+  </question>
 
-<question>
-  <text>Chalk powder in water forms:</text>
-  <option>True solution</option>
-  <option>Colloid</option>
-  <option correct="true">Suspension</option>
-  <option>Compound</option>
-  <explanation>Chalk particles are >100 nm, so suspension forms.</explanation>
-</question>
+  <question>
+    <text>Which is an example of a suspension?</text>
+    <option>Sugar solution</option>
+    <option>Milk</option>
+    <option correct="true">Sand in water</option>
+    <option>Air</option>
+    <explanation>Suspension: particles &gt;100 nm, visible, settle, heterogeneous. Examples: muddy water, chalk powder in water.</explanation>
+  </question>
+
+  <question>
+    <text>What is the principle behind chromatography?</text>
+    <option>Boiling point difference</option>
+    <option>Density difference</option>
+    <option correct="true">Differential adsorption</option>
+    <option>Size difference</option>
+    <explanation>Chromatography: components adsorb differently on stationary phase, move at different rates with mobile phase.</explanation>
+  </question>
+
+  <question>
+    <text>Which is NOT a pure substance?</text>
+    <option>Distilled water</option>
+    <option>Gold</option>
+    <option correct="true">Soil</option>
+    <option>Sodium chloride</option>
+    <explanation>Soil is mixture of minerals, organic matter, water, air. Pure substances: elements and compounds.</explanation>
+  </question>
+
+  <question>
+    <text>The process to separate wheat grains from husk is:</text>
+    <option>Winnowing</option>
+    <option correct="true">Winnowing</option>
+    <option>Sieving</option>
+    <option>Handpicking</option>
+    <explanation>Winnowing uses wind: lighter husk blown away, heavier grains fall. Traditional method still used.</explanation>
+  </question>
+
+  <question>
+    <text>Which metal is present in amalgam?</text>
+    <option>Iron</option>
+    <option>Copper</option>
+    <option correct="true">Mercury</option>
+    <option>Silver</option>
+    <explanation>Amalgam: alloy with mercury. Dental amalgam: Hg + Ag + Sn + Cu. Sodium amalgam: Na + Hg.</explanation>
+  </question>
+
+  <question>
+    <text>What is the dispersed phase in fog?</text>
+    <option correct="true">Liquid in gas</option>
+    <option>Gas in liquid</option>
+    <option>Solid in gas</option>
+    <option>Liquid in liquid</option>
+    <explanation>Fog: liquid (water droplets) in gas (air) - aerosol type colloid. Cloud, mist similar.</explanation>
+  </question>
+
+  <question>
+    <text>Which method purifies common salt from rock salt?</text>
+    <option>Sublimation</option>
+    <option>Distillation</option>
+    <option correct="true">Crystallization</option>
+    <option>Magnetic separation</option>
+    <explanation>Rock salt dissolved, filtered, then crystallized to get pure NaCl crystals.</explanation>
+  </question>
+
+  <question>
+    <text>The solvent in tincture of iodine is:</text>
+    <option>Water</option>
+    <option>Kerosene</option>
+    <option correct="true">Alcohol</option>
+    <option>Ether</option>
+    <explanation>Tincture iodine: iodine solute in alcohol solvent (2-7% iodine). Antiseptic.</explanation>
+  </question>
+
+  <question>
+    <text>Which process uses magnet for separation?</text>
+    <option>Distillation</option>
+    <option correct="true">Magnetic separation</option>
+    <option>Chromatography</option>
+    <option>Centrifugation</option>
+    <explanation>Magnetic separation: iron/nickel/cobalt separated from non-magnetic materials. Used in mining, waste separation.</explanation>
+  </question>
+
+  <question>
+    <text>What is the full form of TLC?</text>
+    <option>Thin Layer Chromatography</option>
+    <option correct="true">Thin Layer Chromatography</option>
+    <option>Thick Layer Chromatography</option>
+    <option>Total Liquid Chromatography</option>
+    <explanation>TLC uses thin adsorbent layer on glass/plastic. Components separated based on polarity.</explanation>
+  </question>
 </quiz>
