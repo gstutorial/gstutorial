@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+  <metadata>
+    <author>G. S. Tutorial</author>
+    <description>Class 9 Science - Chapter 9: Force and Laws of Motion</description>
+  </metadata>
+
+  <!-- Previous Year Questions (CBSE/SEBA) -->
+
+  <question>
+    <text>(CBSE 2023) Newton's first law of motion is also called:</text>
+    <option>Law of inertia</option>
+    <option correct="true">Law of inertia</option>
+    <option>Law of momentum</option>
+    <option>Law of action-reaction</option>
+    <explanation>First law: body remains at rest/uniform motion unless acted upon by external force. Defines inertia.</explanation>
+  </question>
+
+  <question>
+    <text>(SEBA 2023) The SI unit of force is:</text>
+    <option>Joule</option>
+    <option>Pascal</option>
+    <option correct="true">Newton</option>
+    <option>Watt</option>
+    <explanation>Force SI unit: Newton (N). 1 N = 1 kg·m/s². Named after Sir Isaac Newton.</explanation>
+  </question>
+
+  <question>
+    <text>(CBSE 2022) Which law explains why a gun recoils when fired?</text>
+    <option>First law</option>
+    <option>Second law</option>
+    <option correct="true">Third law</option>
+    <option>Law of gravitation</option>
+    <explanation>Third law: action (bullet forward) = reaction (gun backward). Momentum conservation: m₁v₁ = m₂v₂.</explanation>
+  </question>
+
+  <question>
+    <text>(SEBA 2022) The product of mass and velocity is called:</text>
+    <option>Force</option>
+    <option>Acceleration</option>
+    <option correct="true">Momentum</option>
+    <option>Inertia</option>
+    <explanation>Momentum (p) = m × v. Vector quantity, SI unit: kg·m/s. Conservation of momentum in isolated system.</explanation>
+  </question>
+
+  <question>
+    <text>(CBSE 2021) A force of 10 N acts on a mass of 2 kg. The acceleration produced is:</text>
+    <option>2 m/s²</option>
+    <option correct="true">5 m/s²</option>
+    <option>10 m/s²</option>
+    <option>20 m/s²</option>
+    <explanation>F = ma → a = F/m = 10 N / 2 kg = 5 m/s².</explanation>
+  </question>
+
+  <question>
+    <text>(SEBA 2021) The tendency of an object to resist change in its state of motion is called:</text>
+    <option>Momentum</option>
+    <option>Force</option>
+    <option correct="true">Inertia</option>
+    <option>Acceleration</option>
+    <explanation>Inertia: property to resist change in state. Mass measures inertia. More mass → more inertia.</explanation>
+  </question>
+
+  <question>
+    <text>(CBSE 2020) Which has more inertia: a 5 kg iron ball or a 10 kg iron ball?</text>
+    <option>5 kg ball</option>
+    <option correct="true">10 kg ball</option>
+    <option>Both have same</option>
+    <option>Cannot compare</option>
+    <explanation>Inertia ∝ mass. Greater mass → greater inertia. 10 kg ball has twice inertia of 5 kg ball.</explanation>
+  </question>
+
+  <question>
+    <text>(SEBA 2020) When a bus starts suddenly, passengers fall backward due to:</text>
+    <option>Inertia of rest</option>
+    <option correct="true">Inertia of rest</option>
+    <option>Inertia of motion</option>
+    <option>Action-reaction</option>
+    <explanation>Lower body moves with bus, upper body tends to remain at rest (inertia of rest) → fall backward.</explanation>
+  </question>
+
+  <question>
+    <text>(CBSE 2019) According to Newton's second law, F = ma. If force is doubled, acceleration:</text>
+    <option>Halves</option>
+    <option>Remains same</option>
+    <option correct="true">Doubles</option>
+    <option>Quadruples</option>
+    <explanation>F ∝ a (if m constant). Double force → double acceleration. a = F/m.</explanation>
+  </question>
+
+  <question>
+    <text>(SEBA 2019) The force required to stop a moving object depends on:</text>
+    <option>Mass only</option>
+    <option>Velocity only</option>
+    <option correct="true">Both mass and velocity</option>
+    <option>Neither mass nor velocity</option>
+    <explanation>Force needed to change momentum. F = Δp/Δt = mΔv/Δt. Depends on mass and velocity change.</explanation>
+  </question>
+
+  <question>
+    <text>(CBSE 2018) A bullet of mass 20 g is fired with velocity 100 m/s. Its momentum is:</text>
+    <option>0.2 kg·m/s</option>
+    <option correct="true">2 kg·m/s</option>
+    <option>20 kg·m/s</option>
+    <option>200 kg·m/s</option>
+    <explanation>p = mv = 0.020 kg × 100 m/s = 2 kg·m/s. Remember to convert g to kg (20 g = 0.020 kg).</explanation>
+  </question>
+
+  <question>
+    <text>(SEBA 2018) When you jump from a boat to shore, the boat moves backward due to:</text>
+    <option>First law</option>
+    <option>Second law</option>
+    <option correct="true">Third law</option>
+    <option>Law of inertia</option>
+    <explanation>You push boat backward (action), boat pushes you forward (reaction). Equal and opposite forces.</explanation>
+  </question>
+
+  <!-- Additional Important MCQs -->
+
+  <question>
+    <text>Newton's second law gives the measure of:</text>
+    <option>Inertia</option>
+    <option>Work</option>
+    <option correct="true">Force</option>
+    <option>Momentum</option>
+    <explanation>F = ma defines force quantitatively. First law qualitatively. Third law: pair of forces.</explanation>
+  </question>
+
+  <question>
+    <text>A body of mass 1 kg has weight about:</text>
+    <option>1 N</option>
+    <option correct="true">9.8 N</option>
+    <option>10 N</option>
+    <option>98 N</option>
+    <explanation>Weight = mg = 1 kg × 9.8 m/s² = 9.8 N (approx 10 N for simplicity). g varies slightly with location.</explanation>
+  </question>
+
+  <question>
+    <text>Which of these experiences greater inertia?</text>
+    <option>Feather</option>
+    <option>Paper ball</option>
+    <option correct="true">Cricket ball</option>
+    <option>All same</option>
+    <explanation>Inertia depends on mass. Cricket ball has more mass than feather/paper → more inertia.</explanation>
+  </question>
+
+  <question>
+    <text>The momentum of an object changes from 10 kg·m/s to 20 kg·m/s in 2 seconds. Force applied is:</text>
+    <option>5 N</option>
+    <option correct="true">5 N</option>
+    <option>10 N</option>
+    <option>15 N</option>
+    <explanation>F = Δp/Δt = (20-10)/2 = 10/2 = 5 N.</explanation>
+  </question>
+
+  <question>
+    <text>A person in moving bus throws a ball upward. The ball will:</text>
+    <option>Fall behind him</option>
+    <option correct="true">Fall back into his hands</option>
+    <option>Fall in front of him</option>
+    <option>Go upward and stay</option>
+    <explanation>Ball has same horizontal velocity as bus (inertia of motion). Moves with bus, falls back to hand.</explanation>
+  </question>
+
+  <question>
+    <text>When a carpet is beaten with a stick, dust comes out due to:</text>
+    <option>Gravity</option>
+    <option correct="true">Inertia of rest</option>
+    <option>Inertia of motion</option>
+    <option>Friction</option>
+    <explanation>Carpet moves, dust tends to remain at rest (inertia) → separates from carpet.</explanation>
+  </question>
+
+  <question>
+    <text>A force of 5 N gives mass m₁ acceleration 10 m/s² and m₂ acceleration 20 m/s². Ratio m₁:m₂ is:</text>
+    <option>1:2</option>
+    <option correct="true">2:1</option>
+    <option>1:4</option>
+    <option>4:1</option>
+    <explanation>m = F/a. m₁ = 5/10 = 0.5 kg, m₂ = 5/20 = 0.25 kg. Ratio = 0.5:0.25 = 2:1.</explanation>
+  </question>
+
+  <question>
+    <text>Rocket works on principle of:</text>
+    <option>First law</option>
+    <option>Second law</option>
+    <option correct="true">Third law</option>
+    <option>All laws</option>
+    <explanation>Rocket: expels gas backward (action), gets forward thrust (reaction). Momentum conservation.</explanation>
+  </question>
+
+  <question>
+    <text>A body of mass 2 kg moving at 3 m/s collides with stationary 1 kg mass. After collision, they move together. Their common velocity is:</text>
+    <option>1 m/s</option>
+    <option correct="true">2 m/s</option>
+    <option>3 m/s</option>
+    <option>4.5 m/s</option>
+    <explanation>Momentum conservation: m₁u₁ + m₂u₂ = (m₁+m₂)v → 2×3 + 1×0 = (2+1)v → 6 = 3v → v = 2 m/s.</explanation>
+  </question>
+
+  <question>
+    <text>The force experienced by a body of mass 0.5 kg falling freely is: (g=10 m/s²)</text>
+    <option>0.5 N</option>
+    <option correct="true">5 N</option>
+    <option>10 N</option>
+    <option>50 N</option>
+    <explanation>Force = weight = mg = 0.5 × 10 = 5 N downward.</explanation>
+  </question>
+
+  <question>
+    <text>Which law is called the law of conservation of momentum?</text>
+    <option>First law</option>
+    <option>Second law</option>
+    <option correct="true">Derived from third law</option>
+    <option>Separate law</option>
+    <explanation>Momentum conservation derived from Newton's third law for isolated system (no external force).</explanation>
+  </question>
+
+  <question>
+    <text>A man pushing a wall gets tired because:</text>
+    <option>Wall pushes him back</option>
+    <option correct="true">Wall pushes him back</option>
+    <option>Wall doesn't move</option>
+    <option>He does negative work</option>
+    <explanation>Third law: he pushes wall (action), wall pushes him back (reaction). He exerts force but no displacement → no work.</explanation>
+  </question>
+
+  <question>
+    <text>If the net force on a body is zero, it may:</text>
+    <option>Be at rest</option>
+    <option>Move with constant velocity</option>
+    <option correct="true">Both be at rest or move with constant velocity</option>
+    <option>Accelerate</option>
+    <explanation>First law: if F_net = 0, body remains at rest or uniform motion (constant velocity, zero acceleration).</explanation>
+  </question>
+
+  <question>
+    <text>A force of 100 N acts on 50 kg mass at rest. Distance covered in 4 seconds is:</text>
+    <option>8 m</option>
+    <option>16 m</option>
+    <option correct="true">16 m</option>
+    <option>32 m</option>
+    <explanation>a = F/m = 100/50 = 2 m/s². s = ut + ½at² = 0 + ½×2×16 = 16 m.</explanation>
+  </question>
+
+  <question>
+    <text>Inertia of direction is tendency to resist change in:</text>
+    <option>Speed</option>
+    <option correct="true">Direction of motion</option>
+    <option>Mass</option>
+    <option>Position</option>
+    <explanation>Types of inertia: 1) of rest, 2) of motion (speed), 3) of direction. Example: mud flying off rotating tire.</explanation>
+  </question>
+
+  <question>
+    <text>A 1000 kg car moving at 20 m/s stops in 5 seconds. Average braking force is:</text>
+    <option>2000 N</option>
+    <option correct="true">4000 N</option>
+    <option>10000 N</option>
+    <option>20000 N</option>
+    <explanation>F = mΔv/Δt = 1000×(0-20)/5 = -4000 N (magnitude 4000 N opposite to motion).</explanation>
+  </question>
+
+  <question>
+    <text>Which of these is NOT an example of third law?</text>
+    <option>Walking</option>
+    <option>Swimming</option>
+    <option correct="true">Book on table</option>
+    <option>Firing gun</option>
+    <explanation>Book on table: balanced forces (weight down, normal up) → first law. Action-reaction pairs act on different bodies.</explanation>
+  </question>
+
+  <question>
+    <text>The linear momentum of a body changes from 20 kg·m/s to 10 kg·m/s in 0.1 s. Force is:</text>
+    <option>100 N</option>
+    <option correct="true">-100 N</option>
+    <option>200 N</option>
+    <option>-200 N</option>
+    <explanation>F = Δp/Δt = (10-20)/0.1 = -10/0.1 = -100 N (opposite to motion).</explanation>
+  </question>
+
+  <question>
+    <text>A force produces acceleration a in mass m. Same force on mass 2m produces acceleration:</text>
+    <option>a</option>
+    <option>2a</option>
+    <option correct="true">a/2</option>
+    <option>a/4</option>
+    <explanation>F constant, a ∝ 1/m. Double mass → half acceleration. a₂ = (m₁/m₂)a₁ = (m/2m)a = a/2.</explanation>
+  </question>
+
+  <question>
+    <text>When a horse pulls a cart, the force that makes horse move forward is exerted by:</text>
+    <option>Horse on cart</option>
+    <option correct="true">Ground on horse</option>
+    <option>Cart on horse</option>
+    <option>Horse on ground</option>
+    <explanation>Horse pushes ground backward (action), ground pushes horse forward (reaction). Friction enables this.</explanation>
+  </question>
+
+  <question>
+    <text>1 kgf (kilogram-force) is equal to:</text>
+    <option>1 N</option>
+    <option>9.8 N</option>
+    <option correct="true">9.8 N</option>
+    <option>10 N</option>
+    <explanation>1 kgf = weight of 1 kg mass = 1 × 9.8 = 9.8 N. Sometimes approximated to 10 N.</explanation>
+  </question>
+
+  <question>
+    <text>A body is moving with constant speed in circular path. The net force is:</text>
+    <option>Zero</option>
+    <option correct="true">Towards center</option>
+    <option>Tangential</option>
+    <option>Away from center</option>
+    <explanation>Centripetal force required for circular motion, directed toward center. Changes direction, not speed.</explanation>
+  </question>
+
+  <question>
+    <text>If action and reaction are equal and opposite, why don't they cancel?</text>
+    <option>They do cancel</option>
+    <option>They act on same body</option>
+    <option correct="true">They act on different bodies</option>
+    <option>They are not forces</option>
+    <explanation>Action-reaction act on different objects, so don't cancel for individual objects. Net force on system may be zero.</explanation>
+  </question>
+
+  <question>
+    <text>A bullet of mass 10 g is fired with velocity 200 m/s from gun of mass 2 kg. Recoil velocity of gun is:</text>
+    <option>0.1 m/s</option>
+    <option correct="true">1 m/s</option>
+    <option>10 m/s</option>
+    <option>20 m/s</option>
+    <explanation>Conservation: m₁v₁ = m₂v₂ → 0.01×200 = 2×v → v = 2/2 = 1 m/s backward.</explanation>
+  </question>
+
+  <question>
+    <text>The rate of change of momentum is equal to:</text>
+    <option>Acceleration</option>
+    <option correct="true">Force applied</option>
+    <option>Impulse</option>
+    <option>Velocity</option>
+    <explanation>Newton's second law: F = dp/dt. Force = rate of change of momentum.</explanation>
+  </question>
+
+  <question>
+    <text>A body of mass 5 kg moving at 4 m/s is acted by force 10 N for 2 s in direction of motion. Final velocity is:</text>
+    <option>4 m/s</option>
+    <option>6 m/s</option>
+    <option correct="true">8 m/s</option>
+    <option>10 m/s</option>
+    <explanation>a = F/m = 10/5 = 2 m/s². v = u + at = 4 + 2×2 = 8 m/s.</explanation>
+  </question>
+</quiz>
