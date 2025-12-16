@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+  <metadata>
+    <author>G. S. Tutorial</author>
+    <description>Class 9 Science - Chapter 8: Motion</description>
+  </metadata>
+
+  <!-- Previous Year Questions (CBSE/SEBA) -->
+
+  <question>
+    <text>(CBSE 2023) What is the SI unit of acceleration?</text>
+    <option>m/s</option>
+    <option>m</option>
+    <option correct="true">m/s²</option>
+    <option>m²/s</option>
+    <explanation>Acceleration = change in velocity/time = (m/s)/s = m/s². Velocity SI unit: m/s. Distance: m.</explanation>
+  </question>
+
+  <question>
+    <text>(SEBA 2023) A body is said to be in uniform motion if it covers:</text>
+    <option>Unequal distances in equal intervals</option>
+    <option correct="true">Equal distances in equal intervals</option>
+    <option>Equal distances in unequal intervals</option>
+    <option>Unequal distances in unequal intervals</option>
+    <explanation>Uniform motion: equal distance in equal time intervals, constant velocity. Non-uniform: unequal distances in equal times.</explanation>
+  </question>
+
+  <question>
+    <text>(CBSE 2022) The distance-time graph for uniform motion is:</text>
+    <option>Curved line</option>
+    <option>Parallel to time axis</option>
+    <option correct="true">Straight line inclined to axes</option>
+    <option>Perpendicular to time axis</option>
+    <explanation>Uniform motion: straight line with constant slope (speed). Horizontal line: at rest. Curved: non-uniform motion.</explanation>
+  </question>
+
+  <question>
+    <text>(SEBA 2022) What does the area under velocity-time graph represent?</text>
+    <option>Acceleration</option>
+    <option correct="true">Displacement</option>
+    <option>Distance</option>
+    <option>Speed</option>
+    <explanation>Area under v-t graph = displacement (for vector) or distance (for scalar). Slope gives acceleration.</explanation>
+  </question>
+
+  <question>
+    <text>(CBSE 2021) A car accelerates from rest at 2 m/s². What is its velocity after 5 seconds?</text>
+    <option>2 m/s</option>
+    <option>5 m/s</option>
+    <option correct="true">10 m/s</option>
+    <option>25 m/s</option>
+    <explanation>Using v = u + at: u=0, a=2 m/s², t=5 s → v = 0 + 2×5 = 10 m/s.</explanation>
+  </question>
+
+  <question>
+    <text>(SEBA 2021) Which of the following is a vector quantity?</text>
+    <option>Distance</option>
+    <option>Speed</option>
+    <option correct="true">Displacement</option>
+    <option>Time</option>
+    <explanation>Vector: magnitude + direction (displacement, velocity, acceleration). Scalar: only magnitude (distance, speed, time).</explanation>
+  </question>
+
+  <question>
+    <text>(CBSE 2020) The slope of distance-time graph gives:</text>
+    <option>Acceleration</option>
+    <option>Displacement</option>
+    <option correct="true">Speed</option>
+    <option>Velocity</option>
+    <explanation>Slope of d-t graph = speed (for distance) or velocity (for displacement). Slope of v-t graph = acceleration.</explanation>
+  </question>
+
+  <question>
+    <text>(SEBA 2020) A body thrown vertically upward returns to ground. Its acceleration at highest point is:</text>
+    <option>Zero</option>
+    <option correct="true">9.8 m/s² downward</option>
+    <option>9.8 m/s² upward</option>
+    <option>19.6 m/s²</option>
+    <explanation>At highest point, velocity = 0 but acceleration due to gravity = 9.8 m/s² downward (acting throughout).</explanation>
+  </question>
+
+  <question>
+    <text>(CBSE 2019) The equations of motion are valid when:</text>
+    <option>Acceleration is non-uniform</option>
+    <option>Velocity is zero</option>
+    <option correct="true">Acceleration is constant</option>
+    <option>Motion is circular</option>
+    <explanation>Three equations: v = u + at, s = ut + ½at², v² = u² + 2as. Valid only for constant acceleration.</explanation>
+  </question>
+
+  <question>
+    <text>(SEBA 2019) A body moving with constant speed in circular path has:</text>
+    <option>Constant velocity</option>
+    <option>Zero acceleration</option>
+    <option correct="true">Changing velocity</option>
+    <option>Uniform acceleration</option>
+    <explanation>Circular motion: speed constant but direction changes → velocity changes → acceleration (centripetal) present.</explanation>
+  </question>
+
+  <question>
+    <text>(CBSE 2018) A train moving at 72 km/h comes to rest in 10 seconds. Its retardation is:</text>
+    <option>0.5 m/s²</option>
+    <option correct="true">2 m/s²</option>
+    <option>5 m/s²</option>
+    <option>7.2 m/s²</option>
+    <explanation>u = 72 km/h = 20 m/s, v=0, t=10 s. a = (v-u)/t = (0-20)/10 = -2 m/s² (retardation = 2 m/s²).</explanation>
+  </question>
+
+  <question>
+    <text>(SEBA 2018) The numerical ratio of displacement to distance is:</text>
+    <option>Always less than 1</option>
+    <option>Always equal to 1</option>
+    <option correct="true">Less than or equal to 1</option>
+    <option>Greater than 1</option>
+    <explanation>Displacement ≤ Distance. Equal for straight line path without change in direction. Less for curved paths.</explanation>
+  </question>
+
+  <!-- Additional Important MCQs -->
+
+  <question>
+    <text>Which of the following represents non-uniform acceleration?</text>
+    <option>A car moving with constant speed</option>
+    <option>A freely falling body</option>
+    <option correct="true">A car moving in city traffic</option>
+    <option>A pendulum at extreme position</option>
+    <explanation>Non-uniform acceleration: changing rate of velocity change. Free fall: uniform acceleration (g constant). Constant speed: zero acceleration.</explanation>
+  </question>
+
+  <question>
+    <text>If a body travels equal distances in equal time intervals, it has:</text>
+    <option>Uniform acceleration</option>
+    <option correct="true">Uniform velocity</option>
+    <option>Non-uniform velocity</option>
+    <option>Zero acceleration</option>
+    <explanation>Equal distances in equal times → constant speed → uniform velocity if direction also constant.</explanation>
+  </question>
+
+  <question>
+    <text>The velocity-time graph for constant acceleration is:</text>
+    <option>Horizontal line</option>
+    <option correct="true">Straight line inclined to axes</option>
+    <option>Curved line</option>
+    <option>Vertical line</option>
+    <explanation>Constant acceleration: v-t graph is straight line with constant slope. Zero acceleration: horizontal line (constant velocity).</explanation>
+  </question>
+
+  <question>
+    <text>A body goes from A to B with speed 40 km/h and returns with 60 km/h. Average speed is:</text>
+    <option>50 km/h</option>
+    <option>100 km/h</option>
+    <option correct="true">48 km/h</option>
+    <option>52 km/h</option>
+    <explanation>Average speed = total distance/total time. Let distance = d. Time1 = d/40, Time2 = d/60. Avg speed = 2d/(d/40 + d/60) = 48 km/h.</explanation>
+  </question>
+
+  <question>
+    <text>Displacement can be zero even when distance is not zero. Example:</text>
+    <option>Circular motion</option>
+    <option correct="true">Returning to starting point</option>
+    <option>Straight line motion</option>
+    <option>Motion with constant speed</option>
+    <explanation>Displacement zero when initial and final positions same (round trip). Distance covered is path length > 0.</explanation>
+  </question>
+
+  <question>
+    <text>What is the acceleration of a body moving with uniform velocity?</text>
+    <option>Infinite</option>
+    <option>9.8 m/s²</option>
+    <option correct="true">Zero</option>
+    <option>Constant</option>
+    <explanation>Uniform velocity → no change in velocity → acceleration = 0. Acceleration = rate of change of velocity.</explanation>
+  </question>
+
+  <question>
+    <text>A stone dropped from top of a tower reaches ground in 4 seconds. Height of tower is: (g=10 m/s²)</text>
+    <option>20 m</option>
+    <option>40 m</option>
+    <option correct="true">80 m</option>
+    <option>160 m</term>
+    <explanation>Using s = ut + ½gt²: u=0, t=4 s, g=10 m/s² → s = 0 + ½×10×16 = 80 m.</explanation>
+  </question>
+
+  <question>
+    <text>The motion of a pendulum is:</text>
+    <option>Uniform linear motion</option>
+    <option>Uniform circular motion</option>
+    <option correct="true">Oscillatory motion</option>
+    <option>Random motion</option>
+    <explanation>Pendulum: oscillatory (to-and-fro), periodic. Not uniform (speed changes), not circular (arc path).</explanation>
+  </question>
+
+  <question>
+    <text>Which equation gives distance in nth second?</text>
+    <option>s = ut + ½at²</option>
+    <option>v = u + at</option>
+    <option correct="true">s_n = u + a(2n-1)/2</option>
+    <option>v² = u² + 2as</option>
+    <explanation>Distance in nth second: s_n = u + ½a(2n-1). For u=0, s_n = ½a(2n-1).</explanation>
+  </question>
+
+  <question>
+    <text>A body moving with initial velocity 5 m/s accelerates at 2 m/s². Distance in 3rd second is:</text>
+    <option>6 m</option>
+    <option correct="true">10 m</option>
+    <option>14 m</option>
+    <option>18 m</option>
+    <explanation>s_n = u + ½a(2n-1) = 5 + ½×2×(2×3-1) = 5 + 1×5 = 10 m.</explanation>
+  </question>
+
+  <question>
+    <text>Rate of change of displacement is:</text>
+    <option>Acceleration</option>
+    <option correct="true">Velocity</option>
+    <option>Speed</option>
+    <option>Distance</option>
+    <explanation>Velocity = displacement/time (vector). Speed = distance/time (scalar). Acceleration = velocity/time.</explanation>
+  </question>
+
+  <question>
+    <text>When a body is projected upward, the sign of acceleration due to gravity is taken as:</text>
+    <option>Positive always</option>
+    <option correct="true">Negative</option>
+    <option>Zero</option>
+    <option>Positive or negative depending on position</option>
+    <explanation>Upward motion: g opposes motion → negative. Downward motion: g in direction of motion → positive. Convention: downward positive usually.</explanation>
+  </question>
+
+  <question>
+    <text>A car covers first half distance at 40 km/h, second half at 60 km/h. Average speed is:</text>
+    <option>50 km/h</option>
+    <option correct="true">48 km/h</option>
+    <option>52 km/h</option>
+    <option>55 km/h</option>
+    <explanation>Average speed when distances equal = 2v₁v₂/(v₁+v₂) = 2×40×60/(100) = 4800/100 = 48 km/h.</explanation>
+  </question>
+
+  <question>
+    <text>The motion of Earth around Sun is:</text>
+    <option>Rectilinear</option>
+    <option correct="true">Circular</option>
+    <option>Oscillatory</option>
+    <option>Random</option>
+    <explanation>Earth's orbit: approximately circular (actually elliptical). Periodic revolution with nearly constant speed.</explanation>
+  </question>
+
+  <question>
+    <text>If velocity-time graph is parallel to time axis, then:</text>
+    <option>Acceleration is zero</option>
+    <option correct="true">Acceleration is zero</option>
+    <option>Velocity is zero</term>
+    <option>Displacement is zero</term>
+    <explanation>Horizontal v-t line: constant velocity → zero acceleration. Slope = acceleration = 0.</explanation>
+  </question>
+
+  <question>
+    <text>A body starting from rest moves with acceleration 4 m/s². Its velocity after 5 seconds is:</text>
+    <option>4 m/s</option>
+    <option>10 m/s</option>
+    <option correct="true">20 m/s</option>
+    <option>25 m/s</term>
+    <explanation>v = u + at = 0 + 4×5 = 20 m/s.</explanation>
+  </question>
+
+  <question>
+    <text>Distance traveled by a body in 2nd second and 3rd second of its motion are in ratio 3:5. Initial velocity is:</text>
+    <option>Zero</option>
+    <option correct="true">Zero</option>
+    <option>2 m/s</option>
+    <option>4 m/s</term>
+    <explanation>For u=0, s_n ∝ (2n-1). s₂:s₃ = (2×2-1):(2×3-1) = 3:5. So u=0.</explanation>
+  </question>
+
+  <question>
+    <text>A particle moves with constant speed v along a circle of radius r. Its acceleration is:</text>
+    <option>v²/r toward center</option>
+    <option correct="true">v²/r toward center</option>
+    <option>v/r along tangent</option>
+    <option>Zero</term>
+    <explanation>Centripetal acceleration = v²/r, directed toward center. Required for circular motion.</explanation>
+  </question>
+
+  <question>
+    <text>Two balls of different masses are dropped from same height. They will hit ground:</text>
+    <option>Heavier first</option>
+    <option>Lighter first</option>
+    <option correct="true">Simultaneously</option>
+    <option>Depends on shape</term>
+    <explanation>In vacuum, all bodies fall with same acceleration g (9.8 m/s²) regardless of mass. Air resistance may affect differently.</explanation>
+  </question>
+
+  <question>
+    <text>The slope of velocity-time graph for uniformly accelerated motion is:</text>
+    <option>Zero</option>
+    <option correct="true">Constant</option>
+    <option>Increasing</option>
+    <option>Decreasing</term>
+    <explanation>Uniform acceleration → constant slope in v-t graph. Slope = acceleration = constant.</explanation>
+  </question>
+
+  <question>
+    <text>A body moving with 10 m/s is brought to rest in 2 seconds. Retardation is:</text>
+    <option>2 m/s²</option>
+    <option correct="true">5 m/s²</option>
+    <option>10 m/s²</option>
+    <option>20 m/s²</term>
+    <explanation>Retardation = (u-v)/t = (10-0)/2 = 5 m/s².</explanation>
+  </question>
+
+  <question>
+    <text>Which of these is NOT an example of periodic motion?</text>
+    <option>Pendulum swing</option>
+    <option>Earth's rotation</option>
+    <option correct="true">A car moving on road</option>
+    <option>Heartbeat</term>
+    <explanation>Periodic motion repeats at regular intervals. Car motion is not necessarily periodic (could be random).</explanation>
+  </question>
+
+  <question>
+    <text>A train 100 m long crosses a pole in 5 seconds. Its speed is:</text>
+    <option>20 m/s</option>
+    <option correct="true">20 m/s</option>
+    <option>25 m/s</term>
+    <option>50 m/s</term>
+    <explanation>Speed = distance/time = 100 m/5 s = 20 m/s = 72 km/h.</explanation>
+  </question>
+
+  <question>
+    <text>If displacement-time graph is curved upward, the body has:</text>
+    <option>Constant velocity</option>
+    <option correct="true">Increasing velocity</option>
+    <option>Decreasing velocity</term>
+    <option>Zero acceleration</term>
+    <explanation>Curve upward (increasing slope) → increasing speed/velocity → positive acceleration.</explanation>
+  </question>
+
+  <question>
+    <text>The distance covered by a freely falling body in first 3 seconds is: (g=10 m/s²)</text>
+    <option>15 m</option>
+    <option>30 m</option>
+    <option correct="true">45 m</option>
+    <option>90 m</term>
+    <explanation>s = ½gt² = ½×10×9 = 45 m.</explanation>
+  </question>
+</quiz>
