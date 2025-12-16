@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+  <metadata>
+    <author>G. S. Tutorial</author>
+    <description>Class 8 Science - Chapter 6: Reproduction in Animals</description>
+  </metadata>
+
+  <!-- Previous Year Questions (CBSE/SEBA) -->
+
+  <question>
+    <text>(CBSE 2023) Which type of reproduction involves two parents?</text>
+    <option>Binary fission</option>
+    <option>Budding</option>
+    <option>Fragmentation</option>
+    <option correct="true">Sexual reproduction</option>
+    <explanation>Sexual reproduction involves two parents (male and female) producing offspring with genetic variation. Asexual reproduction involves one parent.</explanation>
+  </question>
+
+  <question>
+    <text>(SEBA 2023) Where does fertilization occur in humans?</text>
+    <option>Uterus</option>
+    <option>Vagina</option>
+    <option correct="true">Fallopian tube</option>
+    <option>Ovary</option>
+    <explanation>Fertilization (fusion of sperm and egg) occurs in the fallopian tube of the female reproductive system.</explanation>
+  </question>
+
+  <question>
+    <text>(CBSE 2022) Which animal reproduces by external fertilization?</text>
+    <option>Cat</option>
+    <option>Dog</option>
+    <option correct="true">Frog</option>
+    <option>Human</option>
+    <explanation>Frogs reproduce by external fertilization where eggs are fertilized outside the female's body, usually in water.</explanation>
+  </question>
+
+  <question>
+    <text>(SEBA 2022) What is the male gamete in animals called?</text>
+    <option>Ovum</option>
+    <option>Zygote</option>
+    <option correct="true">Sperm</option>
+    <option>Embryo</option>
+    <explanation>Sperm is the male gamete produced in testes. Ovum is the female gamete produced in ovaries.</explanation>
+  </question>
+
+  <question>
+    <text>(CBSE 2021) What is formed after fertilization of egg?</text>
+    <option>Ovum</option>
+    <option correct="true">Zygote</option>
+    <option>Embryo</option>
+    <option>Foetus</option>
+    <explanation>Fertilization results in the formation of a zygote, which divides to form an embryo.</explanation>
+  </question>
+
+  <question>
+    <text>(SEBA 2021) Which animal shows metamorphosis?</text>
+    <option>Human</option>
+    <option>Dog</option>
+    <option correct="true">Frog</option>
+    <option>Elephant</option>
+    <explanation>Frogs undergo metamorphosis: egg → tadpole → adult frog. Butterflies also show metamorphosis.</explanation>
+  </question>
+
+  <question>
+    <text>(CBSE 2020) Where does the development of the baby occur in humans?</text>
+    <option>Ovary</option>
+    <option correct="true">Uterus</option>
+    <option>Fallopian tube</option>
+    <option>Vagina</option>
+    <explanation>The uterus (womb) is where the embryo implants and develops into a foetus during pregnancy.</explanation>
+  </question>
+
+  <question>
+    <text>(SEBA 2020) What is the process of fusion of gametes called?</text>
+    <option>Germination</option>
+    <option>Metamorphosis</option>
+    <option correct="true">Fertilization</option>
+    <option>Pollination</option>
+    <explanation>Fertilization is the fusion of male and female gametes (sperm and egg) to form a zygote.</explanation>
+  </question>
+
+  <question>
+    <text>(CBSE 2019) Which animal reproduces by budding?</text>
+    <option>Amoeba</option>
+    <option>Hydra</option>
+    <option correct="true">Hydra</option>
+    <option>Human</option>
+    <explanation>Hydra reproduces by budding where a small bud grows out from the parent's body and detaches to form a new individual.</explanation>
+  </question>
+
+  <question>
+    <text>(SEBA 2019) What is the function of testes?</text>
+    <option>Produce eggs</option>
+    <option correct="true">Produce sperms</option>
+    <option>Nourish embryo</option>
+    <option>Produce urine</option>
+    <explanation>Testes are male reproductive organs that produce sperms and male hormone testosterone.</explanation>
+  </question>
+
+  <question>
+    <text>(CBSE 2018) Which animal is oviparous?</text>
+    <option>Human</option>
+    <option>Dog</option>
+    <option>Whale</option>
+    <option correct="true">Hen</option>
+    <explanation>Oviparous animals lay eggs (e.g., birds, reptiles, amphibians). Viviparous animals give birth to young ones.</explanation>
+  </question>
+
+  <question>
+    <text>(SEBA 2018) What is the developing baby called after 8 weeks of pregnancy?</text>
+    <option>Zygote</option>
+    <option>Embryo</option>
+    <option correct="true">Foetus</option>
+    <option>Infant</option>
+    <explanation>After 8 weeks of development, the embryo is called a foetus. This stage continues until birth.</explanation>
+  </question>
+
+  <!-- Additional Important MCQs -->
+
+  <question>
+    <text>Which of these is an example of asexual reproduction?</text>
+    <option>Human reproduction</option>
+    <option>Dog reproduction</option>
+    <option correct="true">Binary fission in Amoeba</option>
+    <option>Frog reproduction</option>
+    <explanation>Binary fission is asexual reproduction where a single organism divides into two identical individuals.</explanation>
+  </question>
+
+  <question>
+    <text>What is the female gamete in humans called?</text>
+    <option>Sperm</option>
+    <option correct="true">Ovum</option>
+    <option>Zygote</option>
+    <option>Embryo</option>
+    <explanation>Ovum (egg) is the female gamete produced in ovaries. It is larger than sperm and contains stored food.</explanation>
+  </question>
+
+  <question>
+    <text>Where are sperms produced?</text>
+    <option>Ovary</option>
+    <option>Uterus</option>
+    <option correct="true">Testes</option>
+    <option>Fallopian tube</option>
+    <explanation>Testes (singular: testis) are the male reproductive organs that produce millions of sperms daily.</explanation>
+  </question>
+
+  <question>
+    <text>What is the name of the process where an embryo gets embedded in the uterus wall?</text>
+    <option>Fertilization</option>
+    <option>Menstruation</option>
+    <option correct="true">Implantation</option>
+    <option>Ovulation</option>
+    <explanation>Implantation is when the embryo attaches to the thickened lining of the uterus for further development.</explanation>
+  </question>
+
+  <question>
+    <text>Which animal is viviparous?</text>
+    <option>Crow</option>
+    <option>Crocodile</option>
+    <option>Snake</option>
+    <option correct="true">Cat</option>
+    <explanation>Viviparous animals give birth to live young ones (e.g., mammals like cats, dogs, humans). Birds and reptiles are oviparous.</explanation>
+  </question>
+
+  <question>
+    <text>What is the function of the placenta?</text>
+    <option>Produce sperms</option>
+    <option>Produce eggs</option>
+    <option correct="true">Provide nutrients to foetus</option>
+    <option>Help in fertilization</option>
+    <explanation>Placenta provides oxygen and nutrients to the developing foetus and removes waste products through the umbilical cord.</explanation>
+  </question>
+
+  <question>
+    <text>Which hormone is responsible for male characteristics?</text>
+    <option>Estrogen</option>
+    <option correct="true">Testosterone</option>
+    <option>Progesterone</option>
+    <option>Insulin</option>
+    <explanation>Testosterone is the male sex hormone produced by testes. Estrogen and progesterone are female hormones.</explanation>
+  </question>
+
+  <question>
+    <text>What is the time period of human pregnancy called?</text>
+    <option>Incubation period</option>
+    <option correct="true">Gestation period</option>
+    <option>Metamorphosis period</option>
+    <option>Fertilization period</option>
+    <explanation>Gestation period is the time from fertilization to birth. In humans, it is about 9 months (40 weeks).</explanation>
+  </question>
+
+  <question>
+    <text>Which animal reproduces by fragmentation?</text>
+    <option>Amoeba</option>
+    <option>Hydra</option>
+    <option correct="true">Planaria</option>
+    <option>Human</option>
+    <explanation>Planaria (flatworm) reproduces by fragmentation where its body breaks into pieces, each growing into a new individual.</explanation>
+  </question>
+
+  <question>
+    <text>What is the name of the stage when a tadpole develops legs?</text>
+    <option>Egg stage</option>
+    <option>Larva stage</option>
+    <option correct="true">Metamorphosis</option>
+    <option>Adult stage</option>
+    <explanation>Metamorphosis in frogs includes: egg → tadpole → tadpole with legs → froglet → adult frog.</explanation>
+  </question>
+
+  <question>
+    <text>Where does the embryo develop in humans?</text>
+    <option>Ovary</option>
+    <option>Fallopian tube</option>
+    <option correct="true">Uterus</option>
+    <option>Vagina</option>
+    <explanation>The uterus provides a protected environment with nourishment for the developing embryo/foetus.</explanation>
+  </question>
+
+  <question>
+    <text>What is the term for animals that can produce both sperms and eggs?</text>
+    <option>Unisexual</option>
+    <option correct="true">Hermaphrodite</option>
+    <option>Viviparous</option>
+    <option>Oviparous</option>
+    <explanation>Hermaphrodites have both male and female reproductive organs (e.g., earthworms, snails, hydra).</explanation>
+  </question>
+
+  <question>
+    <text>Which process involves the release of an egg from the ovary?</text>
+    <option>Fertilization</option>
+    <option>Menstruation</option>
+    <option correct="true">Ovulation</option>
+    <option>Implantation</option>
+    <explanation>Ovulation is the release of a mature egg from the ovary, occurring approximately once a month in females.</explanation>
+  </question>
+
+  <question>
+    <text>What is the function of the umbilical cord?</text>
+    <option>Produce hormones</option>
+    <option correct="true">Connect foetus to placenta</option>
+    <option>Protect the foetus</option>
+    <option>Help in fertilization</option>
+    <explanation>The umbilical cord contains blood vessels that transport nutrients and oxygen from placenta to foetus and remove waste.</explanation>
+  </question>
+
+  <question>
+    <text>Which animal shows internal fertilization but external development?</text>
+    <option>Human</option>
+    <option>Dog</option>
+    <option correct="true">Bird</option>
+    <option>Frog</option>
+    <explanation>Birds have internal fertilization but lay eggs for external development. Frogs have external fertilization.</explanation>
+  </question>
+
+  <question>
+    <text>What is the period of sexual maturity called?</text>
+    <option>Childhood</option>
+    <option correct="true">Adolescence</option>
+    <option>Old age</option>
+    <option>Infancy</option>
+    <explanation>Adolescence is the period when reproductive organs become functional (puberty), typically ages 11-19 in humans.</explanation>
+  </question>
+
+  <question>
+    <text>Which animal undergoes binary fission?</text>
+    <option>Hydra</option>
+    <option>Planaria</option>
+    <option correct="true">Amoeba</option>
+    <option>Frog</option>
+    <explanation>Amoeba reproduces asexually by binary fission where it divides into two identical daughter cells.</explanation>
+  </question>
+
+  <question>
+    <text>What protects the developing foetus in the uterus?</text>
+    <option>Placenta</option>
+    <option correct="true">Amniotic fluid</option>
+    <option>Umbilical cord</option>
+    <option>Fallopian tube</option>
+    <explanation>Amniotic fluid cushions the foetus against shocks and maintains constant temperature.</explanation>
+  </question>
+
+  <question>
+    <text>What is the term for animals with separate male and female individuals?</text>
+    <option>Hermaphrodite</option>
+    <option correct="true">Unisexual</option>
+    <option>Oviparous</option>
+    <option>Viviparous</option>
+    <explanation>Unisexual animals have separate sexes (e.g., humans, dogs, birds). Hermaphrodites have both sexes in one individual.</explanation>
+  </question>
+
+  <question>
+    <text>Which of these is not a part of the male reproductive system?</text>
+    <option>Testes</option>
+    <option>Sperm duct</option>
+    <option>Penis</option>
+    <option correct="true">Ovary</option>
+    <explanation>Ovary is part of the female reproductive system. Testes, sperm duct and penis are male reproductive organs.</explanation>
+  </question>
+</quiz>
