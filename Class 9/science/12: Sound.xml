@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+  <metadata>
+    <author>G. S. Tutorial</author>
+    <description>Class 9 Science - Chapter 12: Sound</description>
+  </metadata>
+
+  <!-- Previous Year Questions (CBSE/SEBA) -->
+
+  <question>
+    <text>(CBSE 2023) Sound cannot travel through:</text>
+    <option>Solid</option>
+    <option>Liquid</option>
+    <option>Gas</option>
+    <option correct="true">Vacuum</option>
+    <explanation>Sound requires material medium (solid, liquid, gas) for propagation. Vacuum has no particles to vibrate.</explanation>
+  </question>
+
+  <question>
+    <text>(SEBA 2023) The number of oscillations per second is called:</text>
+    <option>Amplitude</option>
+    <option>Time period</option>
+    <option correct="true">Frequency</option>
+    <option>Wavelength</option>
+    <explanation>Frequency (f) = oscillations per second. SI unit: Hertz (Hz). Human range: 20 Hz to 20,000 Hz.</explanation>
+  </question>
+
+  <question>
+    <text>(CBSE 2022) The speed of sound is maximum in:</text>
+    <option>Air</option>
+    <option>Water</option>
+    <option correct="true">Steel</option>
+    <option>Vacuum</option>
+    <explanation>Sound speed: Solids > Liquids > Gases. Steel: ~5000 m/s, Water: ~1500 m/s, Air: ~330 m/s, Vacuum: 0.</explanation>
+  </question>
+
+  <question>
+    <text>(SEBA 2022) Loudness of sound depends on:</text>
+    <option>Frequency</option>
+    <option correct="true">Amplitude</option>
+    <option>Time period</option>
+    <option>Wavelength</option>
+    <explanation>Loudness ∝ amplitude². Greater amplitude → louder sound. Measured in decibels (dB).</explanation>
+  </question>
+
+  <question>
+    <text>(CBSE 2021) The unit of frequency is:</text>
+    <option>Decibel</option>
+    <option>Metre</option>
+    <option>Second</option>
+    <option correct="true">Hertz</option>
+    <explanation>1 Hertz = 1 oscillation per second. Named after Heinrich Hertz. 1 kHz = 1000 Hz.</explanation>
+  </question>
+
+  <question>
+    <text>(SEBA 2021) The characteristic that distinguishes two sounds of same loudness and pitch is:</text>
+    <option>Amplitude</option>
+    <option>Frequency</option>
+    <option correct="true">Timbre</option>
+    <option>Speed</option>
+    <explanation>Timbre (quality) helps identify source (e.g., same note on guitar vs piano). Due to overtones/harmonics.</explanation>
+  </question>
+
+  <question>
+    <text>(CBSE 2020) The hearing range of human ear is:</text>
+    <option>20 Hz - 2000 Hz</option>
+    <option correct="true">20 Hz - 20,000 Hz</option>
+    <option>200 Hz - 2000 Hz</option>
+    <option>2 Hz - 200 Hz</option>
+    <explanation>Audible range: 20 Hz (infrasound) to 20,000 Hz (ultrasound). Decreases with age, especially high frequencies.</explanation>
+  </question>
+
+  <question>
+    <text>(SEBA 2020) The persistence of sound due to repeated reflection is:</text>
+    <option>Echo</option>
+    <option correct="true">Reverberation</option>
+    <option>Vibration</option>
+    <option>Amplification</option>
+    <explanation>Reverberation: sound persists (multiple reflections). Echo: distinct reflection heard separately (>0.1 s delay).</explanation>
+  </question>
+
+  <question>
+    <text>(CBSE 2019) Which phenomenon explains twinkling of stars?</text>
+    <option>Reflection</option>
+    <option>Dispersion</option>
+    <option correct="true">Refraction</option>
+    <option>Scattering</option>
+    <explanation>Atmospheric refraction: starlight bends due to varying air density → apparent position changes → twinkling.</explanation>
+  </question>
+
+  <question>
+    <text>(SEBA 2019) Pitch of sound depends on:</text>
+    <option>Amplitude</option>
+    <option correct="true">Frequency</option>
+    <option>Loudness</option>
+    <option>Speed</option>
+    <explanation>Pitch (shrillness) ∝ frequency. Higher frequency → higher pitch (female voice). Lower frequency → lower pitch (male voice).</explanation>
+  </question>
+
+  <question>
+    <text>(CBSE 2018) SONAR works on principle of:</text>
+    <option>Reflection of light</option>
+    <option>Refraction of sound</option>
+    <option correct="true">Reflection of sound</option>
+    <option>Diffraction of sound</option>
+    <explanation>SONAR (Sound Navigation And Ranging): emits ultrasound, detects echo to measure depth/locate objects.</explanation>
+  </question>
+
+  <question>
+    <text>(SEBA 2018) The speed of sound in air at 20°C is approximately:</text>
+    <option>1500 m/s</option>
+    <option>5000 m/s</option>
+    <option correct="true">340 m/s</option>
+    <option>3000 m/s</option>
+    <explanation>In dry air at 20°C: 343 m/s, often taken as 340 m/s. Increases with temperature: v ∝ √T.</explanation>
+  </question>
+
+  <!-- Additional Important MCQs -->
+
+  <question>
+    <text>Sound is produced by:</text>
+    <option>Energy</option>
+    <option>Light</option>
+    <option correct="true">Vibrations</option>
+    <option>Heat</option>
+    <explanation>Vibrating object causes medium particles to vibrate → compressions & rarefactions → sound wave.</explanation>
+  </question>
+
+  <question>
+    <text>The time taken for one complete oscillation is:</text>
+    <option>Frequency</option>
+    <option correct="true">Time period</option>
+    <option>Amplitude</option>
+    <option>Wavelength</option>
+    <explanation>Time period (T) = 1/f. Unit: second (s). Example: f = 50 Hz → T = 0.02 s.</explanation>
+  </question>
+
+  <question>
+    <text>Which part of human ear converts sound vibrations to electrical signals?</text>
+    <option>Eardrum</option>
+    <option>Hammer</option>
+    <option>Anvil</option>
+    <option correct="true">Cochlea</option>
+    <explanation>Cochlea (inner ear) has hair cells that convert vibrations to nerve impulses → auditory nerve → brain.</explanation>
+  </question>
+
+  <question>
+    <text>Ultrasound has frequency:</text>
+    <option>Less than 20 Hz</option>
+    <option>20-20,000 Hz</option>
+    <option correct="true">Above 20,000 Hz</option>
+    <option>Above 2 MHz</option>
+    <explanation>Ultrasound: >20 kHz (beyond human hearing). Uses: medical imaging, cleaning, SONAR. Infrasound: <20 Hz.</explanation>
+  </question>
+
+  <question>
+    <text>Sound travels as:</text>
+    <option>Transverse wave</option>
+    <option correct="true">Longitudinal wave</option>
+    <option>Electromagnetic wave</option>
+    <option>Standing wave</option>
+    <explanation>Sound wave: longitudinal (particles vibrate parallel to wave direction). Light: transverse (perpendicular).</explanation>
+  </question>
+
+  <question>
+    <text>The distance between two consecutive compressions is:</text>
+    <option>Amplitude</option>
+    <option>Frequency</option>
+    <option correct="true">Wavelength</option>
+    <option>Time period</option>
+    <explanation>Wavelength (λ) = distance between successive compressions or rarefactions. v = fλ.</explanation>
+  </question>
+
+  <question>
+    <text>Why can't we hear sound on moon?</text>
+    <option>Moon is too far</option>
+    <option>Moon has no gravity</option>
+    <option correct="true">Moon has no atmosphere</option>
+    <option>Sound is absorbed by moon</option>
+    <explanation>Moon has near vacuum → no medium for sound propagation. Astronauts use radio communication.</explanation>
+  </question>
+
+  <question>
+    <text>Bats navigate using:</text>
+    <option>Eyes</option>
+    <option>Smell</option>
+    <option correct="true">Echolocation</option>
+    <option>Magnetic field</option>
+    <explanation>Bats emit ultrasound clicks, detect echoes to locate prey/obstacles. Dolphins also use echolocation.</explanation>
+  </question>
+
+  <question>
+    <text>The unit of loudness is:</text>
+    <option>Hertz</option>
+    <option>Metre</option>
+    <option correct="true">Decibel</option>
+    <option>Second</option>
+    <explanation>Loudness measured in decibels (dB). Normal conversation: ~60 dB, Pain threshold: ~120 dB, Whisper: ~30 dB.</explanation>
+  </question>
+
+  <question>
+    <text>An echo is heard when distance between source and obstacle is at least: (v=340 m/s)</text>
+    <option>17 m</option>
+    <option correct="true">17 m</option>
+    <option>34 m</option>
+    <option>68 m</option>
+    <explanation>Minimum distance for distinct echo: d = v×t/2 = 340×0.1/2 = 17 m (t=0.1 s for persistence of hearing).</explanation>
+  </question>
+
+  <question>
+    <text>Which property distinguishes musical sound from noise?</text>
+    <option>Loudness</option>
+    <option>Pitch</option>
+    <option>Timbre</option>
+    <option correct="true">All of these</option>
+    <explanation>Musical sound: regular, pleasing. Noise: irregular, unpleasant. Both have loudness, pitch, timbre but pattern differs.</explanation>
+  </question>
+
+  <question>
+    <text>The sound of frequency 25 Hz is:</text>
+    <option>Ultrasound</option>
+    <option correct="true">Audible</option>
+    <option>Infrasonic</option>
+    <option>Supersonic</option>
+    <explanation>25 Hz > 20 Hz → audible (low frequency). Infrasonic: <20 Hz. Ultrasound: >20,000 Hz.</explanation>
+  </question>
+
+  <question>
+    <text>In which medium does sound travel fastest at same temperature?</text>
+    <option>Hydrogen gas</option>
+    <option>Oxygen gas</option>
+    <option>Water</option>
+    <option correct="true">Iron</option>
+    <explanation>Speed: solids > liquids > gases. Iron ~5000 m/s > water ~1500 m/s > gases ~300-500 m/s.</explanation>
+  </question>
+
+  <question>
+    <text>The reflection of sound is used in:</text>
+    <option>Stethoscope</option>
+    <option>Megaphone</option>
+    <option>Soundboard</option>
+    <option correct="true">All of these</option>
+    <explanation>All use reflection to direct/amplify sound. Stethoscope: chest sounds, Megaphone: direct voice, Soundboard: in auditoriums.</explanation>
+  </question>
+
+  <question>
+    <text>If frequency of sound is doubled, its wavelength:</text>
+    <option>Doubles</option>
+    <option>Quadruples</option>
+    <option>Halves</option>
+    <option correct="true">Halves</option>
+    <explanation>v = fλ (constant in same medium). f → 2f → λ → λ/2 to keep v constant.</explanation>
+  </question>
+
+  <question>
+    <text>The range of infrasound is:</text>
+    <option correct="true">Below 20 Hz</option>
+    <option>20-20,000 Hz</option>
+    <option>Above 20,000 Hz</option>
+    <option>Above 2 MHz</option>
+    <explanation>Infrasound: <20 Hz. Produced by earthquakes, volcanoes, elephants, whales. Can travel long distances.</explanation>
+  </question>
+
+  <question>
+    <text>Loudness is proportional to:</text>
+    <option>Amplitude</option>
+    <option>Square of amplitude</option>
+    <option correct="true">Square of amplitude</option>
+    <option>Square root of amplitude</option>
+    <explanation>Loudness ∝ (amplitude)². Double amplitude → 4× loudness. Also depends on sensitivity of ear.</explanation>
+  </question>
+
+  <question>
+    <text>Sound waves in air are:</text>
+    <option>Electromagnetic</option>
+    <option correct="true">Mechanical</option>
+    <option>Transverse</option>
+    <option>Non-elastic</option>
+    <explanation>Mechanical waves require medium. Electromagnetic waves (light, radio) can travel through vacuum.</explanation>
+  </question>
+
+  <question>
+    <text>The ceiling of concert halls are curved to:</text>
+    <option>Look beautiful</option>
+    <option>Reduce cost</option>
+    <option correct="true">Prevent reverberation</option>
+    <option>Increase height</option>
+    <explanation>Curved ceilings distribute sound evenly, reduce excessive reverberation for clarity.</explanation>
+  </question>
+
+  <question>
+    <text>A child hears an echo 2 seconds after shouting near cliff. Distance to cliff is: (v=340 m/s)</text>
+    <option>170 m</option>
+    <option correct="true">340 m</option>
+    <option>680 m</option>
+    <option>1360 m</option>
+    <explanation>Distance = v×t/2 = 340×2/2 = 340 m. Sound travels to cliff and back (2× distance).</explanation>
+  </question>
+
+  <question>
+    <text>The part that vibrates in human voice box is:</text>
+    <option>Vocal cords</option>
+    <option correct="true">Vocal cords</option>
+    <option>Windpipe</option>
+    <option>Lungs</option>
+    <explanation>Voice box (larynx) contains vocal cords that vibrate when air passes → sound. Pitch controlled by tension.</explanation>
+  </question>
+
+  <question>
+    <text>Shock waves are produced by objects moving:</text>
+    <option>At speed of sound</option>
+    <option correct="true">Faster than sound</option>
+    <option>Slower than sound</option>
+    <option>At constant speed</option>
+    <explanation>Supersonic speed (>340 m/s) creates shock waves → sonic boom. Example: jet aircraft, bullet.</explanation>
+  </question>
+
+  <question>
+    <text>The speed of sound increases with:</text>
+    <option>Decrease in temperature</option>
+    <option correct="true">Increase in temperature</option>
+    <option>Increase in humidity</option>
+    <option>Decrease in pressure</option>
+    <explanation>v ∝ √T (absolute temperature). In air: v = 331 + 0.6t m/s (t in °C). Humidity slightly increases speed.</explanation>
+  </question>
+
+  <question>
+    <text>Which instrument measures sound intensity?</text>
+    <option>Audiometer</option>
+    <option>Barometer</option>
+    <option correct="true">Sound level meter</option>
+    <option>Oscilloscope</option>
+    <explanation>Sound level meter measures dB. Audiometer tests hearing. Oscilloscope displays waveforms.</explanation>
+  </question>
+
+  <question>
+    <text>The full form of SONAR is:</text>
+    <option>Sound Navigation and Ranging</option>
+    <option correct="true">Sound Navigation and Ranging</option>
+    <option>Sound Natural Radiation</option>
+    <option>Sonar Navigation of Radar</option>
+    <explanation>SONAR uses ultrasound for underwater detection, mapping, communication.</explanation>
+  </question>
+
+  <question>
+    <text>A tuning fork produces sound due to:</text>
+    <option>Magnetic effect</option>
+    <option correct="true">Vibration of prongs</option>
+    <option>Heating</option>
+    <option>Electrical energy</option>
+    <explanation>When struck, prongs vibrate at natural frequency → produces pure tone of specific frequency.</explanation>
+  </question>
+
+  <question>
+    <text>Noise pollution can cause:</text>
+    <option>Hearing loss</option>
+    <option>Hypertension</option>
+    <option>Sleep disturbance</option>
+    <option correct="true">All of these</option>
+    <explanation>Noise above 85 dB can cause permanent hearing damage, stress, high BP, sleep issues.</explanation>
+  </question>
+
+  <question>
+    <text>The audible range for dogs is up to:</text>
+    <option>20,000 Hz</option>
+    <option>30,000 Hz</option>
+    <option correct="true">45,000 Hz</option>
+    <option>60,000 Hz</option>
+    <explanation>Dogs hear ultrasound up to ~45 kHz. Dog whistles use ~20-30 kHz (inaudible to humans).</explanation>
+  </question>
+
+  <question>
+    <text>When sound passes from air to water, which changes?</text>
+    <option>Frequency</option>
+    <option correct="true">Speed and wavelength</option>
+    <option>Amplitude</option>
+    <option>Pitch</option>
+    <explanation>Frequency (pitch) remains same. Speed increases in water → wavelength increases (v = fλ).</explanation>
+  </question>
+</quiz>
