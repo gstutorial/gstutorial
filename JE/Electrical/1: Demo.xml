@@ -1,16 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <quiz>
-<metadata>
-  <chapter>13. Why Do We Fall Ill</chapter>
-  <timeLimit>3</timeLimit>
-</metadata>
-
-<question>
-  <text>Diseases that last for short period are called:</text>
-  <option correct="true">Acute diseases</option>
-  <option>Chronic diseases</option>
-  <option>Infectious diseases</option>
-  <option>Non-infectious diseases</option>
-  <explanation>Acute diseases: short duration (e.g., common cold).</explanation>
-</question>
+  <question>
+    <text>The standard wheel gauge of passenger BG coaching stock is –</text>
+    <option correct="false">1602 mm</option>
+    <option correct="false">1601 mm</option>
+    <option correct="true">1600 mm</option>
+    <option correct="false">1598 mm</option>
+  </question>
 </quiz>
