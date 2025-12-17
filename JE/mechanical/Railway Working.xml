@@ -1,0 +1,804 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+
+  <question>
+    <text>Q1. The highest administrative authority of Indian Railways is</text>
+    <option correct="false">Divisional Railway Manager</option>
+    <option correct="false">General Manager</option>
+    <option correct="true">Railway Board</option>
+    <option correct="false">Chief Workshop Manager</option>
+  </question>
+
+  <question>
+    <text>Q2. The officer who heads a Zonal Railway is called</text>
+    <option correct="true">General Manager</option>
+    <option correct="false">Divisional Engineer</option>
+    <option correct="false">Chief Controller</option>
+    <option correct="false">Senior Section Engineer</option>
+  </question>
+
+  <question>
+    <text>Q3. The Divisional Railway Manager (DRM) is directly in charge of</text>
+    <option correct="false">Entire Indian Railways</option>
+    <option correct="true">One operating division</option>
+    <option correct="false">One workshop only</option>
+    <option correct="false">Only commercial department</option>
+  </question>
+
+  <question>
+    <text>Q4. A workshop like Carriage &amp; Wagon shop is normally under administrative control of</text>
+    <option correct="false">Station Manager</option>
+    <option correct="true">Chief Workshop Manager</option>
+    <option correct="false">Chief Commercial Manager</option>
+    <option correct="false">Controller of Stores</option>
+  </question>
+
+  <question>
+    <text>Q5. The Mechanical Department of Railways is mainly responsible for</text>
+    <option correct="true">Maintenance of rolling stock and mechanical equipment</option>
+    <option correct="false">Track laying and maintenance</option>
+    <option correct="false">Ticket checking</option>
+    <option correct="false">Running of accounts</option>
+  </question>
+
+  <question>
+    <text>Q6. The department responsible for train lighting and air-conditioning in coaches is</text>
+    <option correct="false">Mechanical</option>
+    <option correct="true">Electrical</option>
+    <option correct="false">Operating</option>
+    <option correct="false">Commercial</option>
+  </question>
+
+  <question>
+    <text>Q7. Signalling and interlocking are maintained by</text>
+    <option correct="false">Mechanical Department</option>
+    <option correct="true">Signal &amp; Telecommunication Department</option>
+    <option correct="false">Stores Department</option>
+    <option correct="false">Personnel Department</option>
+  </question>
+
+  <question>
+    <text>Q8. Track and bridges come under which department?</text>
+    <option correct="false">Mechanical</option>
+    <option correct="true">Engineering (Permanent Way &amp; Bridges)</option>
+    <option correct="false">Electrical</option>
+    <option correct="false">Commercial</option>
+  </question>
+
+  <question>
+    <text>Q9. Procurement and issue of materials in workshop is the responsibility of</text>
+    <option correct="false">Operating Department</option>
+    <option correct="true">Stores Department</option>
+    <option correct="false">Personnel Department</option>
+    <option correct="false">Signal Department</option>
+  </question>
+
+  <question>
+    <text>Q10. Staff matters like leave, promotion and service records are dealt with by</text>
+    <option correct="false">Mechanical Department</option>
+    <option correct="true">Personnel Department</option>
+    <option correct="false">Stores Department</option>
+    <option correct="false">Accounts Department</option>
+  </question>
+
+  <question>
+    <text>Q11. Financial control and internal audit are the functions of</text>
+    <option correct="false">Mechanical Department</option>
+    <option correct="false">Operating Department</option>
+    <option correct="true">Accounts Department</option>
+    <option correct="false">Commercial Department</option>
+  </question>
+
+  <question>
+    <text>Q12. The department mainly responsible for train running and control office is</text>
+    <option correct="false">Mechanical</option>
+    <option correct="true">Operating</option>
+    <option correct="false">Stores</option>
+    <option correct="false">Engineering</option>
+  </question>
+
+  <question>
+    <text>Q13. Earnings from passenger and freight services are looked after by</text>
+    <option correct="false">Mechanical Department</option>
+    <option correct="false">Signal Department</option>
+    <option correct="true">Commercial Department</option>
+    <option correct="false">Personnel Department</option>
+  </question>
+
+  <question>
+    <text>Q14. C&amp;W in open line stands for</text>
+    <option correct="true">Carriage and Wagon</option>
+    <option correct="false">Control and Works</option>
+    <option correct="false">Coach and Wheel</option>
+    <option correct="false">Central and Western</option>
+  </question>
+
+  <question>
+    <text>Q15. Periodic Overhaul (POH) of coaches and wagons is mainly done</text>
+    <option correct="false">In running yard</option>
+    <option correct="true">In workshops</option>
+    <option correct="false">At wayside stations</option>
+    <option correct="false">In divisional control office</option>
+  </question>
+
+  <question>
+    <text>Q16. Trip maintenance of coaching trains is generally carried out at</text>
+    <option correct="true">Coaching depots / C&amp;W terminals</option>
+    <option correct="false">Headquarters only</option>
+    <option correct="false">Workshops only</option>
+    <option correct="false">Signal depots</option>
+  </question>
+
+  <question>
+    <text>Q17. The main objective of Railway workshop is to</text>
+    <option correct="false">Run trains on time</option>
+    <option correct="true">Carry out heavy repairs and overhauls</option>
+    <option correct="false">Issue tickets to passengers</option>
+    <option correct="false">Operate signalling system</option>
+  </question>
+
+  <question>
+    <text>Q18. A job order issued to workshop for a particular work is called</text>
+    <option correct="false">Pass</option>
+    <option correct="true">Work order or job order</option>
+    <option correct="false">Permit</option>
+    <option correct="false">Memo</option>
+  </question>
+
+  <question>
+    <text>Q19. The document which travels with a component indicating operations to be done is</text>
+    <option correct="false">Store card</option>
+    <option correct="true">Route card / job card</option>
+    <option correct="false">Gate pass</option>
+    <option correct="false">Pay sheet</option>
+  </question>
+
+  <question>
+    <text>Q20. A Senior Section Engineer (SSE) or Junior Engineer (JE) is generally responsible to</text>
+    <option correct="false">Chief Commercial Manager</option>
+    <option correct="true">Section in-charge / Workshop manager</option>
+    <option correct="false">Divisional Accounts Officer</option>
+    <option correct="false">General Manager directly</option>
+  </question>
+
+  <question>
+    <text>Q21. The primary duty of a JE in workshop is to</text>
+    <option correct="true">Supervise and control maintenance work with safety</option>
+    <option correct="false">Sell tickets to passengers</option>
+    <option correct="false">Operate signals and points</option>
+    <option correct="false">Maintain station earnings</option>
+  </question>
+
+  <question>
+    <text>Q22. Ensuring proper use of personal protective equipment (PPE) by staff is responsibility of</text>
+    <option correct="false">Passengers</option>
+    <option correct="true">Supervisors and section in-charge</option>
+    <option correct="false">Control office only</option>
+    <option correct="false">Accounts department</option>
+  </question>
+
+  <question>
+    <text>Q23. Which of the following is NOT a personal protective equipment?</text>
+    <option correct="false">Safety helmet</option>
+    <option correct="false">Safety shoes</option>
+    <option correct="false">Goggles</option>
+    <option correct="true">Wrist watch</option>
+  </question>
+
+  <question>
+    <text>Q24. For grinding operations, the essential PPE is</text>
+    <option correct="false">Safety shoes only</option>
+    <option correct="true">Safety goggles / face shield</option>
+    <option correct="false">Ear plugs only</option>
+    <option correct="false">Woollen gloves only</option>
+  </question>
+
+  <question>
+    <text>Q25. Before working on electrically driven machinery, the supply should be</text>
+    <option correct="true">Isolated and locked off</option>
+    <option correct="false">Kept ON for easy start</option>
+    <option correct="false">Connected to higher voltage</option>
+    <option correct="false">By-passed through earth</option>
+  </question>
+
+  <question>
+    <text>Q26. Lock-out and tag-out procedure is adopted to</text>
+    <option correct="true">Prevent accidental energisation of equipment</option>
+    <option correct="false">Speed up production</option>
+    <option correct="false">Check tool life</option>
+    <option correct="false">Reduce paperwork</option>
+  </question>
+
+  <question>
+    <text>Q27. Safety committee meetings in workshop are held primarily to</text>
+    <option correct="false">Discuss staff promotions</option>
+    <option correct="true">Review accidents and improve safety</option>
+    <option correct="false">Decide ticket rates</option>
+    <option correct="false">Plan catering contracts</option>
+  </question>
+
+  <question>
+    <text>Q28. An accident or near-miss in workshop should be</text>
+    <option correct="false">Ignored if no injury</option>
+    <option correct="true">Reported promptly to supervisor</option>
+    <option correct="false">Discussed informally only</option>
+    <option correct="false">Hidden to avoid enquiry</option>
+  </question>
+
+  <question>
+    <text>Q29. Fire extinguishers of dry chemical powder type are generally suitable for</text>
+    <option correct="true">Electrical and flammable liquid fires</option>
+    <option correct="false">Only paper fires</option>
+    <option correct="false">Only metal fires</option>
+    <option correct="false">Not to be used in workshop</option>
+  </question>
+
+  <question>
+    <text>Q30. CO₂ fire extinguisher is most suitable for</text>
+    <option correct="false">Oil spills on floor</option>
+    <option correct="true">Electrical panel fires</option>
+    <option correct="false">Metal fire</option>
+    <option correct="false">Timber yard fire</option>
+  </question>
+
+  <question>
+    <text>Q31. Housekeeping in workshop mainly refers to</text>
+    <option correct="false">Keeping staff houses neat</option>
+    <option correct="true">Keeping work place clean, orderly and safe</option>
+    <option correct="false">Managing railway rest houses</option>
+    <option correct="false">Cleaning trains</option>
+  </question>
+
+  <question>
+    <text>Q32. 5S concept is mainly related to</text>
+    <option correct="true">Workplace organisation and housekeeping</option>
+    <option correct="false">Signal standardisation</option>
+    <option correct="false">Speed scheduling of trains</option>
+    <option correct="false">Staff selection</option>
+  </question>
+
+  <question>
+    <text>Q33. Time office in workshop deals with</text>
+    <option correct="false">Train timing</option>
+    <option correct="true">Attendance and wage related records</option>
+    <option correct="false">Store receipts</option>
+    <option correct="false">Accident enquiry</option>
+  </question>
+
+  <question>
+    <text>Q34. Progress section in workshop is mainly responsible for</text>
+    <option correct="false">Quality inspection</option>
+    <option correct="true">Monitoring output and movement of work</option>
+    <option correct="false">Medical check-up</option>
+    <option correct="false">Operating trains</option>
+  </question>
+
+  <question>
+    <text>Q35. Planning section in workshop prepares</text>
+    <option correct="true">Workload, route cards and production schedules</option>
+    <option correct="false">Pay bills</option>
+    <option correct="false">Traffic notices</option>
+    <option correct="false">Power block schedules</option>
+  </question>
+
+  <question>
+    <text>Q36. Quality assurance / inspection cell in workshop is meant to</text>
+    <option correct="true">Ensure work is as per drawing and standards</option>
+    <option correct="false">Provide refreshments</option>
+    <option correct="false">Sanction leave</option>
+    <option correct="false">Arrange ticket booking</option>
+  </question>
+
+  <question>
+    <text>Q37. A JE should record daily work of staff mainly in</text>
+    <option correct="false">Registration book</option>
+    <option correct="true">Daily work / log sheets</option>
+    <option correct="false">Ticket issuing register</option>
+    <option correct="false">Luggage register</option>
+  </question>
+
+  <question>
+    <text>Q38. Muster sheet in workshop is used for</text>
+    <option correct="true">Marking attendance of staff</option>
+    <option correct="false">Recording material issues</option>
+    <option correct="false">Sanctioning leave</option>
+    <option correct="false">Recording accidents</option>
+  </question>
+
+  <question>
+    <text>Q39. To maintain discipline among staff, supervisor should</text>
+    <option correct="false">Ignore all late comers</option>
+    <option correct="true">Counsel and take action as per rules</option>
+    <option correct="false">Punish without record</option>
+    <option correct="false">Leave it to co-workers</option>
+  </question>
+
+  <question>
+    <text>Q40. In workshop incentive scheme, good supervision helps by</text>
+    <option correct="true">Improving productivity and quality</option>
+    <option correct="false">Reducing output</option>
+    <option correct="false">Increasing absenteeism</option>
+    <option correct="false">Neglecting safety</option>
+  </question>
+
+  <question>
+    <text>Q41. When a safety hazard is noticed, the first action by supervisor should be</text>
+    <option correct="true">Stop unsafe work and make area safe</option>
+    <option correct="false">Wait for written order</option>
+    <option correct="false">Ignore and continue work</option>
+    <option correct="false">Inform union first</option>
+  </question>
+
+  <question>
+    <text>Q42. In a hot work area like welding, which document is important for safety in restricted space?</text>
+    <option correct="false">Leave application</option>
+    <option correct="true">Hot work permit</option>
+    <option correct="false">Booking slip</option>
+    <option correct="false">Pay slip</option>
+  </question>
+
+  <question>
+    <text>Q43. First aid box in workshop is maintained to</text>
+    <option correct="true">Provide immediate treatment for minor injuries</option>
+    <option correct="false">Store tools</option>
+    <option correct="false">Keep attendance cards</option>
+    <option correct="false">Store scrap material</option>
+  </question>
+
+  <question>
+    <text>Q44. Which one of the following is NOT the duty of JE?</text>
+    <option correct="false">Ensuring safe working</option>
+    <option correct="false">Planning daily work</option>
+    <option correct="false">Maintaining technical records</option>
+    <option correct="true">Sanctioning long term loans</option>
+  </question>
+
+  <question>
+    <text>Q45. For lifting heavy coach body safely, the JE must ensure</text>
+    <option correct="true">Use of tested jacks / cranes and proper packing</option>
+    <option correct="false">Any available jack without checking</option>
+    <option correct="false">Only human power</option>
+    <option correct="false">No supervision is required</option>
+  </question>
+
+  <question>
+    <text>Q46. For operations near track, staff must obtain</text>
+    <option correct="false">Leave sanction</option>
+    <option correct="true">Proper line block / caution as per rules</option>
+    <option correct="false">Food coupons</option>
+    <option correct="false">Free pass</option>
+  </question>
+
+  <question>
+    <text>Q47. Safety shoes are provided mainly to protect against</text>
+    <option correct="false">Sunlight</option>
+    <option correct="true">Falling objects and sharp projections</option>
+    <option correct="false">Noise</option>
+    <option correct="false">Radiation</option>
+  </question>
+
+  <question>
+    <text>Q48. Ear protection in workshop is required primarily in</text>
+    <option correct="false">Office area</option>
+    <option correct="true">High noise areas like forging and hammer shop</option>
+    <option correct="false">Store office</option>
+    <option correct="false">Canteen</option>
+  </question>
+
+  <question>
+    <text>Q49. Safety goggles for gas cutting must be</text>
+    <option correct="true">Of appropriate shade for flame</option>
+    <option correct="false">Simple reading glasses</option>
+    <option correct="false">Transparent only</option>
+    <option correct="false">Not required</option>
+  </question>
+
+  <question>
+    <text>Q50. In case of chemical splash in eye, first aid is</text>
+    <option correct="true">Wash eye with plenty of clean water</option>
+    <option correct="false">Rub eye vigorously</option>
+    <option correct="false">Apply grease</option>
+    <option correct="false">Ignore and continue work</option>
+  </question>
+
+  <question>
+    <text>Q51. Accident statistics in workshop are maintained to</text>
+    <option correct="false">Fix responsibility only</option>
+    <option correct="true">Identify trends and improve safety</option>
+    <option correct="false">Increase paper work only</option>
+    <option correct="false">Reduce training</option>
+  </question>
+
+  <question>
+    <text>Q52. A supervisor should conduct safety briefing</text>
+    <option correct="true">At the beginning of shift / before hazardous jobs</option>
+    <option correct="false">Only once in a year</option>
+    <option correct="false">Only after an accident</option>
+    <option correct="false">Never</option>
+  </question>
+
+  <question>
+    <text>Q53. For diesel or oil spills on floor, the first corrective action is</text>
+    <option correct="true">Cover with sand/sawdust and clean</option>
+    <option correct="false">Wash with water only</option>
+    <option correct="false">Ignore</option>
+    <option correct="false">Light a fire to burn</option>
+  </question>
+
+  <question>
+    <text>Q54. In a workshop, visitors should normally</text>
+    <option correct="true">Be accompanied and wear necessary PPE</option>
+    <option correct="false">Move freely without PPE</option>
+    <option correct="false">Operate machines</option>
+    <option correct="false">Stand under suspended loads</option>
+  </question>
+
+  <question>
+    <text>Q55. Tool room in workshop mainly deals with</text>
+    <option correct="true">Issue and maintenance of tools and gauges</option>
+    <option correct="false">Ticket checking</option>
+    <option correct="false">Running of trains</option>
+    <option correct="false">Staff recruitment</option>
+  </question>
+
+  <question>
+    <text>Q56. Calibration records of measuring instruments are maintained to</text>
+    <option correct="true">Ensure reliability and traceability</option>
+    <option correct="false">Increase paperwork only</option>
+    <option correct="false">Avoid using instruments</option>
+    <option correct="false">Reduce accuracy</option>
+  </question>
+
+  <question>
+    <text>Q57. For quality control, a sample of components is checked by</text>
+    <option correct="false">Passengers</option>
+    <option correct="true">Inspection staff as per sampling plan</option>
+    <option correct="false">Canteen staff</option>
+    <option correct="false">RPF</option>
+  </question>
+
+  <question>
+    <text>Q58. Material receipt at workshop stores is verified against</text>
+    <option correct="false">Passenger tickets</option>
+    <option correct="true">Purchase order and challan</option>
+    <option correct="false">Pay sheet</option>
+    <option correct="false">Leave record</option>
+  </question>
+
+  <question>
+    <text>Q59. Railway safety is the joint responsibility of</text>
+    <option correct="true">All departments and all staff</option>
+    <option correct="false">Only Mechanical department</option>
+    <option correct="false">Only Safety department</option>
+    <option correct="false">Only Drivers and Guards</option>
+  </question>
+
+  <question>
+    <text>Q60. A JE should maintain liaison with open line C&amp;W to</text>
+    <option correct="false">Arrange duty passes</option>
+    <option correct="true">Know field failures and improve workshop repairs</option>
+    <option correct="false">Discuss passenger complaints</option>
+    <option correct="false">Decide train timings</option>
+  </question>
+
+  <question>
+    <text>Q61. The term "objective" of workshop refers to</text>
+    <option correct="true">Safe, reliable and economical maintenance</option>
+    <option correct="false">Only high speed trials</option>
+    <option correct="false">Only earning revenue</option>
+    <option correct="false">Only passenger comfort</option>
+  </question>
+
+  <question>
+    <text>Q62. Lubrication schedule for machines is prepared mainly to</text>
+    <option correct="true">Reduce wear and breakdowns</option>
+    <option correct="false">Increase consumption of oil unnecessarily</option>
+    <option correct="false">Reduce machine life</option>
+    <option correct="false">Avoid inspections</option>
+  </question>
+
+  <question>
+    <text>Q63. Preventive maintenance differs from breakdown maintenance as it</text>
+    <option correct="true">Is done before failure occurs</option>
+    <option correct="false">Is done only after failure</option>
+    <option correct="false">Needs no planning</option>
+    <option correct="false">Always costs more</option>
+  </question>
+
+  <question>
+    <text>Q64. For any welding set, return current cable should be</text>
+    <option correct="true">Properly connected and in good condition</option>
+    <option correct="false">Left loose on floor</option>
+    <option correct="false">Replaced by thin wire</option>
+    <option correct="false">Connected to water pipe</option>
+  </question>
+
+  <question>
+    <text>Q65. In gas cutting, cylinders must be stored</text>
+    <option correct="true">Upright and secured from falling</option>
+    <option correct="false">Horizontally with valves open</option>
+    <option correct="false">Near heat sources</option>
+    <option correct="false">Inside closed unventilated room</option>
+  </question>
+
+  <question>
+    <text>Q66. Oxygen and fuel gas cylinders should be kept</text>
+    <option correct="true">Separately with safe distance</option>
+    <option correct="false">Tightly tied together</option>
+    <option correct="false">In direct sunlight</option>
+    <option correct="false">Without caps</option>
+  </question>
+
+  <question>
+    <text>Q67. Before entering a confined space like tank, it should be</text>
+    <option correct="true">Tested for oxygen and toxic gases</option>
+    <option correct="false">Immediately entered without test</option>
+    <option correct="false">Filled with water</option>
+    <option correct="false">Painted from outside only</option>
+  </question>
+
+  <question>
+    <text>Q68. Safe working load (SWL) is marked on</text>
+    <option correct="true">Lifting tackles like slings and cranes</option>
+    <option correct="false">Paper files</option>
+    <option correct="false">Tickets</option>
+    <option correct="false">Reports</option>
+  </question>
+
+  <question>
+    <text>Q69. Overloading a crane beyond SWL may lead to</text>
+    <option correct="false">Better productivity only</option>
+    <option correct="true">Serious accident and structural failure</option>
+    <option correct="false">No effect</option>
+    <option correct="false">Saving time safely</option>
+  </question>
+
+  <question>
+    <text>Q70. "Red tag" on a machine generally indicates</text>
+    <option correct="true">Machine is unsafe / under repair, not to be used</option>
+    <option correct="false">Machine is best in shop</option>
+    <option correct="false">Machine is new</option>
+    <option correct="false">Free for use anytime</option>
+  </question>
+
+  <question>
+    <text>Q71. The supervisor should take over shift from previous in-charge by</text>
+    <option correct="true">Proper shift briefing and reading log book</option>
+    <option correct="false">Ignoring previous records</option>
+    <option correct="false">Starting new registers each day</option>
+    <option correct="false">Talking only to workers</option>
+  </question>
+
+  <question>
+    <text>Q72. To develop staff, a JE should</text>
+    <option correct="true">Provide on-the-job training and guidance</option>
+    <option correct="false">Not share technical knowledge</option>
+    <option correct="false">Discourage questions</option>
+    <option correct="false">Avoid new jobs</option>
+  </question>
+
+  <question>
+    <text>Q73. In case of dispute among staff, supervisor should</text>
+    <option correct="true">Listen to both sides and resolve as per rules</option>
+    <option correct="false">Take sides without hearing</option>
+    <option correct="false">Ignore completely</option>
+    <option correct="false">Encourage quarrel</option>
+  </question>
+
+  <question>
+    <text>Q74. For environmental protection in workshop, JE should ensure</text>
+    <option correct="true">Proper disposal of waste oil and scrap</option>
+    <option correct="false">Oil is drained to open ground</option>
+    <option correct="false">Paint is thrown into drains</option>
+    <option correct="false">No segregation of scrap</option>
+  </question>
+
+  <question>
+    <text>Q75. In Indian Railways, safety slogans and campaign are mainly aimed at</text>
+    <option correct="true">Improving safety awareness among staff</option>
+    <option correct="false">Decorating walls only</option>
+    <option correct="false">Reducing technical training</option>
+    <option correct="false">Avoiding accident reporting</option>
+  </question>
+
+  <question>
+    <text>Q76. Incharge of a shop should keep important emergency numbers</text>
+    <option correct="true">Displayed at prominent locations</option>
+    <option correct="false">Only in his pocket</option>
+    <option correct="false">Hidden in file</option>
+    <option correct="false">Not required</option>
+  </question>
+
+  <question>
+    <text>Q77. For night shift working, adequate lighting is necessary to</text>
+    <option correct="false">Increase heat only</option>
+    <option correct="true">Improve visibility and safety</option>
+    <option correct="false">Disturb workers</option>
+    <option correct="false">Reduce output</option>
+  </question>
+
+  <question>
+    <text>Q78. Workshop layout is designed to</text>
+    <option correct="true">Ensure smooth flow of materials and work</option>
+    <option correct="false">Create maximum congestion</option>
+    <option correct="false">Increase handling distances</option>
+    <option correct="false">Ignore safety</option>
+  </question>
+
+  <question>
+    <text>Q79. For repeated defects appearing in same component, JE should</text>
+    <option correct="true">Analyse root cause and take corrective action</option>
+    <option correct="false">Ignore as normal</option>
+    <option correct="false">Blame workers only</option>
+    <option correct="false">Stop inspection</option>
+  </question>
+
+  <question>
+    <text>Q80. A defect register is maintained to</text>
+    <option correct="true">Record and monitor recurring defects</option>
+    <option correct="false">Record staff attendance</option>
+    <option correct="false">Note passenger complaints</option>
+    <option correct="false">Maintain accounts</option>
+  </question>
+
+  <question>
+    <text>Q81. Work permit system in workshop is mainly used for</text>
+    <option correct="true">Controlling hazardous jobs with specific precautions</option>
+    <option correct="false">Allowing leave</option>
+    <option correct="false">Sanctioning loans</option>
+    <option correct="false">Issuing passes</option>
+  </question>
+
+  <question>
+    <text>Q82. When new equipment is commissioned, JE should first</text>
+    <option correct="true">Read manuals and ensure staff training</option>
+    <option correct="false">Operate without instruction</option>
+    <option correct="false">Allow anyone to experiment</option>
+    <option correct="false">Keep it idle always</option>
+  </question>
+
+  <question>
+    <text>Q83. The prime consideration in any railway maintenance activity is</text>
+    <option correct="false">Only cost saving</option>
+    <option correct="false">Only speed</option>
+    <option correct="true">Safety of passengers, staff and equipment</option>
+    <option correct="false">Only appearance</option>
+  </question>
+
+  <question>
+    <text>Q84. Safety audit of workshop is generally carried out to</text>
+    <option correct="true">Check compliance of safety rules and practices</option>
+    <option correct="false">Check staff dress only</option>
+    <option correct="false">Change working hours</option>
+    <option correct="false">Fix traffic blocks</option>
+  </question>
+
+  <question>
+    <text>Q85. In case of serious accident, supervisor should</text>
+    <option correct="true">Arrange first aid and inform authorities immediately</option>
+    <option correct="false">Take photographs only</option>
+    <option correct="false">Wait till shift end</option>
+    <option correct="false">Leave the place</option>
+  </question>
+
+  <question>
+    <text>Q86. Risk assessment of a job means</text>
+    <option correct="true">Identifying hazards and planning controls</option>
+    <option correct="false">Counting number of workers</option>
+    <option correct="false">Writing pay sheets</option>
+    <option correct="false">Preparing leave chart</option>
+  </question>
+
+  <question>
+    <text>Q87. Standard operating procedure (SOP) is prepared to</text>
+    <option correct="true">Clearly define correct method of doing job</option>
+    <option correct="false">Hide job details</option>
+    <option correct="false">Increase confusion</option>
+    <option correct="false">Reduce safety</option>
+  </question>
+
+  <question>
+    <text>Q88. Displaying caution boards like "DANGER – HIGH VOLTAGE" is part of</text>
+    <option correct="false">Commercial work</option>
+    <option correct="true">Safety communication</option>
+    <option correct="false">Catering contract</option>
+    <option correct="false">Ticketing</option>
+  </question>
+
+  <question>
+    <text>Q89. Cleaning and greasing of screw jacks periodically is part of</text>
+    <option correct="false">Breakdown maintenance</option>
+    <option correct="true">Routine preventive maintenance</option>
+    <option correct="false">Emergency maintenance only</option>
+    <option correct="false">No maintenance</option>
+  </question>
+
+  <question>
+    <text>Q90. To avoid ergonomic problems, JE should ensure</text>
+    <option correct="true">Proper working height and posture</option>
+    <option correct="false">Workers bend more</option>
+    <option correct="false">Use of oversized tools</option>
+    <option correct="false">No rest breaks</option>
+  </question>
+
+  <question>
+    <text>Q91. Communication with staff for instructions should be</text>
+    <option correct="true">Clear, specific and preferably in writing for important jobs</option>
+    <option correct="false">Vague and verbal only</option>
+    <option correct="false">Through rumours</option>
+    <option correct="false">Not required</option>
+  </question>
+
+  <question>
+    <text>Q92. The abbreviation "RPF" stands for</text>
+    <option correct="false">Railway Protection Force</option>
+    <option correct="true">Railway Protection Force</option>
+    <option correct="false">Railway Passenger Fund</option>
+    <option correct="false">Repair Planning Forum</option>
+  </question>
+
+  <question>
+    <text>Q93. RPF in workshop is responsible mainly for</text>
+    <option correct="true">Security of railway property and premises</option>
+    <option correct="false">Quality inspection</option>
+    <option correct="false">Technical supervision</option>
+    <option correct="false">Medical check-up</option>
+  </question>
+
+  <question>
+    <text>Q94. For medical fitness and health of staff, Railways provide</text>
+    <option correct="true">Railway hospitals and health units</option>
+    <option correct="false">Only private clinics</option>
+    <option correct="false">No facility</option>
+    <option correct="false">Only first aid box</option>
+  </question>
+
+  <question>
+    <text>Q95. JE must ensure that all staff working at heights use</text>
+    <option correct="false">Ordinary slippers</option>
+    <option correct="true">Safety harness and fall protection</option>
+    <option correct="false">Bare feet</option>
+    <option correct="false">No protection</option>
+  </question>
+
+  <question>
+    <text>Q96. Accident-free working for long period is mainly due to</text>
+    <option correct="true">Strict adherence to safety rules and good supervision</option>
+    <option correct="false">Luck only</option>
+    <option correct="false">Ignoring rules</option>
+    <option correct="false">Lack of training</option>
+  </question>
+
+  <question>
+    <text>Q97. The ultimate aim of good workshop management is</text>
+    <option correct="true">Safe, reliable rolling stock with optimum cost</option>
+    <option correct="false">Maximum scrap generation</option>
+    <option correct="false">Frequent failures</option>
+    <option correct="false">Poor quality work</option>
+  </question>
+
+  <question>
+    <text>Q98. When instructions from higher authority conflict with safety, supervisor should</text>
+    <option correct="true">Represent the risk and follow safe procedure</option>
+    <option correct="false">Ignore safety</option>
+    <option correct="false">Disobey blindly without discussion</option>
+    <option correct="false">Stop work forever</option>
+  </question>
+
+  <question>
+    <text>Q99. Records like log books, inspection registers and history sheets are important because they</text>
+    <option correct="true">Provide data for analysis and future planning</option>
+    <option correct="false">Are kept only for decoration</option>
+    <option correct="false">Have no value</option>
+    <option correct="false">Replace actual inspection</option>
+  </question>
+
+  <question>
+    <text>Q100. For any job, the correct sequence is</text>
+    <option correct="true">Plan – Organise – Execute – Check – Improve</option>
+    <option correct="false">Execute – Plan – Check – Forget</option>
+    <option correct="false">Organise – Forget – Execute</option>
+    <option correct="false">Check – Execute – Plan</option>
+  </question>
+
+</quiz>
