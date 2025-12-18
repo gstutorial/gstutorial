@@ -13,8 +13,8 @@ const GOOGLE_SHEETS_CONFIG = {
 
 // WhatsApp Configuration
 const WHATSAPP_CONFIG = {
-    ENABLED: false, // Set to false to disable
-    PHONE_NUMBER: '91', // Replace with your WhatsApp number (with country code, no +)
+    ENABLED: true, // Set to false to disable
+    PHONE_NUMBER: '919706195457', // Replace with your WhatsApp number (with country code, no +)
     MESSAGE_TEMPLATE: {
         LOGIN: "🔔 *New User Login* 🔔\n👤 Username: {username}\n📛 Name: {name}\n🏫 Class: {class}\n👥 Role: {role}\n📅 Date: {date}\n⏰ Time: {time}\n🌐 IP: {ip}",
         QUIZ_RESULT: "📊 *Quiz Result* 📊\n👤 Username: {username}\n📛 Name: {name}\n🏫 Class: {class}\n📚 Subject: {subject}\n📖 Chapter: {chapter}\n✅ Correct: {correct}\n📋 Total: {total}\n📈 Score: {percentage}%\n⏱️ Time: {timeTaken}\n📅 Date: {date}"
