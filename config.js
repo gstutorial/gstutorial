@@ -1,31 +1,48 @@
-// config.js - FINAL WORKING VERSION
-const CLOUDFLARE_WORKER_URL = 'https://gstutorial.gobind-bngn.workers.dev';
-
-const API_CONFIG = {
-    BASE_URL: CLOUDFLARE_WORKER_URL,
-    // ONLY these endpoints exist in your current worker.js
-    get USERS_ENDPOINT() { return `${this.BASE_URL}/api/users`; },
-    get AUTHENTICATE_ENDPOINT() { return `${this.BASE_URL}/api/authenticate`; },
-    get HEALTH_CHECK() { return `${this.BASE_URL}/api/health`; }
-    // REMOVE telegram-config and send-telegram for now
-};
-
-// Disable WhatsApp completely for now
-const WHATSAPP_CONFIG = {
-    ENABLED: false,
-    PHONE_NUMBER: '',
-    MESSAGE_TEMPLATE: { LOGIN: '', QUIZ_RESULT: '' }
-};
-
-// Disable Telegram for now - we'll add it back later
-const TELEGRAM_CONFIG = {
-    ENABLED: false,
-    BOT_TOKEN: '',
-    CHAT_ID: '',
-    MESSAGE_TEMPLATE: {
-        LOGIN: "",
-        QUIZ_RESULT: ""
+const GOOGLE_SHEETS_CONFIG = {
+    // Replace with your Google Sheet ID
+    SHEET_ID: '1G6tTHT56T6FmqOwOvVFVPoVqoSs-TSBz_-SiW9imQvk',
+    
+    // Replace with your Sheet GID (usually 0 for first sheet)
+    GID: '0',
+    
+    // API endpoint to fetch sheet data
+    get API_URL() {
+        return `https://docs.google.com/spreadsheets/d/${this.SHEET_ID}/gviz/tq?tqx=out:json&gid=${this.GID}`;
     }
 };
 
-// Other configs (LOGO_CONFIG, LOGGING_CONFIG) remain the same...
+// WhatsApp Configuration
+const WHATSAPP_CONFIG = {
+    ENABLED: false, // Set to false to disable
+    PHONE_NUMBER: '91', // Replace with your WhatsApp number (with country code, no +)
+    MESSAGE_TEMPLATE: {
+        LOGIN: "🔔 *New User Login* 🔔\n👤 Username: {username}\n📛 Name: {name}\n🏫 Class: {class}\n👥 Role: {role}\n📅 Date: {date}\n⏰ Time: {time}\n🌐 IP: {ip}",
+        QUIZ_RESULT: "📊 *Quiz Result* 📊\n👤 Username: {username}\n📛 Name: {name}\n🏫 Class: {class}\n📚 Subject: {subject}\n📖 Chapter: {chapter}\n✅ Correct: {correct}\n📋 Total: {total}\n📈 Score: {percentage}%\n⏱️ Time: {timeTaken}\n📅 Date: {date}"
+    }
+};
+
+// Telegram Configuration
+const TELEGRAM_CONFIG = {
+    ENABLED: true, // Set to false to disable
+    BOT_TOKEN: '8355903870:AAHLCnFWPwwzk7Q22gpvV8ITEmzBjqthB8Q', // Replace with your bot token
+    CHAT_ID: '5903174042', // Replace with your chat ID
+    MESSAGE_TEMPLATE: {
+        LOGIN: "🔔 *New User Login* 🔔\n👤 Username: {username}\n🎓 Name: {name}\n🏫 Class: {class}\n👥 Role: {role}\n📅 Date: {date}\n⏰ Time: {time}\n🌐 IP: {ip}",
+        QUIZ_RESULT: "📊 *Quiz Result* 📊\n👤 Username: {username}\n🎓 Name: {name}\n🏫 Class: {class}\n📚 Subject: {subject}\n📖 Chapter: {chapter}\n✅ Correct: {correct}\n📋 Total: {total}\n🔷 Attempted: {attempted}\n📈 Score: {percentage}%\n⏱️ Time Taken: {timeTaken}\n📅 Date: {date}"
+    }
+};
+
+// Logo configuration
+const LOGO_CONFIG = {
+    src: 'logo.png',
+    alt: 'G. S. Tutorial Logo',
+    width: '40px',
+    height: '40px'
+};
+
+// Logging Configuration
+const LOGGING_CONFIG = {
+    ENABLE_CONSOLE_LOG: true,
+    LOG_LEVEL: 'INFO', // DEBUG, INFO, WARN, ERROR
+    AUTO_SEND_NOTIFICATIONS: true
+};
