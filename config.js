@@ -1,31 +1,32 @@
-const GOOGLE_SHEETS_CONFIG = {
-    // Replace with your Google Sheet ID
-    SHEET_ID: '1G6tTHT56T6FmqOwOvVFVPoVqoSs-TSBz_-SiW9imQvk',
-    
-    // Replace with your Sheet GID (usually 0 for first sheet)
-    GID: '0',
-    
-    // API endpoint to fetch sheet data
-    get API_URL() {
-        return `https://docs.google.com/spreadsheets/d/${this.SHEET_ID}/gviz/tq?tqx=out:json&gid=${this.GID}`;
-    }
+// config.js - UPDATED FOR YOUR WORKER
+// Use your actual Worker URL
+const CLOUDFLARE_WORKER_URL = 'https://gstutorial.gobind-bngn.workers.dev';
+
+// API Endpoints - MUST MATCH WORKER.JS ROUTES
+const API_CONFIG = {
+    BASE_URL: CLOUDFLARE_WORKER_URL,
+    get USERS_ENDPOINT() { return `${this.BASE_URL}/api/users`; },
+    get TELEGRAM_CONFIG_ENDPOINT() { return `${this.BASE_URL}/api/telegram-config`; },
+    get SEND_TELEGRAM_ENDPOINT() { return `${this.BASE_URL}/api/send-telegram`; },
+    get AUTHENTICATE_ENDPOINT() { return `${this.BASE_URL}/api/authenticate`; },
+    get HEALTH_CHECK() { return `${this.BASE_URL}/api/health`; }
 };
 
-// WhatsApp Configuration
+// WhatsApp Configuration (optional - disable if not using)
 const WHATSAPP_CONFIG = {
-    ENABLED: true, // Set to false to disable
-    PHONE_NUMBER: '919706195457', // Replace with your WhatsApp number (with country code, no +)
+    ENABLED: false, // Set to false since we're using Telegram
+    PHONE_NUMBER: '919706195457',
     MESSAGE_TEMPLATE: {
         LOGIN: "🔔 *New User Login* 🔔\n👤 Username: {username}\n📛 Name: {name}\n🏫 Class: {class}\n👥 Role: {role}\n📅 Date: {date}\n⏰ Time: {time}\n🌐 IP: {ip}",
         QUIZ_RESULT: "📊 *Quiz Result* 📊\n👤 Username: {username}\n📛 Name: {name}\n🏫 Class: {class}\n📚 Subject: {subject}\n📖 Chapter: {chapter}\n✅ Correct: {correct}\n📋 Total: {total}\n📈 Score: {percentage}%\n⏱️ Time: {timeTaken}\n📅 Date: {date}"
     }
 };
 
-// Telegram Configuration
+// Telegram Configuration - Will be loaded from Cloudflare Worker
 const TELEGRAM_CONFIG = {
-    ENABLED: true, // Set to false to disable
-    BOT_TOKEN: '8355903870:AAHLCnFWPwwzk7Q22gpvV8ITEmzBjqthB8Q', // Replace with your bot token
-    CHAT_ID: '5903174042', // Replace with your chat ID
+    ENABLED: false, // Will be updated by worker
+    BOT_TOKEN: '',  // Empty - will come from worker
+    CHAT_ID: '',    // Empty - will come from worker
     MESSAGE_TEMPLATE: {
         LOGIN: "🔔 *New User Login* 🔔\n👤 Username: {username}\n🎓 Name: {name}\n🏫 Class: {class}\n👥 Role: {role}\n📅 Date: {date}\n⏰ Time: {time}\n🌐 IP: {ip}",
         QUIZ_RESULT: "📊 *Quiz Result* 📊\n👤 Username: {username}\n🎓 Name: {name}\n🏫 Class: {class}\n📚 Subject: {subject}\n📖 Chapter: {chapter}\n✅ Correct: {correct}\n📋 Total: {total}\n🔷 Attempted: {attempted}\n📈 Score: {percentage}%\n⏱️ Time Taken: {timeTaken}\n📅 Date: {date}"
@@ -43,6 +44,17 @@ const LOGO_CONFIG = {
 // Logging Configuration
 const LOGGING_CONFIG = {
     ENABLE_CONSOLE_LOG: true,
-    LOG_LEVEL: 'INFO', // DEBUG, INFO, WARN, ERROR
+    LOG_LEVEL: 'INFO',
     AUTO_SEND_NOTIFICATIONS: true
 };
+
+// Export configurations
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = {
+        API_CONFIG,
+        WHATSAPP_CONFIG,
+        TELEGRAM_CONFIG,
+        LOGO_CONFIG,
+        LOGGING_CONFIG
+    };
+}
