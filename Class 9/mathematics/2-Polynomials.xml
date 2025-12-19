@@ -82,14 +82,6 @@
     <explanation>If (x+1) is factor, then p(-1)=0. So (-1)² + k(-1) + 5 = 0 → 1 - k + 5 = 0 → k = 6.</explanation>
 </question>
 
-<question answer="D">
-    <text>For which p is (x+p) a factor of x² + px + 3? (CBSE 2020)</text>
-    <option>1</option>
-    <option>-1</option>
-    <option>3</option>
-    <option>-3</option>
-</question>
-
 <question answer="A">
     <text>Which polynomial has -2 as a zero? (CBSE 2016)</text>
     <option>x + 2</option>
