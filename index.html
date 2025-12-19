@@ -1479,6 +1479,15 @@
           </select>
           <button class="start-btn" id="start-btn" disabled>Start</button>
         </div>
+        
+        <!-- AUTO-DETECT NEW XML FILES -->
+        <div class="toggle-row" style="margin-top: 10px;">
+          <input type="checkbox" id="auto-detect-toggle" checked />
+          <label for="auto-detect-toggle">Auto-detect new XML files</label>
+          <button id="refresh-xml-btn" style="margin-left: auto; background: rgba(59, 130, 246, 0.1); color: #93c5fd; border: 1px solid rgba(59, 130, 246, 0.3); padding: 4px 8px; border-radius: 6px; font-size: 0.8rem; cursor: pointer;">
+            🔄 Refresh XML List
+          </button>
+        </div>
       </div>
 
       <!-- Timer Container -->
@@ -1594,6 +1603,11 @@
     // Logging variables
     let userIP = 'Unknown';
     let currentQuizStats = null;
+    
+    // Auto-detection variables
+    let autoDetectInterval = null;
+    let lastXMLCount = 0;
+    let xmlFileCache = new Map(); // Cache for XML file content
 
     // ========== DOM ELEMENTS ==========
     const fixedHeaderEl = document.querySelector(".fixed-header");
@@ -1626,6 +1640,8 @@
     const topicSelectEl = document.getElementById("topic-select");
     const startBtnEl = document.getElementById("start-btn");
     const randomToggleEl = document.getElementById("random-toggle");
+    const autoDetectToggleEl = document.getElementById("auto-detect-toggle");
+    const refreshXmlBtnEl = document.getElementById("refresh-xml-btn");
     const quizTopicNameEl = document.getElementById("quiz-topic-name");
     const quizQuestionCountEl = document.getElementById("quiz-question-count");
     const timerContainerEl = document.getElementById("timer-container");
@@ -1642,6 +1658,461 @@
     const scoreMiniEl = document.getElementById("score-mini");
     const finalScoreEl = document.getElementById("final-score");
 
+    // ========== ENHANCED XML PARSER (HANDLES BOTH FORMATS) ==========
+    function parseXMLToQuestions(xmlText) {
+      const parser = new DOMParser();
+      const xmlDoc = parser.parseFromString(xmlText, "application/xml");
+
+      // Check for parsing errors
+      const parserError = xmlDoc.getElementsByTagName("parsererror")[0];
+      if (parserError) {
+        console.error("XML Parsing Error:", parserError.textContent);
+        throw new Error("Invalid XML format. Please check your XML file.");
+      }
+
+      // Reset timer duration
+      timerDuration = 0;
+
+      // Check for timer configuration
+      const metadataNode = xmlDoc.getElementsByTagName("metadata")[0];
+      if (metadataNode) {
+        const timeLimitNode = metadataNode.getElementsByTagName("timeLimit")[0];
+        if (timeLimitNode) {
+          const minutes = parseInt(timeLimitNode.textContent) || 0;
+          timerDuration = minutes * 60 * 1000;
+        }
+      } else {
+        const timerNode = xmlDoc.getElementsByTagName("timer")[0];
+        if (timerNode) {
+          const hours = parseInt(timerNode.getAttribute("hours")) || 0;
+          const minutes = parseInt(timerNode.getAttribute("minutes")) || 0;
+          timerDuration = (hours * 60 * 60 * 1000) + (minutes * 60 * 1000);
+        }
+      }
+
+      const qNodes = xmlDoc.getElementsByTagName("question");
+      const out = [];
+
+      console.log(`Found ${qNodes.length} question nodes in XML`);
+
+      for (let i = 0; i < qNodes.length; i++) {
+        const qNode = qNodes[i];
+        const textNode = qNode.getElementsByTagName("text")[0];
+        if (!textNode) {
+          console.warn(`Question ${i} has no text tag, skipping`);
+          continue;
+        }
+
+        const qText = textNode.textContent.trim();
+        
+        // Get all option tags
+        const optNodes = qNode.getElementsByTagName("option");
+        if (optNodes.length < 2) {
+          console.warn(`Question ${i} has less than 2 options (${optNodes.length}), skipping`);
+          continue;
+        }
+
+        const options = [];
+        let correctIndex = -1;
+        let explanation = "";
+
+        // Get explanation if exists
+        const expNode = qNode.getElementsByTagName("explanation")[0];
+        if (expNode) {
+          explanation = expNode.textContent.trim();
+        }
+
+        // METHOD 1: Check for answer attribute on question tag (Format: <question answer="C">)
+        const questionAnswer = qNode.getAttribute("answer");
+        
+        if (questionAnswer) {
+          // Format 1: <question answer="C"> with options in order A, B, C, D
+          const answerLetter = questionAnswer.toUpperCase().trim();
+          
+          for (let j = 0; j < optNodes.length; j++) {
+            const optNode = optNodes[j];
+            const optText = optNode.textContent.trim();
+            const optionLetter = String.fromCharCode(65 + j); // A, B, C, D...
+            
+            options.push(optText);
+            if (optionLetter === answerLetter) {
+              correctIndex = j;
+            }
+          }
+          
+          console.log(`Question ${i}: Format 1 detected, answer="${answerLetter}", correctIndex=${correctIndex}`);
+        } else {
+          // Format 2: <option correct="true"> within options
+          for (let j = 0; j < optNodes.length; j++) {
+            const optNode = optNodes[j];
+            const optText = optNode.textContent.trim();
+            
+            // Check if this option is correct (correct="true" attribute)
+            if (optNode.getAttribute("correct") === "true") {
+              if (correctIndex !== -1) {
+                console.warn(`Question ${i}: Multiple correct answers found, using last one`);
+              }
+              correctIndex = j;
+            }
+            
+            options.push(optText);
+          }
+          
+          console.log(`Question ${i}: Format 2 detected, correctIndex=${correctIndex}`);
+        }
+
+        // Validate that we found a correct answer
+        if (correctIndex === -1) {
+          console.warn(`Question ${i}: No correct answer found, checking option text`);
+          
+          // Fallback: Check if any option text contains "(correct)" or similar markers
+          for (let j = 0; j < options.length; j++) {
+            if (options[j].toLowerCase().includes("(correct)") || 
+                options[j].toLowerCase().includes("correct answer:")) {
+              correctIndex = j;
+              console.log(`Found correct answer via text pattern at index ${j}`);
+              break;
+            }
+          }
+          
+          if (correctIndex === -1) {
+            console.warn(`Question ${i}: No correct answer found, skipping`);
+            continue;
+          }
+        }
+
+        out.push({
+          question: qText,
+          options,
+          correctIndex,
+          explanation: explanation
+        });
+        
+        console.log(`Parsed question ${i}: "${qText.substring(0, 50)}..." with ${options.length} options, correct: "${options[correctIndex].substring(0, 30)}..."`);
+      }
+      
+      console.log(`Successfully parsed ${out.length} questions from XML`);
+      return out;
+    }
+
+// ========== AUTO-DETECTION WITH CONTENT MONITORING ==========
+let xmlScanner = null;
+
+async function setupAutoDetection() {
+    if (!currentClass || !currentSubject) return;
+    
+    // Clean the subject name for URL
+    const cleanSubject = currentSubject.toLowerCase()
+        .replace(/ /g, '-')
+        .replace(/[^a-z0-9-]/g, '');
+    
+    // Find subject ID from CLASSES_CONFIG
+    const currentClassConfig = CLASSES_CONFIG.find(cls => cls.id === currentClass);
+    let subjectId = cleanSubject;
+    
+    if (currentClassConfig && currentClassConfig.subjects) {
+        const subjectConfig = currentClassConfig.subjects.find(subj => 
+            subj.name.toLowerCase() === currentSubject.toLowerCase()
+        );
+        if (subjectConfig) {
+            subjectId = subjectConfig.id;
+        }
+    }
+    
+    // Determine base path
+    const basePath = `${currentClass}/${subjectId}/`;
+    
+    // Stop previous scanner if exists
+    if (xmlScanner) {
+        xmlScanner.stopScanning();
+        xmlScanner = null;
+    }
+    
+    // Create new scanner
+    xmlScanner = new XMLFileScanner();
+    
+    // Set up change handler
+    xmlScanner.onChange((changes) => {
+        console.log('📊 File changes detected:', changes);
+        
+        if (changes.hasChanges) {
+            // Update chapters list
+            chaptersList = changes.allFiles;
+            
+            // Update dropdown
+            populateChapterDropdown();
+            
+            // Show notifications
+            showChangeNotifications(changes);
+            
+            // If current quiz topic was modified, ask user to reload
+            if (currentTopicName && changes.modified.some(m => m.name === currentTopicName)) {
+                showContentUpdateNotification(currentTopicName);
+            }
+        }
+    });
+    
+    // Start scanning if auto-detect is enabled
+    if (autoDetectToggleEl.checked) {
+        xmlScanner.startScanning(basePath, 30000); // Scan every 30 seconds
+        console.log(`🔄 Started auto-detection for ${basePath}`);
+    }
+}
+
+function showChangeNotifications(changes) {
+    let messages = [];
+    
+    if (changes.added.length > 0) {
+        messages.push(`📦 Added ${changes.added.length} new file${changes.added.length !== 1 ? 's' : ''}`);
+    }
+    
+    if (changes.removed.length > 0) {
+        messages.push(`🗑️ Removed ${changes.removed.length} file${changes.removed.length !== 1 ? 's' : ''}`);
+    }
+    
+    if (changes.modified.length > 0) {
+        messages.push(`✏️ Updated ${changes.modified.length} file${changes.modified.length !== 1 ? 's' : ''}`);
+    }
+    
+    if (messages.length > 0) {
+        const message = messages.join(', ');
+        showNotification(`${message}. Chapter list updated.`);
+    }
+}
+
+function showContentUpdateNotification(chapterName) {
+    const notification = document.createElement('div');
+    notification.style.cssText = `
+        position: fixed;
+        top: 80px;
+        right: 20px;
+        background: rgba(245, 158, 11, 0.9);
+        color: white;
+        padding: 15px;
+        border-radius: 8px;
+        z-index: 9999;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        animation: slideIn 0.3s ease-out;
+        max-width: 350px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    `;
+    
+    notification.innerHTML = `
+        <div style="display: flex; align-items: center; gap: 8px;">
+            <span>🔄</span>
+            <span><strong>Chapter Updated</strong></span>
+        </div>
+        <div style="font-size: 0.9rem;">
+            "${chapterName}" has been modified. Reload to see updated questions?
+        </div>
+        <div style="display: flex; gap: 10px; margin-top: 5px;">
+            <button id="reload-chapter-btn" style="
+                background: #3b82f6;
+                color: white;
+                border: none;
+                padding: 6px 12px;
+                border-radius: 4px;
+                cursor: pointer;
+                font-size: 0.85rem;
+                flex: 1;
+            ">Reload Chapter</button>
+            <button id="dismiss-update-btn" style="
+                background: #6b7280;
+                color: white;
+                border: none;
+                padding: 6px 12px;
+                border-radius: 4px;
+                cursor: pointer;
+                font-size: 0.85rem;
+                flex: 1;
+            ">Dismiss</button>
+        </div>
+    `;
+    
+    document.body.appendChild(notification);
+    
+    // Add event listeners
+    document.getElementById('reload-chapter-btn').addEventListener('click', () => {
+        // Clear cache and reload current chapter
+        if (xmlScanner) {
+            xmlScanner.refreshFile(currentTopicName, `${currentClass}/${currentSubject}/`);
+        }
+        
+        // Clear XML cache
+        const cleanChapterName = currentTopicName.replace(/[<>:"/\\|?*]/g, '');
+        const cleanSubject = currentSubject.toLowerCase().replace(/ /g, '-');
+        const cacheKey = `${currentClass}/${cleanSubject}/${cleanChapterName}.xml`;
+        xmlFileCache.delete(cacheKey);
+        
+        // Reload questions
+        loadQuestionsFromXML(currentTopicName);
+        
+        // Remove notification
+        notification.remove();
+    });
+    
+    document.getElementById('dismiss-update-btn').addEventListener('click', () => {
+        notification.remove();
+    });
+    
+    // Auto-remove after 30 seconds
+    setTimeout(() => {
+        if (notification.parentNode) {
+            notification.remove();
+        }
+    }, 30000);
+}
+
+// Update the startAutoDetection function to use the new scanner
+function startAutoDetection() {
+    if (autoDetectInterval) {
+        clearInterval(autoDetectInterval);
+        autoDetectInterval = null;
+    }
+    
+    if (xmlScanner) {
+        xmlScanner.stopScanning();
+    }
+    
+    if (autoDetectToggleEl.checked) {
+        console.log("🔄 Starting enhanced auto-detection");
+        setupAutoDetection();
+    }
+}
+
+// Update the scanForXMLFiles function to use the scanner
+async function scanForXMLFiles() {
+    if (!currentClass || !currentSubject) return [];
+    
+    try {
+        if (!xmlScanner) {
+            await setupAutoDetection();
+        }
+        
+        // Perform a scan
+        const changes = await xmlScanner.performScan(`${currentClass}/${currentSubject}/`);
+        
+        // Extract just the file names
+        const fileNames = changes.allFiles;
+        
+        console.log(`Found ${fileNames.length} XML files`);
+        return fileNames;
+        
+    } catch (error) {
+        console.error("Error scanning for XML files:", error);
+        return [];
+    }
+}
+
+// Update the refresh XML button handler
+refreshXmlBtnEl.addEventListener("click", async () => {
+    refreshXmlBtnEl.innerHTML = '🔄 Scanning...';
+    refreshXmlBtnEl.disabled = true;
+    
+    // Clear all caches
+    xmlFileCache.clear();
+    if (xmlScanner) {
+        xmlScanner.cleanupCache(0); // Clear all cached data
+    }
+    
+    // Force a fresh scan
+    await scanForXMLFiles();
+    
+    refreshXmlBtnEl.innerHTML = '🔄 Refresh XML List';
+    refreshXmlBtnEl.disabled = false;
+    
+    showNotification("✅ XML list refreshed with latest changes!");
+});
+
+// Update auto-detection toggle handler
+autoDetectToggleEl.addEventListener("change", () => {
+    if (autoDetectToggleEl.checked) {
+        startAutoDetection();
+    } else if (xmlScanner) {
+        xmlScanner.stopScanning();
+        console.log("⏹️ Stopped auto-detection");
+    }
+});
+
+// Update showQuizContainer to start scanner
+function showQuizContainer(subjectName) {
+    currentSubject = subjectName;
+    
+    // Update path display
+    currentPathEl.innerHTML = `
+        <span class="path-link" onclick="showClassSelection()">Classes</span>
+        <span class="path-separator">›</span>
+        <span class="path-link" onclick="showSubjectSelection('${currentClass}')">Class ${currentClass}</span>
+        <span class="path-separator">›</span>
+        <span>${subjectName}</span>
+    `;
+    currentPathEl.style.display = "flex";
+    
+    subjectSelectionEl.style.display = "none";
+    quizContainerEl.style.display = "block";
+    
+    loadChapters();
+    isReviewMode = false;
+    
+    // Start auto-detection for XML files
+    startAutoDetection();
+}
+
+function showNotification(message) {
+    // Create notification element
+    const notification = document.createElement('div');
+    notification.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: rgba(34, 197, 94, 0.9);
+        color: white;
+        padding: 12px 16px;
+        border-radius: 8px;
+        z-index: 9999;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        animation: slideIn 0.3s ease-out;
+        max-width: 300px;
+    `;
+    
+    notification.innerHTML = `
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span>🔔</span>
+          <span>${message}</span>
+        </div>
+    `;
+    
+    document.body.appendChild(notification);
+    
+    // Remove after 5 seconds
+    setTimeout(() => {
+        notification.style.animation = 'slideOut 0.3s ease-in';
+        setTimeout(() => {
+            if (notification.parentNode) {
+                notification.parentNode.removeChild(notification);
+            }
+        }, 300);
+    }, 5000);
+    
+    // Add CSS animations if not already present
+    if (!document.querySelector('#notification-styles')) {
+        const style = document.createElement('style');
+        style.id = 'notification-styles';
+        style.textContent = `
+          @keyframes slideIn {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+          }
+          @keyframes slideOut {
+            from { transform: translateX(0); opacity: 1; }
+            to { transform: translateX(100%); opacity: 0; }
+          }
+        `;
+        document.head.appendChild(style);
+    }
+}
     // ========== LOAD EXTERNAL CONFIGURATIONS ==========
     async function loadConfigurations() {
         try {
@@ -2030,22 +2501,28 @@
       console.log(`🎉 User ${user.name} logged in successfully. Role: ${user.role}, Class: ${user.class || '8'}`);
     }
 
-    function logout() {
-      if (confirm("Are you sure you want to logout?")) {
+ function logout() {
+    if (confirm("Are you sure you want to logout?")) {
         // Clear all timers
         if (timerInterval) {
-          clearInterval(timerInterval);
-          timerInterval = null;
+            clearInterval(timerInterval);
+            timerInterval = null;
         }
         
         if (inactivityTimer) {
-          clearTimeout(inactivityTimer);
-          inactivityTimer = null;
+            clearTimeout(inactivityTimer);
+            inactivityTimer = null;
         }
         
         if (cooldownTimer) {
-          clearInterval(cooldownTimer);
-          cooldownTimer = null;
+            clearInterval(cooldownTimer);
+            cooldownTimer = null;
+        }
+        
+        // Stop auto-detection scanner
+        if (xmlScanner) {
+            xmlScanner.stopScanning();
+            xmlScanner = null;
         }
         
         // Remove activity listeners
@@ -2078,8 +2555,8 @@
         usernameEl.focus();
         
         console.log("👋 User logged out");
-      }
     }
+}
 
     function autoLogout() {
       if (currentUser) {
@@ -2097,6 +2574,7 @@
 
     // ========== NAVIGATION FUNCTIONS ==========
     function showClassSelection() {
+      stopAutoDetection();
       classSelectionEl.style.display = "block";
       subjectSelectionEl.style.display = "none";
       quizContainerEl.style.display = "none";
@@ -2105,6 +2583,7 @@
     }
 
     function showSubjectSelection(className) {
+      stopAutoDetection();
       currentClass = className;
       currentClassDisplayEl.textContent = `Class ${className}`;
       
@@ -2134,6 +2613,9 @@
       
       loadChapters();
       isReviewMode = false;
+      
+      // Start auto-detection for XML files
+      startAutoDetection();
     }
 
     function loadClasses() {
@@ -2309,19 +2791,23 @@
         }
         
         if (!response || !response.ok) {
-          throw new Error(`Cannot find chapters.json for ${currentClass}/${subjectId}`);
-        }
-        
-        chaptersList = await response.json();
-        
-        if (!Array.isArray(chaptersList) || chaptersList.length === 0) {
-          throw new Error(`chapters.json is empty. Please add chapter names.`);
+          // If chapters.json doesn't exist, scan for XML files directly
+          console.log("chapters.json not found, scanning for XML files directly");
+          chaptersList = await scanForXMLFiles();
+        } else {
+          chaptersList = await response.json();
+          
+          if (!Array.isArray(chaptersList) || chaptersList.length === 0) {
+            // If chapters.json is empty, scan for XML files
+            console.log("chapters.json is empty, scanning for XML files");
+            chaptersList = await scanForXMLFiles();
+          }
         }
         
         // Populate dropdown
         populateChapterDropdown();
         
-        console.log(`📖 Loaded ${chaptersList.length} chapters from ${successfulPath}`);
+        console.log(`📖 Loaded ${chaptersList.length} chapters`);
         
       } catch (err) {
         console.error("❌ Error loading chapters:", err);
@@ -2335,7 +2821,12 @@
       topicSelectEl.innerHTML = '<option value="">-- Select Chapter --</option>';
       
       if (chaptersList && chaptersList.length > 0) {
-        chaptersList.forEach(chapter => {
+        // Sort chapters alphabetically
+        const sortedChapters = [...chaptersList].sort((a, b) => 
+          a.toString().localeCompare(b.toString())
+        );
+        
+        sortedChapters.forEach(chapter => {
           if (chapter && chapter.trim()) {
             const option = document.createElement("option");
             option.value = chapter.trim();
@@ -2354,8 +2845,11 @@
       } else {
         startBtnEl.disabled = true;
         quizTopicNameEl.textContent = "Error: No chapters found";
+        quizTopicNameEl.style.backgroundColor = "rgba(239, 68, 68, 0.1)";
+        quizTopicNameEl.style.borderColor = "rgba(239, 68, 68, 0.5)";
+        quizTopicNameEl.style.color = "#fca5a5";
         quizQuestionCountEl.textContent = "0 chapters";
-        questionTextEl.textContent = "Please check the chapters.json file format.";
+        questionTextEl.textContent = "No XML files found. Please add XML files to the subject folder.";
       }
     }
 
@@ -2370,7 +2864,7 @@
       quizTopicNameEl.style.borderColor = "rgba(239, 68, 68, 0.5)";
       quizTopicNameEl.style.color = "#fca5a5";
       quizQuestionCountEl.textContent = "0 chapters";
-      questionTextEl.textContent = "Please create chapters.json in the subject folder with chapter names in an array.";
+      questionTextEl.textContent = "Please create chapters.json in the subject folder with chapter names in an array, or add XML files directly.";
       startBtnEl.disabled = true;
     }
 
@@ -2422,94 +2916,6 @@
       removeTimerNotification();
     }
 
-    // ========== ENHANCED XML PARSER ==========
-    function parseXMLToQuestions(xmlText) {
-      const parser = new DOMParser();
-      const xmlDoc = parser.parseFromString(xmlText, "application/xml");
-
-      // Reset timer duration
-      timerDuration = 0;
-
-      // Check for timer configuration - look for timeLimit in metadata
-      const metadataNode = xmlDoc.getElementsByTagName("metadata")[0];
-      if (metadataNode) {
-        const timeLimitNode = metadataNode.getElementsByTagName("timeLimit")[0];
-        if (timeLimitNode) {
-          const minutes = parseInt(timeLimitNode.textContent) || 0;
-          timerDuration = minutes * 60 * 1000; // Convert minutes to milliseconds
-        }
-      } else {
-        // Also check for direct timer tag
-        const timerNode = xmlDoc.getElementsByTagName("timer")[0];
-        if (timerNode) {
-          const hours = parseInt(timerNode.getAttribute("hours")) || 0;
-          const minutes = parseInt(timerNode.getAttribute("minutes")) || 0;
-          timerDuration = (hours * 60 * 60 * 1000) + (minutes * 60 * 1000);
-        }
-      }
-
-      const qNodes = xmlDoc.getElementsByTagName("question");
-      const out = [];
-
-      for (let i = 0; i < qNodes.length; i++) {
-        const qNode = qNodes[i];
-        const textNode = qNode.getElementsByTagName("text")[0];
-        if (!textNode) continue;
-
-        const qText = textNode.textContent.trim();
-        const optNodes = qNode.getElementsByTagName("option");
-        if (optNodes.length < 2) continue;
-
-        const options = [];
-        let correctIndex = 0;
-        let explanation = "";
-
-        // Get explanation if exists
-        const expNode = qNode.getElementsByTagName("explanation")[0];
-        if (expNode) {
-          explanation = expNode.textContent.trim();
-        }
-
-        // Check if question has answer attribute (format 2: <question answer="C">)
-        const questionAnswer = qNode.getAttribute("answer");
-        
-        // FORMAT 1: <option correct="true"> (default format)
-        if (!questionAnswer) {
-          for (let j = 0; j < optNodes.length; j++) {
-            const optNode = optNodes[j];
-            const optText = optNode.textContent.trim();
-            const isCorrect = optNode.getAttribute("correct") === "true";
-            options.push(optText);
-            if (isCorrect) correctIndex = j;
-          }
-        } 
-        // FORMAT 2: <question answer="C"> with options A, B, C, D
-        else {
-          // Parse answer letter (A, B, C, D, etc.)
-          const answerLetter = questionAnswer.toUpperCase().trim();
-          
-          for (let j = 0; j < optNodes.length; j++) {
-            const optNode = optNodes[j];
-            const optText = optNode.textContent.trim();
-            const optionLetter = String.fromCharCode(65 + j); // A, B, C, D...
-            
-            options.push(optText);
-            if (optionLetter === answerLetter) {
-              correctIndex = j;
-            }
-          }
-        }
-
-        out.push({
-          question: qText,
-          options,
-          correctIndex,
-          explanation: explanation
-        });
-      }
-      return out;
-    }
-
     // ========== HELPER FUNCTIONS ==========
     function shuffleArray(arr) {
       for (let i = arr.length - 1; i > 0; i--) {
@@ -2519,22 +2925,36 @@
     }
 
     function prepareQuestionBank(rawQuestions, randomize) {
-      const qs = rawQuestions.map(q => ({
-        question: q.question,
-        options: [...q.options],
-        correctIndex: q.correctIndex,
-        explanation: q.explanation
+      console.log(`Preparing ${rawQuestions.length} questions, randomize: ${randomize}`);
+      
+      const qs = rawQuestions.map((q, idx) => ({
+        question: q.question || `Question ${idx + 1}`,
+        options: [...(q.options || [])],
+        correctIndex: q.correctIndex || 0,
+        explanation: q.explanation || ""
       }));
 
       if (randomize) {
+        console.log("Randomizing questions and options");
         shuffleArray(qs);
-        qs.forEach(q => {
+        qs.forEach((q, idx) => {
+          // Store original correct answer for debugging
+          const originalCorrect = q.correctIndex;
+          const originalOptions = [...q.options];
+          
+          // Shuffle options indices
           const idxs = q.options.map((_, idx) => idx);
           shuffleArray(idxs);
+          
+          // Create new shuffled options array
           const newOptions = idxs.map(i => q.options[i]);
           const newCorrectIndex = idxs.indexOf(q.correctIndex);
+          
+          // Update question
           q.options = newOptions;
           q.correctIndex = newCorrectIndex;
+          
+          console.log(`Question ${idx}: Original correct was index ${originalCorrect} ("${originalOptions[originalCorrect]}"), now index ${newCorrectIndex} ("${newOptions[newCorrectIndex]}")`);
         });
       }
 
@@ -3066,6 +3486,8 @@
 
       currentTopicName = trimmed;
       
+      console.log(`=== Loading questions for chapter: "${trimmed}" ===`);
+      
       // Clean the filename - remove any invalid characters
       const cleanChapterName = trimmed.replace(/[<>:"/\\|?*]/g, '');
       
@@ -3136,11 +3558,23 @@
         for (const path of pathOptions) {
           try {
             console.log(`🔍 Trying XML path: ${path}`);
+            
+            // Check cache first
+            if (xmlFileCache.has(path)) {
+              console.log(`📦 Using cached XML for: ${path}`);
+              xmlText = xmlFileCache.get(path);
+              successfulPath = path;
+              break;
+            }
+            
             const res = await fetch(path);
             if (res.ok) {
               xmlText = await res.text();
               successfulPath = path;
               console.log(`✅ Successfully loaded XML from: ${path}`);
+              
+              // Cache the XML content
+              xmlFileCache.set(path, xmlText);
               break;
             } else {
               console.log(`❌ Failed to load from: ${path} (Status: ${res.status})`);
@@ -3324,6 +3758,29 @@
       goToPreviousQuestion();
     });
 
+    autoDetectToggleEl.addEventListener("change", () => {
+      if (autoDetectToggleEl.checked) {
+        startAutoDetection();
+      } else {
+        stopAutoDetection();
+      }
+    });
+
+    refreshXmlBtnEl.addEventListener("click", async () => {
+      refreshXmlBtnEl.innerHTML = '🔄 Scanning...';
+      refreshXmlBtnEl.disabled = true;
+      
+      // Clear cache to force fresh scan
+      xmlFileCache.clear();
+      
+      await scanForXMLFiles();
+      
+      refreshXmlBtnEl.innerHTML = '🔄 Refresh XML List';
+      refreshXmlBtnEl.disabled = false;
+      
+      showNotification("✅ XML list refreshed!");
+    });
+
     // ========== INITIALIZATION ==========
     async function initializeApp() {
       // Load all configurations first
@@ -3333,6 +3790,7 @@
       console.log("🚀 G. S. Tutorial App initialized");
       console.log("📊 Configuration loaded successfully");
       console.log("🔐 Google Sheets Login System Ready");
+      console.log("🔄 Auto-detection system ready");
       
       // Show loaded configuration
       console.log("📋 Current Configuration:");
@@ -3357,5 +3815,6 @@ if ("serviceWorker" in navigator) {
   navigator.serviceWorker.register("service-worker.js");
 }
   </script>
+  <script src="scanner.js"></script>
 </body>
 </html>
